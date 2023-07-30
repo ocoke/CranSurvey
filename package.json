@@ -9,7 +9,7 @@
     "dev": "nitropack dev",
     "build": "nitropack build",
     "preview": "node .output/server/index.mjs",
-    "commit": "mini-cz"
+    "commit": "cz"
   },
   "dependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
