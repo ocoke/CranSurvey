@@ -2,7 +2,7 @@ import jwt from 'jwt-simple'
 import initDatabase from '~/src/functions/init-database'
 export default eventHandler(async (event) => {
   const storage = useStorage()
-  const { id, pwd } = event.context.params
+  const { id, pwd } = await readBody(event)
   if (!id || !pwd) {
     return {
       code: 1001,

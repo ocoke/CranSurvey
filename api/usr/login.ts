@@ -1,7 +1,7 @@
 import jwt from 'jwt-simple'
 export default eventHandler(async (event) => {
   const storage = useStorage()
-  const { id, pwd } = event.context.params
+  const { id, pwd } = await readBody(event)
   if (!id || !pwd) {
     return {
       code: 1001,

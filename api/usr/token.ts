@@ -1,7 +1,7 @@
-import { checkToken } from '~/src/functions/checkToken';
+import checkToken from '~/src/functions/checkToken';
 
 export default eventHandler(async (event) => {
-  const { token } = event.context.params
+  const { token } = await readBody(event)
   if (!token) {
     return {
       code: 1001,
