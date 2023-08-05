@@ -1,4 +1,4 @@
-import dbConfObj from '~/src/functions/db-config'
+import dbConfObj from './src/functions/db-config'
 
 export default defineNitroConfig({
   storage: {
