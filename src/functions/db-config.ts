@@ -6,9 +6,16 @@
 
 const dbType = process.env.db_name
 const _env = process.env.db_config
-
+let envObj = {};
+try {
+  console.log(dbType)
+  console.log(_env)
+  envObj = JSON.parse(_env);
+} catch(e) {
+  console.log(e)
+}
 const dbConfObj: object = {
   driver: dbType,
-  ...JSON.parse(_env)
+  ...envObj || {}
 }
 export default dbConfObj
