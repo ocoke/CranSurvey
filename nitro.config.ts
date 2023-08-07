@@ -1,8 +1,5 @@
-
-
 export default defineNitroConfig({
-  storage: {
-    // db: dbConfObj
-  }
-
+	storage: {
+		// db: dbConfObj
+	},
 })

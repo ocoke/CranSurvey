@@ -3,24 +3,24 @@
 // import { createStorage } from "unstorage";
 // import dbConfig from "./db-config";
 
-export default async function initDatabase () {
-  try {
-    const storage = useStorage("cransurvey")
+export default async function initDatabase() {
+	try {
+		const storage = useStorage("cransurvey")
 
-    // user(s)
+		// user(s)
 
-    await storage.setItem('usr', [])
+		await storage.setItem("usr", [])
 
-    // survey id(s)
-    await storage.setItem('sid', [])
+		// survey id(s)
+		await storage.setItem("sid", [])
 
-    // answers
-    await storage.setItem('ans', {})
+		// answers
+		await storage.setItem("ans", {})
 
-    await storage.setItem('init', true)
+		await storage.setItem("init", true)
 
-    return true
-  } catch (e) {
-    return false
-  }
+		return true
+	} catch (e) {
+		return false
+	}
 }

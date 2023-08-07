@@ -9,10 +9,13 @@
     "dev": "nitropack dev",
     "build": "nitropack build",
     "preview": "node .output/server/index.mjs",
-    "commit": "cz"
+    "commit": "cz",
+    "lint": "eslint --ext .ts --ignore-path .gitignore . --fix"
   },
   "dependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "js-base64": "^3.7.5",
     "js-sha256": "^0.9.0",
     "jshashes": "^1.0.8",
@@ -23,7 +26,12 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0"
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.46.0",
+    "prettier": "^3.0.1",
+    "typescript": "^5.1.6"
   },
   "config": {
     "commitizen": {
