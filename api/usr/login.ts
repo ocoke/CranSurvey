@@ -8,15 +8,15 @@ export default eventHandler(async (event) => {
       msg: 'Invalid parameters.'
     }
   }
-  const usr: object = await storage.getItem('usr')
+  const usr: object[] = await storage.getItem('usr')
   if (!usr) {
     return {
       code: 2001,
       msg: 'Database Error.'
     }
   }
-  const user = usr.find(u => u.id == id)
-  if (user && user.pwd == pwd) {
+  const user = usr.find(u => u["id"] == id)
+  if (user && user["pwd"] == pwd) {
     return {
       code: 0,
       msg: 'Success.',
