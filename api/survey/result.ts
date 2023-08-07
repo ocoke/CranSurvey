@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import checkToken from '~/src/functions/checkToken';
 export default eventHandler(async (event) => {
-    const storage = useStorage()
+    const storage = useStorage("cransurvey")
     const { uniqueId, userId, token, } = await readBody(event)
     const _ans: object = await storage.getItem('ans')
     if (!uniqueId) {

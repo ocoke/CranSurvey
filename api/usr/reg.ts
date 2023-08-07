@@ -1,7 +1,7 @@
 import jwt from 'jwt-simple'
 import initDatabase from '~/src/functions/init-database'
 export default eventHandler(async (event) => {
-  const storage = useStorage()
+  const storage = useStorage("cransurvey")
   const { id, pwd } = await readBody(event)
   if (!id || !pwd) {
     return {

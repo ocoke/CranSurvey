@@ -5,7 +5,7 @@
 
 export default async function initDatabase () {
   try {
-    const storage = useStorage()
+    const storage = useStorage("cransurvey")
 
     // user(s)
 

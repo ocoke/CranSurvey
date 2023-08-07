@@ -2,7 +2,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import checkToken from '~/src/functions/checkToken';
 export default eventHandler(async (event) => {
-  const storage = useStorage()
+  const storage = useStorage("cransurvey")
   const { token, title, description, questions } = await readBody(event)
   if (!token || !title || !description || !questions) {
     return {

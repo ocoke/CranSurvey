@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 export default eventHandler(async (event) => {
-    const storage = useStorage()
+    const storage = useStorage("cransurvey")
     const { uniqueId, userId, answers } = await readBody(event)
 
     if (!uniqueId || !userId || !answers) {
