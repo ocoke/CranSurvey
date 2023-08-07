@@ -11,7 +11,7 @@
 
 Please check our wiki to learn more information about this.
 
-- [English (en-US)](https://github.com/oCoke/CranSurvey/wiki/Getting-Started)
+- [English](https://github.com/oCoke/CranSurvey/wiki/Getting-Started)
 
 - [Chinese (zh-Hans)](https://github.com/oCoke/CranSurvey/wiki/%5B%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-zh%E2%80%90Hans%5D-%E5%BC%80%E5%A7%8B)
 
