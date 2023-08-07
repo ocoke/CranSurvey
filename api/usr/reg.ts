@@ -3,7 +3,7 @@ import initDatabase from '~/src/functions/init-database'
 export default eventHandler(async (event) => {
   const storage = useStorage("cransurvey")
   const { id, pwd } = await readBody(event)
-  if (!id || !pwd) {
+  if (!id || !pwd || id.length >= 32 || pwd.length >= 64) {
     return {
       code: 1001,
       msg: 'Invalid parameters.'
@@ -12,7 +12,7 @@ export default eventHandler(async (event) => {
   if (await storage.getItem('init') != true) {
     await initDatabase()
 
-    const usr = await storage.getItem('usr')
+    let usr: object[] = await storage.getItem('usr')
     usr.push({
       id,
       pwd
@@ -27,7 +27,16 @@ export default eventHandler(async (event) => {
       token: jwt.encode({ id, pwd }, process.env.JWT_SECRET || '_cransurvey_')
     }
   } else {
-    const usr = await storage.getItem('usr')
+    let usr: object[] = await storage.getItem('usr')
+    let exist = (usr as any[]).find((v) => v.id == id)
+
+    if (exist) {
+      return {
+        code: 1002,
+        msg: 'User already exists.'
+      }
+    }
+
     usr.push({
       id,
       pwd
