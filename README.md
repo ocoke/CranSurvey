@@ -1,7 +1,7 @@
 <p align="center">
     <img src="https://raw.githubusercontent.com/oCoke/CranSurvey/master/src/icons/200x200.png" alt="CranSurvey" width="200" />
-    <h1>CranSurvey</h1>
 </p>
+<h1 align="center">CranSurvey</h1>
 
 > 🗒️ Add a prompt window to collect surveys from your website. 
 > 
