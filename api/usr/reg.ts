@@ -1,8 +1,8 @@
 import jwt from "jwt-simple"
 import initDatabase from "~/src/functions/init-database"
 export default eventHandler(async (event) => {
-	const storage = useStorage("cransurvey")
-	const { id, pwd } = await readBody(event)
+const storage = useStorage("cransurvey")
+		const { id, pwd } = await readBody(event)
 	if (!id || !pwd || id.length >= 32 || pwd.length >= 64) {
 		return {
 			code: 1001,
