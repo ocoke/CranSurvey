@@ -20,11 +20,9 @@ export default async function initDatabase() {
 		// configs
 
 		await storage.setItem("cfg", {
-			
 			users: {
 				allowSignUp: true,
-			}
-
+			},
 		})
 
 		await storage.setItem("init", true)

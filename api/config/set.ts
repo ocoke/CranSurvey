@@ -2,7 +2,7 @@ import checkToken from "~/src/functions/checkToken"
 
 export default eventHandler(async (event) => {
 	const { token, data } = await readBody(event)
-    const storage = useStorage("cransurvey")
+	const storage = useStorage("cransurvey")
 	if (!token) {
 		return {
 			code: 1001,
@@ -10,15 +10,15 @@ export default eventHandler(async (event) => {
 		}
 	}
 	if (await checkToken(token)) {
-        let cfg: object = await storage.getItem("cfg")
-        for (let i in data) {
-            cfg[i] = data[i]
-        }
-        await storage.setItem("cfg", cfg)
+		const cfg: object = await storage.getItem("cfg")
+		for (const i in data) {
+			cfg[i] = data[i]
+		}
+		await storage.setItem("cfg", cfg)
 		return {
 			code: 0,
 			msg: "Success.",
-            data,
+			data,
 		}
 	} else {
 		return {
