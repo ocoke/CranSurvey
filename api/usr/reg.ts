@@ -37,6 +37,17 @@ export default eventHandler(async (event) => {
 			}
 		}
 
+		const cfg: object = await storage.getItem("cfg")
+		const allowSignUp = cfg["users"].allowSignUp
+
+		if (!allowSignUp) {
+			return {
+				code: 1003,
+				msg: "Sign up is not allowed.",
+			}
+		}
+
+
 		usr.push({
 			id,
 			pwd,

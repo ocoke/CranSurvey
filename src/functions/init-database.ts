@@ -17,6 +17,16 @@ export default async function initDatabase() {
 		// answers
 		await storage.setItem("ans", {})
 
+		// configs
+
+		await storage.setItem("cfg", {
+			
+			users: {
+				allowSignUp: true,
+			}
+
+		})
+
 		await storage.setItem("init", true)
 
 		return true
