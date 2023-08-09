@@ -43,4 +43,13 @@ jobs:
         with:
           commit-message: "style(eslint): update"
           title: "style(eslint): update"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+#       - name: Install
+#         run: |
+#           git add .
+#           git config --global user.name "iColaBot"
+#           git config --global user.email "icolabot@e.yfun.top"
+#           git commit -m "style(eslint): update"
+#           git push -u origin master
 
