@@ -39,11 +39,15 @@ jobs:
         continue-on-error: false
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          commit-message: "style(eslint): update"
-          title: "style(eslint): update"
-          token: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr create -B master -H ci/update --title "style(eslint):\ update" --body 'Created by GitHub Action.'
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Create Pull Request
+#         uses: peter-evans/create-pull-request@v5
+#         with:
+#           commit-message: "style(eslint): update"
+#           title: "style(eslint): update"
+#           token: ${{ secrets.GITHUB_TOKEN }}
 
 #       - name: Install
 #         run: |
