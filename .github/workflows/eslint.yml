@@ -38,10 +38,9 @@ jobs:
         run: npm run lint
         continue-on-error: false
 
-      - name: Install
-        run: |
-          git add .
-          git config --global user.name "iColaBot"
-          git config --global user.email "icolabot@e.yfun.top"
-          git commit -m "style(eslint): update"
-          git push -u origin master
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: "style(eslint): update"
+          title: "style(eslint): update"
+
