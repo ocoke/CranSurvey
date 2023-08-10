@@ -55,6 +55,7 @@ jobs:
           commit-message: "style(eslint): update"
           title: "style(eslint): update"
           token: ${{  secrets.ACTION_GH_TOKEN  }}
+        continue-on-error: true
 
 #       - name: Install
 #         run: |
