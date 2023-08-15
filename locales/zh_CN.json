@@ -11,5 +11,17 @@
 		"success": "已成功登录。",
 		"error": "登录时出错。",
 		"invalid_params": "请检查您的用户名和密码。"
+	},
+	"signup": {
+		"signup": "注册",
+		"username": "用户名",
+		"password": "密码",
+		"password_re": "重新输入您的密码",
+		"continue": "继续",
+		"success": "注册成功。",
+		"error": "登录时出错。",
+		"invalid_params": "请检查您的用户名和密码。",
+		"invalid_password": "密码不匹配。",
+		"init": "看来这是您第一次来这里，我们已经自动初始化了您的数据库。"
 	}
 }
