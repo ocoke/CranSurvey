@@ -13,15 +13,15 @@
 		"invalid_params": "ユーザー名とパスワードを確認してください。"
 	},
 	"signup": {
-		"signup": "Sign up",
+		"signup": "サインアップ",
 		"username": "ユーザー名",
 		"password": "パスワード",
-		"password_re": "Re-enter your password",
+		"password_re": "パスワードを再入力してください",
 		"continue": "続ける",
-		"success": "Signed up successfully.",
+		"success": "正常にサインアップしました。",
 		"error": "サインイン中にエラーが発生しました。",
 		"invalid_params": "ユーザー名とパスワードを確認してください。",
-		"invalid_password": "The passwords do not match.",
-		"init": "It seems like this is your first time here, we have automatically initialized your database."
+		"invalid_password": "パスワードが一致しません。",
+		"init": "ここで初めてのようですが、データベースを自動的に初期化しました。"
 	}
 }
