@@ -2,5 +2,14 @@
 	"welcome": {
 		"welcome": "Welcome to CranSurvey!",
 		"gotoDashboard": "Goto Dashboard"
+	},
+	"signin": {
+		"signin": "Sign in",
+		"username": "Username",
+		"password": "Password",
+		"continue": "Continue",
+		"success": "Signed in successfully.",
+		"error": "An error occurred while signing in.",
+		"invalid_params": "Please check your username and password."
 	}
 }
