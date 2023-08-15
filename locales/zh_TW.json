@@ -13,15 +13,15 @@
 		"invalid_params": "請檢查您的使用者名和密碼。"
 	},
 	"signup": {
-		"signup": "Sign up",
+		"signup": "註冊",
 		"username": "使用者名",
 		"password": "密碼",
-		"password_re": "Re-enter your password",
+		"password_re": "重新輸入您的密碼",
 		"continue": "繼續",
-		"success": "Signed up successfully.",
+		"success": "註冊成功。",
 		"error": "登錄時出錯。",
 		"invalid_params": "請檢查您的使用者名和密碼。",
-		"invalid_password": "The passwords do not match.",
-		"init": "It seems like this is your first time here, we have automatically initialized your database."
+		"invalid_password": "密碼不匹配。",
+		"init": "看來這是您第一次來這裏，我們已經自動初始化了您的資料庫。"
 	}
 }
