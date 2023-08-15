@@ -5,15 +5,18 @@
   "author": "CK Yu <hi@cky.im>",
   "private": true,
   "scripts": {
-    "prepare": "nitropack prepare",
-    "dev": "nitropack dev",
-    "build": "nitropack build",
+    "prepare": "nuxt prepare",
+    "dev": "nuxt dev",
+    "build": "nuxt build",
     "preview": "node .output/server/index.mjs",
     "commit": "cz",
     "lint": "eslint --ext .ts --ignore-path .gitignore . --fix"
   },
   "dependencies": {
+    "@mdi/font": "^7.2.96",
+    "@nuxt/types": "^2.17.1",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@types/node": "^20.5.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "js-base64": "^3.7.5",
@@ -22,10 +25,14 @@
     "jwt-simple": "^0.5.6",
     "mongodb": "^5.7.0",
     "nitropack": "latest",
+    "nuxt": "^3.6.5",
+    "sass": "^1.65.1",
     "unstorage": "^1.8.0",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "vuetify": "^3.3.12"
   },
   "devDependencies": {
+    "@nuxtjs/i18n": "^8.0.0-rc.2",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
     "cz-conventional-changelog": "^3.3.0",
