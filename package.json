@@ -13,6 +13,7 @@
     "lint": "eslint --ext .ts --ignore-path .gitignore . --fix"
   },
   "dependencies": {
+    "@mdi/font": "^7.2.96",
     "@nuxt/types": "^2.17.1",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@types/node": "^20.5.0",
@@ -25,8 +26,10 @@
     "mongodb": "^5.7.0",
     "nitropack": "latest",
     "nuxt": "^3.6.5",
+    "sass": "^1.65.1",
     "unstorage": "^1.8.0",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "vuetify": "^3.3.12"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.3.0",
