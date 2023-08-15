@@ -23,12 +23,14 @@
     "js-sha256": "^0.9.0",
     "jshashes": "^1.0.8",
     "jwt-simple": "^0.5.6",
+    "md5": "^2.3.0",
     "mongodb": "^5.7.0",
     "nitropack": "latest",
     "nuxt": "^3.6.5",
     "sass": "^1.65.1",
     "unstorage": "^1.8.0",
     "uuid": "^9.0.0",
+    "vue-toastification": "^2.0.0-rc.5",
     "vuetify": "^3.3.12"
   },
   "devDependencies": {
