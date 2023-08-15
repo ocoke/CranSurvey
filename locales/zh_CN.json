@@ -2,5 +2,14 @@
 	"welcome": {
 		"welcome": "欢迎来到 CranSurvey！",
 		"gotoDashboard": "转到仪表板"
+	},
+	"signin": {
+		"signin": "登录",
+		"username": "用户名",
+		"password": "密码",
+		"continue": "继续",
+		"success": "已成功登录。",
+		"error": "登录时出错。",
+		"invalid_params": "请检查您的用户名和密码。"
 	}
 }
