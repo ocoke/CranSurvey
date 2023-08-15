@@ -1,8 +1,15 @@
 <script setup>
+import '~/src/styles/index.css'
 const { locale } = useI18n()
+const localePath = useLocalePath()
+
 </script>
 
 <template>
-    <h1>{{ $t('welcome.welcome') }}</h1>
-    <h2>{{ $t('welcome.gotoDashboard') }}</h2>
+    <div class="welcomePage">
+        <h4 class="text-h4">{{ $t('welcome.welcome') }}</h4>
+        <Nuxt-Link :to="localePath('/dash')"><v-btn variant="outlined">
+            {{ $t('welcome.gotoDashboard') }}
+        </v-btn></Nuxt-Link>
+    </div>
 </template>

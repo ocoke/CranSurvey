@@ -12,7 +12,7 @@ export default defineNuxtConfig({
 	i18n: {
 		locales: [
 			{
-				code: "en",
+				code: "en-US",
 				file: "en_US.json",
 			},
 			{
@@ -43,5 +43,6 @@ export default defineNuxtConfig({
 			useCookie: true,
 			cookieKey: "i18n_redirected",
 		},
+        strategy: "prefix"
 	},
 })

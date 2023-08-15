@@ -1,6 +1,11 @@
 <template>
-    <NuxtLoadingIndicator />
-    <div id="app">
-        <router-view></router-view>
-    </div>
+    <NuxtLayout>
+        <div>
+            <NuxtLoadingIndicator /> <!-- here -->
+            <NuxtPage />
+        </div>
+    </NuxtLayout>
 </template>
+<script setup>
+import '~/src/styles/global.css'
+</script>
