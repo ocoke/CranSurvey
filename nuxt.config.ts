@@ -23,18 +23,18 @@ export default defineNuxtConfig({
 				code: "zh-HK",
 				file: "zh_HK.json",
 			},
-            {
-                code: "ja-JP",
-                file: "ja_JP.json",
-            },
-            {
-                code: "zh-TW",
-                file: "zh_TW.json",
-            },
-            {
-                code: "es-ES",
-                file: "es_ES.json",
-            },
+			{
+				code: "ja-JP",
+				file: "ja_JP.json",
+			},
+			{
+				code: "zh-TW",
+				file: "zh_TW.json",
+			},
+			{
+				code: "es-ES",
+				file: "es_ES.json",
+			},
 		],
 		defaultLocale: "en",
 		lazy: true,
