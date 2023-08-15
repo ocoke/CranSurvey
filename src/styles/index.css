@@ -1,6 +1,7 @@
 .welcomePage {
     max-width: 550px;
     margin: 25vh auto auto auto;
+    padding: 0 20px 0 20px;
 }
 
 .welcomePage h4 {
