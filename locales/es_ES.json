@@ -2,5 +2,14 @@
 	"welcome": {
 		"welcome": "¡Bienvenido a CranSurvey!",
 		"gotoDashboard": "Ir al panel"
+	},
+	"signin": {
+		"signin": "Inicia sesión",
+		"username": "Nombre de usuario",
+		"password": "Contraseña",
+		"continue": "Continuar",
+		"success": "Ha iniciado sesión correctamente.",
+		"error": "Se ha producido un error al iniciar sesión.",
+		"invalid_params": "Por favor, compruebe su nombre de usuario y contraseña."
 	}
 }
