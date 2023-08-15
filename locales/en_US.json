@@ -22,6 +22,6 @@
 		"error": "An error occurred while signing in.",
 		"invalid_params": "Please check your username and password.",
 		"invalid_password": "The passwords do not match.",
-		"init": "It seems like this is your first time here, we have automatically init your database."
+		"init": "It seems like this is your first time here, we have automatically initialized your database."
 	}
 }
