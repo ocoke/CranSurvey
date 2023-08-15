@@ -43,6 +43,6 @@ export default defineNuxtConfig({
 			useCookie: true,
 			cookieKey: "i18n_redirected",
 		},
-        strategy: "prefix"
+		strategy: "prefix",
 	},
 })
