@@ -1,6 +1,6 @@
 {
 	"welcome": {
-		"welcome": "Welcome to CranSurvey!",
-		"gotoDashboard": "Goto Dashboard"
+		"welcome": "CranSurveyへようこそ",
+		"gotoDashboard": "ダッシュボードに移動"
 	}
 }
