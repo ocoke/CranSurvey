@@ -2,5 +2,14 @@
 	"welcome": {
 		"welcome": "歡迎來到 CranSurvey！",
 		"gotoDashboard": "轉到儀錶板"
+	},
+	"signin": {
+		"signin": "登錄",
+		"username": "使用者名",
+		"password": "密碼",
+		"continue": "繼續",
+		"success": "已成功登錄。",
+		"error": "登錄時出錯。",
+		"invalid_params": "請檢查您的使用者名和密碼。"
 	}
 }
