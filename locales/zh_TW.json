@@ -11,5 +11,17 @@
 		"success": "已成功登錄。",
 		"error": "登錄時出錯。",
 		"invalid_params": "請檢查您的使用者名和密碼。"
+	},
+	"signup": {
+		"signup": "Sign up",
+		"username": "使用者名",
+		"password": "密碼",
+		"password_re": "Re-enter your password",
+		"continue": "繼續",
+		"success": "Signed up successfully.",
+		"error": "登錄時出錯。",
+		"invalid_params": "請檢查您的使用者名和密碼。",
+		"invalid_password": "The passwords do not match.",
+		"init": "It seems like this is your first time here, we have automatically initialized your database."
 	}
 }
