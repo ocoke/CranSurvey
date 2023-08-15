@@ -13,15 +13,15 @@
 		"invalid_params": "Por favor, compruebe su nombre de usuario y contraseña."
 	},
 	"signup": {
-		"signup": "Sign up",
+		"signup": "Únete",
 		"username": "Nombre de usuario",
 		"password": "Contraseña",
-		"password_re": "Re-enter your password",
+		"password_re": "Vuelva a introducir su contraseña",
 		"continue": "Continuar",
-		"success": "Signed up successfully.",
+		"success": "Se ha registrado correctamente.",
 		"error": "Se ha producido un error al iniciar sesión.",
 		"invalid_params": "Por favor, compruebe su nombre de usuario y contraseña.",
-		"invalid_password": "The passwords do not match.",
-		"init": "It seems like this is your first time here, we have automatically initialized your database."
+		"invalid_password": "Las contraseñas no coinciden.",
+		"init": "Parece que esta es su primera vez aquí, hemos inicializado automáticamente su base de datos."
 	}
 }
