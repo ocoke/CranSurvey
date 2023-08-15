@@ -1,11 +1,36 @@
 {
-  "extends": "./.nitro/types/tsconfig.json",
   "compilerOptions": {
-    "allowJs": true,
-    "checkJs": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": [
+      "esnext",
+      "esnext.asynciterable",
+      "dom"
+    ],
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-  }
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "strict": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "importsNotUsedAsValues": "preserve",
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./*"]
+    },
+    "types": [
+      "@types/node",
+      "@nuxt/types"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "allowJs": true,
+  "checkJs": true,
+  "esModuleInterop": true,
+  "forceConsistentCasingInFileNames": true,
+  "resolveJsonModule": true,
+  "skipLibCheck": true
 }
