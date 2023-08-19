@@ -23,5 +23,17 @@
 		"invalid_params": "请检查您的用户名和密码。",
 		"invalid_password": "密码不匹配。",
 		"init": "看来这是您第一次来这里，我们已经自动初始化了您的数据库。"
+	},
+	"dashboard": {
+		"dashboard": "Dashboard",
+		"surveys": "Surveys",
+		"ongoing_surveys": "There is one ongoing survey. | There are {count} ongoing survey.",
+		"manage": "Manage",
+		"users": "Users",
+		"site_users": "It looks like you're the only one here. | There are {count} users on your site.",
+		"today": "Today",
+		"this_week": "This Week",
+		"today_collected": "We have collected an answer from your survey today. | We have collected {count} answers from your survey today.",
+		"week_collected": "We have collected an answer from your survey in this week. | We have collected {count} answers from your survey in this week."
 	}
 }
