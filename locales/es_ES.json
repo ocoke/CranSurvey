@@ -23,5 +23,17 @@
 		"invalid_params": "Por favor, compruebe su nombre de usuario y contraseña.",
 		"invalid_password": "Las contraseñas no coinciden.",
 		"init": "Parece que esta es su primera vez aquí, hemos inicializado automáticamente su base de datos."
+	},
+	"dashboard": {
+		"dashboard": "Salpicadero",
+		"surveys": "Encuestas",
+		"ongoing_surveys": "Hay una encuesta en curso. | Hay {count} Encuesta en curso.",
+		"manage": "Gestionar",
+		"users": "Usuarios",
+		"site_users": "Parece que eres el único aquí. | Hay {count} usuarios en su sitio.",
+		"today": "Hoy",
+		"this_week": "Esta semana",
+		"today_collected": "Hemos recopilado una respuesta de su encuesta de hoy. | Hemos recopilado {count} respuestas de su encuesta de hoy.",
+		"week_collected": "Hemos recopilado una respuesta de su encuesta en esta semana. | Hemos recopilado {count} respuestas de su encuesta en esta semana."
 	}
 }

@@ -23,5 +23,17 @@
 		"invalid_params": "ユーザー名とパスワードを確認してください。",
 		"invalid_password": "パスワードが一致しません。",
 		"init": "ここで初めてのようですが、データベースを自動的に初期化しました。"
+	},
+	"dashboard": {
+		"dashboard": "ダッシュボード",
+		"surveys": "調査",
+		"ongoing_surveys": "進行中の調査が1つあります。|あります {count} 継続的な調査。",
+		"manage": "取り締まる",
+		"users": "ユーザー",
+		"site_users": "ここにいるのはあなただけのようです。|あります {count} サイトのユーザー。",
+		"today": "今日",
+		"this_week": "今週",
+		"today_collected": "本日、アンケートの回答を集めました。|集めました {count} 今日のアンケートからの回答。",
+		"week_collected": "今週のアンケートから回答を集めました。|集めました {count} 今週のアンケートからの回答。"
 	}
 }
