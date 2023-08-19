@@ -6,3 +6,11 @@ html, body {
 .Vue-Toastification__toast-body {
     font-family: "Roboto", sans-serif!important;
 }
+
+.v-card-title, .v-btn__content {
+    font-weight: 600;
+}
+
+.text-h4 {
+    font-weight: 500;
+}
