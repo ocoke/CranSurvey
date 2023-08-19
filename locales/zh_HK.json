@@ -23,5 +23,17 @@
 		"invalid_params": "Please check your username and password.",
 		"invalid_password": "The passwords do not match.",
 		"init": "It seems like this is your first time here, we have automatically initialized your database."
+	},
+	"dashboard": {
+		"dashboard": "Dashboard",
+		"surveys": "Surveys",
+		"ongoing_surveys": "There is one ongoing survey. | There are {count} ongoing survey.",
+		"manage": "Manage",
+		"users": "Users",
+		"site_users": "It looks like you're the only one here. | There are {count} users on your site.",
+		"today": "Today",
+		"this_week": "This Week",
+		"today_collected": "We have collected an answer from your survey today. | We have collected {count} answers from your survey today.",
+		"week_collected": "We have collected an answer from your survey in this week. | We have collected {count} answers from your survey in this week."
 	}
 }
