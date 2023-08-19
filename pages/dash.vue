@@ -45,8 +45,7 @@
             <div class="card-group">
                 <v-card
                     :title="$t('dashboard.surveys')"
-                    :subtitle="$t('dashboard.ongoing_surveys', 11)"
-                    text=""
+                    :text="$t('dashboard.ongoing_surveys', 11)"
                     variant="tonal"
                     >
                     <v-card-actions>
@@ -55,8 +54,7 @@
                 </v-card>
                 <v-card
                     :title="$t('dashboard.users')"
-                    :subtitle="$t('dashboard.site_users', 1)"
-                    text=""
+                    :text="$t('dashboard.site_users', 1)"
                     variant="tonal"
                     >
                     <v-card-actions>
@@ -67,7 +65,7 @@
             <div class="card-group">
                 <v-card
                     :title="$t('dashboard.today')"
-                    :subtitle="$t('dashboard.today_collected', 1)"
+                    :text="$t('dashboard.today_collected', 1)"
                     variant="tonal"
                     >
                     <v-card-actions>
@@ -76,7 +74,7 @@
                 </v-card>
                 <v-card
                     :title="$t('dashboard.this_week')"
-                    :subtitle="$t('dashboard.week_collected', 7)"
+                    :text="$t('dashboard.week_collected', 7)"
                     variant="tonal"
                     >
                     <v-card-actions>
@@ -115,12 +113,12 @@
 }
 .card-group .v-card {
     max-width: 550px;
-    min-width: 350px;
+    /* min-width: 350px; */
     width: 48%;
     margin-right: 1%;
     margin: 0 auto;
 }
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 935px) {
     .card-group {
         display: block;
     }
@@ -128,6 +126,9 @@
         width: 100%;
         height: 100%;
         margin-top: 20px;
+    }
+    .dash_nav .v-main {
+        max-width: 100%;
     }
 }
 </style>
