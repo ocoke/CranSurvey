@@ -25,15 +25,15 @@
 		"init": "Parece que esta es su primera vez aquí, hemos inicializado automáticamente su base de datos."
 	},
 	"dashboard": {
-		"dashboard": "Dashboard",
-		"surveys": "Surveys",
-		"ongoing_surveys": "There is one ongoing survey. | There are {count} ongoing survey.",
-		"manage": "Manage",
-		"users": "Users",
-		"site_users": "It looks like you're the only one here. | There are {count} users on your site.",
-		"today": "Today",
-		"this_week": "This Week",
-		"today_collected": "We have collected an answer from your survey today. | We have collected {count} answers from your survey today.",
-		"week_collected": "We have collected an answer from your survey in this week. | We have collected {count} answers from your survey in this week."
+		"dashboard": "Salpicadero",
+		"surveys": "Encuestas",
+		"ongoing_surveys": "Hay una encuesta en curso. | Hay {count} Encuesta en curso.",
+		"manage": "Gestionar",
+		"users": "Usuarios",
+		"site_users": "Parece que eres el único aquí. | Hay {count} usuarios en su sitio.",
+		"today": "Hoy",
+		"this_week": "Esta semana",
+		"today_collected": "Hemos recopilado una respuesta de su encuesta de hoy. | Hemos recopilado {count} respuestas de su encuesta de hoy.",
+		"week_collected": "Hemos recopilado una respuesta de su encuesta en esta semana. | Hemos recopilado {count} respuestas de su encuesta en esta semana."
 	}
 }
