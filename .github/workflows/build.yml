@@ -18,21 +18,29 @@ jobs:
             - name: Install
               run: |
                 yarn install
+                mkdir dist
+                git init dist
             - name: Build for Deno Deploy
               run: |
                 NITRO_PRESET=deno yarn build
-                mv .output deno
+                mv .output dist/deno
             - name: Build for Cloudflare Workers
               run: |
                 NITRO_PRESET=cloudflare yarn build
-                mv .output cloudflare
+                mv .output dist/cloudflare
+            - name: Build for Cloudflare Workers
+              run: |
+                  cd dist
+                  git add .
+                  git commit -m "Build Successfully"
+                  cd -
             - name: Push
               uses: ad-m/github-push-action@master
               with:
                 github_token: ${{ secrets.ACTION_GH_TOKEN }}
                 branch: dist
                 force: true
-                directory: .
+                directory: dist
                 commit_message: "Build Successfully"
                 committer: "CranSurvey Bot <cransurveybot@github.com>"
             
