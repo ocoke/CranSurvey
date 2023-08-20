@@ -7,6 +7,7 @@
             navigateTo(localePath('/sign-in'))
         }
     }
+    import '~/src/styles/dash.css'
 </script>
 
 <template>
@@ -45,7 +46,8 @@
             <div class="card-group">
                 <v-card
                     :title="$t('dashboard.surveys')"
-                    :text="$t('dashboard.ongoing_surveys', 11)"
+                    :text="ongoingSurveysData"
+                    :loading="ongoingLoading"
                     variant="tonal"
                     >
                     <v-card-actions>
@@ -93,42 +95,29 @@
       return {
         drawer: true,
         rail: true,
+        ongoingLoading: true,
+        ongoingSurveysData: '',
       }
     },
+    async mounted () {
+      let ongoingSurveys = await $fetch('/api/dash/ongoing', {
+        method: "POST",
+        body: JSON.stringify({
+          token: sessionStorage.getItem("_cransurvey_token")
+        })
+      })
+
+      console.log(ongoingSurveys)
+
+      if (ongoingSurveys.code == 0) {
+        this.ongoingSurveysData = this.$t('dashboard.ongoing_surveys', ongoingSurveys.count)
+      } else {
+        this.ongoingSurveysData = this.$t('dashboard.error_fetching_data')
+      }
+
+      this.ongoingLoading = false
+      
+
+    }
   }
 </script>
-<style>
-.dash_nav .v-avatar {
-    border-radius: 0;
-}
-.dash_nav .v-main {
-    max-width: 1080px;
-    margin: 30px auto;
-    padding-left: calc(var(--v-layout-left) + 20px);
-    padding-right: calc(var(--v-layout-right) + 20px);
-}
-.card-group {
-    margin-top: 40px;
-    display: flex;
-}
-.card-group .v-card {
-    max-width: 550px;
-    /* min-width: 350px; */
-    width: 48%;
-    margin-right: 1%;
-    margin: 0 auto;
-}
-@media screen and (max-width: 935px) {
-    .card-group {
-        display: block;
-    }
-    .card-group .v-card {
-        width: 100%;
-        height: 100%;
-        margin-top: 20px;
-    }
-    .dash_nav .v-main {
-        max-width: 100%;
-    }
-}
-</style>

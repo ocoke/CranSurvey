@@ -1,6 +1,4 @@
 // ongoing survey
-// create survey
-import { v4 as uuidv4 } from "uuid"
 import checkToken from "~/src/functions/checkToken"
 export default eventHandler(async (event) => {
 	const storage = useStorage("cransurvey")
