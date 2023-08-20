@@ -17,7 +17,7 @@ export default eventHandler(async (event) => {
 
 		for (const i in users) {
 			list.push(users[i].id)
-            count++
+			count++
 		}
 
 		return {
