@@ -23,7 +23,7 @@ jobs:
   eslint:
     name: Run eslint scanning
     runs-on: ubuntu-latest
-    if: ${{ !contains(github.event.pull_request.title, 'style(eslint)') }}
+    if: ${{ !contains(github.event.pull_request.title, 'style(eslint)') && !contains(github.event.commits.message, 'Merge pull request') }}
     permissions:
       contents: read
       security-events: write
