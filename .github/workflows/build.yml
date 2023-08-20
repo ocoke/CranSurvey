@@ -10,7 +10,7 @@ on:
 
 jobs:
     build:
-        name: Run eslint scanning
+        name: Build
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
@@ -26,10 +26,6 @@ jobs:
               run: |
                 NITRO_PRESET=cloudflare yarn build
                 mv .output cloudflare
-            - name: Build for Vercel
-              run: |
-                NITRO_PRESET=vercel yarn build
-                mv .output vercel
             - name: Push
               uses: ad-m/github-push-action@master
               with:
