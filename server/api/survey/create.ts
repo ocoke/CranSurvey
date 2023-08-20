@@ -32,6 +32,7 @@ export default eventHandler(async (event) => {
 			description,
 			questions,
 			created_at: new Date().getTime(),
+			enable: true
 		}
 
 		await storage.setItem("sid", [...survey, new_survey])
