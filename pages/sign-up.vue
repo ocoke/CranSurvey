@@ -67,6 +67,7 @@ export default {
             toast.success(this.$t('signup.success'), toastCfg)
             console.debug(rsp)
             sessionStorage.setItem("_cransurvey_token", rsp.token)
+            sessionStorage.setItem("_cransurvey_usr", this.username)
             if (rsp.init) {
                 toast.info(this.$t('signup.init'), toastCfg)
                 setTimeout(() => {

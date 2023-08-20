@@ -2,63 +2,21 @@
     const localePath = useLocalePath()
     const route = useRoute()
     const { locale, locales } = useI18n()
+    import Drawer from './Drawer.vue'   
     if (process.client) {
         let token = sessionStorage.getItem("_cransurvey_token")
-        if (!token) {
+        let username = sessionStorage.getItem('_cransurvey_usr')
+        if (!token || !username) {
             navigateTo(localePath('/sign-in'))
         }
     }
     import '~/src/styles/dash.css'
-    const switchLocalePath = useSwitchLocalePath()
-
-    const availableLocales = computed(() => {
-      // return (locales.value).filter(i => i.code !== locale.value)
-      return locales.value
-    })
-
-    
-
 </script>
 
 <template>
     <v-card class="dash_nav">
       <v-layout>
-        <v-navigation-drawer
-          v-model="drawer"
-          :rail="rail"
-          permanent
-
-          @click="rail = false"
-        >
-          <v-list-item
-            prepend-avatar="/icons/64x64.png"
-            title="CranSurvey"
-            nav
-          >
-            <template v-slot:append>
-              <v-btn
-                variant="text"
-                icon="mdi-chevron-left"
-                @click.stop="rail = !rail"
-              ></v-btn>
-            </template>
-          </v-list-item>
-  
-          <v-divider></v-divider>
-  
-          <v-list density="compact" nav>
-            <v-list-item prepend-icon="mdi-home-city" :title="$t('dashboard.dashboard')" value="dashboard"></v-list-item>
-            <v-list-item prepend-icon="mdi-account-group-outline" :title="$t('dashboard.users')" value="users"></v-list-item>
-            <v-select
-              :label="$t('dashboard.language')"
-              :items="availableLocales"
-              item-title="name"
-              item-value="code"
-              v-model="lang"
-              @update:modelValue="switchLang()"
-            ></v-select>
-          </v-list>
-        </v-navigation-drawer>
+        <Drawer />
         <v-main>
             <h1 class="text-h4">{{ $t('dashboard.dashboard') }}</h1>
             <div class="card-group">
@@ -74,11 +32,12 @@
                 </v-card>
                 <v-card
                     :title="$t('dashboard.users')"
-                    :text="$t('dashboard.site_users', 1)"
+                    :text="siteUsersData"
+                    :loading="siteUsersLoading"
                     variant="tonal"
                     >
                     <v-card-actions>
-                        <v-btn>{{ $t('dashboard.manage') }}</v-btn>
+                        <v-btn @click="navigateTo(localePath('/dash/users'))">{{ $t('dashboard.manage') }}</v-btn>
                     </v-card-actions>
                 </v-card>
             </div>
@@ -116,6 +75,8 @@
         ongoingLoading: true,
         ongoingSurveysData: '',
         lang: useI18n().locale.value,
+        siteUsersLoading: true,
+        siteUsersData: '',
       }
     },
     methods: {
@@ -131,8 +92,6 @@
         })
       })
 
-      console.log(ongoingSurveys)
-
       if (ongoingSurveys.code == 0) {
         this.ongoingSurveysData = this.$t('dashboard.ongoing_surveys', ongoingSurveys.count)
       } else {
@@ -141,6 +100,21 @@
 
       this.ongoingLoading = false
       
+
+      let siteUsers = await $fetch('/api/dash/users', {
+        method: "POST",
+        body: JSON.stringify({
+          token: sessionStorage.getItem("_cransurvey_token")
+        })
+      })
+
+      if (siteUsers.code == 0) {
+        this.siteUsersData = this.$t('dashboard.site_users', siteUsers.count)
+      } else {
+        this.siteUsersData = this.$t('dashboard.error_fetching_data')
+      }
+
+      this.siteUsersLoading = false
 
     }
   }

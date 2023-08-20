@@ -62,6 +62,7 @@ export default {
             toast.success(this.$t('signin.success'), toastCfg)
             console.debug(rsp)
             sessionStorage.setItem("_cransurvey_token", rsp.token)
+            sessionStorage.setItem("_cransurvey_usr", this.username)
             setTimeout(() => {
                 navigateTo(this.localePath('/dash'))
             }, 2000);
