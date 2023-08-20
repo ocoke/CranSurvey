@@ -15,6 +15,7 @@ on:
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ "master" ]
+    types: [review_requested]
   # schedule:
   #   - cron: '38 16 * * 2'
 
@@ -22,6 +23,7 @@ jobs:
   eslint:
     name: Run eslint scanning
     runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.title != 'style(eslint): update' }}
     permissions:
       contents: read
       security-events: write
@@ -32,10 +34,10 @@ jobs:
 
       - name: Install
         run: |
-          npm install --save
+          yarn install
           
       - name: Run ESLint
-        run: npm run lint
+        run: yarn lint
         continue-on-error: false
 
       - name: Commit
