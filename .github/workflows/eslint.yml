@@ -23,7 +23,7 @@ jobs:
   eslint:
     name: Run eslint scanning
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.title != 'style(eslint): update' }}
+    if: ${{ !contains(github.event.pull_request.title, 'style(eslint)') }}
     permissions:
       contents: read
       security-events: write
