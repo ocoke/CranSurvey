@@ -27,13 +27,14 @@
 	"dashboard": {
 		"dashboard": "儀錶板",
 		"surveys": "調查",
-		"ongoing_surveys": "有一項正在進行的調查。| 有 {count} 正在進行的調查。",
+		"ongoing_surveys": "現在沒有正在進行的調查。| 有一項正在進行的調查。 | 有 {count} 項正在進行的調查。",
 		"manage": "管理",
 		"users": "使用者",
-		"site_users": "看起來這裡只有你一個人。| 您網站上有 {count} 使用者。",
+		"site_users": "看起來這裡只有你一個人。| 您網站上有 {count} 個使用者。",
 		"today": "今天",
 		"this_week": "本週",
-		"today_collected": "我們今天從您的調查中收集了一個答案。| 我們今天從您的調查中收集了 {count} 答案。",
-		"week_collected": "我們從您本周的調查中收集了一個答案。| 我們從您本周的調查收集了 {count} 答案。"
+		"today_collected": "我們今天還沒有從您的調查中收集任何答案。 | 我們今天從您的調查中收集了一個答案。 | 我們今天從您的調查中收集了 {count} 個答案。",
+		"week_collected": "本周，我們沒有從您的調查中收集任何答案。| 我們本周從您的調查中收集了一個答案。| 我們本周從您的調查中收集了 {count} 個答案。",
+		"error_fetching_data": "獲取數據時出錯。"
 	}
 }
