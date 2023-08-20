@@ -27,13 +27,14 @@
 	"dashboard": {
 		"dashboard": "仪表板",
 		"surveys": "调查",
-		"ongoing_surveys": "有一项正在进行的调查。| 有 {count} 正在进行的调查。",
+		"ongoing_surveys": "There are no ongoing surveys now. | There is one ongoing survey. | There are {count} ongoing survey.",
 		"manage": "管理",
 		"users": "用户",
 		"site_users": "看起来这里只有你一个人。| 有 {count} 您网站上的用户。",
 		"today": "今天",
 		"this_week": "本周",
-		"today_collected": "我们今天从您的调查中收集了一个答案。| 我们今天从您调查中收集了 {count} 答案。",
-		"week_collected": "我们从您本周的调查中收集了一个答案。| 我们本周从您调查中收集了 {count} 答案。"
+		"today_collected": "We haven't collected any answer from your survey today. | We have collected an answer from your survey today. | We have collected {count} answers from your survey today.",
+		"week_collected": "We haven't collected any answer from your survey in this week. | We have collected an answer from your survey in this week. | We have collected {count} answers from your survey in this week.",
+		"error_fetching_data": "An error occurred while fetching data."
 	}
 }
