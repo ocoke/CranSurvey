@@ -6,7 +6,7 @@ import httpDriver from "unstorage/drivers/http"
 import fsDriver from "unstorage/drivers/fs"
 import githubDriver from "unstorage/drivers/github"
 import memoryDriver from "unstorage/drivers/memory"
-import mongodbDriver from "unstorage/drivers/mongodb"
+// import mongodbDriver from "unstorage/drivers/mongodb"
 
 const dbType = process.env.db_name
 const _env = process.env.db_config
@@ -48,9 +48,9 @@ export default defineNitroPlugin(() => {
 		case "memory":
 			driver = memoryDriver(dbConfObj)
 			break
-		case "mongodb":
-			driver = mongodbDriver(dbConfObj)
-			break
+		// case "mongodb":
+		// 	driver = mongodbDriver(dbConfObj)
+		// 	break
 		case "redis":
 			driver = redisDriver(dbConfObj)
 			break
