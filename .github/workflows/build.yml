@@ -28,10 +28,12 @@ jobs:
               run: |
                 NITRO_PRESET=cloudflare yarn build
                 mv .output dist/cloudflare
-            - name: Build for Cloudflare Workers
+            - name: Commit
               run: |
                   cd dist
                   git add .
+                  git config --global user.email "cransurveybot@github.com"
+                  git config --global user.name "CranSurvey Bot"
                   git commit -m "Build Successfully"
                   cd -
             - name: Push
