@@ -1,6 +1,7 @@
 <script setup>
     const localePath = useLocalePath()
     const route = useRoute()
+    const { locale, locales } = useI18n()
     if (process.client) {
         let token = sessionStorage.getItem("_cransurvey_token")
         if (!token) {
@@ -8,6 +9,15 @@
         }
     }
     import '~/src/styles/dash.css'
+    const switchLocalePath = useSwitchLocalePath()
+
+    const availableLocales = computed(() => {
+      // return (locales.value).filter(i => i.code !== locale.value)
+      return locales.value
+    })
+
+    
+
 </script>
 
 <template>
@@ -39,6 +49,14 @@
           <v-list density="compact" nav>
             <v-list-item prepend-icon="mdi-home-city" :title="$t('dashboard.dashboard')" value="dashboard"></v-list-item>
             <v-list-item prepend-icon="mdi-account-group-outline" :title="$t('dashboard.users')" value="users"></v-list-item>
+            <v-select
+              :label="$t('dashboard.language')"
+              :items="availableLocales"
+              item-title="name"
+              item-value="code"
+              v-model="lang"
+              @update:modelValue="switchLang()"
+            ></v-select>
           </v-list>
         </v-navigation-drawer>
         <v-main>
@@ -97,6 +115,12 @@
         rail: true,
         ongoingLoading: true,
         ongoingSurveysData: '',
+        lang: useI18n().locale.value,
+      }
+    },
+    methods: {
+      switchLang () {
+        navigateTo(useSwitchLocalePath()(this.lang))
       }
     },
     async mounted () {
