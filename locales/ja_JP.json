@@ -27,7 +27,7 @@
 	"dashboard": {
 		"dashboard": "ダッシュボード",
 		"surveys": "調査",
-		"ongoing_surveys": "現在、進行中の調査はありません。|進行中の調査が1つあります。|あります {count} 継続的な調査。",
+		"ongoing_surveys": "There are no ongoing surveys now. | There is one ongoing survey. | There are {count} ongoing surveys.",
 		"manage": "取り締まる",
 		"users": "ユーザー",
 		"site_users": "ここにいるのはあなただけのようです。|あります {count} サイトのユーザー。",
@@ -43,5 +43,19 @@
 		"signed": "としてサインインしました {username}.",
 		"signout": "サインアウト",
 		"signout_success": "正常にサインアウトしました。"
+	},
+	"surveys": {
+		"surveys": "調査",
+		"enabled": "Enabled",
+		"description": "Description",
+		"created_at": "Created At",
+		"enable_true": "Yes",
+		"enable_false": "No"
+	},
+	"results": {
+		"results": "Results"
+	},
+	"edit": {
+		"edit": "Edit"
 	}
 }
