@@ -40,8 +40,8 @@
 	},
 	"users": {
 		"users": "ユーザー",
-		"signed": "You have signed in as {username}.",
-		"signout": "Sign out",
-		"signout_success": "Signed out successfully."
+		"signed": "としてサインインしました {username}.",
+		"signout": "サインアウト",
+		"signout_success": "正常にサインアウトしました。"
 	}
 }
