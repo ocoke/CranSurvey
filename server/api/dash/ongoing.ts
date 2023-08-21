@@ -16,7 +16,7 @@ export default eventHandler(async (event) => {
 		let count = 0
 
 		for (const i in surveys) {
-			if (surveys["enable"] == true) {
+			if (surveys[i]["enable"] == true) {
 				list.push(surveys[i])
 				count++
 			}

@@ -35,7 +35,9 @@
 
         <v-list density="compact" nav>
         <v-list-item prepend-icon="mdi-home-city" :title="$t('dashboard.dashboard')" value="dashboard" @click="navigateTo(localePath('/dash'))"></v-list-item>
+        <v-list-item prepend-icon="mdi-list-box-outline" :title="$t('dashboard.surveys')" value="surveys" @click="navigateTo(localePath('/dash/surveys'))"></v-list-item>
         <v-list-item prepend-icon="mdi-account-group-outline" :title="$t('dashboard.users')" value="users" @click="navigateTo(localePath('/dash/users'))"></v-list-item>
+        
         <v-select
             :label="$t('dashboard.language')"
             :items="availableLocales"
