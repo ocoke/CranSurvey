@@ -27,7 +27,7 @@
 	"dashboard": {
 		"dashboard": "ダッシュボード",
 		"surveys": "調査",
-		"ongoing_surveys": "There are no ongoing surveys now. | There is one ongoing survey. | There are {count} ongoing surveys.",
+		"ongoing_surveys": "現在、進行中の調査はありません。|進行中の調査が1つあります。|あります {count} 継続的な調査。",
 		"manage": "取り締まる",
 		"users": "ユーザー",
 		"site_users": "ここにいるのはあなただけのようです。|あります {count} サイトのユーザー。",
@@ -46,16 +46,16 @@
 	},
 	"surveys": {
 		"surveys": "調査",
-		"enabled": "Enabled",
-		"description": "Description",
-		"created_at": "Created At",
-		"enable_true": "Yes",
-		"enable_false": "No"
+		"enabled": "有効",
+		"description": "形容",
+		"created_at": "作成日",
+		"enable_true": "はい",
+		"enable_false": "いいえ"
 	},
 	"results": {
-		"results": "Results"
+		"results": "業績"
 	},
 	"edit": {
-		"edit": "Edit"
+		"edit": "編集"
 	}
 }
