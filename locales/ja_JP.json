@@ -43,5 +43,19 @@
 		"signed": "としてサインインしました {username}.",
 		"signout": "サインアウト",
 		"signout_success": "正常にサインアウトしました。"
+	},
+	"surveys": {
+		"surveys": "調査",
+		"enabled": "有効",
+		"description": "形容",
+		"created_at": "作成日",
+		"enable_true": "はい",
+		"enable_false": "いいえ"
+	},
+	"results": {
+		"results": "業績"
+	},
+	"edit": {
+		"edit": "編集"
 	}
 }

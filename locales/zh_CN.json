@@ -27,7 +27,7 @@
 	"dashboard": {
 		"dashboard": "仪表板",
 		"surveys": "调查",
-		"ongoing_surveys": "现在没有正在进行的调查。| 有一项正在进行的调查。| 有 {count} 项正在进行的调查。",
+		"ongoing_surveys": "现在没有正在进行的调查。|有一项正在进行的调查。|有 {count} 正在进行的调查。",
 		"manage": "管理",
 		"users": "用户",
 		"site_users": "看起来这里只有你一个人。| 有 {count} 您网站上的用户。",
@@ -43,5 +43,19 @@
 		"signed": "您已登录身份 {username}.",
 		"signout": "登出",
 		"signout_success": "已成功注销。"
+	},
+	"surveys": {
+		"surveys": "调查",
+		"enabled": "启用",
+		"description": "描述",
+		"created_at": "创建于",
+		"enable_true": "是的",
+		"enable_false": "不"
+	},
+	"results": {
+		"results": "结果"
+	},
+	"edit": {
+		"edit": "编辑"
 	}
 }

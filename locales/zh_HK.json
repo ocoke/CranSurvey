@@ -27,7 +27,7 @@
 	"dashboard": {
 		"dashboard": "Dashboard",
 		"surveys": "Surveys",
-		"ongoing_surveys": "There are no ongoing surveys now. | There is one ongoing survey. | There are {count} ongoing survey.",
+		"ongoing_surveys": "There are no ongoing surveys now. | There is one ongoing survey. | There are {count} ongoing surveys.",
 		"manage": "Manage",
 		"users": "Users",
 		"site_users": "It looks like you're the only one here. | There are {count} users on your site.",
@@ -43,5 +43,19 @@
 		"signed": "You have signed in as {username}.",
 		"signout": "Sign out",
 		"signout_success": "Signed out successfully."
+	},
+	"surveys": {
+		"surveys": "Surveys",
+		"enabled": "Enabled",
+		"description": "Description",
+		"created_at": "Created At",
+		"enable_true": "Yes",
+		"enable_false": "No"
+	},
+	"results": {
+		"results": "Results"
+	},
+	"edit": {
+		"edit": "Edit"
 	}
 }
