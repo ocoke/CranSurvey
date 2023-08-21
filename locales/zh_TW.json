@@ -27,7 +27,7 @@
 	"dashboard": {
 		"dashboard": "儀錶板",
 		"surveys": "調查",
-		"ongoing_surveys": "There are no ongoing surveys now. | There is one ongoing survey. | There are {count} ongoing surveys.",
+		"ongoing_surveys": "現在沒有正在進行的調查。|有一項正在進行的調查。|有 {count} 正在進行的調查。",
 		"manage": "管理",
 		"users": "使用者",
 		"site_users": "看起來這裡只有你一個人。| 您網站上有 {count} 個使用者。",
@@ -46,16 +46,16 @@
 	},
 	"surveys": {
 		"surveys": "調查",
-		"enabled": "Enabled",
-		"description": "Description",
-		"created_at": "Created At",
-		"enable_true": "Yes",
-		"enable_false": "No"
+		"enabled": "啟用",
+		"description": "描述",
+		"created_at": "創建於",
+		"enable_true": "是的",
+		"enable_false": "不"
 	},
 	"results": {
-		"results": "Results"
+		"results": "結果"
 	},
 	"edit": {
-		"edit": "Edit"
+		"edit": "編輯"
 	}
 }
