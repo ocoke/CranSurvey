@@ -27,7 +27,7 @@
 	"dashboard": {
 		"dashboard": "儀錶板",
 		"surveys": "調查",
-		"ongoing_surveys": "現在沒有正在進行的調查。| 有一項正在進行的調查。 | 有 {count} 項正在進行的調查。",
+		"ongoing_surveys": "There are no ongoing surveys now. | There is one ongoing survey. | There are {count} ongoing surveys.",
 		"manage": "管理",
 		"users": "使用者",
 		"site_users": "看起來這裡只有你一個人。| 您網站上有 {count} 個使用者。",
@@ -43,5 +43,19 @@
 		"signed": "您已登入身份 {username}.",
 		"signout": "登出",
 		"signout_success": "已成功註銷。"
+	},
+	"surveys": {
+		"surveys": "調查",
+		"enabled": "Enabled",
+		"description": "Description",
+		"created_at": "Created At",
+		"enable_true": "Yes",
+		"enable_false": "No"
+	},
+	"results": {
+		"results": "Results"
+	},
+	"edit": {
+		"edit": "Edit"
 	}
 }
