@@ -37,5 +37,11 @@
 		"week_collected": "We haven't collected any answer from your survey in this week. | We have collected an answer from your survey in this week. | We have collected {count} answers from your survey in this week.",
 		"error_fetching_data": "An error occurred while fetching data.",
 		"language": "Language"
+	},
+	"users": {
+		"users": "Users",
+		"signed": "You have signed in as {username}.",
+		"signout": "Sign out",
+		"signout_success": "Signed out successfully."
 	}
 }
