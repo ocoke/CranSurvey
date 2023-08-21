@@ -27,7 +27,7 @@
                     variant="tonal"
                     >
                     <v-card-actions>
-                        <v-btn>{{ $t('dashboard.manage') }}</v-btn>
+                        <v-btn @click="navigateTo(localePath('/dash/surveys'))">{{ $t('dashboard.manage') }}</v-btn>
                     </v-card-actions>
                 </v-card>
                 <v-card

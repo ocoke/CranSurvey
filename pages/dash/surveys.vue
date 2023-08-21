@@ -50,7 +50,27 @@
                             <p>{{ $t('surveys.description') }}: <code>{{ survey.description }}</code></p>
                             <p>{{ $t('surveys.enabled') }}: <code>{{ $t('surveys.enable_' + ( survey.enable || false ).toString())}}.</code></p>
                             <p>{{ $t('surveys.created_at') }}: <code>{{ new Date(survey.created_at) }}</code></p>
+                            
+                            <v-card-actions>
+                                <v-spacer></v-spacer>
+                                <v-btn
+                                    variant="text"
+                                    color="secondary"
+                                    @click="navigateTo(localePath('/dash/edit?id=' + survey.id))"
+                                >
+                                    {{ $t('edit.edit') }}
+                                </v-btn>
+                                <v-btn
+                                    variant="text"
+                                    color="primary"
+                                    @click="navigateTo(localePath('/dash/results?id=' + survey.id))"
+                                >
+                                    {{ $t('results.results') }}
+                                </v-btn>
+                            </v-card-actions>
+                        
                         </v-expansion-panel-text>
+                       
                         </v-expansion-panel>
                     </v-expansion-panels>
                 </v-card>

@@ -51,5 +51,11 @@
 		"created_at": "Created At",
 		"enable_true": "Yes",
 		"enable_false": "No"
+	},
+	"results": {
+		"results": "Results"
+	},
+	"edit": {
+		"edit": "Edit"
 	}
 }
