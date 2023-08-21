@@ -40,8 +40,8 @@
 	},
 	"users": {
 		"users": "使用者",
-		"signed": "You have signed in as {username}.",
-		"signout": "Sign out",
-		"signout_success": "Signed out successfully."
+		"signed": "您已登入身份 {username}.",
+		"signout": "登出",
+		"signout_success": "已成功註銷。"
 	}
 }
