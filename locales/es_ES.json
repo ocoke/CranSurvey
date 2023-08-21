@@ -27,7 +27,7 @@
 	"dashboard": {
 		"dashboard": "Salpicadero",
 		"surveys": "Encuestas",
-		"ongoing_surveys": "There are no ongoing surveys now. | There is one ongoing survey. | There are {count} ongoing surveys.",
+		"ongoing_surveys": "No hay encuestas en curso ahora. | Hay una encuesta en curso. | Hay {count} encuestas en curso.",
 		"manage": "Gestionar",
 		"users": "Usuarios",
 		"site_users": "Parece que eres el único aquí. | Hay {count} usuarios en su sitio.",
@@ -46,16 +46,16 @@
 	},
 	"surveys": {
 		"surveys": "Encuestas",
-		"enabled": "Enabled",
-		"description": "Description",
-		"created_at": "Created At",
-		"enable_true": "Yes",
+		"enabled": "Habilitado",
+		"description": "Descripción",
+		"created_at": "Creado en",
+		"enable_true": "Sí",
 		"enable_false": "No"
 	},
 	"results": {
-		"results": "Results"
+		"results": "Resultados"
 	},
 	"edit": {
-		"edit": "Edit"
+		"edit": "Editar"
 	}
 }
