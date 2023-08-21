@@ -37,5 +37,11 @@
 		"week_collected": "今週のアンケートからの回答は収集されていません。|今週のアンケートから回答を集めました。|集めました {count} 今週のアンケートからの回答。",
 		"error_fetching_data": "データのフェッチ中にエラーが発生しました。",
 		"language": "言語"
+	},
+	"users": {
+		"users": "ユーザー",
+		"signed": "としてサインインしました {username}.",
+		"signout": "サインアウト",
+		"signout_success": "正常にサインアウトしました。"
 	}
 }

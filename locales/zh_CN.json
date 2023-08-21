@@ -30,12 +30,18 @@
 		"ongoing_surveys": "现在没有正在进行的调查。| 有一项正在进行的调查。| 有 {count} 项正在进行的调查。",
 		"manage": "管理",
 		"users": "用户",
-		"site_users": "看起来这里只有你一个人。| 您站点上有 {count} 位用户。",
+		"site_users": "看起来这里只有你一个人。| 有 {count} 您网站上的用户。",
 		"today": "今天",
 		"this_week": "本周",
 		"today_collected": "我们今天还没有从您的调查中收集任何答案。| 我们今天从您的调查中收集了一个答案。| 我们今天从您的调查中收集了 {count} 个答案。",
 		"week_collected": "本周，我们没有从您的调查中收集任何答案。| 我们本周从您的调查中收集了一个答案。| 我们本周从您的调查中收集了 {count} 个答案。",
 		"error_fetching_data": "获取数据时出错。",
 		"language": "语言"
+	},
+	"users": {
+		"users": "用户",
+		"signed": "您已登录身份 {username}.",
+		"signout": "登出",
+		"signout_success": "已成功注销。"
 	}
 }

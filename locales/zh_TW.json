@@ -37,5 +37,11 @@
 		"week_collected": "本周，我們沒有從您的調查中收集任何答案。| 我們本周從您的調查中收集了一個答案。| 我們本周從您的調查中收集了 {count} 個答案。",
 		"error_fetching_data": "獲取數據時出錯。",
 		"language": "語言"
+	},
+	"users": {
+		"users": "使用者",
+		"signed": "您已登入身份 {username}.",
+		"signout": "登出",
+		"signout_success": "已成功註銷。"
 	}
 }
