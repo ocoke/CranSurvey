@@ -3,19 +3,24 @@
 </p>
 <h1 align="center">CranSurvey</h1>
 
-> 🗒️ Add a prompt window to collect surveys from your website. 
+> 🗒️ CranSurvey is a tool for the website manager to add a quick survey-collecting prompt to their website in a few seconds
 > 
-> 📝 CranSurvey based on Nitro, supports Serverless deployment, and is compatible with multiple types of database.
+> 🌎 CranSurvey based on Nuxt, supports Serverless deployment, and is compatible with multiple types of database.
+
 
 ## Getting Started
 
+> ⚠ Warning: CranSurvey is under the Alpha test, there might be Breaking Changes in the future!
+
 Please check our wiki to learn more information about this.
 
-- [English](https://github.com/oCoke/CranSurvey/wiki/Getting-Started)
+- [English (US)](https://github.com/oCoke/CranSurvey/wiki/Getting-Started)
 
-- [Chinese (zh-Hans)](https://github.com/oCoke/CranSurvey/wiki/%5B%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-zh%E2%80%90Hans%5D-%E5%BC%80%E5%A7%8B)
+- [简体中文](https://github.com/oCoke/CranSurvey/wiki/%5B%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-zh%E2%80%90Hans%5D-%E5%BC%80%E5%A7%8B)
 
 ## Development
+
+CranSurvey is still in development, to see the progress, please check the [ocoke/CranSurvey#27](https://github.com/ocoke/CranSurvey/issues/27).
 
 ### Setup
 
