@@ -6,7 +6,7 @@
 version: 2
 updates:
   # Enable version updates for yarn
-  - package-ecosystem: "yarn"
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
