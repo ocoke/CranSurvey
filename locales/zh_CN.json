@@ -37,7 +37,7 @@
 		"week_collected": "本周，我们没有从您的调查中收集任何答案。| 我们本周从您的调查中收集了一个答案。| 我们本周从您的调查中收集了 {count} 个答案。",
 		"error_fetching_data": "获取数据时出错。",
 		"language": "语言",
-		"toggleTheme": "Toggle Theme"
+		"toggleTheme": "切换主题"
 	},
 	"users": {
 		"users": "用户",
