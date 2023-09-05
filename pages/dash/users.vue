@@ -14,13 +14,9 @@
 </script>
 
 <template>
-    <v-card class="dash_nav">
-      <v-layout>
-        <Drawer />
-        <v-main>
             <h1 class="text-h4">{{ $t('users.users') }}</h1>
             <div class="mainGroup">
-                <code class="text-subtitle-1" style="font-family: 'monospace;" v-text="$t('users.signed', { username: '`' + username + '`', })"></code>
+                <code class="text-subtitle-1" style="font-family: monospace!important;" v-text="$t('users.signed', { username: '`' + username + '`', })"></code>
                 <p class="text-subtitle-1">{{ siteUsersData }}</p>
                 <v-card variant="tonal" style="margin: 20px auto; padding: 15px; padding-top: 5px;">
                     <v-list lines="one" item-props :items="siteUsers">
@@ -31,9 +27,6 @@
                 </v-card>
                 <v-btn variant="outlined" @click="signout">{{ $t('users.signout') }}</v-btn>
             </div>
-        </v-main>
-      </v-layout>
-    </v-card>
   </template>
 
 <script>

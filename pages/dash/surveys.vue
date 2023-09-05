@@ -14,13 +14,10 @@
 </script>
 
 <template>
-    <v-card class="dash_nav">
-      <v-layout>
-        <Drawer />
-        <v-main>
+
             <h1 class="text-h4">{{ $t('surveys.surveys') }}</h1>
             <div class="mainGroup">
-                <code class="text-subtitle-1" style="font-family: 'monospace;" v-text="$t('users.signed', { username: '`' + username + '`', })"></code>
+                <code class="text-subtitle-1" style="font-family: monospace!important;" v-text="$t('users.signed', { username: '`' + username + '`', })"></code>
                 <p class="text-subtitle-1">{{ ongoingSurveysData }}</p>
                 <v-card variant="outlined" style="margin: 20px auto; padding: 15px;">
                     <v-expansion-panels>
@@ -55,7 +52,7 @@
                                 <v-spacer></v-spacer>
                                 <v-btn
                                     variant="text"
-                                    color="secondary"
+                                    color="primary"
                                     @click="navigateTo(localePath('/dash/edit?id=' + survey.id))"
                                 >
                                     {{ $t('edit.edit') }}
@@ -76,9 +73,6 @@
                 </v-card>
                 <v-btn variant="outlined" @click="signout">{{ $t('users.signout') }}</v-btn>
             </div>
-        </v-main>
-      </v-layout>
-    </v-card>
   </template>
 
 <script>

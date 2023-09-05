@@ -36,7 +36,8 @@
 		"today_collected": "We haven't collected any answer from your survey today. | We have collected an answer from your survey today. | We have collected {count} answers from your survey today.",
 		"week_collected": "We haven't collected any answer from your survey in this week. | We have collected an answer from your survey in this week. | We have collected {count} answers from your survey in this week.",
 		"error_fetching_data": "An error occurred while fetching data.",
-		"language": "Language"
+		"language": "Language",
+		"toggleTheme": "Toggle Theme"
 	},
 	"users": {
 		"users": "Users",

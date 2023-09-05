@@ -14,10 +14,7 @@
 </script>
 
 <template>
-    <v-card class="dash_nav">
-      <v-layout>
-        <Drawer />
-        <v-main>
+    
             <h1 class="text-h4">{{ $t('dashboard.dashboard') }}</h1>
             <div class="card-group">
                 <v-card
@@ -61,9 +58,6 @@
                     </v-card-actions>
                 </v-card>
             </div>
-        </v-main>
-      </v-layout>
-    </v-card>
   </template>
 
 <script>
