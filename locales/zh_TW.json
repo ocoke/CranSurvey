@@ -36,7 +36,8 @@
 		"today_collected": "我們今天還沒有從您的調查中收集任何答案。 | 我們今天從您的調查中收集了一個答案。 | 我們今天從您的調查中收集了 {count} 個答案。",
 		"week_collected": "本周，我們沒有從您的調查中收集任何答案。| 我們本周從您的調查中收集了一個答案。| 我們本周從您的調查中收集了 {count} 個答案。",
 		"error_fetching_data": "獲取數據時出錯。",
-		"language": "語言"
+		"language": "語言",
+		"toggleTheme": "Toggle Theme"
 	},
 	"users": {
 		"users": "使用者",
