@@ -36,7 +36,8 @@
 		"today_collected": "No hemos recopilado ninguna respuesta de su encuesta de hoy. | Hemos recopilado una respuesta de su encuesta de hoy. | Hemos recopilado {count} respuestas de su encuesta de hoy.",
 		"week_collected": "No hemos recopilado ninguna respuesta de su encuesta en esta semana. | Hemos recopilado una respuesta de su encuesta en esta semana. | Hemos recopilado {count} respuestas de su encuesta en esta semana.",
 		"error_fetching_data": "Se ha producido un error al obtener datos.",
-		"language": "Idioma"
+		"language": "Idioma",
+		"toggleTheme": "Alternar tema"
 	},
 	"users": {
 		"users": "Usuarios",
