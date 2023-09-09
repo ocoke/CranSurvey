@@ -89,7 +89,7 @@
       if (ongoingSurveys.code == 0) {
         this.ongoingSurveysData = this.$t('dashboard.ongoing_surveys', ongoingSurveys.count)
       } else {
-        this.ongoingSurveysData = this.$t('dashboard.error_fetching_data')
+        this.ongoingSurveysData = this.$t('dashboard.error_fetching_data') +" (" + this.$t('error_codes.' + ongoingSurveys.code )+ ")"
       }
 
       this.ongoingLoading = false
@@ -105,7 +105,7 @@
       if (siteUsers.code == 0) {
         this.siteUsersData = this.$t('dashboard.site_users', siteUsers.count)
       } else {
-        this.siteUsersData = this.$t('dashboard.error_fetching_data')
+        this.siteUsersData = this.$t('dashboard.error_fetching_data') +" (" + this.$t('error_codes.' + siteUsers.code )+ ")"
       }
 
       this.siteUsersLoading = false

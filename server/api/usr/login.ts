@@ -11,7 +11,7 @@ export default eventHandler(async (event) => {
 	const usr: object[] = await storage.getItem("usr")
 	if (!usr) {
 		return {
-			code: 2001,
+			code: 2002,
 			msg: "Database Error.",
 		}
 	}
@@ -24,7 +24,7 @@ export default eventHandler(async (event) => {
 		}
 	} else {
 		return {
-			code: 2002,
+			code: 2004,
 			msg: "Invalid user.",
 		}
 	}

@@ -17,7 +17,7 @@ export default eventHandler(async (event) => {
 
 	if (!survey || !svId || !ans) {
 		return {
-			code: 2001,
+			code: 2002,
 			msg: "Database Error.",
 		}
 	}

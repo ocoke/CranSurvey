@@ -19,7 +19,7 @@ export default eventHandler(async (event) => {
 	const ans = _ans[uniqueId]
 	if (!ans) {
 		return {
-			code: 2001,
+			code: 2002,
 			msg: "Database Error.",
 		}
 	}
@@ -27,7 +27,7 @@ export default eventHandler(async (event) => {
 	const svId = (survey || []).find((s) => s.id == uniqueId)
 	if (!survey || !svId) {
 		return {
-			code: 2001,
+			code: 2002,
 			msg: "Database Error.",
 		}
 	}

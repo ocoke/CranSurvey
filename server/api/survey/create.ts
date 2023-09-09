@@ -16,14 +16,14 @@ export default eventHandler(async (event) => {
 		const survey: object = await storage.getItem("sid")
 		if (!survey) {
 			return {
-				code: 2001,
+				code: 2002,
 				msg: "Database Error.",
 			}
 		}
 		const surveyId = survey.find((s) => s.id == uniqueId)
 		if (surveyId) {
 			return {
-				code: 2002,
+				code: 2003,
 				msg: "Survey ID already exists.",
 			}
 		}
