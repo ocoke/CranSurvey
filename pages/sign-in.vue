@@ -67,7 +67,7 @@ export default {
                 navigateTo(this.localePath('/dash'))
             }, 2000);
         } else {
-            toast.error(this.$t('signin.error') +" (" + this.$t('error_codes.' + rsp.code )+ ")", toastCfg);
+            toast.error(this.$t('signin.error') + " (" + this.$t('error_codes.' + rsp.code) + ")", toastCfg);
             console.warn(rsp);
         }
     }
