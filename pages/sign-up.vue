@@ -79,7 +79,7 @@ export default {
                 }, 2000);
             }
         } else {
-            toast.error(this.$t('signup.error' +" (" + this.$t('error_codes.' + rsp.code )+ ")"), toastCfg);
+            toast.error(this.$t('signup.error') +" (" + this.$t('error_codes.' + rsp.code )+ ")"), toastCfg);
             console.warn(rsp);
         }
     }
