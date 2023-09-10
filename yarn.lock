@@ -743,15 +743,15 @@
     source-map-js "^1.0.1"
     yaml-eslint-parser "^0.3.2"
 
-"@intlify/core-base@9.3.0-beta.14-77e850b":
-  version "9.3.0-beta.14-77e850b"
-  resolved "https://registry.yarnpkg.com/@intlify/core-base/-/core-base-9.3.0-beta.14-77e850b.tgz#dbfdb9e9fe9688f64bf344961430c75cad9d693a"
-  integrity sha512-Eb8CeN+s/Och1whMLzW8ds1dkYgEuu5Vf26IYz+GVYstx1rPICnh5HNvgTyQvQMUsvVei5ujz2gx/LcPxxRymQ==
+"@intlify/core-base@9.3.0-beta.25":
+  version "9.3.0-beta.25"
+  resolved "https://registry.yarnpkg.com/@intlify/core-base/-/core-base-9.3.0-beta.25.tgz#4fb729f4c08fa4adc9d148a49b32f73ddfaf4243"
+  integrity sha512-Zohb874rZvvPe5o9QIQj3unApmsyI5/Y7KWUot5bqFAQrxowJ9HKFLnOpXj4EELEoZS0/ss4WUezpALJKbnvJA==
   dependencies:
-    "@intlify/devtools-if" "9.3.0-beta.14-77e850b"
-    "@intlify/message-compiler" "9.3.0-beta.14-77e850b"
-    "@intlify/shared" "9.3.0-beta.14-77e850b"
-    "@intlify/vue-devtools" "9.3.0-beta.14-77e850b"
+    "@intlify/devtools-if" "9.3.0-beta.25"
+    "@intlify/message-compiler" "9.3.0-beta.25"
+    "@intlify/shared" "9.3.0-beta.25"
+    "@intlify/vue-devtools" "9.3.0-beta.25"
 
 "@intlify/core-base@9.3.0-beta.26":
   version "9.3.0-beta.26"
@@ -763,12 +763,12 @@
     "@intlify/shared" "9.3.0-beta.26"
     "@intlify/vue-devtools" "9.3.0-beta.26"
 
-"@intlify/devtools-if@9.3.0-beta.14-77e850b":
-  version "9.3.0-beta.14-77e850b"
-  resolved "https://registry.yarnpkg.com/@intlify/devtools-if/-/devtools-if-9.3.0-beta.14-77e850b.tgz#2482684714a015326f8eb6d8040cc2bb488be4c1"
-  integrity sha512-Misf4UDGi9vyUONXIAhcSAIb8n6bBYNfuezLQxwgnVDrJk0GacKQG38GW231QE9OgLvmUmC+WGbq7LTZo/pCpA==
+"@intlify/devtools-if@9.3.0-beta.25":
+  version "9.3.0-beta.25"
+  resolved "https://registry.yarnpkg.com/@intlify/devtools-if/-/devtools-if-9.3.0-beta.25.tgz#a4b7e899a5bd2315535fd689b6c72db7ad638e16"
+  integrity sha512-F2TtZGb5bbh746SIJq0EwZxmsj4NV8kLImI+ubThfk0G/8M2qb/3YwmVN2pn8lx8+683ZMhYxbd39HEtczdVlQ==
   dependencies:
-    "@intlify/shared" "9.3.0-beta.14-77e850b"
+    "@intlify/shared" "9.3.0-beta.25"
 
 "@intlify/devtools-if@9.3.0-beta.26":
   version "9.3.0-beta.26"
@@ -777,20 +777,20 @@
   dependencies:
     "@intlify/shared" "9.3.0-beta.26"
 
-"@intlify/message-compiler@9.3.0-beta.14-77e850b":
-  version "9.3.0-beta.14-77e850b"
-  resolved "https://registry.yarnpkg.com/@intlify/message-compiler/-/message-compiler-9.3.0-beta.14-77e850b.tgz#0c6032e508850d0e3c694c9f6b59c86522a6ad5f"
-  integrity sha512-MF7EdnBoKo21Unf8rDy37KEhRzcbPlel+FTD7VR+EzzMgk4R/sMtICnMgDxS3Kl5FS9tLdHlNF0Qbuxc6+NNmg==
-  dependencies:
-    "@intlify/shared" "9.3.0-beta.14-77e850b"
-    source-map "0.6.1"
-
 "@intlify/message-compiler@9.3.0-beta.24":
   version "9.3.0-beta.24"
   resolved "https://registry.npmjs.org/@intlify/message-compiler/-/message-compiler-9.3.0-beta.24.tgz"
   integrity sha512-prhHATkgp0mpPqoVgiAtLmUc1JMvs8fMH6w53AVEBn+VF87dLhzanfmWY5FoZWORG51ag54gBDBOoM/VFv3m3A==
   dependencies:
     "@intlify/shared" "9.3.0-beta.24"
+    source-map-js "^1.0.2"
+
+"@intlify/message-compiler@9.3.0-beta.25":
+  version "9.3.0-beta.25"
+  resolved "https://registry.yarnpkg.com/@intlify/message-compiler/-/message-compiler-9.3.0-beta.25.tgz#070ac388baf586aca61b84f1aab775fdfe421cba"
+  integrity sha512-uT7ybqKoDEw1XITQYnTYjWgZnpCDmHv9e3D4MmJDqHl2qCm6anzdUXWKHUhqR87Ha9Z8Rl44v40iSI/4NUbppQ==
+  dependencies:
+    "@intlify/shared" "9.3.0-beta.25"
     source-map-js "^1.0.2"
 
 "@intlify/message-compiler@9.3.0-beta.26":
@@ -801,15 +801,15 @@
     "@intlify/shared" "9.3.0-beta.26"
     source-map-js "^1.0.2"
 
-"@intlify/shared@9.3.0-beta.14-77e850b":
-  version "9.3.0-beta.14-77e850b"
-  resolved "https://registry.yarnpkg.com/@intlify/shared/-/shared-9.3.0-beta.14-77e850b.tgz#af2cb0bd209f835876881bc7dbb93b2514e3e274"
-  integrity sha512-aHZYRM0sJN+YSUnoC5Dv4L1TFYtP23kdTkrK5cHSEqUbI5UXc8FbnXPal0lJliMhO0ED7Ic7aEOeQX84BM3xCQ==
-
 "@intlify/shared@9.3.0-beta.24", "@intlify/shared@next":
   version "9.3.0-beta.24"
   resolved "https://registry.npmjs.org/@intlify/shared/-/shared-9.3.0-beta.24.tgz"
   integrity sha512-AKxJ8s7eKIQWkNaf4wyyoLRwf4puCuQgjSChlDJm5JBEt6T8HGgnYTJLRXu6LD/JACn3Qwu6hM/XRX1c9yvjmQ==
+
+"@intlify/shared@9.3.0-beta.25":
+  version "9.3.0-beta.25"
+  resolved "https://registry.yarnpkg.com/@intlify/shared/-/shared-9.3.0-beta.25.tgz#d2c94c131a63495b9338bba5660a84babe552afa"
+  integrity sha512-Zg+ECV9RPdp227tCJOgvPb+S3i651nf4kKHsMojSyWCppVK/4NFuDrBG2lIQSQL6Iq5LKVr5MkezHCW2NBTQRg==
 
 "@intlify/shared@9.3.0-beta.26":
   version "9.3.0-beta.26"
@@ -834,13 +834,13 @@
     source-map-js "^1.0.2"
     unplugin "^1.1.0"
 
-"@intlify/vue-devtools@9.3.0-beta.14-77e850b":
-  version "9.3.0-beta.14-77e850b"
-  resolved "https://registry.yarnpkg.com/@intlify/vue-devtools/-/vue-devtools-9.3.0-beta.14-77e850b.tgz#7b32670c17c4d2930a4cc1a5e62780227cc6c856"
-  integrity sha512-QRznXFfu9UldQmE4kWj5VbfSFzT4y2Zh5xD9L2AJ8J/bhlLzbncMHDb3BOL6Xzczv5K6LhYDLdoVvW1n+z4tpA==
+"@intlify/vue-devtools@9.3.0-beta.25":
+  version "9.3.0-beta.25"
+  resolved "https://registry.yarnpkg.com/@intlify/vue-devtools/-/vue-devtools-9.3.0-beta.25.tgz#06a81eb36c6868cd33538a80f883ffa6db689f55"
+  integrity sha512-p2ob9v9tqBYLq9DSiJ4nnfQSuQC0O8H9wuvzNRrej2qvLqPF3p/Xr2fRTM5NlW1uKQiFzXlZtIt+kBwSGUXWdw==
   dependencies:
-    "@intlify/core-base" "9.3.0-beta.14-77e850b"
-    "@intlify/shared" "9.3.0-beta.14-77e850b"
+    "@intlify/core-base" "9.3.0-beta.25"
+    "@intlify/shared" "9.3.0-beta.25"
 
 "@intlify/vue-devtools@9.3.0-beta.26":
   version "9.3.0-beta.26"
@@ -1153,7 +1153,7 @@
     eslint-plugin-vue "^9.7.0"
     local-pkg "^0.4.2"
 
-"@nuxtjs/i18n@^8.0.0-rc.3":
+"@nuxtjs/i18n@8.0.0-rc.3":
   version "8.0.0-rc.3"
   resolved "https://registry.yarnpkg.com/@nuxtjs/i18n/-/i18n-8.0.0-rc.3.tgz#6f814b81f7f9150b58e6fab9710290f918254558"
   integrity sha512-TrJF7OxCK1CcEnKQHcP3VjVnb0K22OdMxdbWOk/kUzD9DX6+hrcrfrQD6W7xDA5pnEhBnsw1pLT2I+DYVpK/gw==
@@ -2106,7 +2106,7 @@
     "@vue/compiler-dom" "3.3.4"
     "@vue/shared" "3.3.4"
 
-"@vue/devtools-api@^6.2.1", "@vue/devtools-api@^6.5.0":
+"@vue/devtools-api@^6.5.0":
   version "6.5.0"
   resolved "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.5.0.tgz"
   integrity sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==
@@ -6714,10 +6714,10 @@ safe-regex@^2.1.1:
   resolved "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sass@^1.65.1:
-  version "1.65.1"
-  resolved "https://registry.npmjs.org/sass/-/sass-1.65.1.tgz"
-  integrity sha512-9DINwtHmA41SEd36eVPQ9BJKpn7eKDQmUHmpI0y5Zv2Rcorrh0zS+cFrt050hdNbmmCNKTW3hV5mWfuegNRsEA==
+sass@^1.66.1:
+  version "1.66.1"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.66.1.tgz#04b51c4671e4650aa393740e66a4e58b44d055b1"
+  integrity sha512-50c+zTsZOJVgFfTgwwEzkjA3/QACgdNsKueWPyAR0mRINIvLAStVQBbPg14iuqEQ74NPDbXzJARJ/O4SI1zftA==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
@@ -6857,7 +6857,7 @@ source-map-support@^0.5.21, source-map-support@~0.5.12, source-map-support@~0.5.
     buffer-from "^1.0.0"
     source-map "^0.6.0"
 
-source-map@0.6.1, source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
+source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
   version "0.6.1"
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
@@ -7721,6 +7721,16 @@ vue-i18n-routing@^0.13.3:
     ufo "^1.2.0"
     vue-demi "^0.14.5"
 
+vue-i18n@9.3.0-beta.25:
+  version "9.3.0-beta.25"
+  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-9.3.0-beta.25.tgz#5428ac242710c39ea383ffbf8e51a48e8554e3c2"
+  integrity sha512-WfR5W3ql2fGFGyJfD6WsoyewqINra5NKxW50RIbLpiqw099PRNBZ4pPgMuO0J194OQ+VayOEMEGSnAimcolbQQ==
+  dependencies:
+    "@intlify/core-base" "9.3.0-beta.25"
+    "@intlify/shared" "9.3.0-beta.25"
+    "@intlify/vue-devtools" "9.3.0-beta.25"
+    "@vue/devtools-api" "^6.5.0"
+
 vue-i18n@9.3.0-beta.26:
   version "9.3.0-beta.26"
   resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-9.3.0-beta.26.tgz#b716f45b13360f54f0156c27ce8f8a36a95172f7"
@@ -7730,16 +7740,6 @@ vue-i18n@9.3.0-beta.26:
     "@intlify/shared" "9.3.0-beta.26"
     "@intlify/vue-devtools" "9.3.0-beta.26"
     "@vue/devtools-api" "^6.5.0"
-
-vue-i18n@^9.3.0-beta.25:
-  version "9.3.0-beta.14-77e850b"
-  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-9.3.0-beta.14-77e850b.tgz#2c981dcfc72bdd3fdd648598bdfa12fe21608861"
-  integrity sha512-Zjkzm7ZYhLfssuwSgJI9jq1agex7kPl7gEI18pw23+eWUisqy3q20lPP2xDFLmzhUYb3AoaDifj5z4U6+cvhHA==
-  dependencies:
-    "@intlify/core-base" "9.3.0-beta.14-77e850b"
-    "@intlify/shared" "9.3.0-beta.14-77e850b"
-    "@intlify/vue-devtools" "9.3.0-beta.14-77e850b"
-    "@vue/devtools-api" "^6.2.1"
 
 vue-router@^4.2.4:
   version "4.2.4"
