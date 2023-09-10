@@ -1,6 +1,6 @@
 <template>
 	<NuxtLayout>
-		<div v-if="route.path.includes('dash')">
+		<div v-if="$route.path.includes('dash')">
 			<NuxtLoadingIndicator />
 			<!-- here -->
 			<v-card class="dash_nav">
