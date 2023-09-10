@@ -58,5 +58,15 @@
 	},
 	"edit": {
 		"edit": "Editar"
+	},
+	"error_codes": {
+		"0": "Éxito.",
+		"1001": "Parámetros no válidos.",
+		"1002": "El usuario ya existe.",
+		"1003": "No se permite registrarse",
+		"2001": "Token no válido.",
+		"2002": "Error de base de datos.",
+		"2003": "El ID de la encuesta ya existe.",
+		"2004": "Usuario no válido."
 	}
 }
