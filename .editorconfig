@@ -6,9 +6,8 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 charset = utf-8
 
-[*.js]
-indent_style = space
-indent_size = 2
+[*.{ts,js}]
+indent_style = tab
 
 [{package.json,*.yml,*.cjson}]
 indent_style = space
