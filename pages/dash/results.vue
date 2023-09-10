@@ -1,3 +1,3 @@
 <template>
-    {{ $t('results.results') }}
+	{{ $t("results.results") }}
 </template>

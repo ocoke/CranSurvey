@@ -1,12 +1,16 @@
 {
-  "parser": "@typescript-eslint/parser",
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+  },
 
   "extends": [
     // "@nuxtjs/eslint-config-typescript",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "prettier"
+    "prettier",
+    "@vue/typescript/recommended",
   ],
 
   "plugins": ["@typescript-eslint"],
@@ -39,7 +43,9 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-namespace": "off",
-    "@typescript-eslint/triple-slash-reference": "off"
+    "@typescript-eslint/triple-slash-reference": "off",
+    // not needed for vue 3
+    "vue/no-multiple-template-root": "off"
   },
 
 }

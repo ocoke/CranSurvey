@@ -1,4 +1,3 @@
 <template>
-
-    {{ $t('edit.edit') }}
+	{{ $t("edit.edit") }}
 </template>

@@ -10,7 +10,7 @@
     "build": "nuxt build",
     "preview": "node .output/server/index.mjs",
     "commit": "cz",
-    "lint": "eslint --ext .ts --ignore-path .gitignore . --fix"
+    "lint": "eslint --ext .ts,.vue --ignore-path .gitignore . --fix"
   },
   "dependencies": {
     "@mdi/font": "^7.2.96",
@@ -36,18 +36,19 @@
     "@nuxtjs/i18n": "^8.0.0-rc.3",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
+    "@vue/eslint-config-typescript": "^11.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.46.0",
+    "eslint-plugin-vue": "^9.17.0",
     "prettier": "^3.0.1",
     "typescript": "^5.1.6",
+    "vue-eslint-parser": "^9.3.1",
     "vue-i18n": "^9.3.0-beta.25"
   },
-
   "overrides": {
     "@intlify/core-base": "9.3.0-beta.25",
     "@intlify/shared": "9.3.0-beta.25"
   },
-
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
