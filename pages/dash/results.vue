@@ -13,7 +13,6 @@ import "~/src/styles/dash.css"
 <template>
 	<h1 class="text-h4">{{ $t("results.results") }}</h1>
 	<div class="mainGroup">
-
 		<p class="text-subtitle-1">{{ surveyText }}</p>
 		<v-card variant="outlined" style="margin: 20px auto; padding: 15px">
 			<v-expansion-panels>
@@ -21,9 +20,7 @@ import "~/src/styles/dash.css"
 					<v-expansion-panel-title>
 						<template v-slot:default="{ expanded }">
 							<v-row no-gutters>
-								<v-col cols="4" class="d-flex justify-start">
-									Survey
-								</v-col>
+								<v-col cols="4" class="d-flex justify-start"> Survey </v-col>
 								<v-col cols="8" class="text-grey">
 									<v-fade-transition leave-absolute>
 										<span v-if="expanded"> #1 </span>
@@ -89,7 +86,6 @@ export default {
 		},
 	},
 	async mounted() {
-
 		const surveyData = await $fetch("/api/survey/result", {
 			method: "POST",
 			body: JSON.stringify({
@@ -113,7 +109,6 @@ export default {
 		//         title: ongoingSurveys.list[i].title,
 		//     })
 		//   }
-
 
 		this.username = sessionStorage.getItem("_cransurvey_usr")
 	},
