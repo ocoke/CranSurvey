@@ -54,7 +54,8 @@
 		"enable_false": "いいえ"
 	},
 	"results": {
-		"results": "業績"
+		"results": "業績",
+		"success": "Data fetched successfully."
 	},
 	"edit": {
 		"edit": "編集"
