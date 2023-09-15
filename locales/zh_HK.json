@@ -54,7 +54,8 @@
 		"enable_false": "No"
 	},
 	"results": {
-		"results": "Results"
+		"results": "Results",
+		"success": "Data fetched successfully."
 	},
 	"edit": {
 		"edit": "Edit"
