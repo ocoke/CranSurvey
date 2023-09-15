@@ -54,7 +54,8 @@
 		"enable_false": "不"
 	},
 	"results": {
-		"results": "結果"
+		"results": "結果",
+		"success": "Data fetched successfully."
 	},
 	"edit": {
 		"edit": "編輯"
