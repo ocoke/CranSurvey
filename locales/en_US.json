@@ -55,7 +55,16 @@
 	},
 	"results": {
 		"results": "Results",
-		"success": "Data fetched successfully."
+		"success": "Data fetched successfully.",
+		"no_results": "No results found.",
+		"survey_preview": "The survey was created at {time}, has 1 answer. | The survey was created at {time}, has {count} answers.",
+		"from_user": "From `{usr}`",
+		"question": "Question",
+		"answer": "Answer",
+		"type": "Type",
+		"collected_at": "Collected at: {date}",
+		"close": "Close",
+		"delete": "Delete"
 	},
 	"edit": {
 		"edit": "Edit"
