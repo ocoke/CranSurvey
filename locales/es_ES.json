@@ -55,7 +55,16 @@
 	},
 	"results": {
 		"results": "Resultados",
-		"success": "Los datos se obtuvieron correctamente."
+		"success": "Los datos se obtuvieron correctamente.",
+		"no_results": "No se encontraron resultados.",
+		"survey_preview": "La encuesta fue creada en {time}, tiene 1 respuesta. | La encuesta fue creada en {time}tiene {count} Respuestas.",
+		"from_user": "Desde '{usr}`",
+		"question": "Pregunta",
+		"answer": "Respuesta",
+		"type": "Tipo",
+		"collected_at": "Recopilado en: {date}",
+		"close": "Cerrar",
+		"delete": "Borrar"
 	},
 	"edit": {
 		"edit": "Editar"

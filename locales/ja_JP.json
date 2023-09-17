@@ -55,7 +55,16 @@
 	},
 	"results": {
 		"results": "業績",
-		"success": "データが正常にフェッチされました。"
+		"success": "データが正常にフェッチされました。",
+		"no_results": "結果が見つかりません。",
+		"survey_preview": "調査は次の場所で作成されました。 {time}、1つの答えがあります。|調査は次の場所で作成されました。 {time}は {count} 答え。",
+		"from_user": "から '{usr}`",
+		"question": "質問",
+		"answer": "答える",
+		"type": "種類",
+		"collected_at": "収集場所: {date}",
+		"close": "閉める",
+		"delete": "削除"
 	},
 	"edit": {
 		"edit": "編集"
