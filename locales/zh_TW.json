@@ -56,15 +56,15 @@
 	"results": {
 		"results": "結果",
 		"success": "已成功獲取數據。",
-		"no_results": "No results found.",
-		"survey_preview": "The survey was created at {time}, has 1 answer. | The survey was created at {time}, has {count} answers.",
-		"from_user": "From `{usr}`",
-		"question": "Question",
-		"answer": "Answer",
-		"type": "Type",
-		"collected_at": "Collected at: {date}",
-		"close": "Close",
-		"delete": "Delete"
+		"no_results": "未找到結果。",
+		"survey_preview": "該調查創建於 {time}，有 1 個答案。 | 該調查創建於 {time}，有 {count} 個答案。",
+		"from_user": "從 `{usr}`",
+		"question": "問題",
+		"answer": "答案",
+		"type": "類型",
+		"collected_at": "收集於： {date}",
+		"close": "關閉",
+		"delete": "刪除"
 	},
 	"edit": {
 		"edit": "編輯"
