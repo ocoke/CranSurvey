@@ -160,7 +160,6 @@ export default {
 		},
 	},
 	async mounted() {
-
 		const surveyData = await $fetch("/api/survey/result", {
 			method: "POST",
 			body: JSON.stringify({
@@ -194,7 +193,6 @@ export default {
 		//         title: ongoingSurveys.list[i].title,
 		//     })
 		//   }
-
 
 		this.username = sessionStorage.getItem("_cransurvey_usr")
 	},

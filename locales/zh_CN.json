@@ -54,7 +54,8 @@
 		"enable_false": "不"
 	},
 	"results": {
-		"results": "结果"
+		"results": "结果",
+		"success": "已成功获取数据。"
 	},
 	"edit": {
 		"edit": "编辑"

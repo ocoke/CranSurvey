@@ -54,7 +54,8 @@
 		"enable_false": "いいえ"
 	},
 	"results": {
-		"results": "業績"
+		"results": "業績",
+		"success": "データが正常にフェッチされました。"
 	},
 	"edit": {
 		"edit": "編集"
