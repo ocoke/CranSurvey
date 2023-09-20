@@ -45,10 +45,7 @@
     "vue-eslint-parser": "^9.3.1",
     "vue-i18n": "9.4.1"
   },
-  "overrides": {
-    "@intlify/core-base": "9.3.0-beta.25",
-    "@intlify/shared": "9.3.0-beta.25"
-  },
+  
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
