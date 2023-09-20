@@ -37,16 +37,28 @@ import "~/src/styles/dash.css"
 						</template>
 					</v-expansion-panel-title>
 					<v-expansion-panel-text>
-						<p>
-							{{ $t("surveys.description") }}: <code>{{ survey.description }}</code>
-						</p>
-						<p>
-							{{ $t("surveys.enabled") }}:
-							<code>{{ $t("surveys.enable_" + (survey.enable || false).toString()) }}.</code>
-						</p>
-						<p>
-							{{ $t("surveys.created_at") }}: <code>{{ new Date(survey.created_at) }}</code>
-						</p>
+						<v-table>
+							<thead>
+							<tr>
+								<th class="text-left">
+									{{ $t("surveys.description") }}
+								</th>
+								<th class="text-left">
+									{{ $t("surveys.enabled") }}
+								</th>
+								<th class="text-left">
+									{{ $t("surveys.created_at") }}
+								</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>{{ survey.description }}</td>
+								<td>{{ $t("surveys.enable_" + (survey.enable || false).toString()) }}</td>
+								<td>{{ new Date(survey.created_at) }}</td>
+							</tr>
+							</tbody>
+						</v-table>
 
 						<v-card-actions>
 							<v-spacer></v-spacer>
