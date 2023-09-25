@@ -8,9 +8,12 @@ import "~/src/styles/sign-in.css"
 		<v-text-field :label="$t('signin.username')" v-model="username"></v-text-field>
 		<v-text-field :label="$t('signin.password')" type="password" v-model="password"></v-text-field>
 
-		<v-btn variant="tonal" class="font-weight-bold" @click="sign">
+		<p><v-btn variant="tonal" class="font-weight-bold" @click="sign">
 			{{ $t("signin.continue") }}
 		</v-btn>
+		<v-btn variant="outlined" class="font-weight-bold" @click="navigateTo(useLocalePath()('/sign-up'))" style="margin-left: .6rem;">
+			{{ $t("signin.or_signup") }}
+		</v-btn></p>
 	</div>
 </template>
 
