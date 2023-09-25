@@ -5,6 +5,21 @@ if (process.client) {
 	const username = sessionStorage.getItem("_cransurvey_usr")
 	if (!token || !username) {
 		navigateTo(localePath("/sign-in"))
+	} else if (!sessionStorage.getItem("_cransurvey_token_lock")) {
+		$fetch("/api/usr/token", {
+			method: "POST",
+			body: JSON.stringify({
+				token: token,
+			}),
+		}).then(rsp => {
+			if (rsp.code == 0) {
+				sessionStorage.setItem("_cransurvey_token_lock", true)
+			} else {
+				sessionStorage.removeItem("_cransurvey_token")
+				sessionStorage.removeItem("_cransurvey_usr")
+				navigateTo(localePath("/sign-in"))
+			}
+		})
 	}
 }
 import "~/src/styles/dash.css"
@@ -12,6 +27,7 @@ import "~/src/styles/dash.css"
 
 <template>
 	<h1 class="text-h4">{{ $t("surveys.surveys") }}</h1>
+	<v-btn variant="outlined" @click="navigateTo(localePath('/dash/new'))" style="margin-top: 20px; margin-left: 8px;">{{ $t("new.new") }}</v-btn>
 	<div class="mainGroup">
 		<code
 			class="text-subtitle-1"
@@ -30,7 +46,7 @@ import "~/src/styles/dash.css"
 								</v-col>
 								<v-col cols="8" class="text-grey">
 									<v-fade-transition leave-absolute>
-										<span v-if="expanded"> #{{ survey.id }} </span>
+										<span v-if="expanded"> #{{ survey.id.slice(-6) }} </span>
 									</v-fade-transition>
 								</v-col>
 							</v-row>
@@ -73,7 +89,7 @@ import "~/src/styles/dash.css"
 				</v-expansion-panel>
 			</v-expansion-panels>
 		</v-card>
-		<v-btn variant="outlined" @click="signout">{{ $t("users.signout") }}</v-btn>
+		
 	</div>
 </template>
 
@@ -160,9 +176,9 @@ export default {
 	},
 }
 </script>
-<style>
+<style scoped>
 .mainGroup {
-	margin-top: 20px;
+	margin-top: 10px;
 	padding: 10px;
 }
 </style>
