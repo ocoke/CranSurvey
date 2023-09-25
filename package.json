@@ -26,7 +26,7 @@
     "md5": "^2.3.0",
     "nitropack": "2.6.0",
     "nuxt": "3.7.3",
-    "sass": "^1.67.0",
+    "sass": "^1.68.0",
     "unstorage": "^1.8.0",
     "uuid": "^9.0.0",
     "vue-toastification": "^2.0.0-rc.5",
