@@ -69,6 +69,46 @@
 	"edit": {
 		"edit": "編集"
 	},
+	"new": {
+		"new": "新しい調査",
+		"title": "タイトル*",
+		"title_sub": "ここにアンケートのタイトルを入力します。",
+		"description": "形容*",
+		"description_sub": "アンケートの説明をここに入力します。",
+		"q1": "レイアウト",
+		"q1_sub": "調査のレイアウトを選択します。",
+		"q1_simple": "簡単",
+		"q1_advanced": "アドバンスド",
+		"q1_prompt": "プロンプト",
+		"simple_sub": "簡単なアンケートには質問が1つだけ含まれており、ユーザーはダイアログウィンドウを開かずに回答できます。",
+		"advanced_sub": "高度な調査には複数の質問を含めることができ、ユーザーはダイアログウィンドウを開いて回答する必要があります。",
+		"prompt_sub": "プロンプトはユーザーにメッセージのみを表示し、ユーザーは応答する必要はありません。",
+		"question": {
+			"question": "質問*",
+			"question_sub": "ここに質問のタイトルを入力します。",
+			"question_prompt": "プロンプト",
+			"question_prompt_sub": "ここに質問のプロンプトを入力します。",
+			"question_type": "種類*",
+			"question_placeholder": "プレースホルダ",
+			"question_placeholder_sub": "ここに質問のプレースホルダーを入力します。"
+		},
+		"site": "敷地",
+		"site_sub": "サイトの構成。",
+		"domain": "ドメイン",
+		"domain_sub": "ここにドメインをカンマで区切って入力し、グローバルの場合は空白のままにします。",
+		"position": "立場",
+		"position_sub": "プロンプトウィンドウの位置を選択します。",
+		"position_options": {
+			"bottom_left": "左下",
+			"bottom_right": "右下",
+			"bottom_banner": "ボトムバナー"
+		},
+		"priority": "表示優先度",
+		"create": "創造する",
+		"miss_required": "必須項目にチェックを入れてください。",
+		"success": "アンケートが正常に作成されました。",
+		"error": "アンケートの作成中にエラーが発生しました。"
+	},
 	"error_codes": {
 		"0": "成功。",
 		"1001": "無効なパラメーターです。",

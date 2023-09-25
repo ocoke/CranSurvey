@@ -69,6 +69,46 @@
 	"edit": {
 		"edit": "Editar"
 	},
+	"new": {
+		"new": "Nueva encuesta",
+		"title": "Título*",
+		"title_sub": "Ingrese el título de su encuesta aquí.",
+		"description": "Descripción*",
+		"description_sub": "Ingrese la descripción de su encuesta aquí.",
+		"q1": "Diseño",
+		"q1_sub": "Elige un diseño para tu encuesta.",
+		"q1_simple": "Sencillo",
+		"q1_advanced": "Avanzado",
+		"q1_prompt": "Pronto",
+		"simple_sub": "La encuesta simple contiene solo una pregunta, el usuario puede responder sin abrir una ventana de diálogo.",
+		"advanced_sub": "La encuesta avanzada puede contener varias preguntas, el usuario necesita responder abriendo una ventana de diálogo.",
+		"prompt_sub": "El mensaje solo muestra el mensaje al usuario, el usuario no necesita responder.",
+		"question": {
+			"question": "Pregunta*",
+			"question_sub": "Ingrese el título de su pregunta aquí.",
+			"question_prompt": "Pronto",
+			"question_prompt_sub": "Ingrese su pregunta aquí.",
+			"question_type": "Tipo*",
+			"question_placeholder": "Marcador",
+			"question_placeholder_sub": "Ingrese su marcador de posición para la pregunta aquí."
+		},
+		"site": "Sitio",
+		"site_sub": "La configuración del sitio.",
+		"domain": "Dominio",
+		"domain_sub": "Ingrese su dominio aquí, separado por coma, deje en blanco para global.",
+		"position": "Posición",
+		"position_sub": "Elija la posición para la ventana de solicitud.",
+		"position_options": {
+			"bottom_left": "Abajo a la izquierda",
+			"bottom_right": "Abajo a la derecha",
+			"bottom_banner": "Banner inferior"
+		},
+		"priority": "Prioridad de visualización",
+		"create": "Crear",
+		"miss_required": "Por favor, compruebe los campos obligatorios.",
+		"success": "Encuesta creada correctamente.",
+		"error": "Se ha producido un error al crear la encuesta."
+	},
 	"error_codes": {
 		"0": "Éxito.",
 		"1001": "Parámetros no válidos.",
