@@ -69,6 +69,46 @@
 	"edit": {
 		"edit": "Edit"
 	},
+	"new": {
+		"new": "New Survey",
+		"title": "Title*",
+		"title_sub": "Enter your survey title here.",
+		"description": "Description*",
+		"description_sub": "Enter your survey description here.",
+		"q1": "Layout",
+		"q1_sub": "Choose a layout for your survey.",
+		"q1_simple": "Simple",
+		"q1_advanced": "Advanced",
+		"q1_prompt": "Prompt",
+		"simple_sub": "The simple survey contains only one question, user can answer without open a dialog window.",
+		"advanced_sub": "The advanced survey can contain multiple questions, user need answer by opening a dialog window.",
+		"prompt_sub": "The prompt only show message to user, user doesn't need to answer.",
+		"question": {
+			"question": "Question*",
+			"question_sub": "Enter your question title here.",
+			"question_prompt": "Prompt",
+			"question_prompt_sub": "Enter your prompt for question here.",
+			"question_type": "Type*",
+			"question_placeholder": "Placeholder",
+			"question_placeholder_sub": "Enter your placeholder for question here."
+		},
+		"site": "Site",
+		"site_sub": "The configuration for site.",
+		"domain": "Domain",
+		"domain_sub": "Enter your domain here, separated by comma, leave blank for global.",
+		"position": "Position",
+		"position_sub": "Choose the position for the prompt window.",
+		"position_options": {
+			"bottom_left": "Bottom Left",
+			"bottom_right": "Bottom Right",
+			"bottom_banner": "Bottom Banner"
+		},
+		"priority": "Display Priority",
+		"create": "Create",
+		"miss_required": "Please check the required fields.",
+		"success": "Survey created successfully.",
+		"error": "An error occurred while creating survey."
+	},
 	"error_codes": {
 		"0": "Success.",
 		"1001": "Invalid parameters.",
