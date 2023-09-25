@@ -30,7 +30,7 @@
     "unstorage": "^1.8.0",
     "uuid": "^9.0.0",
     "vue-toastification": "^2.0.0-rc.5",
-    "vuetify": "^3.3.12"
+    "vuetify": "^3.3.17"
   },
   "devDependencies": {
     "@nuxtjs/i18n": "8.0.0-rc.3",
