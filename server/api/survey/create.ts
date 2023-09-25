@@ -4,8 +4,8 @@ import checkToken from "~/src/functions/checkToken"
 import escapeText from "~/src/functions/escape"
 export default eventHandler(async (event) => {
 	const storage = useStorage("cransurvey")
-	const { token, title, description, questions } = await readBody(event)
-	if (!token || !title || !description || !questions) {
+	const { token, title, description, questions, type, site } = await readBody(event)
+	if (!token || !title || !description || !questions || !type) {
 		return {
 			code: 1001,
 			msg: "Invalid parameters.",
@@ -33,7 +33,9 @@ export default eventHandler(async (event) => {
 			description: escapeText(description),
 			questions,
 			created_at: new Date().getTime(),
+			type,
 			enable: true,
+			site,
 		}
 
 		await storage.setItem("sid", [...survey, new_survey])
