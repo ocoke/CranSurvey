@@ -11,7 +11,7 @@ if (process.client) {
 			body: JSON.stringify({
 				token: token,
 			}),
-		}).then(rsp => {
+		}).then((rsp) => {
 			if (rsp.code == 0) {
 				sessionStorage.setItem("_cransurvey_token_lock", true)
 			} else {
@@ -27,7 +27,9 @@ import "~/src/styles/dash.css"
 
 <template>
 	<h1 class="text-h4">{{ $t("surveys.surveys") }}</h1>
-	<v-btn variant="outlined" @click="navigateTo(localePath('/dash/new'))" style="margin-top: 20px; margin-left: 8px;">{{ $t("new.new") }}</v-btn>
+	<v-btn variant="outlined" @click="navigateTo(localePath('/dash/new'))" style="margin-top: 20px; margin-left: 8px">{{
+		$t("new.new")
+	}}</v-btn>
 	<div class="mainGroup">
 		<code
 			class="text-subtitle-1"
@@ -55,24 +57,24 @@ import "~/src/styles/dash.css"
 					<v-expansion-panel-text>
 						<v-table>
 							<thead>
-							<tr>
-								<th class="text-left">
-									{{ $t("surveys.description") }}
-								</th>
-								<th class="text-left">
-									{{ $t("surveys.enabled") }}
-								</th>
-								<th class="text-left">
-									{{ $t("surveys.created_at") }}
-								</th>
-							</tr>
+								<tr>
+									<th class="text-left">
+										{{ $t("surveys.description") }}
+									</th>
+									<th class="text-left">
+										{{ $t("surveys.enabled") }}
+									</th>
+									<th class="text-left">
+										{{ $t("surveys.created_at") }}
+									</th>
+								</tr>
 							</thead>
 							<tbody>
-							<tr>
-								<td>{{ survey.description }}</td>
-								<td>{{ $t("surveys.enable_" + (survey.enable || false).toString()) }}</td>
-								<td>{{ new Date(survey.created_at) }}</td>
-							</tr>
+								<tr>
+									<td>{{ survey.description }}</td>
+									<td>{{ $t("surveys.enable_" + (survey.enable || false).toString()) }}</td>
+									<td>{{ new Date(survey.created_at) }}</td>
+								</tr>
 							</tbody>
 						</v-table>
 
@@ -89,7 +91,6 @@ import "~/src/styles/dash.css"
 				</v-expansion-panel>
 			</v-expansion-panels>
 		</v-card>
-		
 	</div>
 </template>
 

@@ -11,7 +11,7 @@ if (process.client) {
 			body: JSON.stringify({
 				token: token,
 			}),
-		}).then(rsp => {
+		}).then((rsp) => {
 			if (rsp.code == 0) {
 				sessionStorage.setItem("_cransurvey_token_lock", true)
 			} else {
