@@ -11,7 +11,7 @@
 		"success": "Ha iniciado sesión correctamente.",
 		"error": "Se ha producido un error al iniciar sesión.",
 		"invalid_params": "Por favor, compruebe su nombre de usuario y contraseña.",
-		"or_signup": "Or sign up"
+		"or_signup": "O regístrate"
 	},
 	"signup": {
 		"signup": "Únete",
@@ -24,7 +24,7 @@
 		"invalid_params": "Por favor, compruebe su nombre de usuario y contraseña.",
 		"invalid_password": "Las contraseñas no coinciden.",
 		"init": "Parece que esta es su primera vez aquí, hemos inicializado automáticamente su base de datos.",
-		"or_signin": "Or sign in"
+		"or_signin": "O inicia sesión"
 	},
 	"dashboard": {
 		"dashboard": "Salpicadero",
