@@ -11,7 +11,7 @@
 		"success": "已成功登录。",
 		"error": "登录时出错。",
 		"invalid_params": "请检查您的用户名和密码。",
-		"or_signup": "Or sign up"
+		"or_signup": "或注册"
 	},
 	"signup": {
 		"signup": "注册",
@@ -24,7 +24,7 @@
 		"invalid_params": "请检查您的用户名和密码。",
 		"invalid_password": "密码不匹配。",
 		"init": "看来这是您第一次来这里，我们已经自动初始化了您的数据库。",
-		"or_signin": "Or sign in"
+		"or_signin": "或登录"
 	},
 	"dashboard": {
 		"dashboard": "仪表板",
