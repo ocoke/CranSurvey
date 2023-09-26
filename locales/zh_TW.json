@@ -10,7 +10,8 @@
 		"continue": "繼續",
 		"success": "已成功登錄。",
 		"error": "登錄時出錯。",
-		"invalid_params": "請檢查您的使用者名和密碼。"
+		"invalid_params": "請檢查您的使用者名和密碼。",
+		"or_signup": "或註冊"
 	},
 	"signup": {
 		"signup": "註冊",
@@ -22,7 +23,8 @@
 		"error": "登錄時出錯。",
 		"invalid_params": "請檢查您的使用者名和密碼。",
 		"invalid_password": "密碼不匹配。",
-		"init": "看來這是您第一次來這裏，我們已經自動初始化了您的資料庫。"
+		"init": "看來這是您第一次來這裏，我們已經自動初始化了您的資料庫。",
+		"or_signin": "或登錄"
 	},
 	"dashboard": {
 		"dashboard": "儀錶板",

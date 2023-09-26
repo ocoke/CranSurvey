@@ -10,7 +10,8 @@
 		"continue": "Continuar",
 		"success": "Ha iniciado sesión correctamente.",
 		"error": "Se ha producido un error al iniciar sesión.",
-		"invalid_params": "Por favor, compruebe su nombre de usuario y contraseña."
+		"invalid_params": "Por favor, compruebe su nombre de usuario y contraseña.",
+		"or_signup": "O regístrate"
 	},
 	"signup": {
 		"signup": "Únete",
@@ -22,7 +23,8 @@
 		"error": "Se ha producido un error al iniciar sesión.",
 		"invalid_params": "Por favor, compruebe su nombre de usuario y contraseña.",
 		"invalid_password": "Las contraseñas no coinciden.",
-		"init": "Parece que esta es su primera vez aquí, hemos inicializado automáticamente su base de datos."
+		"init": "Parece que esta es su primera vez aquí, hemos inicializado automáticamente su base de datos.",
+		"or_signin": "O inicia sesión"
 	},
 	"dashboard": {
 		"dashboard": "Salpicadero",
