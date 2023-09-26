@@ -11,7 +11,7 @@ if (process.client) {
 			body: JSON.stringify({
 				token: token,
 			}),
-		}).then(rsp => {
+		}).then((rsp) => {
 			if (rsp.code == 0) {
 				sessionStorage.setItem("_cransurvey_token_lock", true)
 			} else {
@@ -28,81 +28,127 @@ import "~/src/styles/dash.css"
 <template>
 	<h1 class="text-h4">{{ $t("new.new") }}</h1>
 	<div class="mainGroup">
-		<v-card :title="$t('new.q1')" :subtitle="$t('new.q1_sub')" variant="outlined" style="margin-bottom: 20px;">
-            <v-card-text>
-				<h3 class="ques_title">{{ $t('new.title') }}</h3>
-				<v-text-field :label="$t('new.title_sub')" variant="outlined" maxlength="150" v-model="surveyTitle"></v-text-field>
-				<h3 class="ques_title">{{ $t('new.description') }}</h3>
-				<v-text-field :label="$t('new.description_sub')" variant="outlined" maxlength="500" v-model="surveyDesc"></v-text-field>
+		<v-card :title="$t('new.q1')" :subtitle="$t('new.q1_sub')" variant="outlined" style="margin-bottom: 20px">
+			<v-card-text>
+				<h3 class="ques_title">{{ $t("new.title") }}</h3>
+				<v-text-field
+					:label="$t('new.title_sub')"
+					variant="outlined"
+					maxlength="150"
+					v-model="surveyTitle"
+				></v-text-field>
+				<h3 class="ques_title">{{ $t("new.description") }}</h3>
+				<v-text-field
+					:label="$t('new.description_sub')"
+					variant="outlined"
+					maxlength="500"
+					v-model="surveyDesc"
+				></v-text-field>
 				<v-radio-group inline v-model="surveyType">
 					<v-radio :label="$t('new.q1_simple')" value="simple"></v-radio>
 					<v-radio :label="$t('new.q1_advanced')" value="advanced"></v-radio>
 					<v-radio :label="$t('new.q1_prompt')" value="prompt"></v-radio>
 				</v-radio-group>
-			
-			</v-card-text>
-        </v-card>
-		<v-card variant="outlined" :title="$t('new.q1_simple')" :subtitle="$t('new.simple_sub')" v-show="surveyType == 'simple'">
-			<v-card-text>
-
-				<h3 class="ques_title">{{ $t('new.question.question') }}</h3>
-				<v-text-field :label="$t('new.question.question_sub')" variant="outlined" maxlength="150" v-model="simple.question"></v-text-field>
-
-				<h3 class="ques_title">{{ $t('new.question.question_prompt') }}</h3>
-				<v-text-field :label="$t('new.question.question_prompt_sub')" variant="outlined" maxlength="500" v-model="simple.prompt"></v-text-field>
-
-				<h3 class="ques_title">{{ $t('new.question.question_type') }}</h3>
-				<v-text-field :label="$t('new.question.question_type')" variant="outlined" maxlength="500" v-model="simple.type" disabled></v-text-field>
-
-				<h3 class="ques_title">{{ $t('new.question.question_placeholder') }}</h3>
-				<v-text-field :label="$t('new.question.question_placeholder_sub')" variant="outlined" maxlength="500" v-model="simple.placeholder"></v-text-field>
-
-
 			</v-card-text>
 		</v-card>
-		<v-card variant="outlined" :title="$t('new.q1_advanced')" :subtitle="$t('new.advanced_sub')" v-show="surveyType == 'advanced'">
-			
-		</v-card>
-		<v-card variant="outlined" :title="$t('new.q1_prompt')" :subtitle="$t('new.prompt_sub')" v-show="surveyType == 'prompt'">
-			
-		</v-card>
-
-		<v-card variant="outlined" :title="$t('new.site')" :subtitle="$t('new.site_sub')" v-show="surveyType" style="margin-top: 20px;">
+		<v-card
+			variant="outlined"
+			:title="$t('new.q1_simple')"
+			:subtitle="$t('new.simple_sub')"
+			v-show="surveyType == 'simple'"
+		>
 			<v-card-text>
-				<h3 class="ques_title">{{ $t('new.domain') }}</h3>
-				<v-text-field :label="$t('new.domain_sub')" variant="outlined" maxlength="500" v-model="simple.domain"></v-text-field>
+				<h3 class="ques_title">{{ $t("new.question.question") }}</h3>
+				<v-text-field
+					:label="$t('new.question.question_sub')"
+					variant="outlined"
+					maxlength="150"
+					v-model="simple.question"
+				></v-text-field>
 
-				<h3 class="ques_title">{{ $t('new.position') }}</h3>
+				<h3 class="ques_title">{{ $t("new.question.question_prompt") }}</h3>
+				<v-text-field
+					:label="$t('new.question.question_prompt_sub')"
+					variant="outlined"
+					maxlength="500"
+					v-model="simple.prompt"
+				></v-text-field>
+
+				<h3 class="ques_title">{{ $t("new.question.question_type") }}</h3>
+				<v-text-field
+					:label="$t('new.question.question_type')"
+					variant="outlined"
+					maxlength="500"
+					v-model="simple.type"
+					disabled
+				></v-text-field>
+
+				<h3 class="ques_title">{{ $t("new.question.question_placeholder") }}</h3>
+				<v-text-field
+					:label="$t('new.question.question_placeholder_sub')"
+					variant="outlined"
+					maxlength="500"
+					v-model="simple.placeholder"
+				></v-text-field>
+			</v-card-text>
+		</v-card>
+		<v-card
+			variant="outlined"
+			:title="$t('new.q1_advanced')"
+			:subtitle="$t('new.advanced_sub')"
+			v-show="surveyType == 'advanced'"
+		>
+		</v-card>
+		<v-card
+			variant="outlined"
+			:title="$t('new.q1_prompt')"
+			:subtitle="$t('new.prompt_sub')"
+			v-show="surveyType == 'prompt'"
+		>
+		</v-card>
+
+		<v-card
+			variant="outlined"
+			:title="$t('new.site')"
+			:subtitle="$t('new.site_sub')"
+			v-show="surveyType"
+			style="margin-top: 20px"
+		>
+			<v-card-text>
+				<h3 class="ques_title">{{ $t("new.domain") }}</h3>
+				<v-text-field
+					:label="$t('new.domain_sub')"
+					variant="outlined"
+					maxlength="500"
+					v-model="simple.domain"
+				></v-text-field>
+
+				<h3 class="ques_title">{{ $t("new.position") }}</h3>
 				<v-radio-group inline v-model="promptWindowPosition" :label="$t('new.position_sub')">
 					<v-radio :label="$t('new.position_options.bottom_left')" value="bottom_left"></v-radio>
 					<v-radio :label="$t('new.position_options.bottom_right')" value="bottom_right"></v-radio>
 					<v-radio :label="$t('new.position_options.bottom_banner')" value="bottom_banner"></v-radio>
 				</v-radio-group>
 
-				<h3 class="ques_title">{{ $t('new.priority') }}</h3>
-				<v-slider
-					v-model="priority"
-					class="align-center ques_title"
-					max="10s"
-					min="0"
-					step="1"
-					hide-details
-				>
+				<h3 class="ques_title">{{ $t("new.priority") }}</h3>
+				<v-slider v-model="priority" class="align-center ques_title" max="10s" min="0" step="1" hide-details>
 					<template v-slot:append>
-					<v-text-field
-						v-model="priority"
-						hide-details
-						single-line
-						density="compact"
-						type="number"
-						style="width: 70px"
-					></v-text-field>
+						<v-text-field
+							v-model="priority"
+							hide-details
+							single-line
+							density="compact"
+							type="number"
+							style="width: 70px"
+						></v-text-field>
 					</template>
 				</v-slider>
 			</v-card-text>
 		</v-card>
 
-		<v-btn variant="outlined" @click="create" style="margin-top: 20px;" v-show="surveyType">{{ $t('new.create') }}</v-btn>
+		<v-btn variant="outlined" @click="create" style="margin-top: 20px" v-show="surveyType">{{
+			$t("new.create")
+		}}</v-btn>
 	</div>
 </template>
 
@@ -133,7 +179,7 @@ export default {
 			promptWindowPosition: "bottom_right",
 			priority: 0,
 			simple: {
-				type: "string_plain"
+				type: "string_plain",
 			},
 			surveyTitle: "",
 			surveyDesc: "",
@@ -150,12 +196,12 @@ export default {
 		},
 		async create() {
 			if (this.surveyType == "simple") {
-				let info = this.simple
+				const info = this.simple
 				if (!info.question || !info.type || !this.surveyTitle || !this.surveyDesc) {
 					toast.error(this.$t("new.miss_required"), toastCfg)
 					return false
 				}
-				let data = {
+				const data = {
 					title: this.surveyTitle,
 					description: this.surveyDesc,
 					token: sessionStorage.getItem("_cransurvey_token"),
@@ -167,18 +213,18 @@ export default {
 							question: info.question,
 							placeholder: info.placeholder,
 							prompt: info.prompt,
-						}
+						},
 					],
 					site: {
 						domain: info.domain,
 						priority: this.priority,
 						promptWindowPosition: this.promptWindowPosition,
-					}
+					},
 				}
 
-				const rsp = await $fetch('/api/survey/create', {
+				const rsp = await $fetch("/api/survey/create", {
 					method: "POST",
-					body: JSON.stringify(data)
+					body: JSON.stringify(data),
 				})
 
 				if (rsp.code == 0) {
@@ -188,12 +234,9 @@ export default {
 					toast.error(this.$t("new.error") + " (" + this.$t("error_codes." + rsp.code) + ")", toastCfg)
 				}
 			}
-			
-			
-		}
+		},
 	},
 	async mounted() {
-		
 		this.username = sessionStorage.getItem("_cransurvey_usr")
 	},
 }
