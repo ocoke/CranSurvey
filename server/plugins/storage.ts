@@ -7,7 +7,7 @@ import fsDriver from "unstorage/drivers/fs"
 import githubDriver from "unstorage/drivers/github"
 import memoryDriver from "unstorage/drivers/memory"
 // Vercel KV
-import vercelKVDriver from "unstorage/drivers/vercel-kv";
+import vercelKVDriver from "unstorage/drivers/vercel-kv"
 // import mongodbDriver from "unstorage/drivers/mongodb"
 
 const dbType = process.env.db_name
