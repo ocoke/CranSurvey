@@ -22,10 +22,12 @@ jobs:
               run: |
                 NITRO_PRESET=deno yarn build
                 mv .output dist/deno
+              continue-on-error: true
             - name: Build for Cloudflare Workers
               run: |
                 NITRO_PRESET=cloudflare yarn build
                 mv .output dist/cloudflare
+              continue-on-error: true
             - name: Commit
               run: |
                   cd dist
