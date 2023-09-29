@@ -7,7 +7,7 @@ export default async function checkToken(token: string) {
 	if (!usr) {
 		return false
 	}
-	const user = usr.find((u) => u.id == tk.id)
+	const user = usr[tk.id]
 	if (user && user.pwd == tk.pwd) {
 		return true
 	} else {

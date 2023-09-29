@@ -18,10 +18,10 @@ export default eventHandler(async (event) => {
 		await initDatabase()
 
 		const usr: object[] = await storage.getItem("usr")
-		usr.push({
-			id,
+		usr[id] = {
 			pwd,
-		})
+			admin: true,
+		}
 
 		await storage.setItem("usr", usr)
 
@@ -33,7 +33,7 @@ export default eventHandler(async (event) => {
 		}
 	} else {
 		const usr: object[] = await storage.getItem("usr")
-		const exist = (usr as any[]).find((v) => v.id == id)
+		const exist = usr[id]
 
 		if (exist) {
 			return {
@@ -52,10 +52,10 @@ export default eventHandler(async (event) => {
 			}
 		}
 
-		usr.push({
-			id,
+		usr[id] = {
 			pwd,
-		})
+			admin: false,
+		}
 
 		await storage.setItem("usr", usr)
 

@@ -15,7 +15,7 @@ export default eventHandler(async (event) => {
 			msg: "Database Error.",
 		}
 	}
-	const user = usr.find((u) => u["id"] == id)
+	const user = usr[id]
 	if (user && user["pwd"] == pwd) {
 		return {
 			code: 0,
