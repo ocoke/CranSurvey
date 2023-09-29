@@ -35,10 +35,10 @@ import "~/src/styles/dash.css"
 		></code>
 		<p class="text-subtitle-1">{{ siteUsersData }}</p>
 		<v-card variant="outlined" style="margin: 20px auto; padding: 15px">
-		<v-expansion-panels>
-			<v-expansion-panel v-for="user in siteUsers">
-				<v-expansion-panel-title>
-					<template v-slot:default="{ expanded }">
+			<v-expansion-panels>
+				<v-expansion-panel v-for="user in siteUsers">
+					<v-expansion-panel-title>
+						<template v-slot:default="{ expanded }">
 							<v-row no-gutters>
 								<v-col cols="4" class="d-flex justify-start">
 									<code>{{ user.title }}</code>
@@ -50,18 +50,18 @@ import "~/src/styles/dash.css"
 								</v-col>
 							</v-row>
 						</template>
-				</v-expansion-panel-title>
-				<v-expansion-panel-text>
-				<v-card-actions>
+					</v-expansion-panel-title>
+					<v-expansion-panel-text>
+						<v-card-actions>
 							<v-spacer></v-spacer>
 							<v-btn variant="text" color="primary" disabled>
 								{{ $t("edit.edit") }}
 							</v-btn>
-
 						</v-card-actions>
 					</v-expansion-panel-text>
-			</v-expansion-panel>
-		</v-expansion-panels></v-card>
+				</v-expansion-panel>
+			</v-expansion-panels></v-card
+		>
 		<v-btn variant="outlined" @click="signout">{{ $t("users.signout") }}</v-btn>
 	</div>
 </template>
