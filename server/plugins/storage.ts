@@ -6,6 +6,8 @@ import httpDriver from "unstorage/drivers/http"
 import fsDriver from "unstorage/drivers/fs"
 import githubDriver from "unstorage/drivers/github"
 import memoryDriver from "unstorage/drivers/memory"
+// Vercel KV
+import vercelKVDriver from "unstorage/drivers/vercel-kv";
 // import mongodbDriver from "unstorage/drivers/mongodb"
 
 const dbType = process.env.db_name
@@ -53,6 +55,9 @@ export default defineNitroPlugin(() => {
 		// 	break
 		case "redis":
 			driver = redisDriver(dbConfObj)
+			break
+		case "vercel-kv":
+			driver = vercelKVDriver(dbConfObj)
 			break
 		default:
 			driver = memoryDriver(dbConfObj)
