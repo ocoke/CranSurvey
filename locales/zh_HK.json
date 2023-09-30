@@ -20,7 +20,7 @@
 		"password_re": "Re-enter your password",
 		"continue": "Continue",
 		"success": "Signed up successfully.",
-		"error": "An error occurred while signing in.",
+		"error": "An error occurred while signing up.",
 		"invalid_params": "Please check your username and password.",
 		"invalid_password": "The passwords do not match.",
 		"init": "It seems like this is your first time here, we have automatically initialized your database.",
@@ -111,6 +111,14 @@
 		"miss_required": "Please check the required fields.",
 		"success": "Survey created successfully.",
 		"error": "An error occurred while creating survey."
+	},
+	"editUser": {
+		"editUser": "Edit for {username}",
+		"password": "Reset Password",
+		"password_sub": "Reset the passwod for {username}.",
+		"enter_password": "Please enter the new password for {username}.",
+		"enter_password_re": "Please re-enter the new password for {username}.",
+		"update": "Update"
 	},
 	"error_codes": {
 		"0": "Success.",
