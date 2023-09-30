@@ -20,7 +20,7 @@
 		"password_re": "Vuelva a introducir su contraseña",
 		"continue": "Continuar",
 		"success": "Se ha registrado correctamente.",
-		"error": "An error occurred while signing up.",
+		"error": "Se ha producido un error al registrarse.",
 		"invalid_params": "Por favor, compruebe su nombre de usuario y contraseña.",
 		"invalid_password": "Las contraseñas no coinciden.",
 		"init": "Parece que esta es su primera vez aquí, hemos inicializado automáticamente su base de datos.",
@@ -52,7 +52,7 @@
 		"enabled": "Habilitado",
 		"description": "Descripción",
 		"created_at": "Creado en",
-		"number_of_questions": "Number of Questions",
+		"number_of_questions": "Número de preguntas",
 		"enable_true": "Sí",
 		"enable_false": "No"
 	},
@@ -113,12 +113,12 @@
 		"error": "Se ha producido un error al crear la encuesta."
 	},
 	"editUser": {
-		"editUser": "Edit for {username}",
-		"password": "Reset Password",
-		"password_sub": "Reset the passwod for {username}.",
-		"enter_password": "Please enter the new password for {username}.",
-		"enter_password_re": "Please re-enter the new password for {username}.",
-		"update": "Update"
+		"editUser": "Editar para {username}",
+		"password": "Restablecer contraseña",
+		"password_sub": "Restablecer el passwod para {username}.",
+		"enter_password": "Introduzca la nueva contraseña para {username}.",
+		"enter_password_re": "Vuelva a introducir la nueva contraseña para {username}.",
+		"update": "Actualizar"
 	},
 	"error_codes": {
 		"0": "Éxito.",
