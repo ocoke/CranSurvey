@@ -52,6 +52,7 @@
 		"enabled": "Enabled",
 		"description": "Description",
 		"created_at": "Created At",
+		"number_of_questions": "Number of Questions",
 		"enable_true": "Yes",
 		"enable_false": "No"
 	},

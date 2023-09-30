@@ -65,6 +65,12 @@ import "~/src/styles/dash.css"
 										{{ $t("surveys.enabled") }}
 									</th>
 									<th class="text-left">
+										{{ $t("results.type") }}
+									</th>
+									<th class="text-left">
+										{{ $t("surveys.number_of_questions") }}
+									</th>
+									<th class="text-left">
 										{{ $t("surveys.created_at") }}
 									</th>
 								</tr>
@@ -73,6 +79,8 @@ import "~/src/styles/dash.css"
 								<tr>
 									<td>{{ survey.description }}</td>
 									<td>{{ $t("surveys.enable_" + (survey.enable || false).toString()) }}</td>
+									<td>{{ $t("new.q1_" + survey.type) }}</td>
+									<td>{{ survey.questions.length }}</td>
 									<td>{{ new Date(survey.created_at) }}</td>
 								</tr>
 							</tbody>

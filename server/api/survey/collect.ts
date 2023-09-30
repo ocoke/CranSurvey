@@ -13,7 +13,7 @@ export default eventHandler(async (event) => {
 
 	const survey: object = await storage.getItem("sid")
 	const ans: object = await storage.getItem("ans")
-	const svId = (survey || []).find((s) => s.id == uniqueId)
+	const svId = survey[uniqueId]
 
 	if (!survey || !svId || !ans) {
 		return {

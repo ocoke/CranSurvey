@@ -20,7 +20,7 @@ export default eventHandler(async (event) => {
 				msg: "Database Error.",
 			}
 		}
-		const surveyId = survey.find((s) => s.id == uniqueId)
+		const surveyId = survey[uniqueId]
 		if (surveyId) {
 			return {
 				code: 2003,
@@ -38,7 +38,8 @@ export default eventHandler(async (event) => {
 			site,
 		}
 
-		await storage.setItem("sid", [...survey, new_survey])
+		survey[uniqueId] = new_survey
+		await storage.setItem("sid", survey)
 
 		return {
 			code: 0,
