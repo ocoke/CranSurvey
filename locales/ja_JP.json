@@ -20,7 +20,7 @@
 		"password_re": "パスワードを再入力してください",
 		"continue": "続ける",
 		"success": "正常にサインアップしました。",
-		"error": "An error occurred while signing up.",
+		"error": "サインアップ中にエラーが発生しました。",
 		"invalid_params": "ユーザー名とパスワードを確認してください。",
 		"invalid_password": "パスワードが一致しません。",
 		"init": "ここで初めてのようですが、データベースを自動的に初期化しました。",
@@ -52,7 +52,7 @@
 		"enabled": "有効",
 		"description": "形容",
 		"created_at": "作成日",
-		"number_of_questions": "Number of Questions",
+		"number_of_questions": "質問数",
 		"enable_true": "はい",
 		"enable_false": "いいえ"
 	},
@@ -113,12 +113,12 @@
 		"error": "アンケートの作成中にエラーが発生しました。"
 	},
 	"editUser": {
-		"editUser": "Edit for {username}",
-		"password": "Reset Password",
-		"password_sub": "Reset the passwod for {username}.",
-		"enter_password": "Please enter the new password for {username}.",
-		"enter_password_re": "Please re-enter the new password for {username}.",
-		"update": "Update"
+		"editUser": "編集対象 {username}",
+		"password": "パスワードのリセット",
+		"password_sub": "のパスワードをリセットする {username}.",
+		"enter_password": "新しいパスワードを入力してください {username}.",
+		"enter_password_re": "新しいパスワードを再入力してください {username}.",
+		"update": "更新"
 	},
 	"error_codes": {
 		"0": "成功。",
