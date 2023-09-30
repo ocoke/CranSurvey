@@ -20,7 +20,7 @@
 		"password_re": "重新输入您的密码",
 		"continue": "继续",
 		"success": "注册成功。",
-		"error": "An error occurred while signing up.",
+		"error": "注册时出错。",
 		"invalid_params": "请检查您的用户名和密码。",
 		"invalid_password": "密码不匹配。",
 		"init": "看来这是您第一次来这里，我们已经自动初始化了您的数据库。",
@@ -52,7 +52,7 @@
 		"enabled": "启用",
 		"description": "描述",
 		"created_at": "创建于",
-		"number_of_questions": "Number of Questions",
+		"number_of_questions": "问题数量",
 		"enable_true": "是的",
 		"enable_false": "不"
 	},
@@ -113,12 +113,12 @@
 		"error": "创建调查时出错。"
 	},
 	"editUser": {
-		"editUser": "Edit for {username}",
-		"password": "Reset Password",
-		"password_sub": "Reset the passwod for {username}.",
-		"enter_password": "Please enter the new password for {username}.",
-		"enter_password_re": "Please re-enter the new password for {username}.",
-		"update": "Update"
+		"editUser": "编辑 {username}",
+		"password": "重置密码",
+		"password_sub": "重置密码 {username}.",
+		"enter_password": "请输入新密码 {username}.",
+		"enter_password_re": "请重新输入新密码 {username}.",
+		"update": "更新"
 	},
 	"error_codes": {
 		"0": "成功。",
