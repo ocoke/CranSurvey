@@ -20,7 +20,7 @@
 		"password_re": "Vuelva a introducir su contraseña",
 		"continue": "Continuar",
 		"success": "Se ha registrado correctamente.",
-		"error": "Se ha producido un error al iniciar sesión.",
+		"error": "An error occurred while signing up.",
 		"invalid_params": "Por favor, compruebe su nombre de usuario y contraseña.",
 		"invalid_password": "Las contraseñas no coinciden.",
 		"init": "Parece que esta es su primera vez aquí, hemos inicializado automáticamente su base de datos.",
@@ -111,6 +111,14 @@
 		"miss_required": "Por favor, compruebe los campos obligatorios.",
 		"success": "Encuesta creada correctamente.",
 		"error": "Se ha producido un error al crear la encuesta."
+	},
+	"editUser": {
+		"editUser": "Edit for {username}",
+		"password": "Reset Password",
+		"password_sub": "Reset the passwod for {username}.",
+		"enter_password": "Please enter the new password for {username}.",
+		"enter_password_re": "Please re-enter the new password for {username}.",
+		"update": "Update"
 	},
 	"error_codes": {
 		"0": "Éxito.",
