@@ -1,28 +1,28 @@
 {
 	"welcome": {
-		"welcome": "Welcome to CranSurvey!",
-		"gotoDashboard": "Goto Dashboard"
+		"welcome": "歡迎使用 CranSurvey！",
+		"gotoDashboard": "前往儀表盤"
 	},
 	"signin": {
-		"signin": "Sign in",
-		"username": "Username",
-		"password": "Password",
-		"continue": "Continue",
-		"success": "Signed in successfully.",
-		"error": "An error occurred while signing in.",
-		"invalid_params": "Please check your username and password.",
-		"or_signup": "Or sign up"
+		"signin": "登入",
+		"username": "用户名",
+		"password": "密碼",
+		"continue": "繼續",
+		"success": "登入成功",
+		"error": "登入時出錯",
+		"invalid_params": "請檢查用户名與密碼。",
+		"or_signup": "或建立賬號"
 	},
 	"signup": {
-		"signup": "Sign up",
-		"username": "Username",
-		"password": "Password",
-		"password_re": "Re-enter your password",
-		"continue": "Continue",
-		"success": "Signed up successfully.",
-		"error": "An error occurred while signing in.",
-		"invalid_params": "Please check your username and password.",
-		"invalid_password": "The passwords do not match.",
+		"signup": "建立賬號",
+		"username": "用户名",
+		"password": "密碼",
+		"password_re": "重新鍵入密碼",
+		"continue": "繼續",
+		"success": "建立成功",
+		"error": "建立時出錯",
+		"invalid_params": "請檢查用户名與密碼。",
+		"invalid_password": "密碼不匹配",
 		"init": "It seems like this is your first time here, we have automatically initialized your database.",
 		"or_signin": "Or sign in"
 	},
@@ -52,6 +52,7 @@
 		"enabled": "Enabled",
 		"description": "Description",
 		"created_at": "Created At",
+		"number_of_questions": "Number of Questions",
 		"enable_true": "Yes",
 		"enable_false": "No"
 	},
@@ -110,6 +111,14 @@
 		"miss_required": "Please check the required fields.",
 		"success": "Survey created successfully.",
 		"error": "An error occurred while creating survey."
+	},
+	"editUser": {
+		"editUser": "Edit for {username}",
+		"password": "Reset Password",
+		"password_sub": "Reset the passwod for {username}.",
+		"enter_password": "Please enter the new password for {username}.",
+		"enter_password_re": "Please re-enter the new password for {username}.",
+		"update": "Update"
 	},
 	"error_codes": {
 		"0": "Success.",
