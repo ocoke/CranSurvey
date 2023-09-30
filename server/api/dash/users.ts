@@ -16,7 +16,7 @@ export default eventHandler(async (event) => {
 		let count: number = 0
 
 		for (const i in users) {
-			list.push(users[i].id)
+			list.push(i)
 			count++
 		}
 
