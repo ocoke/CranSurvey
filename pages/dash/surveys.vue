@@ -125,8 +125,6 @@ export default {
 		return {
 			drawer: true,
 			rail: true,
-			siteUsersLoading: true,
-			siteUsersData: "",
 			surveys: [],
 			ongoingLoading: true,
 			ongoingSurveysData: "",
@@ -143,17 +141,13 @@ export default {
 		},
 	},
 	async mounted() {
-		const siteUsers = await $fetch("/api/dash/users", {
-			method: "POST",
-			body: JSON.stringify({
-				token: sessionStorage.getItem("_cransurvey_token"),
-			}),
-		})
+
 
 		const ongoingSurveys = await $fetch("/api/dash/ongoing", {
 			method: "POST",
 			body: JSON.stringify({
 				token: sessionStorage.getItem("_cransurvey_token"),
+				isdash: true,
 			}),
 		})
 
@@ -172,14 +166,6 @@ export default {
 		//   }
 
 		this.surveys = ongoingSurveys.list
-
-		if (siteUsers.code == 0) {
-			this.siteUsersData = this.$t("dashboard.site_users", siteUsers.count)
-		} else {
-			this.siteUsersData = this.$t("dashboard.error_fetching_data")
-		}
-
-		this.siteUsersLoading = false
 
 		this.username = sessionStorage.getItem("_cransurvey_usr")
 	},

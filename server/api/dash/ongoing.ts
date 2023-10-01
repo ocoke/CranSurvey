@@ -2,7 +2,7 @@
 import checkToken from "~/src/functions/checkToken"
 export default eventHandler(async (event) => {
 	const storage = useStorage("cransurvey")
-	const { token } = await readBody(event)
+	const { token, isdash } = await readBody(event)
 	if (!token) {
 		return {
 			code: 1001,
@@ -16,7 +16,10 @@ export default eventHandler(async (event) => {
 		let count = 0
 
 		for (const i in surveys) {
-			if (surveys[i]["enable"] == true) {
+			if (surveys[i]["enable"] == true && !isdash) {
+				list.push(surveys[i])
+				count++
+			} else {
 				list.push(surveys[i])
 				count++
 			}
