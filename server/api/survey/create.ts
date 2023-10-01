@@ -27,6 +27,12 @@ export default eventHandler(async (event) => {
 				msg: "Survey ID already exists.",
 			}
 		}
+		for (const i in questions) {
+			questions[i]["question"] = escapeText(questions[i]["question"])
+			questions[i]["placeholder"] = escapeText(questions[i]["placeholder"])
+			questions[i]["prompt"] = escapeText(questions[i]["prompt"])
+		}
+
 		const new_survey = {
 			id: uniqueId,
 			title: escapeText(title),
