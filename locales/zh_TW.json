@@ -20,7 +20,7 @@
 		"password_re": "重新輸入您的密碼",
 		"continue": "繼續",
 		"success": "註冊成功。",
-		"error": "登錄時出錯。",
+		"error": "註冊時出錯。",
 		"invalid_params": "請檢查您的使用者名和密碼。",
 		"invalid_password": "密碼不匹配。",
 		"init": "看來這是您第一次來這裏，我們已經自動初始化了您的資料庫。",
@@ -52,6 +52,7 @@
 		"enabled": "啟用",
 		"description": "描述",
 		"created_at": "創建於",
+		"number_of_questions": "問題數量",
 		"enable_true": "是的",
 		"enable_false": "不"
 	},
@@ -110,6 +111,14 @@
 		"miss_required": "請檢查必填欄位。",
 		"success": "調查創建成功。",
 		"error": "創建調查時出錯。"
+	},
+	"editUser": {
+		"editUser": "編輯 {username}",
+		"password": "重置密碼",
+		"password_sub": "重置密碼 {username}.",
+		"enter_password": "請輸入新密碼 {username}.",
+		"enter_password_re": "請重新輸入新密碼 {username}.",
+		"update": "更新"
 	},
 	"error_codes": {
 		"0": "成功。",
