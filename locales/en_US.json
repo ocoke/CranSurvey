@@ -111,7 +111,18 @@
 		"miss_required": "Please check the required fields.",
 		
 		"success": "Survey created successfully.",
-		"error": "An error occurred while creating survey."
+		"error": "An error occurred while creating survey.",
+		"types": {
+			"short_answer": "Short Answer",
+			"paragraph": "Paragraph",
+			"multiple": "Multiple Choice",
+			"checkboxes": "Checkboxes",
+			"dropdown": "Dropdown",
+			"file": "File Upload",
+			"linear": "Linear Scale",
+			"date": "Date",
+			"time": "Time"
+		}
 	},
 	"editUser": {
 		"editUser": "Edit for {username}",

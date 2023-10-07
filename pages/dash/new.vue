@@ -82,6 +82,12 @@ import "~/src/styles/dash.css"
 					v-model="simple.type"
 					disabled
 				></v-text-field>
+				<!-- <v-select
+					label="Select"
+					:items="$t('new.types')"
+					v-model="simple.type"
+					variant="outlined"
+				></v-select> -->
 
 				<h3 class="ques_title">{{ $t("new.question.question_placeholder") }}</h3>
 				<v-text-field
