@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid"
-import { ansValidate } from "~/src/functions/validate"
+import ansValidate from "~/src/functions/validate"
 export default eventHandler(async (event) => {
 	const storage = useStorage("cransurvey")
 	const { uniqueId, userId, answers } = await readBody(event)
