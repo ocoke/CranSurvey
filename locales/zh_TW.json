@@ -112,15 +112,15 @@
 		"success": "調查創建成功。",
 		"error": "創建調查時出錯。",
 		"types": {
-			"short_answer": "Short Answer",
-			"paragraph": "Paragraph",
-			"multiple": "Multiple Choice",
-			"checkboxes": "Checkboxes",
-			"dropdown": "Dropdown",
-			"file": "File Upload",
-			"linear": "Linear Scale",
-			"date": "Date",
-			"time": "Time"
+			"short_answer": "簡答題",
+			"paragraph": "段落",
+			"multiple": "單選按鈕",
+			"checkboxes": "多選題",
+			"dropdown": "下拉清單",
+			"file": "檔案上傳",
+			"linear": "直線比例",
+			"date": "日期",
+			"time": "時間"
 		}
 	},
 	"editUser": {
