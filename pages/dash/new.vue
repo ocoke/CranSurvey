@@ -123,13 +123,24 @@ import "~/src/styles/dash.css"
 			:subtitle="$t('new.prompt_sub')"
 			v-show="surveyType == 'prompt'"
 		>
-			<h3 class="ques_title">{{ $t("new.title") }}</h3>
-			<v-text-field
-				:label="$t('new.title_sub')"
-				variant="outlined"
-				maxlength="150"
-				v-model="prompt.title"
-			></v-text-field>
+			<v-card-text>
+				<h3 class="ques_title">{{ $t("new.title") }}</h3>
+				<v-text-field
+					:label="$t('new.question.prompt_title_sub')"
+					variant="outlined"
+					maxlength="150"
+					v-model="prompt.title"
+				></v-text-field>
+				<h3 class="ques_title">{{ $t("new.question.prompt_content") }}</h3>
+				<v-textarea
+					:label="$t('new.question.prompt_content_sub')"
+					variant="outlined"
+					v-model="prompt.content"
+					maxlength="2048"
+					counter
+					:rules="promptContentRules"
+				></v-textarea>
+			</v-card-text>
 		</v-card>
 
 		<v-card
@@ -214,6 +225,7 @@ export default {
 				title: "",
 				content: ""
 			},
+			promptContentRules: [v => v.length <= 2048 || 'Max 2048 characters'],
 			surveyTitle: "",
 			surveyDesc: "",
 			availableTypes: [
