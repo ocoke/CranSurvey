@@ -1,5 +1,5 @@
 // Validate the format of the answer
-
+// use validate.ts
 export default function ansValidate(answer: string, type: string) {
 	// Plain Text
 	if (type.startsWith("string_plain")) {

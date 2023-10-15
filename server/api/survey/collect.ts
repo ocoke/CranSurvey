@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid"
-
+import { ansValidate } from "~/src/functions/validate"
 export default eventHandler(async (event) => {
 	const storage = useStorage("cransurvey")
 	const { uniqueId, userId, answers } = await readBody(event)
@@ -23,6 +23,22 @@ export default eventHandler(async (event) => {
 	}
 
 	const uniqueAnsId: string = uuidv4()
+
+	for (let i in answers) {
+		let q = svId.questions[i]
+		if (!q) {
+			return {
+				code: 3001,
+				msg: "Invalid question.",
+			}
+		}
+		if (!ansValidate(answers[i].answer, q.type, q.validate || "default")) {
+			return {
+				code: 3002,
+				msg: "Invalid answer.",
+			}
+		}
+	}
 
 	const new_ans = {
 		usr: userId,
