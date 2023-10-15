@@ -112,15 +112,15 @@
 		"success": "アンケートが正常に作成されました。",
 		"error": "アンケートの作成中にエラーが発生しました。",
 		"types": {
-			"short_answer": "Short Answer",
-			"paragraph": "Paragraph",
-			"multiple": "Multiple Choice",
-			"checkboxes": "Checkboxes",
-			"dropdown": "Dropdown",
-			"file": "File Upload",
-			"linear": "Linear Scale",
-			"date": "Date",
-			"time": "Time"
+			"short_answer": "短い答え",
+			"paragraph": "段落",
+			"multiple": "複数選択",
+			"checkboxes": "チェックボックス",
+			"dropdown": "ドロップダウン",
+			"file": "ファイルアップロード",
+			"linear": "線形スケール",
+			"date": "日付",
+			"time": "時間"
 		}
 	},
 	"editUser": {
