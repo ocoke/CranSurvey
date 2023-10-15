@@ -112,15 +112,15 @@
 		"success": "Encuesta creada correctamente.",
 		"error": "Se ha producido un error al crear la encuesta.",
 		"types": {
-			"short_answer": "Short Answer",
-			"paragraph": "Paragraph",
-			"multiple": "Multiple Choice",
-			"checkboxes": "Checkboxes",
-			"dropdown": "Dropdown",
-			"file": "File Upload",
-			"linear": "Linear Scale",
-			"date": "Date",
-			"time": "Time"
+			"short_answer": "Respuesta corta",
+			"paragraph": "Párrafo",
+			"multiple": "Opción múltiple",
+			"checkboxes": "Casillas de verificación",
+			"dropdown": "Menú desplegable",
+			"file": "Carga de archivos",
+			"linear": "Escala lineal",
+			"date": "Fecha",
+			"time": "Hora"
 		}
 	},
 	"editUser": {
