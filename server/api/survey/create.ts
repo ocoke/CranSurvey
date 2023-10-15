@@ -29,8 +29,8 @@ export default eventHandler(async (event) => {
 		}
 		for (const i in questions) {
 			questions[i]["question"] = escapeText(questions[i]["question"])
-			questions[i]["placeholder"] = escapeText(questions[i]["placeholder"])
-			questions[i]["prompt"] = escapeText(questions[i]["prompt"])
+			if (questions[i]["placeholder"]) questions[i]["placeholder"] = escapeText(questions[i]["placeholder"])
+			if (questions[i]["prompt"]) questions[i]["prompt"] = escapeText(questions[i]["prompt"])
 		}
 
 		const new_survey = {

@@ -75,20 +75,32 @@ import "~/src/styles/dash.css"
 				></v-text-field>
 
 				<h3 class="ques_title">{{ $t("new.question.question_type") }}</h3>
-				<v-text-field
+				<!-- <v-text-field
 					:label="$t('new.question.question_type')"
 					variant="outlined"
 					maxlength="500"
 					v-model="simple.type"
 					disabled
-				></v-text-field>
-				<!-- <v-select
+				></v-text-field> -->
+				<v-select
 					label="Select"
-					:items="$t('new.types')"
+					:items="availableTypes"
+					item-title="name"
+					item-value="value"
 					v-model="simple.type"
 					variant="outlined"
-				></v-select> -->
-
+				></v-select>
+				
+				<h3 class="ques_title">{{ $t('new.question.answer_validate') }}</h3>
+				<v-card v-if="simple.type == 'short_answer'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
+					<!-- <h3 class="ques_title">{{  }}</h3> -->
+					<v-card-text style="padding-bottom: 0;"><p style="display: flex; align-items: center; font-size: 1rem;" class="validateText">
+						<span>{{ $t('new.validate.length') }} {{ $t('new.validate.from') }} </span>
+						<v-text-field :label="$t('new.validate.min')" type="number" class="inline-num-input" density="compact" v-model="simple.validate.min"></v-text-field> 
+						<span>{{ $t('new.validate.to') }} </span>
+						<v-text-field :label="$t('new.validate.max')" type="number" class="inline-num-input" density="compact" v-model="simple.validate.max"></v-text-field>
+					</p></v-card-text>
+				</v-card>
 				<h3 class="ques_title">{{ $t("new.question.question_placeholder") }}</h3>
 				<v-text-field
 					:label="$t('new.question.question_placeholder_sub')"
@@ -111,6 +123,13 @@ import "~/src/styles/dash.css"
 			:subtitle="$t('new.prompt_sub')"
 			v-show="surveyType == 'prompt'"
 		>
+			<h3 class="ques_title">{{ $t("new.title") }}</h3>
+			<v-text-field
+				:label="$t('new.title_sub')"
+				variant="outlined"
+				maxlength="150"
+				v-model="prompt.title"
+			></v-text-field>
 		</v-card>
 
 		<v-card
@@ -185,10 +204,66 @@ export default {
 			promptWindowPosition: "bottom_right",
 			priority: 0,
 			simple: {
-				type: "string_plain",
+				type: "short_answer",
+				validate: {
+					min: 0,
+					max: 2048,
+				}
+			},
+			prompt: {
+				title: "",
+				content: ""
 			},
 			surveyTitle: "",
 			surveyDesc: "",
+			availableTypes: [
+				// ["short_answer", "paragraph", "multiple_choice", "checkboxes", "dropdown", "linear", "file", "date", "time"],
+				// short_answer: this.$t('new.types.short_answer'),
+				// paragraph: this.$t('new.types.paragraph'),
+				// multiple: this.$t('new.types.multiple'),
+				// checkboxes: this.$t('new.types.checkboxes'),
+				// dropdown: this.$t('new.types.dropdown'),
+				// linear: this.$t('new.types.linear'),
+				// file: this.$t('new.types.file'),
+				// date: this.$t('new.types.date'),
+				// time: this.$t('new.types.time'),
+				{
+					name: this.$t("new.types.short_answer"),
+					value: "short_answer",
+				},
+				{
+					name: this.$t("new.types.paragraph"),
+					value: "paragraph",
+				},
+				{
+					name: this.$t("new.types.multiple"),
+					value: "multiple",
+				},
+				{
+					name: this.$t("new.types.checkboxes"),
+					value: "checkboxes",
+				},
+				{
+					name: this.$t("new.types.dropdown"),
+					value: "dropdown",
+				},
+				{
+					name: this.$t("new.types.linear"),
+					value: "linear",
+				},
+				{
+					name: this.$t("new.types.file"),
+					value: "file",
+				},
+				{
+					name: this.$t("new.types.date"),
+					value: "date",
+				},
+				{
+					name: this.$t("new.types.time"),
+					value: "time",
+				},
+			]
 		}
 	},
 	methods: {
@@ -207,6 +282,17 @@ export default {
 					toast.error(this.$t("new.miss_required"), toastCfg)
 					return false
 				}
+				const validate = this.simple.validate;
+				let validateStr = ""
+				if (validate.min && validate.max && validate.min > validate.max) {
+					validateStr = "min_" + validate.min
+				} else if (validate.min && validate.max) {
+					validateStr = validate.min + ":" + validate.max
+				} else if (validate.min) {
+					validateStr = "min_" + validate.min
+				} else if (validate.max) {
+					validateStr = "max_" + validate.max
+				}
 				const data = {
 					title: this.surveyTitle,
 					description: this.surveyDesc,
@@ -216,6 +302,7 @@ export default {
 						{
 							id: 0,
 							type: info.type,
+							validate: validateStr,
 							question: info.question,
 							placeholder: info.placeholder,
 							prompt: info.prompt,
@@ -255,5 +342,13 @@ export default {
 .ques_title {
 	margin-bottom: 1rem;
 	margin-left: 0.1rem;
+}
+.inline-num-input {
+	max-width: 6rem;
+	min-width:5rem;
+	margin: 0 1rem;
+}
+p.validateText span {
+	margin-bottom: 1rem;
 }
 </style>

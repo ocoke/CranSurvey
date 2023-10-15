@@ -92,6 +92,8 @@
 			"question_prompt": "Prompt",
 			"question_prompt_sub": "Enter your prompt for question here.",
 			"question_type": "Type*",
+			"answer_validate": "Answer Validate",
+			"answer_validate_unavailable": "Sorry, The answer validate is currently not available for this type of question.",
 			"question_placeholder": "Placeholder",
 			"question_placeholder_sub": "Enter your placeholder for question here."
 		},
@@ -122,6 +124,13 @@
 			"linear": "Linear Scale",
 			"date": "Date",
 			"time": "Time"
+		},
+		"validate": {
+			"length": "The length of the answers (characters),",
+			"from": "From",
+			"to": "To",
+			"min": "Min",
+			"max": "Max",
 		}
 	},
 	"editUser": {
