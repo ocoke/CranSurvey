@@ -98,7 +98,7 @@
 			"question_placeholder_sub": "Enter your placeholder for question here.",
 			"prompt_title_sub": "Enter your the title of your prompt here.",
 			"prompt_content": "Content",
-			"prompt_content_sub": "Enter your the content of your prompt here.",
+			"prompt_content_sub": "Enter your the content of your prompt here."
 		},
 		"site": "Site",
 		"site_sub": "The configuration for site.",
@@ -132,7 +132,7 @@
 			"from": "From",
 			"to": "To",
 			"min": "Min",
-			"max": "Max",
+			"max": "Max"
 		}
 	},
 	"editUser": {
