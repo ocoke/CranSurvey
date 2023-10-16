@@ -111,7 +111,7 @@ import "~/src/styles/dash.css"
 										</v-dialog>
 									</td>
 									<td>
-										<code>`{{ item.type }}`</code>
+										{{ $t('new.types.' + surveyQuestions[item.id].type) }}
 									</td>
 								</tr>
 							</tbody>

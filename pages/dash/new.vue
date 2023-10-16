@@ -217,7 +217,7 @@ export default {
 			simple: {
 				type: "short_answer",
 				validate: {
-					min: 0,
+					min: 1,
 					max: 2048,
 				}
 			},
@@ -295,16 +295,7 @@ export default {
 					return false
 				}
 				const validate = this.simple.validate;
-				let validateStr = ""
-				if (validate.min && validate.max && validate.min > validate.max) {
-					validateStr = "min_" + validate.min
-				} else if (validate.min && validate.max) {
-					validateStr = validate.min + ":" + validate.max
-				} else if (validate.min) {
-					validateStr = "min_" + validate.min
-				} else if (validate.max) {
-					validateStr = "max_" + validate.max
-				}
+				let validateStr = (validate.min || 1) + ":" + (validate.max || 2048)
 				const data = {
 					title: this.surveyTitle,
 					description: this.surveyDesc,
