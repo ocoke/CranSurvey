@@ -92,8 +92,13 @@
 			"question_prompt": "プロンプト",
 			"question_prompt_sub": "ここに質問のプロンプトを入力します。",
 			"question_type": "種類*",
+			"answer_validate": "Answer Validate",
+			"answer_validate_unavailable": "Sorry, The answer validate is currently not available for this type of question.",
 			"question_placeholder": "プレースホルダ",
-			"question_placeholder_sub": "ここに質問のプレースホルダーを入力します。"
+			"question_placeholder_sub": "ここに質問のプレースホルダーを入力します。",
+			"prompt_title_sub": "Enter your the title of your prompt here.",
+			"prompt_content": "Content",
+			"prompt_content_sub": "Enter your the content of your prompt here."
 		},
 		"site": "敷地",
 		"site_sub": "サイトの構成。",
@@ -121,6 +126,13 @@
 			"linear": "線形スケール",
 			"date": "日付",
 			"time": "時間"
+		},
+		"validate": {
+			"length": "The length of the answers (characters),",
+			"from": "From",
+			"to": "To",
+			"min": "Min",
+			"max": "Max"
 		}
 	},
 	"editUser": {
