@@ -92,13 +92,13 @@
 			"question_prompt": "提示",
 			"question_prompt_sub": "在此處輸入您的問題提示。",
 			"question_type": "類型*",
-			"answer_validate": "Answer Validate",
-			"answer_validate_unavailable": "Sorry, The answer validate is currently not available for this type of question.",
+			"answer_validate": "答案驗證",
+			"answer_validate_unavailable": "抱歉，答案驗證目前不適用於此類問題。",
 			"question_placeholder": "佔位元",
 			"question_placeholder_sub": "在此處輸入您的問題佔位元。",
-			"prompt_title_sub": "Enter your the title of your prompt here.",
-			"prompt_content": "Content",
-			"prompt_content_sub": "Enter your the content of your prompt here."
+			"prompt_title_sub": "在此處輸入提示的標題。",
+			"prompt_content": "內容",
+			"prompt_content_sub": "在此處輸入您的提示內容。"
 		},
 		"site": "網站",
 		"site_sub": "網站的配置。",
@@ -128,11 +128,11 @@
 			"time": "時間"
 		},
 		"validate": {
-			"length": "The length of the answers (characters),",
-			"from": "From",
-			"to": "To",
-			"min": "Min",
-			"max": "Max"
+			"length": "答案的長度（字元），",
+			"from": "從",
+			"to": "自",
+			"min": "最小值",
+			"max": "麥克斯"
 		}
 	},
 	"editUser": {
