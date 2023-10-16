@@ -110,7 +110,18 @@
 		"create": "创建",
 		"miss_required": "请检查必填字段。",
 		"success": "调查创建成功。",
-		"error": "创建调查时出错。"
+		"error": "创建调查时出错。",
+		"types": {
+			"short_answer": "简答题",
+			"paragraph": "段落",
+			"multiple": "单项选择",
+			"checkboxes": "多项选择",
+			"dropdown": "下拉列表",
+			"file": "文件上传",
+			"linear": "线性量表",
+			"date": "日期",
+			"time": "时间"
+		}
 	},
 	"editUser": {
 		"editUser": "编辑 {username}",
