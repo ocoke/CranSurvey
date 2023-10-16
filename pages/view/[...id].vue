@@ -78,7 +78,7 @@ export default {
                 userId = uuidv4()
                 localStorage.setItem('cransurvey-usrid', userId)
             }
-            if (!ans || ans == []) {
+            if (!ans || ans == [] || !ans[0]) {
                 toast.error('Please fill out all the required question.', toastCfg)
                 return false
             }
@@ -103,6 +103,7 @@ export default {
                 this.collected = true
             } else {
                 toast.error('Something went wrong. Please try again later.', toastCfg)
+                return false
             }
         }
     }

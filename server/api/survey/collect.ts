@@ -24,8 +24,15 @@ export default eventHandler(async (event) => {
 
 	const uniqueAnsId: string = uuidv4()
 
-	for (let i in answers) {
-		let q = svId.questions[i]
+	if (svId.questions.type == "simple" && !answers){
+		return {
+			code: 3000,
+			msg: "Invalid answer.",
+		}
+	}
+
+	for (const i in answers) {
+		const q = svId.questions[i]
 		if (!q) {
 			return {
 				code: 3001,
