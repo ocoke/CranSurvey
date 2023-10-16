@@ -12,7 +12,7 @@ export default async function initDatabase() {
 		await storage.setItem("usr", {})
 
 		// survey id(s)
-		await storage.setItem("sid", [])
+		await storage.setItem("sid", {})
 
 		// answers
 		await storage.setItem("ans", {})
