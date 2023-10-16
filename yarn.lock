@@ -778,31 +778,21 @@
   resolved "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@intlify/bundle-utils@^7.0.2":
-  version "7.0.2"
-  resolved "https://registry.npmjs.org/@intlify/bundle-utils/-/bundle-utils-7.0.2.tgz"
-  integrity sha512-8wbx9xhbawBFTE5LPTECiK26RRqrNS31jyWSur72ZXZZ4it5jiZTcG6eUJlNirr4+jXYio2DGY299JsGVT4cpw==
+"@intlify/bundle-utils@^7.4.0":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@intlify/bundle-utils/-/bundle-utils-7.4.0.tgz#b4dc41026d2d98d2e8a2bd83851c1883a48f1254"
+  integrity sha512-AQfjBe2HUxzyN8ignIk3WhhSuVcSuirgzOzkd17nb337rCbI4Gv/t1R60UUyIqFoFdviLb/wLcDUzTD/xXjv9w==
   dependencies:
-    "@intlify/message-compiler" "9.3.0-beta.24"
-    "@intlify/shared" "9.3.0-beta.24"
+    "@intlify/message-compiler" "^9.4.0"
+    "@intlify/shared" "^9.4.0"
     acorn "^8.8.2"
     escodegen "^2.0.0"
     estree-walker "^2.0.2"
-    jsonc-eslint-parser "^1.0.1"
+    jsonc-eslint-parser "^2.3.0"
     magic-string "^0.30.0"
     mlly "^1.2.0"
     source-map-js "^1.0.1"
-    yaml-eslint-parser "^0.3.2"
-
-"@intlify/core-base@9.3.0-beta.26":
-  version "9.3.0-beta.26"
-  resolved "https://registry.yarnpkg.com/@intlify/core-base/-/core-base-9.3.0-beta.26.tgz#9d033b3b4b120eec3ac1ce3acf018a3a6ddd6296"
-  integrity sha512-omhEuB6+uE3D36wAtBazTkjQxfMy+sHAdvPe51aPINVcIiL9RZiSMgecipbvkjqnL/5ogTcCc/UXKWlM3jb90g==
-  dependencies:
-    "@intlify/devtools-if" "9.3.0-beta.26"
-    "@intlify/message-compiler" "9.3.0-beta.26"
-    "@intlify/shared" "9.3.0-beta.26"
-    "@intlify/vue-devtools" "9.3.0-beta.26"
+    yaml-eslint-parser "^1.2.2"
 
 "@intlify/core-base@9.5.0":
   version "9.5.0"
@@ -812,30 +802,7 @@
     "@intlify/message-compiler" "9.5.0"
     "@intlify/shared" "9.5.0"
 
-"@intlify/devtools-if@9.3.0-beta.26":
-  version "9.3.0-beta.26"
-  resolved "https://registry.yarnpkg.com/@intlify/devtools-if/-/devtools-if-9.3.0-beta.26.tgz#3d879e7d34beecb040ce2c0fc3a460407feb87f4"
-  integrity sha512-N13XwjkT/payWlr8DqBVylsPlwjm4WyaI+eaG+eVdBKPw0yI/9c4zJ3U+/ASRBRuzArVJxALE+LT/cI1NxWGvw==
-  dependencies:
-    "@intlify/shared" "9.3.0-beta.26"
-
-"@intlify/message-compiler@9.3.0-beta.24":
-  version "9.3.0-beta.24"
-  resolved "https://registry.npmjs.org/@intlify/message-compiler/-/message-compiler-9.3.0-beta.24.tgz"
-  integrity sha512-prhHATkgp0mpPqoVgiAtLmUc1JMvs8fMH6w53AVEBn+VF87dLhzanfmWY5FoZWORG51ag54gBDBOoM/VFv3m3A==
-  dependencies:
-    "@intlify/shared" "9.3.0-beta.24"
-    source-map-js "^1.0.2"
-
-"@intlify/message-compiler@9.3.0-beta.26":
-  version "9.3.0-beta.26"
-  resolved "https://registry.yarnpkg.com/@intlify/message-compiler/-/message-compiler-9.3.0-beta.26.tgz#398e1228e00f9ab9b243fce9a7c1408107693918"
-  integrity sha512-qsfU6Lca7mI80ts1vgy+pfNvGm2gHy0nERpT/K1GYgnECmsKwud0e8SG1PPxKPEHKa5Mdngzs4pS7X1wH0SCGA==
-  dependencies:
-    "@intlify/shared" "9.3.0-beta.26"
-    source-map-js "^1.0.2"
-
-"@intlify/message-compiler@9.5.0":
+"@intlify/message-compiler@9.5.0", "@intlify/message-compiler@^9.4.0":
   version "9.5.0"
   resolved "https://registry.yarnpkg.com/@intlify/message-compiler/-/message-compiler-9.5.0.tgz#1b4916bf11ca7024f9c15be0d6b4de7be5317808"
   integrity sha512-CAhVNfEZcOVFg0/5MNyt+OFjvs4J/ARjCj2b+54/FvFP0EDJI5lIqMTSDBE7k0atMROSP0SvWCkwu/AZ5xkK1g==
@@ -843,28 +810,18 @@
     "@intlify/shared" "9.5.0"
     source-map-js "^1.0.2"
 
-"@intlify/shared@9.3.0-beta.24", "@intlify/shared@next":
-  version "9.3.0-beta.24"
-  resolved "https://registry.npmjs.org/@intlify/shared/-/shared-9.3.0-beta.24.tgz"
-  integrity sha512-AKxJ8s7eKIQWkNaf4wyyoLRwf4puCuQgjSChlDJm5JBEt6T8HGgnYTJLRXu6LD/JACn3Qwu6hM/XRX1c9yvjmQ==
-
-"@intlify/shared@9.3.0-beta.26":
-  version "9.3.0-beta.26"
-  resolved "https://registry.yarnpkg.com/@intlify/shared/-/shared-9.3.0-beta.26.tgz#4c45e272533e66c5b5b63edb9cf8dbc077da129f"
-  integrity sha512-RpCtfSYIg4tSskrazTr5+WCHyw6qpgwdIxC+x3nCnrPGxyk+en9FoSbadVfx/w7uDTdyhKslEw4d2+qhNc0s4Q==
-
-"@intlify/shared@9.5.0":
+"@intlify/shared@9.5.0", "@intlify/shared@^9.4.0", "@intlify/shared@^9.4.1":
   version "9.5.0"
   resolved "https://registry.yarnpkg.com/@intlify/shared/-/shared-9.5.0.tgz#185d9ab9f6b4bb4f4d133cfdd51432e9b94c2c44"
   integrity sha512-tAxV14LMXZDZbu32XzLMTsowNlgJNmLwWHYzvMUl6L8gvQeoYiZONjY7AUsqZW8TOZDX9lfvF6adPkk9FSRdDA==
 
-"@intlify/unplugin-vue-i18n@^0.12.2":
-  version "0.12.2"
-  resolved "https://registry.npmjs.org/@intlify/unplugin-vue-i18n/-/unplugin-vue-i18n-0.12.2.tgz"
-  integrity sha512-IIgzLRSPUKZM1FBdUAZ9NwVPiLUr4ea5g/HLWe2lB7gNtPDz4FOfUNUllIT504hT+3pDoJmjaYJ6pyqT7F4Wuw==
+"@intlify/unplugin-vue-i18n@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@intlify/unplugin-vue-i18n/-/unplugin-vue-i18n-1.4.0.tgz#581ac40567240209ed0851e27bfc7c9487cf55ec"
+  integrity sha512-RGDchCRBlDTyVVFgPA1C1XC1uD4xYN81Ma+3EnU6GQ8pBEreraX/PWdPXXzOB6k9GWCQHuqii3atYXhcH3rpSg==
   dependencies:
-    "@intlify/bundle-utils" "^7.0.2"
-    "@intlify/shared" "9.3.0-beta.24"
+    "@intlify/bundle-utils" "^7.4.0"
+    "@intlify/shared" "^9.4.0"
     "@rollup/pluginutils" "^5.0.2"
     "@vue/compiler-sfc" "^3.2.47"
     debug "^4.3.3"
@@ -876,23 +833,15 @@
     source-map-js "^1.0.2"
     unplugin "^1.1.0"
 
-"@intlify/vue-devtools@9.3.0-beta.26":
-  version "9.3.0-beta.26"
-  resolved "https://registry.yarnpkg.com/@intlify/vue-devtools/-/vue-devtools-9.3.0-beta.26.tgz#a33cca72bbe50c565060a7020743ca64e140330f"
-  integrity sha512-IwJM8jUCM+savGDvgcOQaVHNMPDbvRf9dVjB+skCemYA7DBqtJ0YypTlRDtt6PO9rDfkWU2Z0ueaY/o6OaGtRg==
-  dependencies:
-    "@intlify/core-base" "9.3.0-beta.26"
-    "@intlify/shared" "9.3.0-beta.26"
+"@intlify/vue-i18n-bridge@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@intlify/vue-i18n-bridge/-/vue-i18n-bridge-1.0.1.tgz#7d8b124ab5d792f3ce4fe556f1afde022d161a73"
+  integrity sha512-MJ1uC39/P8sCsvSs8pdXClbBCKYp5g+DbvNyIPvsKdAH/yBXP4r0s4GIsrOgxrvAO6wABZIIZ/glHAZJZfj4nw==
 
-"@intlify/vue-i18n-bridge@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.npmjs.org/@intlify/vue-i18n-bridge/-/vue-i18n-bridge-0.8.0.tgz"
-  integrity sha512-wQ18fSccm9QaWpUW2vq2QHvojgKIog7s+UMj9LeY3pUV3yD9bU4YZI+1PTNoX3tOA+BE71gQyqVGox/TVQKP6Q==
-
-"@intlify/vue-router-bridge@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.npmjs.org/@intlify/vue-router-bridge/-/vue-router-bridge-0.8.0.tgz"
-  integrity sha512-CNxOgvyQcRhtGmRrksicL+HGjDijXtz+J/x04C/RslZ74CFdZkxjCe8MABkeD3xr+ry8G8tCm2nV2hLjZbynQw==
+"@intlify/vue-router-bridge@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@intlify/vue-router-bridge/-/vue-router-bridge-1.0.1.tgz#117f74ff12add8106f533197b99f10e075f235f2"
+  integrity sha512-P8XjgUZ7dYXhDpGGXmAA/l9VEG4LHIt0mESd0377tRBupDLIEhmZ1IahG8Al1VzG+5yHmwb568pGIJoFEJZEMA==
   dependencies:
     vue-demi "^0.13.5"
 
@@ -1023,7 +972,7 @@
   resolved "https://registry.npmjs.org/@nuxt/devalue/-/devalue-2.0.2.tgz"
   integrity sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==
 
-"@nuxt/kit@3.7.4", "@nuxt/kit@^3.6.5", "@nuxt/kit@^3.7.4":
+"@nuxt/kit@3.7.4", "@nuxt/kit@^3.7.4":
   version "3.7.4"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.7.4.tgz#31c0bd57397cc56a1098af5d6504353cc2e855a2"
   integrity sha512-/S5abZL62BITCvC/TY3KWA6N721U1Osln3cQdBb56XHIeafZCBVqTi92Xb0o7ovl72mMRhrKwRu7elzvz9oT/g==
@@ -1180,15 +1129,15 @@
     eslint-plugin-vue "^9.7.0"
     local-pkg "^0.4.2"
 
-"@nuxtjs/i18n@8.0.0-rc.3":
-  version "8.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/i18n/-/i18n-8.0.0-rc.3.tgz#6f814b81f7f9150b58e6fab9710290f918254558"
-  integrity sha512-TrJF7OxCK1CcEnKQHcP3VjVnb0K22OdMxdbWOk/kUzD9DX6+hrcrfrQD6W7xDA5pnEhBnsw1pLT2I+DYVpK/gw==
+"@nuxtjs/i18n@8.0.0-rc.5":
+  version "8.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/i18n/-/i18n-8.0.0-rc.5.tgz#7a8cefef9b2f2ce7460badac71ecb4600d85546c"
+  integrity sha512-iNOh9erVx8/sKtQcz/YZIPTGT/xcf/fmAHbGLb20qecRGOWFMsRb62n9T9taS4WtJwUn1AFc0S7395xqpRkJHw==
   dependencies:
-    "@intlify/shared" "9.3.0-beta.26"
-    "@intlify/unplugin-vue-i18n" "^0.12.2"
+    "@intlify/shared" "9.5.0"
+    "@intlify/unplugin-vue-i18n" "^1.4.0"
     "@mizchi/sucrase" "^4.1.0"
-    "@nuxt/kit" "^3.6.5"
+    "@nuxt/kit" "^3.7.4"
     "@vue/compiler-sfc" "^3.3.4"
     cookie-es "^1.0.0"
     debug "^4.3.4"
@@ -1197,15 +1146,15 @@
     is-https "^4.0.0"
     js-cookie "^3.0.5"
     knitwork "^1.0.0"
-    magic-string "^0.27.0"
-    mlly "^1.4.0"
+    magic-string "^0.30.4"
+    mlly "^1.4.2"
     pathe "^1.1.1"
     pkg-types "^1.0.3"
-    ufo "^1.1.2"
-    unplugin "^1.3.2"
-    unstorage "^1.5.0"
-    vue-i18n "9.3.0-beta.26"
-    vue-i18n-routing "^0.13.3"
+    ufo "^1.3.1"
+    unplugin "^1.5.0"
+    unstorage "^1.9.0"
+    vue-i18n "9.5.0"
+    vue-i18n-routing "^1.1.1"
 
 "@parcel/watcher-android-arm64@2.3.0":
   version "2.3.0"
@@ -2096,7 +2045,7 @@ abbrev@1:
   resolved "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz"
   integrity sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==
 
-acorn-jsx@^5.2.0, acorn-jsx@^5.3.2:
+acorn-jsx@^5.3.2:
   version "5.3.2"
   resolved "https://registry.npmjs.org/acorn-jsx/-/acorn-jsx-5.3.2.tgz"
   integrity sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==
@@ -2106,15 +2055,10 @@ acorn-walk@^8.1.1:
   resolved "https://registry.npmjs.org/acorn-walk/-/acorn-walk-8.2.0.tgz"
   integrity sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==
 
-acorn@8.10.0, acorn@^8.10.0, acorn@^8.4.1, acorn@^8.6.0, acorn@^8.8.2, acorn@^8.9.0:
+acorn@8.10.0, acorn@^8.10.0, acorn@^8.4.1, acorn@^8.5.0, acorn@^8.6.0, acorn@^8.8.2, acorn@^8.9.0:
   version "8.10.0"
   resolved "https://registry.npmjs.org/acorn/-/acorn-8.10.0.tgz"
   integrity sha512-F0SAmZ8iUtS//m8DmCTA0jlh6TDKkHQyK6xc6V4KDTyZKA9dnvX9/3sRTVQrWm79glUAZbnmmNcdYwUIHWVybw==
-
-acorn@^7.1.1, acorn@^7.4.1:
-  version "7.4.1"
-  resolved "https://registry.npmjs.org/acorn/-/acorn-7.4.1.tgz"
-  integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
 
 agent-base@6:
   version "6.0.2"
@@ -3558,7 +3502,7 @@ eslint-scope@^7.1.1, eslint-scope@^7.2.2:
     esrecurse "^4.3.0"
     estraverse "^5.2.0"
 
-eslint-utils@^2.0.0, eslint-utils@^2.1.0:
+eslint-utils@^2.0.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/eslint-utils/-/eslint-utils-2.1.0.tgz"
   integrity sha512-w94dQYoauyvlDc43XnGB8lU3Zt713vNChgt4EWwhXAP2XkBvndfxF0AgIqKOOasjPIPzj9JqgwkwbCYD0/V3Zg==
@@ -3572,7 +3516,7 @@ eslint-utils@^3.0.0:
   dependencies:
     eslint-visitor-keys "^2.0.0"
 
-eslint-visitor-keys@^1.1.0, eslint-visitor-keys@^1.3.0:
+eslint-visitor-keys@^1.1.0:
   version "1.3.0"
   resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-1.3.0.tgz"
   integrity sha512-6J72N8UNa462wa/KFODt/PJ3IU60SDpC3QXC1Hjc1BXXpfL2C9R5+AU7jhe0F6GREqVMh4Juu+NY7xn+6dipUQ==
@@ -3582,7 +3526,7 @@ eslint-visitor-keys@^2.0.0:
   resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-2.1.0.tgz"
   integrity sha512-0rSmRBzXgDzIsD6mGdJgevzgezI534Cer5L/vyMX0kHzT/jiB43jRhd9YUlMGYLQy2zprNmoT8qasCGtY+QaKw==
 
-eslint-visitor-keys@^3.3.0, eslint-visitor-keys@^3.4.1, eslint-visitor-keys@^3.4.3:
+eslint-visitor-keys@^3.0.0, eslint-visitor-keys@^3.3.0, eslint-visitor-keys@^3.4.1, eslint-visitor-keys@^3.4.3:
   version "3.4.3"
   resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz"
   integrity sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag==
@@ -3630,16 +3574,7 @@ eslint@8.49.0:
     strip-ansi "^6.0.1"
     text-table "^0.2.0"
 
-espree@^6.0.0:
-  version "6.2.1"
-  resolved "https://registry.npmjs.org/espree/-/espree-6.2.1.tgz"
-  integrity sha512-ysCxRQY3WaXJz9tdbWOwuWr5Y/XrPTGX9Kiz3yoUXwW0VZ4w30HTkQLaGx/+ttFjF8i+ACbArnB4ce68a9m5hw==
-  dependencies:
-    acorn "^7.1.1"
-    acorn-jsx "^5.2.0"
-    eslint-visitor-keys "^1.1.0"
-
-espree@^9.3.1, espree@^9.6.0, espree@^9.6.1:
+espree@^9.0.0, espree@^9.3.1, espree@^9.6.0, espree@^9.6.1:
   version "9.6.1"
   resolved "https://registry.npmjs.org/espree/-/espree-9.6.1.tgz"
   integrity sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==
@@ -4780,16 +4715,15 @@ json5@^2.2.2, json5@^2.2.3:
   resolved "https://registry.npmjs.org/json5/-/json5-2.2.3.tgz"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
 
-jsonc-eslint-parser@^1.0.1:
-  version "1.4.1"
-  resolved "https://registry.npmjs.org/jsonc-eslint-parser/-/jsonc-eslint-parser-1.4.1.tgz"
-  integrity sha512-hXBrvsR1rdjmB2kQmUjf1rEIa+TqHBGMge8pwi++C+Si1ad7EjZrJcpgwym+QGK/pqTx+K7keFAtLlVNdLRJOg==
+jsonc-eslint-parser@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/jsonc-eslint-parser/-/jsonc-eslint-parser-2.3.0.tgz#7c2de97d01bff7227cbef2f25d1025d42a36198b"
+  integrity sha512-9xZPKVYp9DxnM3sd1yAsh/d59iIaswDkai8oTxbursfKYbg/ibjX0IzFt35+VZ8iEW453TVTXztnRvYUQlAfUQ==
   dependencies:
-    acorn "^7.4.1"
-    eslint-utils "^2.1.0"
-    eslint-visitor-keys "^1.3.0"
-    espree "^6.0.0"
-    semver "^6.3.0"
+    acorn "^8.5.0"
+    eslint-visitor-keys "^3.0.0"
+    espree "^9.0.0"
+    semver "^7.3.5"
 
 jsonc-parser@^3.2.0:
   version "3.2.0"
@@ -4937,7 +4871,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
   integrity sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==
 
-lodash@4.17.21, lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.21:
+lodash@4.17.21, lodash@^4.17.15, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -4988,10 +4922,10 @@ magic-string@^0.27.0:
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.4.13"
 
-magic-string@^0.30.0, magic-string@^0.30.2, magic-string@^0.30.3:
-  version "0.30.3"
-  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.30.3.tgz#403755dfd9d6b398dfa40635d52e96c5ac095b85"
-  integrity sha512-B7xGbll2fG/VjP+SWg4sX3JynwIU0mjoTc6MPpKNuIvftk6u6vqhDnk1R80b8C2GBR6ywqy+1DcKBrevBg+bmw==
+magic-string@^0.30.0, magic-string@^0.30.2, magic-string@^0.30.3, magic-string@^0.30.4:
+  version "0.30.5"
+  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.30.5.tgz#1994d980bd1c8835dc6e78db7cbd4ae4f24746f9"
+  integrity sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.4.15"
 
@@ -6346,7 +6280,7 @@ scule@^1.0.0:
   resolved "https://registry.npmjs.org/semver/-/semver-5.7.2.tgz"
   integrity sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==
 
-semver@^6.0.0, semver@^6.1.0, semver@^6.3.0, semver@^6.3.1:
+semver@^6.0.0, semver@^6.1.0, semver@^6.3.1:
   version "6.3.1"
   resolved "https://registry.npmjs.org/semver/-/semver-6.3.1.tgz"
   integrity sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==
@@ -6913,10 +6847,10 @@ typed-array-length@^1.0.4:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.2.2.tgz#5ebb5e5a5b75f085f22bc3f8460fba308310fa78"
   integrity sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==
 
-ufo@^1.1.2, ufo@^1.2.0, ufo@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/ufo/-/ufo-1.3.0.tgz#c92f8ac209daff607c57bbd75029e190930a0019"
-  integrity sha512-bRn3CsoojyNStCZe0BG0Mt4Nr/4KF+rhFlnNXybgqt5pXHNFRlqinSoQaTrGyzE4X8aHplSb+TorH+COin9Yxw==
+ufo@^1.1.2, ufo@^1.2.0, ufo@^1.3.0, ufo@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/ufo/-/ufo-1.3.1.tgz#e085842f4627c41d4c1b60ebea1f75cdab4ce86b"
+  integrity sha512-uY/99gMLIOlJPwATcMVYfqDSxUR9//AUcgZMzwfSTJPDKzA1S8mX4VLqa+fiAtveraQUBCz4FFcwVZBGbwBXIw==
 
 ultrahtml@^1.5.2:
   version "1.5.2"
@@ -7017,7 +6951,7 @@ unplugin-vue-router@^0.7.0:
     unplugin "^1.5.0"
     yaml "^2.3.2"
 
-unplugin@^1.1.0, unplugin@^1.3.1, unplugin@^1.3.2, unplugin@^1.4.0, unplugin@^1.5.0:
+unplugin@^1.1.0, unplugin@^1.3.1, unplugin@^1.4.0, unplugin@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/unplugin/-/unplugin-1.5.0.tgz#8938ae84defe62afc7757df9ca05d27160f6c20c"
   integrity sha512-9ZdRwbh/4gcm1JTOkp9lAkIDrtOyOxgHmY7cjuwI8L/2RTikMcVG25GsZwNAgRuap3iDw2jeq7eoqtAsz5rW3A==
@@ -7027,7 +6961,7 @@ unplugin@^1.1.0, unplugin@^1.3.1, unplugin@^1.3.2, unplugin@^1.4.0, unplugin@^1.
     webpack-sources "^3.2.3"
     webpack-virtual-modules "^0.5.0"
 
-unstorage@^1.5.0, unstorage@^1.8.0, unstorage@^1.9.0:
+unstorage@^1.8.0, unstorage@^1.9.0:
   version "1.9.0"
   resolved "https://registry.npmjs.org/unstorage/-/unstorage-1.9.0.tgz"
   integrity sha512-VpD8ZEYc/le8DZCrny3bnqKE4ZjioQxBRnWE+j5sGNvziPjeDlaS1NaFFHzl/kkXaO3r7UaF8MGQrs14+1B4pQ==
@@ -7244,26 +7178,16 @@ vue-eslint-parser@^9.1.1, vue-eslint-parser@^9.3.1:
     lodash "^4.17.21"
     semver "^7.3.6"
 
-vue-i18n-routing@^0.13.3:
-  version "0.13.3"
-  resolved "https://registry.yarnpkg.com/vue-i18n-routing/-/vue-i18n-routing-0.13.3.tgz#46e20d71c0a419c142825e0ceac8c1eef3022c05"
-  integrity sha512-RdYFuo8w653yv9D6AAf0KqtwI11P1/28b3WgPKyY9Kr+QQ+du9c9HvZTP/AVh1Ag2lrfubpTmL0nyH9LHZ0cgQ==
+vue-i18n-routing@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-i18n-routing/-/vue-i18n-routing-1.1.1.tgz#5fbf100807e1bc6a7f7bcb7c11c4ccee5fffeee2"
+  integrity sha512-VhND1ErGylDy4fjuGXiHXqvIhvyLwZH2RRqbgHiLaUudjjkcgSGc8hfVNgMzF+v6X3bcx4ZkPsYyKvdIzJw77A==
   dependencies:
-    "@intlify/shared" next
-    "@intlify/vue-i18n-bridge" "^0.8.0"
-    "@intlify/vue-router-bridge" "^0.8.0"
+    "@intlify/shared" "^9.4.1"
+    "@intlify/vue-i18n-bridge" "^1.0.1"
+    "@intlify/vue-router-bridge" "^1.0.1"
     ufo "^1.2.0"
     vue-demi "^0.14.5"
-
-vue-i18n@9.3.0-beta.26:
-  version "9.3.0-beta.26"
-  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-9.3.0-beta.26.tgz#b716f45b13360f54f0156c27ce8f8a36a95172f7"
-  integrity sha512-RfyxO4wMJ3SiqjxKGydA1RnJ6rvl4y60Urzqab80x9weCooNdb7++fRce+ZtSqtvnt4NTSq4je/WWyU8EAR9cA==
-  dependencies:
-    "@intlify/core-base" "9.3.0-beta.26"
-    "@intlify/shared" "9.3.0-beta.26"
-    "@intlify/vue-devtools" "9.3.0-beta.26"
-    "@vue/devtools-api" "^6.5.0"
 
 vue-i18n@9.5.0:
   version "9.5.0"
@@ -7426,19 +7350,19 @@ yallist@^4.0.0:
   resolved "https://registry.npmjs.org/yallist/-/yallist-4.0.0.tgz"
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
 
-yaml-eslint-parser@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.npmjs.org/yaml-eslint-parser/-/yaml-eslint-parser-0.3.2.tgz"
-  integrity sha512-32kYO6kJUuZzqte82t4M/gB6/+11WAuHiEnK7FreMo20xsCKPeFH5tDBU7iWxR7zeJpNnMXfJyXwne48D0hGrg==
+yaml-eslint-parser@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/yaml-eslint-parser/-/yaml-eslint-parser-1.2.2.tgz#1a9673ebe254328cfc2fa99f297f6d8c9364ccd8"
+  integrity sha512-pEwzfsKbTrB8G3xc/sN7aw1v6A6c/pKxLAkjclnAyo5g5qOh6eL9WGu0o3cSDQZKrTNk4KL4lQSwZW+nBkANEg==
   dependencies:
-    eslint-visitor-keys "^1.3.0"
-    lodash "^4.17.20"
-    yaml "^1.10.0"
+    eslint-visitor-keys "^3.0.0"
+    lodash "^4.17.21"
+    yaml "^2.0.0"
 
-yaml@^1.10.0:
-  version "1.10.2"
-  resolved "https://registry.npmjs.org/yaml/-/yaml-1.10.2.tgz"
-  integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
+yaml@^2.0.0:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.3.3.tgz#01f6d18ef036446340007db8e016810e5d64aad9"
+  integrity sha512-zw0VAJxgeZ6+++/su5AFoqBbZbrEakwu+X0M5HmcwUiBL7AzcuPKjj5we4xfQLp78LkEMpD0cOnUhmgOVy3KdQ==
 
 yaml@^2.3.2:
   version "2.3.2"

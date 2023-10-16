@@ -33,7 +33,7 @@
     "vuetify": "^3.3.17"
   },
   "devDependencies": {
-    "@nuxtjs/i18n": "8.0.0-rc.3",
+    "@nuxtjs/i18n": "8.0.0-rc.5",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.3",
     "@vue/eslint-config-typescript": "^11.0.3",
