@@ -46,7 +46,7 @@ export default eventHandler(async (event) => {
 				msg: "Invalid answer.",
 			}
 		}
-		answers[i].answer = escapeText(answers[i].answer)
+		// answers[i].answer = escapeText(answers[i].answer)
 	}
 
 	const new_ans = {
