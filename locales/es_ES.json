@@ -110,7 +110,18 @@
 		"create": "Crear",
 		"miss_required": "Por favor, compruebe los campos obligatorios.",
 		"success": "Encuesta creada correctamente.",
-		"error": "Se ha producido un error al crear la encuesta."
+		"error": "Se ha producido un error al crear la encuesta.",
+		"types": {
+			"short_answer": "Respuesta corta",
+			"paragraph": "Párrafo",
+			"multiple": "Opción múltiple",
+			"checkboxes": "Casillas de verificación",
+			"dropdown": "Menú desplegable",
+			"file": "Carga de archivos",
+			"linear": "Escala lineal",
+			"date": "Fecha",
+			"time": "Hora"
+		}
 	},
 	"editUser": {
 		"editUser": "Editar para {username}",
