@@ -36,7 +36,7 @@
     "@nuxtjs/i18n": "8.0.0-rc.3",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.3",
-    "@vue/eslint-config-typescript": "^11.0.3",
+    "@vue/eslint-config-typescript": "^12.0.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "8.49.0",
     "eslint-plugin-vue": "^9.17.0",
