@@ -92,8 +92,13 @@
 			"question_prompt": "提示",
 			"question_prompt_sub": "在此处输入您的问题提示。",
 			"question_type": "类型*",
+			"answer_validate": "答案验证",
+			"answer_validate_unavailable": "抱歉，答案验证目前不适用于此类问题。",
 			"question_placeholder": "占位符",
-			"question_placeholder_sub": "在此处输入您的问题占位符。"
+			"question_placeholder_sub": "在此处输入您的问题占位符。",
+			"prompt_title_sub": "在此处输入提示的标题。",
+			"prompt_content": "内容",
+			"prompt_content_sub": "在此处输入您的提示内容。"
 		},
 		"site": "网站",
 		"site_sub": "站点的配置。",
@@ -121,6 +126,13 @@
 			"linear": "线性量表",
 			"date": "日期",
 			"time": "时间"
+		},
+		"validate": {
+			"length": "答案的长度（字符），",
+			"from": "从",
+			"to": "自",
+			"min": "最小值",
+			"max": "最大值"
 		}
 	},
 	"editUser": {

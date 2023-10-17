@@ -92,8 +92,13 @@
 			"question_prompt": "プロンプト",
 			"question_prompt_sub": "ここに質問のプロンプトを入力します。",
 			"question_type": "種類*",
+			"answer_validate": "回答検証",
+			"answer_validate_unavailable": "申し訳ありませんが、回答の検証は現在、このタイプの質問では利用できません。",
 			"question_placeholder": "プレースホルダ",
-			"question_placeholder_sub": "ここに質問のプレースホルダーを入力します。"
+			"question_placeholder_sub": "ここに質問のプレースホルダーを入力します。",
+			"prompt_title_sub": "ここにプロンプトのタイトルを入力します。",
+			"prompt_content": "コンテンツ",
+			"prompt_content_sub": "ここにプロンプトの内容を入力します。"
 		},
 		"site": "敷地",
 		"site_sub": "サイトの構成。",
@@ -121,6 +126,13 @@
 			"linear": "線形スケール",
 			"date": "日付",
 			"time": "時間"
+		},
+		"validate": {
+			"length": "回答の長さ(文字)、",
+			"from": "差出人",
+			"to": "宛先",
+			"min": "分",
+			"max": "マックス"
 		}
 	},
 	"editUser": {

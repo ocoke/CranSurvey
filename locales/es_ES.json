@@ -92,8 +92,13 @@
 			"question_prompt": "Pronto",
 			"question_prompt_sub": "Ingrese su pregunta aquí.",
 			"question_type": "Tipo*",
+			"answer_validate": "Respuesta Validar",
+			"answer_validate_unavailable": "Lo sentimos, la respuesta validate no está disponible actualmente para este tipo de pregunta.",
 			"question_placeholder": "Marcador",
-			"question_placeholder_sub": "Ingrese su marcador de posición para la pregunta aquí."
+			"question_placeholder_sub": "Ingrese su marcador de posición para la pregunta aquí.",
+			"prompt_title_sub": "Ingresa el título de tu mensaje aquí.",
+			"prompt_content": "Contenido",
+			"prompt_content_sub": "Ingresa el contenido de tu mensaje aquí."
 		},
 		"site": "Sitio",
 		"site_sub": "La configuración del sitio.",
@@ -121,6 +126,13 @@
 			"linear": "Escala lineal",
 			"date": "Fecha",
 			"time": "Hora"
+		},
+		"validate": {
+			"length": "La longitud de las respuestas (caracteres),",
+			"from": "De",
+			"to": "Para",
+			"min": "Min",
+			"max": "Máximo"
 		}
 	},
 	"editUser": {
