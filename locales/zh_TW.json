@@ -68,8 +68,8 @@
 		"collected_at": "收集於： {date}",
 		"close": "關閉",
 		"delete": "刪除",
-		"attributes": "Attributes",
-		"value": "Value"
+		"attributes": "屬性",
+		"value": "值"
 	},
 	"edit": {
 		"edit": "編輯"
@@ -86,11 +86,11 @@
 		"q1_advanced": "高級",
 		"q1_prompt": "提示",
 		"simple_sub": "簡單調查僅包含一個問題，使用者無需打開對話框視窗即可回答。",
-		"advanced_q": "Add a Question",
-		"advanced_q_sub": "Add a question to your advanced survey from here.",
+		"advanced_q": "添加問題",
+		"advanced_q_sub": "從此處向高級調查添加問題。",
 		"advanced_sub": "高級調查可以包含多個問題，使用者需要通過打開對話視窗來回答。",
-		"questions_list": "Questions List",
-		"questions_list_sub": "The list of questions in your advanced survey.",
+		"questions_list": "問題清單",
+		"questions_list_sub": "高級調查中的問題清單。",
 		"prompt_sub": "提示僅向用戶顯示消息，使用者無需回答。",
 		"question": {
 			"question": "問題*",
@@ -140,7 +140,7 @@
 			"min": "最小值",
 			"max": "最大值"
 		},
-		"add": "Add"
+		"add": "新增"
 	},
 	"editUser": {
 		"editUser": "編輯 {username}",
