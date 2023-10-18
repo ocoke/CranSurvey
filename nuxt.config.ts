@@ -17,6 +17,36 @@ export default defineNuxtConfig({
 				name: "English (US)",
 			},
 			{
+				code: "es-ES",
+				file: "es_ES.json",
+				name: "Español (España)",
+			},
+			{
+				code: "de-DE",
+				file: "de_DE.json",
+				name: "Deutsch (Deutschland)",
+			},
+			{
+				code: "fr-FR",
+				file: "fr_FR.json",
+				name: "Français (France)",
+			},
+			{
+				code: "ja-JP",
+				file: "ja_JP.json",
+				name: "日本語",
+			},
+			{
+				code: "ko-KR",
+				file: "ko_KR.json",
+				name: "한국어",
+			},
+			{
+				code: "pt-PT",
+				file: "pt_PT.json",
+				name: "Português (Portugal)",
+			},
+			{
 				code: "zh-CN",
 				file: "zh_CN.json",
 				name: "简体中文",
@@ -30,16 +60,6 @@ export default defineNuxtConfig({
 				code: "zh-TW",
 				file: "zh_TW.json",
 				name: "繁體中文（台灣）",
-			},
-			{
-				code: "ja-JP",
-				file: "ja_JP.json",
-				name: "日本語",
-			},
-			{
-				code: "es-ES",
-				file: "es_ES.json",
-				name: "Español (España)",
 			},
 		],
 		defaultLocale: "en-US",
