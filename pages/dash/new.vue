@@ -350,6 +350,7 @@ export default {
 			}
 		},
 		async create() {
+			let data;
 			if (this.surveyType == "simple") {
 				const info = this.simple
 				if (!info.question || !info.type || !this.surveyTitle || !this.surveyDesc) {
@@ -358,7 +359,7 @@ export default {
 				}
 				const validate = this.simple.validate;
 				let validateStr = (validate.min || 1) + ":" + (validate.max || 2048)
-				const data = {
+				data = {
 					title: this.surveyTitle,
 					description: this.surveyDesc,
 					token: sessionStorage.getItem("_cransurvey_token"),
@@ -379,18 +380,52 @@ export default {
 						promptWindowPosition: this.promptWindowPosition,
 					},
 				}
-
-				const rsp = await $fetch("/api/survey/create", {
-					method: "POST",
-					body: JSON.stringify(data),
-				})
-
-				if (rsp.code == 0) {
-					toast.success(this.$t("new.success"), toastCfg)
-					navigateTo(useLocalePath()("/dash/surveys"))
-				} else {
-					toast.error(this.$t("new.error") + " (" + this.$t("error_codes." + rsp.code) + ")", toastCfg)
+			} else if (this.surveyType == 'prompt') {
+				data = {
+					title: this.surveyTitle,
+					description: this.surveyDesc,
+					token: sessionStorage.getItem("_cransurvey_token"),
+					type: "prompt",
+					questions: [
+						{
+							id: 0,
+							type: 'info',
+							validate: 'disabled',
+							question: this.prompt.title,
+							prompt: this.prompt.content,
+						},
+					],
+					site: {
+						domain: this.simple.domain,
+						priority: this.priority,
+						promptWindowPosition: this.promptWindowPosition,
+					},
 				}
+				
+			} else if (this.surveyType == 'advanced') {
+				data = {
+					title: this.surveyTitle,
+					description: this.surveyDesc,
+					token: sessionStorage.getItem("_cransurvey_token"),
+					type: "advanced",
+					questions: this.advanced.questions,
+					site: {
+						domain: this.simple.domain,
+						priority: this.priority,
+						promptWindowPosition: this.promptWindowPosition,
+					},
+				}
+			}
+			const rsp = await $fetch("/api/survey/create", {
+				method: "POST",
+				body: JSON.stringify(data),
+			})
+
+			if (rsp.code == 0) {
+				toast.success(this.$t("new.success"), toastCfg)
+				navigateTo(useLocalePath()("/dash/surveys"))
+			} else {
+				toast.error(this.$t("new.error") + " (" + this.$t("error_codes." + rsp.code) + ")", toastCfg)
 			}
 		},
 		addQuestion() {
