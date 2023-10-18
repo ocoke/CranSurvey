@@ -53,10 +53,19 @@ import "~/src/styles/dash.css"
 		</v-card>
 		<v-card
 			variant="outlined"
-			:title="$t('new.q1_simple')"
-			:subtitle="$t('new.simple_sub')"
-			v-show="surveyType == 'simple'"
+			:title="$t('new.q1_advanced')"
+			:subtitle="$t('new.advanced_sub')"
+			v-show="surveyType == 'advanced'"
+			style="margin-bottom: 20px;"
+		></v-card>
+		<v-card
+			variant="outlined"
+			v-show="surveyType == 'simple' || surveyType == 'advanced'"
 		>
+			<v-card-title v-if="surveyType == 'simple'">{{ $t('new.q1_simple') }}</v-card-title>
+			<v-card-title v-else>{{ $t('new.advanced_q') }}</v-card-title>
+			<v-card-subtitle v-if="surveyType == 'advanced'">{{ $t('new.simple_sub') }}</v-card-subtitle>
+			<v-card-subtitle v-else>{{ $t('new.advanced_q_sub') }}</v-card-subtitle>
 			<v-card-text>
 				<h3 class="ques_title">{{ $t("new.question.question") }}</h3>
 				<v-text-field
@@ -65,7 +74,6 @@ import "~/src/styles/dash.css"
 					maxlength="150"
 					v-model="simple.question"
 				></v-text-field>
-
 				<h3 class="ques_title">{{ $t("new.question.question_prompt") }}</h3>
 				<v-text-field
 					:label="$t('new.question.question_prompt_sub')"
@@ -73,15 +81,7 @@ import "~/src/styles/dash.css"
 					maxlength="500"
 					v-model="simple.prompt"
 				></v-text-field>
-
 				<h3 class="ques_title">{{ $t("new.question.question_type") }}</h3>
-				<!-- <v-text-field
-					:label="$t('new.question.question_type')"
-					variant="outlined"
-					maxlength="500"
-					v-model="simple.type"
-					disabled
-				></v-text-field> -->
 				<v-select
 					label="Select"
 					:items="availableTypes"
@@ -90,10 +90,8 @@ import "~/src/styles/dash.css"
 					v-model="simple.type"
 					variant="outlined"
 				></v-select>
-				
 				<h3 class="ques_title">{{ $t('new.question.answer_validate') }}</h3>
-				<v-card v-if="simple.type == 'short_answer'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
-					<!-- <h3 class="ques_title">{{  }}</h3> -->
+				<v-card v-if="simple.type == 'short_answer' || simple.type == 'paragraph'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
 					<v-card-text style="padding-bottom: 0;"><p style="display: flex; align-items: center; font-size: 1rem;" class="validateText">
 						<span>{{ $t('new.validate.length') }} {{ $t('new.validate.from') }} </span>
 						<v-text-field :label="$t('new.validate.min')" type="number" class="inline-num-input" density="compact" v-model="simple.validate.min"></v-text-field> 
@@ -108,14 +106,75 @@ import "~/src/styles/dash.css"
 					maxlength="500"
 					v-model="simple.placeholder"
 				></v-text-field>
+				<v-btn variant="outlined" v-show="surveyType == 'advanced'" @click="addQuestion">{{ $t('new.add') }}</v-btn>
 			</v-card-text>
 		</v-card>
 		<v-card
 			variant="outlined"
-			:title="$t('new.q1_advanced')"
-			:subtitle="$t('new.advanced_sub')"
+			:title="$t('new.questions_list')"
+			:subtitle="$t('new.questions_list_sub')"
 			v-show="surveyType == 'advanced'"
+			style="margin-top: 20px;"
 		>
+			<v-card-text>
+				<v-expansion-panels>
+				<v-expansion-panel v-for="item in advanced.questions">
+					<v-expansion-panel-title>
+						<template v-slot:default="{ expanded }">
+							<v-row no-gutters>
+								<v-col cols="4" class="d-flex justify-start">
+									{{ item.question }}
+								</v-col>
+								<v-col cols="8" class="text-grey">
+									<v-fade-transition leave-absolute>
+										<span v-if="expanded"> #{{ item.id }} </span>
+									</v-fade-transition>
+								</v-col>
+							</v-row>
+						</template>
+					</v-expansion-panel-title>
+					<v-expansion-panel-text>
+						<v-table density="compact">
+							<thead>
+							<tr>
+								<th class="text-left">
+									{{ $t('results.attributes') }}
+								</th>
+								<th class="text-left">
+									{{ $t('results.value') }}
+								</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>{{ $t('results.type') }}</td>
+								<td>{{ $t('new.types.' + item.type) }}</td>
+							</tr>
+							<tr>
+								<td>{{ $t('new.question.question_placeholder') }}</td>
+								<td>{{ item.placeholder }}</td>
+							</tr>
+							<tr>
+								<td>{{ $t('new.question.question_prompt') }}</td>
+								<td>{{ item.prompt }}</td>
+							</tr>
+							<tr>
+								<td>{{ $t('new.question.answer_validate') }}</td>
+								<td>{{ item.validateStr }}</td>
+							</tr>
+							</tbody>
+						</v-table>
+						<v-card-actions>
+							<v-spacer></v-spacer>
+							<v-btn variant="text" color="primary" @click="deleteQuestion(item.id)">
+								{{ $t("results.delete") }}
+							</v-btn>
+						</v-card-actions>
+					</v-expansion-panel-text>
+				</v-expansion-panel>
+			</v-expansion-panels>
+	
+			</v-card-text>
 		</v-card>
 		<v-card
 			variant="outlined"
@@ -220,6 +279,9 @@ export default {
 					min: 1,
 					max: 2048,
 				}
+			},
+			advanced: {
+				questions: [],
 			},
 			prompt: {
 				title: "",
@@ -331,6 +393,29 @@ export default {
 				}
 			}
 		},
+		addQuestion() {
+			const info = this.simple
+			if (!info.question || !info.type) {
+				toast.error(this.$t("new.miss_required"), toastCfg)
+				return false
+			}
+			const validate = this.simple.validate;
+			let validateStr = (validate.min || 1) + ":" + (validate.max || 2048)
+			this.advanced.questions.push({
+				id: this.advanced.questions.length,
+				type: info.type,
+				validate: validateStr,
+				question: info.question,
+				placeholder: info.placeholder,
+				prompt: info.prompt,
+			});
+		},
+		deleteQuestion(id) {
+			this.advanced.questions.splice(id, 1)
+			for (let i in this.advanced.questions) {
+				this.advanced.questions[i].id = i
+			}
+		}
 	},
 	async mounted() {
 		this.username = sessionStorage.getItem("_cransurvey_usr")
