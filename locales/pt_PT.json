@@ -1,28 +1,28 @@
 {
 	"welcome": {
-		"welcome": "歡迎使用 CranSurvey！",
-		"gotoDashboard": "前往儀表盤"
+		"welcome": "Welcome to CranSurvey!",
+		"gotoDashboard": "Goto Dashboard"
 	},
 	"signin": {
-		"signin": "登入",
-		"username": "用户名",
-		"password": "密碼",
-		"continue": "繼續",
-		"success": "登入成功",
-		"error": "登入時出錯",
-		"invalid_params": "請檢查用户名與密碼。",
-		"or_signup": "或建立賬號"
+		"signin": "Sign in",
+		"username": "Username",
+		"password": "Password",
+		"continue": "Continue",
+		"success": "Signed in successfully.",
+		"error": "An error occurred while signing in.",
+		"invalid_params": "Please check your username and password.",
+		"or_signup": "Or sign up"
 	},
 	"signup": {
-		"signup": "建立賬號",
-		"username": "用户名",
-		"password": "密碼",
-		"password_re": "重新鍵入密碼",
-		"continue": "繼續",
-		"success": "建立成功",
-		"error": "建立時出錯",
-		"invalid_params": "請檢查用户名與密碼。",
-		"invalid_password": "密碼不匹配",
+		"signup": "Sign up",
+		"username": "Username",
+		"password": "Password",
+		"password_re": "Re-enter your password",
+		"continue": "Continue",
+		"success": "Signed up successfully.",
+		"error": "An error occurred while signing up.",
+		"invalid_params": "Please check your username and password.",
+		"invalid_password": "The passwords do not match.",
 		"init": "It seems like this is your first time here, we have automatically initialized your database.",
 		"or_signin": "Or sign in"
 	},
