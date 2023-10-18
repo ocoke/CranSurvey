@@ -67,7 +67,9 @@
 		"type": "種類",
 		"collected_at": "収集場所: {date}",
 		"close": "閉める",
-		"delete": "削除"
+		"delete": "削除",
+		"attributes": "Attributes",
+		"value": "Value"
 	},
 	"edit": {
 		"edit": "編集"
@@ -84,7 +86,11 @@
 		"q1_advanced": "アドバンスド",
 		"q1_prompt": "プロンプト",
 		"simple_sub": "簡単なアンケートには質問が1つだけ含まれており、ユーザーはダイアログウィンドウを開かずに回答できます。",
+		"advanced_q": "Add a Question",
+		"advanced_q_sub": "Add a question to your advanced survey from here.",
 		"advanced_sub": "高度な調査には複数の質問を含めることができ、ユーザーはダイアログウィンドウを開いて回答する必要があります。",
+		"questions_list": "Questions List",
+		"questions_list_sub": "The list of questions in your advanced survey.",
 		"prompt_sub": "プロンプトはユーザーにメッセージのみを表示し、ユーザーは応答する必要はありません。",
 		"question": {
 			"question": "質問*",
@@ -133,7 +139,8 @@
 			"to": "宛先",
 			"min": "分",
 			"max": "マックス"
-		}
+		},
+		"add": "Add"
 	},
 	"editUser": {
 		"editUser": "編集対象 {username}",
