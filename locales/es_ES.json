@@ -67,7 +67,9 @@
 		"type": "Tipo",
 		"collected_at": "Recopilado en: {date}",
 		"close": "Cerrar",
-		"delete": "Borrar"
+		"delete": "Borrar",
+		"attributes": "Atributos",
+		"value": "Valor"
 	},
 	"edit": {
 		"edit": "Editar"
@@ -84,7 +86,11 @@
 		"q1_advanced": "Avanzado",
 		"q1_prompt": "Pronto",
 		"simple_sub": "La encuesta simple contiene solo una pregunta, el usuario puede responder sin abrir una ventana de diálogo.",
+		"advanced_q": "Agregar una pregunta",
+		"advanced_q_sub": "Añade una pregunta a tu encuesta avanzada desde aquí.",
 		"advanced_sub": "La encuesta avanzada puede contener varias preguntas, el usuario necesita responder abriendo una ventana de diálogo.",
+		"questions_list": "Lista de preguntas",
+		"questions_list_sub": "La lista de preguntas de la encuesta avanzada.",
 		"prompt_sub": "El mensaje solo muestra el mensaje al usuario, el usuario no necesita responder.",
 		"question": {
 			"question": "Pregunta*",
@@ -133,7 +139,8 @@
 			"to": "Para",
 			"min": "Min",
 			"max": "Máximo"
-		}
+		},
+		"add": "Agregar"
 	},
 	"editUser": {
 		"editUser": "Editar para {username}",

@@ -67,7 +67,9 @@
 		"type": "类型",
 		"collected_at": "收集于： {date}",
 		"close": "关闭",
-		"delete": "删除"
+		"delete": "删除",
+		"attributes": "属性",
+		"value": "值"
 	},
 	"edit": {
 		"edit": "编辑"
@@ -84,7 +86,11 @@
 		"q1_advanced": "高深",
 		"q1_prompt": "提示",
 		"simple_sub": "简单调查仅包含一个问题，用户无需打开对话框窗口即可回答。",
+		"advanced_q": "添加问题",
+		"advanced_q_sub": "从此处向高级调查添加问题。",
 		"advanced_sub": "高级调查可以包含多个问题，用户需要通过打开对话窗口来回答。",
+		"questions_list": "问题列表",
+		"questions_list_sub": "高级调查中的问题列表。",
 		"prompt_sub": "提示仅向用户显示消息，用户无需回答。",
 		"question": {
 			"question": "问题*",
@@ -133,7 +139,8 @@
 			"to": "自",
 			"min": "最小值",
 			"max": "最大值"
-		}
+		},
+		"add": "新增"
 	},
 	"editUser": {
 		"editUser": "编辑 {username}",
