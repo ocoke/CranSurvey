@@ -67,7 +67,9 @@
 		"type": "Type",
 		"collected_at": "Collected at: {date}",
 		"close": "Close",
-		"delete": "Delete"
+		"delete": "Delete",
+		"attributes": "Attributes",
+		"value": "Value"
 	},
 	"edit": {
 		"edit": "Edit"
@@ -84,7 +86,11 @@
 		"q1_advanced": "Advanced",
 		"q1_prompt": "Prompt",
 		"simple_sub": "The simple survey contains only one question, user can answer without open a dialog window.",
+		"advanced_q": "Add a Question",
+		"advanced_q_sub": "Add a question to your advanced survey from here.",
 		"advanced_sub": "The advanced survey can contain multiple questions, user need answer by opening a dialog window.",
+		"questions_list": "Questions List",
+		"questions_list_sub": "The list of questions in your advanced survey.",
 		"prompt_sub": "The prompt only show message to user, user doesn't need to answer.",
 		"question": {
 			"question": "Question*",
@@ -133,7 +139,8 @@
 			"to": "To",
 			"min": "Min",
 			"max": "Max"
-		}
+		},
+		"add": "Add"
 	},
 	"editUser": {
 		"editUser": "Edit for {username}",
