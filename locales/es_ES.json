@@ -119,7 +119,7 @@
 		},
 		"priority": "Prioridad de visualización",
 		"create": "Crear",
-		"required": "Required",
+		"required": "Obligatorio",
 		"miss_required": "Por favor, compruebe los campos obligatorios.",
 		"success": "Encuesta creada correctamente.",
 		"error": "Se ha producido un error al crear la encuesta.",
@@ -162,6 +162,6 @@
 		"2004": "Usuario no válido."
 	},
 	"footer": {
-		"translate": "The page was translated by Microsoft Translator and other contributors."
+		"translate": "La página fue traducida por Microsoft Translator y otros colaboradores."
 	}
 }
