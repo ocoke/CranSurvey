@@ -119,6 +119,7 @@
 		},
 		"priority": "Display Priority",
 		"create": "Create",
+		"required": "Required",
 		"miss_required": "Please check the required fields.",
 		"success": "Survey created successfully.",
 		"error": "An error occurred while creating survey.",
