@@ -160,5 +160,8 @@
 		"2002": "データベース エラー。",
 		"2003": "調査 ID は既に存在します。",
 		"2004": "無効なユーザーです。"
+	},
+	"footer": {
+		"translate": "The page was translated by Microsoft Translator and other contributors."
 	}
 }
