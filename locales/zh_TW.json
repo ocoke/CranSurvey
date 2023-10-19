@@ -160,5 +160,8 @@
 		"2002": "資料庫錯誤。",
 		"2003": "調查ID已存在。",
 		"2004": "無效使用者。"
+	},
+	"footer": {
+		"translate": "The page was translated by Microsoft Translator and other contributors."
 	}
 }
