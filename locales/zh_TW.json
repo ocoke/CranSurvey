@@ -119,6 +119,7 @@
 		},
 		"priority": "顯示優先順序",
 		"create": "創造",
+		"required": "Required",
 		"miss_required": "請檢查必填欄位。",
 		"success": "調查創建成功。",
 		"error": "創建調查時出錯。",
