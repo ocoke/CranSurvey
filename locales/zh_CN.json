@@ -160,5 +160,8 @@
 		"2002": "数据库错误。",
 		"2003": "调查 ID 已存在。",
 		"2004": "无效用户。"
+	},
+	"footer": {
+		"translate": "The page was translated by Microsoft Translator and other contributors."
 	}
 }
