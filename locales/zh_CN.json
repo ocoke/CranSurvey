@@ -119,6 +119,7 @@
 		},
 		"priority": "显示优先级",
 		"create": "创建",
+		"required": "Required",
 		"miss_required": "请检查必填字段。",
 		"success": "调查创建成功。",
 		"error": "创建调查时出错。",
