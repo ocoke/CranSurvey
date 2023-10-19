@@ -25,12 +25,6 @@ export default eventHandler(async (event) => {
 
 	const uniqueAnsId: string = uuidv4()
 
-	if (svId.questions.type == "simple" && !answers){
-		return {
-			code: 3000,
-			msg: "Invalid answer.",
-		}
-	}
 
 	for (const i in answers) {
 		const q = svId.questions[i]
@@ -39,6 +33,15 @@ export default eventHandler(async (event) => {
 				code: 3001,
 				msg: "Invalid question.",
 			}
+		}
+		if (q.required && !answers[i].answer) {
+			return {
+				code: 3003,
+				msg: "Required question.",
+			}
+		}
+		if (!q.required && !answers[i].answer) {
+			continue
 		}
 		if (!ansValidate(answers[i].answer, q.type, q.validate || "default")) {
 			return {

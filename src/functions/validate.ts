@@ -9,12 +9,21 @@ export default function ansValidate(answer: string, type: string, rule: string) 
 				return false
 			}
 		}
+	} else if (type == "paragraph") {
+		if (rule.includes(":")) {
+			// [num]:[num]
+			if (answer.length >= parseInt(rule.split(":")[0]) && answer.length <= parseInt(rule.split(":")[1])) {
+				return true
+			} else {
+				return false
+			}
+		}
 	} else if (type == "info") {
 		if (rule == "disabled" && answer) {
 			return false
 		} else if (!rule) {
-            return false
-        }
+			return false
+		}
 	} else {
 		return false
 	}

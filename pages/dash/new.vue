@@ -90,6 +90,7 @@ import "~/src/styles/dash.css"
 					v-model="simple.type"
 					variant="outlined"
 				></v-select>
+				<v-checkbox :label="$t('new.required')" v-model="simple.required"></v-checkbox>
 				<h3 class="ques_title">{{ $t('new.question.answer_validate') }}</h3>
 				<v-card v-if="simple.type == 'short_answer' || simple.type == 'paragraph'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
 					<v-card-text style="padding-bottom: 0;"><p style="display: flex; align-items: center; font-size: 1rem;" class="validateText">
@@ -278,7 +279,8 @@ export default {
 				validate: {
 					min: 1,
 					max: 2048,
-				}
+				},
+				required: true,
 			},
 			advanced: {
 				questions: [],
@@ -372,6 +374,7 @@ export default {
 							question: info.question,
 							placeholder: info.placeholder,
 							prompt: info.prompt,
+							required: info.required,
 						},
 					],
 					site: {
@@ -393,6 +396,7 @@ export default {
 							validate: 'disabled',
 							question: this.prompt.title,
 							prompt: this.prompt.content,
+							required: false,
 						},
 					],
 					site: {
@@ -443,6 +447,7 @@ export default {
 				question: info.question,
 				placeholder: info.placeholder,
 				prompt: info.prompt,
+				required: info.required,
 			});
 		},
 		deleteQuestion(id) {
