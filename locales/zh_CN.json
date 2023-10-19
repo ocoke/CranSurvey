@@ -119,7 +119,7 @@
 		},
 		"priority": "显示优先级",
 		"create": "创建",
-		"required": "Required",
+		"required": "必填",
 		"miss_required": "请检查必填字段。",
 		"success": "调查创建成功。",
 		"error": "创建调查时出错。",
@@ -162,6 +162,6 @@
 		"2004": "无效用户。"
 	},
 	"footer": {
-		"translate": "The page was translated by Microsoft Translator and other contributors."
+		"translate": "该页面由 Microsoft Translator 和其他贡献者翻译。"
 	}
 }
