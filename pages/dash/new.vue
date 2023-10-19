@@ -27,7 +27,7 @@ import "~/src/styles/dash.css"
 
 <template>
 	<h1 class="text-h4">{{ $t("new.new") }}</h1>
-	<div class="mainGroup">
+	<div class="mainGroup new_survey">
 		<v-card :title="$t('new.q1')" :subtitle="$t('new.q1_sub')" variant="outlined" style="margin-bottom: 20px">
 			<v-card-text>
 				<h3 class="ques_title">{{ $t("new.title") }}</h3>
@@ -478,5 +478,10 @@ export default {
 }
 p.validateText span {
 	margin-bottom: 1rem;
+}
+.mainGroup.new_survey .v-card-subtitle {
+	white-space: inherit;
+	overflow: auto;
+	text-overflow: clip;
 }
 </style>

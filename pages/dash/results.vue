@@ -36,11 +36,11 @@ import "~/src/styles/dash.css"
 						<template v-slot:default="{ expanded }">
 							<v-row no-gutters>
 								<v-col cols="4" class="d-flex justify-start">
-									<code>{{ $t("results.from_user", { usr: asw.usr }) }}</code>
+									<code>{{ $t("results.from_user", { usr: asw.usr.slice(-6) }) }}</code>
 								</v-col>
 								<v-col cols="8" class="text-grey">
 									<v-fade-transition leave-absolute>
-										<span v-if="expanded"> #{{ asw.id }} </span>
+										<span v-if="expanded"> #{{ asw.id.slice(-6) }} </span>
 									</v-fade-transition>
 								</v-col>
 							</v-row>
@@ -92,7 +92,7 @@ import "~/src/styles/dash.css"
 									<td>
 										<v-dialog width="500">
 											<template v-slot:activator="{ props }">
-												<p v-bind="props">{{ item.answer }}</p>
+												<p v-bind="props" style="cursor: pointer;">{{ desc(item.answer) }}</p>
 											</template>
 
 											<template v-slot:default="{ isActive }">
@@ -169,6 +169,14 @@ export default {
 				navigateTo(useLocalePath()("/sign-in"))
 			}
 		},
+		desc(text) {
+			text = text.slice(0, 100)
+			if (text.endsWith(" ")) {
+				return text.slice(0, 99) + "..."
+			} else {
+				return text + "..."
+			}
+		}
 	},
 	async mounted() {
 		const surveyData = await $fetch("/api/survey/result", {

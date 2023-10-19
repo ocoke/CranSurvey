@@ -8,7 +8,7 @@
 footer {
 	margin: 0 auto;
 	text-align: center;
-	padding: 10px;
+	padding: 15px;
 	/* border-top: 1px solid #eee; */
 	opacity: .8;
 }
