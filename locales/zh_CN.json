@@ -119,6 +119,7 @@
 		},
 		"priority": "显示优先级",
 		"create": "创建",
+		"required": "必填",
 		"miss_required": "请检查必填字段。",
 		"success": "调查创建成功。",
 		"error": "创建调查时出错。",
@@ -159,5 +160,8 @@
 		"2002": "数据库错误。",
 		"2003": "调查 ID 已存在。",
 		"2004": "无效用户。"
+	},
+	"footer": {
+		"translate": "该页面由 Microsoft Translator 和其他贡献者翻译。"
 	}
 }

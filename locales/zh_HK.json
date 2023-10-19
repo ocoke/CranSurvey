@@ -119,6 +119,7 @@
 		},
 		"priority": "Display Priority",
 		"create": "Create",
+		"required": "Required",
 		"miss_required": "Please check the required fields.",
 		"success": "Survey created successfully.",
 		"error": "An error occurred while creating survey.",
@@ -159,5 +160,8 @@
 		"2002": "Database error.",
 		"2003": "Survey ID already exists.",
 		"2004": "Invalid user."
+	},
+	"footer": {
+		"translate": "The page was translated by Microsoft Translator and other contributors."
 	}
 }

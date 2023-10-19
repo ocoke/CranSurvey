@@ -119,6 +119,7 @@
 		},
 		"priority": "顯示優先順序",
 		"create": "創造",
+		"required": "必填",
 		"miss_required": "請檢查必填欄位。",
 		"success": "調查創建成功。",
 		"error": "創建調查時出錯。",
@@ -159,5 +160,8 @@
 		"2002": "資料庫錯誤。",
 		"2003": "調查ID已存在。",
 		"2004": "無效使用者。"
+	},
+	"footer": {
+		"translate": "該頁面由 Microsoft Translator 和其他貢獻者翻譯。"
 	}
 }
