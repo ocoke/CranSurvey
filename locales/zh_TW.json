@@ -140,13 +140,13 @@
 			"to": "自",
 			"min": "最小值",
 			"max": "最大值",
-			"text": "text",
-			"preview": "Preview"
+			"text": "發簡訊",
+			"preview": "預覽"
 		},
 		"add": "新增",
-		"option_exists": "The option already exists.",
-		"options": "Options",
-		"set_default": "Set as default"
+		"option_exists": "該選項已存在。",
+		"options": "選項",
+		"set_default": "設置為預設值"
 	},
 	"editUser": {
 		"editUser": "編輯 {username}",
