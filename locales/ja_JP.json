@@ -69,7 +69,8 @@
 		"close": "閉める",
 		"delete": "削除",
 		"attributes": "属性",
-		"value": "価値"
+		"value": "価値",
+		"details": "Details"
 	},
 	"edit": {
 		"edit": "編集"
