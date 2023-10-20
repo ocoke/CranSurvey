@@ -140,13 +140,13 @@
 			"to": "받는 사람",
 			"min": "분",
 			"max": "최대",
-			"text": "text",
-			"preview": "Preview"
+			"text": "문자 메시지",
+			"preview": "미리 보기"
 		},
 		"add": "더하다",
-		"option_exists": "The option already exists.",
-		"options": "Options",
-		"set_default": "Set as default"
+		"option_exists": "옵션이 이미 있습니다.",
+		"options": "옵션",
+		"set_default": "기본값으로 설정"
 	},
 	"editUser": {
 		"editUser": "편집 대상 {username}",
