@@ -139,9 +139,14 @@
 			"from": "보낸 사람",
 			"to": "받는 사람",
 			"min": "분",
-			"max": "최대"
+			"max": "최대",
+			"text": "text",
+			"preview": "Preview"
 		},
-		"add": "더하다"
+		"add": "더하다",
+		"option_exists": "The option already exists.",
+		"options": "Options",
+		"set_default": "Set as default"
 	},
 	"editUser": {
 		"editUser": "편집 대상 {username}",
