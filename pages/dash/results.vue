@@ -102,7 +102,6 @@ import "~/src/styles/dash.css"
 													<v-card-text>
 														<span v-if="surveyQuestions[index].type == 'multiple' && surveyQuestions[index].options && surveyQuestions[index].options.optionsData">{{ surveyQuestions[index].options.optionsData[item.answer] }}</span>
 														<div v-else-if="surveyQuestions[index].type == 'checkboxes' && surveyQuestions[index].options && surveyQuestions[index].options.optionsData">
-															
 															<v-checkbox hide-details disabled class="viewing-checkboxes" :label="i" v-model="item.answer[index]" v-for="(i, index) in surveyQuestions[index].options.optionsData"></v-checkbox>
 														</div>
 														<span v-else>{{ item.answer }}</span>

@@ -50,7 +50,7 @@ export default eventHandler(async (event) => {
 					msg: "Invalid answer.",
 				}
 			}
-		} else (!ansValidate(answers[i].answer, q.type, q.validate || "default")) {
+		} else if (!ansValidate(answers[i].answer, q.type, (q.validate || "default"))) {
 			return {
 				code: 3002,
 				msg: "Invalid answer.",
