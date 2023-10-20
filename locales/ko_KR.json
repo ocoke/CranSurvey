@@ -69,7 +69,8 @@
 		"close": "닫다",
 		"delete": "삭제하다",
 		"attributes": "특성",
-		"value": "값"
+		"value": "값",
+		"details": "세부 정보"
 	},
 	"edit": {
 		"edit": "편집하다"

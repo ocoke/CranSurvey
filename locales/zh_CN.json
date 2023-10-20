@@ -69,7 +69,8 @@
 		"close": "关闭",
 		"delete": "删除",
 		"attributes": "属性",
-		"value": "值"
+		"value": "值",
+		"details": "详"
 	},
 	"edit": {
 		"edit": "编辑"
