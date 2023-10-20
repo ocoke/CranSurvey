@@ -139,9 +139,14 @@
 			"from": "差出人",
 			"to": "宛先",
 			"min": "分",
-			"max": "マックス"
+			"max": "マックス",
+			"text": "text",
+			"preview": "Preview"
 		},
-		"add": "足す"
+		"add": "足す",
+		"option_exists": "The option already exists.",
+		"options": "Options",
+		"set_default": "Set as default"
 	},
 	"editUser": {
 		"editUser": "編集対象 {username}",
