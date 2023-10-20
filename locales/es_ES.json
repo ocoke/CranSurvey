@@ -139,9 +139,14 @@
 			"from": "De",
 			"to": "Para",
 			"min": "Min",
-			"max": "Máximo"
+			"max": "Máximo",
+			"text": "Mensaje de texto",
+			"preview": "Vista previa"
 		},
-		"add": "Agregar"
+		"add": "Agregar",
+		"option_exists": "La opción ya existe.",
+		"options": "Opciones",
+		"set_default": "Establecer como predeterminado"
 	},
 	"editUser": {
 		"editUser": "Editar para {username}",

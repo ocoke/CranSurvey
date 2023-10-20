@@ -139,9 +139,14 @@
 			"from": "Von",
 			"to": "An",
 			"min": "Min",
-			"max": "Max"
+			"max": "Max",
+			"text": "Text",
+			"preview": "Vorschau"
 		},
-		"add": "Hinzufügen"
+		"add": "Hinzufügen",
+		"option_exists": "Die Option ist bereits vorhanden.",
+		"options": "Optionen",
+		"set_default": "Als Standard festlegen"
 	},
 	"editUser": {
 		"editUser": "Bearbeiten für {username}",

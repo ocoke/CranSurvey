@@ -139,9 +139,14 @@
 			"from": "De",
 			"to": "À",
 			"min": "Min",
-			"max": "Max"
+			"max": "Max",
+			"text": "SMS",
+			"preview": "Aperçu"
 		},
-		"add": "Ajouter"
+		"add": "Ajouter",
+		"option_exists": "L’option existe déjà.",
+		"options": "Options",
+		"set_default": "Définir par défaut"
 	},
 	"editUser": {
 		"editUser": "Modifier pour {username}",
