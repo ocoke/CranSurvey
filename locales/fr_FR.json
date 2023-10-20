@@ -139,9 +139,14 @@
 			"from": "De",
 			"to": "À",
 			"min": "Min",
-			"max": "Max"
+			"max": "Max",
+			"text": "text",
+			"preview": "Preview"
 		},
-		"add": "Ajouter"
+		"add": "Ajouter",
+		"option_exists": "The option already exists.",
+		"options": "Options",
+		"set_default": "Set as default"
 	},
 	"editUser": {
 		"editUser": "Modifier pour {username}",
