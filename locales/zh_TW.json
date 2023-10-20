@@ -139,9 +139,14 @@
 			"from": "從",
 			"to": "自",
 			"min": "最小值",
-			"max": "最大值"
+			"max": "最大值",
+			"text": "text",
+			"preview": "Preview"
 		},
-		"add": "新增"
+		"add": "新增",
+		"option_exists": "The option already exists.",
+		"options": "Options",
+		"set_default": "Set as default"
 	},
 	"editUser": {
 		"editUser": "編輯 {username}",
