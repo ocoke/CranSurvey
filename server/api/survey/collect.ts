@@ -43,7 +43,14 @@ export default eventHandler(async (event) => {
 		if (!q.required && !answers[i].answer) {
 			continue
 		}
-		if (!ansValidate(answers[i].answer, q.type, q.validate || "default")) {
+		if (q.type == 'checkboxes' || q.type == 'multiple') {
+			if (!ansValidate(answers[i].answer, q.type, q.options.optionsData.length)) {
+				return {
+					code: 3002,
+					msg: "Invalid answer.",
+				}
+			}
+		} else (!ansValidate(answers[i].answer, q.type, q.validate || "default")) {
 			return {
 				code: 3002,
 				msg: "Invalid answer.",

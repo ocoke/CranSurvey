@@ -24,6 +24,24 @@ export default function ansValidate(answer: string, type: string, rule: string) 
 		} else if (!rule) {
 			return false
 		}
+	} else if (type == "multiple") {
+		if (!Number(answer)) {
+			return false
+		}
+		if (answer >= rule) {
+			return false
+		}
+		return true
+	} else if (type == "checkboxes") {
+		if (answer.length > rule) {
+			return false
+		}
+		for (let i in answer) {
+			if (answer[i] !== false && answer[i] !== true) {
+				return false
+			}
+		}
+		return true
 	} else {
 		return false
 	}

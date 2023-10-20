@@ -1,7 +1,7 @@
 <template>
 <div class="bg"></div>
 <div class="main">
-
+    <Title>{{ surveyInfo.title }} - CranSurvey</Title>
     <v-card style="box-shadow: none; padding: 10px 6px 16px 6px;" color="light-green-lighten-4">
         <v-card-title style="font-size: 1.5rem;">{{ surveyInfo.title }}</v-card-title>
         <v-card-text style="opacity: .7;padding-bottom: .5rem;">{{ surveyInfo.description }}</v-card-text>
@@ -17,17 +17,25 @@
         </v-card-text>
     </v-card> -->
     <v-card color="light-green-lighten-4" v-for="item in surveyInfo.questions" style="margin-top: 10px; box-shadow: none;" v-show="!collected">
-        <v-card-title style="font-size: 1rem;">{{ item.question }}<span v-show="item.required">*</span></v-card-title>
-        <v-card-subtitle v-show="item.type != 'info'">{{ item.prompt }}</v-card-subtitle>
-        <v-card-text>
-            <div class="short_answer" v-show="item.type == 'short_answer'">
+        <v-card-title class="quesition_card_title" style="font-size: 1rem;">{{ item.question }}<span v-show="item.required">*</span></v-card-title>
+        <v-card-subtitle v-show="item.type != 'info' && item.prompt" class="question_card_subtitle">{{ item.prompt }}</v-card-subtitle>
+        <v-card-text class="question_card_text">
+            <div class="short_answer" v-if="item.type == 'short_answer'">
                 <v-text-field variant="outlined" label="Your Answer" :placeholder="item.placeholder" counter :rules="[v => ansValidate(v || '', item.type, item.validate) || ('The answer doesn\'t meet the requirements. (' + item.validate.split(':')[0] + '-' + item.validate.split(':')[1] + ')')]" v-model="ans[item.id]"></v-text-field>
             </div>
-            <div class="paragraph" v-show="item.type == 'paragraph'">
+            <div class="paragraph" v-if="item.type == 'paragraph'">
                 <v-textarea label="Your Answer" variant="outlined" :placeholder="item.placeholder" counter :rules="[v => ansValidate(v || '', item.type, item.validate) || ('The answer doesn\'t meet the requirements. (' + item.validate.split(':')[0] + '-' + item.validate.split(':')[1] + ')')]" v-model="ans[item.id]"></v-textarea>
             </div>
-            <div class="prompt" v-show="item.type == 'info'">
+            <div class="prompt" v-if="item.type == 'info'">
                 <p>{{ item.prompt }}</p>
+            </div>
+            <div class="multiple" v-if="item.type == 'multiple' && item.options && item.options.optionsData">
+                <v-radio-group v-model="ans[item.id]">
+                    <v-radio :label="i" :value="index" v-for="(i, index) in item.options.optionsData"></v-radio>
+                </v-radio-group>
+            </div>
+            <div class="checkboxes" v-if="item.type == 'checkboxes' && item.options && item.options.optionsData">
+                <v-checkbox class="viewing-checkboxes" @change="checkboxesItem($event, item.id, item.options.optionsData.length)" :label="i" :value="index" v-for="(i, index) in item.options.optionsData"></v-checkbox>
             </div>
         </v-card-text>
     </v-card>
@@ -134,6 +142,22 @@ export default {
                 toast.error('Something went wrong. Please try again later.', toastCfg)
                 return false
             }
+        },
+        checkboxesItem($event, id, length) {
+            let ans = this.ans
+            if (!ans[id]) {
+                ans[id] = []
+                for (let i = 0; i <= (length - 1); i++) {
+                    ans[id].push(false)
+                }
+            }
+            let v = $event.target.value
+            v = Number(v)
+            if (ans[id][v] == true) {
+                ans[id][v] = false
+            } else {
+                ans[id][v] = true
+            }
         }
     },
     async mounted() {
@@ -161,5 +185,20 @@ export default {
 .subtitle-text {
     padding-bottom: 0;
     padding-top: 0;
+}
+.quesition_card_title {
+    padding-bottom: 0;
+}
+.question_card_subtitle {
+    margin-bottom: 1rem;
+}
+.question_card_text {
+    padding-top: 0;
+}
+</style>
+
+<style>
+.viewing-checkboxes .v-input__details, .v-radio-group .v-input__details {
+	display: none;
 }
 </style>

@@ -69,7 +69,8 @@
 		"close": "Close",
 		"delete": "Delete",
 		"attributes": "Attributes",
-		"value": "Value"
+		"value": "Value",
+		"details": "Details"
 	},
 	"edit": {
 		"edit": "Edit"
@@ -140,7 +141,7 @@
 			"to": "To",
 			"min": "Min",
 			"max": "Max",
-			"text": "text",
+			"text": "Text",
 			"preview": "Preview"
 		},
 		"add": "Add",

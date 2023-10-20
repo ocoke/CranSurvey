@@ -116,7 +116,7 @@ import "~/src/styles/dash.css"
 							</div>
 						</v-card-text></v-card>
 						<v-btn variant="outlined" @click="deleteOption" style="margin-bottom: 1rem;" v-show="simple.options.optionsData.length != 0">{{ $t('results.delete') }}</v-btn>
-						<v-btn variant="outlined" @click="setDefaultOption" style="margin-bottom: 1rem; margin-left: .5rem;" v-show="simple.options.optionsData.length != 0">{{ $t('new.set_default') }}</v-btn>
+						<!-- <v-btn variant="outlined" @click="setDefaultOption" style="margin-bottom: 1rem; margin-left: .5rem;" v-show="simple.options.optionsData.length != 0">{{ $t('new.set_default') }}</v-btn> -->
 					</v-card-text>
 				</v-card>
 				<h3 class="ques_title">{{ $t("new.question.question_placeholder") }}</h3>
