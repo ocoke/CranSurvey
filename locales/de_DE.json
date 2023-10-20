@@ -140,13 +140,13 @@
 			"to": "An",
 			"min": "Min",
 			"max": "Max",
-			"text": "text",
-			"preview": "Preview"
+			"text": "Text",
+			"preview": "Vorschau"
 		},
 		"add": "Hinzufügen",
-		"option_exists": "The option already exists.",
-		"options": "Options",
-		"set_default": "Set as default"
+		"option_exists": "Die Option ist bereits vorhanden.",
+		"options": "Optionen",
+		"set_default": "Als Standard festlegen"
 	},
 	"editUser": {
 		"editUser": "Bearbeiten für {username}",
