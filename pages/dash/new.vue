@@ -100,12 +100,32 @@ import "~/src/styles/dash.css"
 						<v-text-field :label="$t('new.validate.max')" type="number" class="inline-num-input" density="compact" v-model="simple.validate.max"></v-text-field>
 					</p></v-card-text>
 				</v-card>
+				<v-card v-if="simple.type == 'multiple' || simple.type == 'checkboxes'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
+					<v-card-text style="padding-bottom: 0;">
+						<v-text-field :label="$t('new.validate.text')" variant="outlined" v-model="optionText"></v-text-field>
+						<v-btn variant="outlined" @click="addOptions" style="margin-bottom: 1rem;">{{ $t('new.add') }}</v-btn>
+						<v-card variant="tonal" :title="$t('new.validate.preview')" style="margin: 0.5rem 0 1.5rem 0;" v-if="simple.options.optionsData.length != 0">
+						<v-card-text>
+							<div v-if="simple.type == 'multiple'">
+								<v-radio-group v-model="deleteOptionText">
+									<v-radio v-for="(i, index) in simple.options.optionsData" :label="i" :value="index"></v-radio>
+								</v-radio-group>
+							</div>
+							<div v-else>
+								<v-checkbox class="preview_checkbox" v-for="i in simple.options.optionsData" :label="i" :value="i" v-model="deleteOptionText"></v-checkbox>
+							</div>
+						</v-card-text></v-card>
+						<v-btn variant="outlined" @click="deleteOption" style="margin-bottom: 1rem;" v-show="simple.options.optionsData.length != 0">{{ $t('results.delete') }}</v-btn>
+						<v-btn variant="outlined" @click="setDefaultOption" style="margin-bottom: 1rem; margin-left: .5rem;" v-show="simple.options.optionsData.length != 0">{{ $t('new.set_default') }}</v-btn>
+					</v-card-text>
+				</v-card>
 				<h3 class="ques_title">{{ $t("new.question.question_placeholder") }}</h3>
 				<v-text-field
 					:label="$t('new.question.question_placeholder_sub')"
 					variant="outlined"
 					maxlength="500"
 					v-model="simple.placeholder"
+					:disabled="simple.type == 'multiple' || simple.type == 'checkboxes'"
 				></v-text-field>
 				<v-btn variant="outlined" v-show="surveyType == 'advanced'" @click="addQuestion">{{ $t('new.add') }}</v-btn>
 			</v-card-text>
@@ -162,6 +182,10 @@ import "~/src/styles/dash.css"
 							<tr>
 								<td>{{ $t('new.question.answer_validate') }}</td>
 								<td>{{ item.validateStr }}</td>
+							</tr>
+							<tr v-if="item.type == 'multiple' || item.type == 'checkboxes'">
+								<td>{{ $t('new.options') }}</td>
+								<td><code>{{ item.options.optionsData }}</code></td>
 							</tr>
 							</tbody>
 						</v-table>
@@ -281,6 +305,9 @@ export default {
 					max: 2048,
 				},
 				required: true,
+				options: {
+					optionsData: [],
+				},
 			},
 			advanced: {
 				questions: [],
@@ -292,17 +319,9 @@ export default {
 			promptContentRules: [v => v.length <= 2048 || 'Max 2048 characters'],
 			surveyTitle: "",
 			surveyDesc: "",
+			optionText: "",
+			deleteOptionText: null,
 			availableTypes: [
-				// ["short_answer", "paragraph", "multiple_choice", "checkboxes", "dropdown", "linear", "file", "date", "time"],
-				// short_answer: this.$t('new.types.short_answer'),
-				// paragraph: this.$t('new.types.paragraph'),
-				// multiple: this.$t('new.types.multiple'),
-				// checkboxes: this.$t('new.types.checkboxes'),
-				// dropdown: this.$t('new.types.dropdown'),
-				// linear: this.$t('new.types.linear'),
-				// file: this.$t('new.types.file'),
-				// date: this.$t('new.types.date'),
-				// time: this.$t('new.types.time'),
 				{
 					name: this.$t("new.types.short_answer"),
 					value: "short_answer",
@@ -375,6 +394,7 @@ export default {
 							placeholder: info.placeholder,
 							prompt: info.prompt,
 							required: info.required,
+							options: info.options,
 						},
 					],
 					site: {
@@ -433,7 +453,7 @@ export default {
 			}
 		},
 		addQuestion() {
-			const info = this.simple
+			let info = this.simple
 			if (!info.question || !info.type) {
 				toast.error(this.$t("new.miss_required"), toastCfg)
 				return false
@@ -448,13 +468,50 @@ export default {
 				placeholder: info.placeholder,
 				prompt: info.prompt,
 				required: info.required,
-			});
+				options: {
+					optionsData: this.simple.options.optionsData,
+					...this.simple.options,
+				},
+			})
+			if (this.simple.options.optionsData.length != 0) {
+				this.simple.options.optionsData = []
+			}
 		},
 		deleteQuestion(id) {
 			this.advanced.questions.splice(id, 1)
 			for (let i in this.advanced.questions) {
 				this.advanced.questions[i].id = i
 			}
+		},
+		addOptions() {
+			if (!this.optionText) {
+				return false
+			}
+			if (this.simple.options.optionsData.includes(this.optionText)) {
+				toast.error(this.$t("new.option_exists"), toastCfg)
+				return false
+			}
+			this.simple.options.optionsData.push(this.optionText)
+			this.optionText = ""
+		},
+		deleteOption() {
+			if (!this.deleteOptionText) {
+				return false
+			}
+			if (!this.simple.options.optionsData) {
+				this.simple.options.optionsData = []
+			}
+			this.simple.options.optionsData = this.simple.options.optionsData.filter((item) => {
+				return item != this.deleteOptionText
+			})
+			this.deleteOptionText = ""
+		},
+		setDefaultOption() {
+			if (this.deleteOptionText == null) {
+				return false
+			}
+			this.simple.placeholder = this.simple.options.optionsData[this.deleteOptionText]
+			this.simple.options.default = this.deleteOptionText
 		}
 	},
 	async mounted() {
@@ -483,5 +540,8 @@ p.validateText span {
 	white-space: inherit;
 	overflow: auto;
 	text-overflow: clip;
+}
+.preview_checkbox .v-input__details {
+	display: none;
 }
 </style>
