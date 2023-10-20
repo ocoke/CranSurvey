@@ -69,7 +69,8 @@
 		"close": "關閉",
 		"delete": "刪除",
 		"attributes": "屬性",
-		"value": "值"
+		"value": "值",
+		"details": "Details"
 	},
 	"edit": {
 		"edit": "編輯"
