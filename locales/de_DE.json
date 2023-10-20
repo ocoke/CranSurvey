@@ -69,7 +69,8 @@
 		"close": "Schließen",
 		"delete": "Löschen",
 		"attributes": "Attribute",
-		"value": "Wert"
+		"value": "Wert",
+		"details": "Details"
 	},
 	"edit": {
 		"edit": "Redigieren"
