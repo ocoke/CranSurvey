@@ -139,9 +139,14 @@
 			"from": "De",
 			"to": "Para",
 			"min": "Min",
-			"max": "Máximo"
+			"max": "Máximo",
+			"text": "text",
+			"preview": "Preview"
 		},
-		"add": "Agregar"
+		"add": "Agregar",
+		"option_exists": "The option already exists.",
+		"options": "Options",
+		"set_default": "Set as default"
 	},
 	"editUser": {
 		"editUser": "Editar para {username}",
