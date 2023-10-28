@@ -74,15 +74,15 @@
 	},
 	"edit": {
 		"edit": "Redigieren",
-		"edit_for": "Edit for \"{title}\""
+		"edit_for": "Bearbeiten für \"{title}\""
 	},
 	"delete": {
-		"cancel": "Cancel",
-		"confirm": "Confirm",
-		"warning": "Warning",
-		"warning_msg": "Are you sure you want to delete \"{title}\"? All the questions and answers will be deleted. This action can't be undone.",
-		"success": "Survey deleted successfully.",
-		"error": "An error occurred while deleting survey."
+		"cancel": "Abbrechen",
+		"confirm": "Bestätigen",
+		"warning": "Warnung",
+		"warning_msg": "Sind Sie sicher, dass Sie \"{title}\"? Alle Fragen und Antworten werden gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.",
+		"success": "Die Umfrage wurde erfolgreich gelöscht.",
+		"error": "Beim Löschen der Umfrage ist ein Fehler aufgetreten."
 	},
 	"new": {
 		"new": "Neue Umfrage",
@@ -167,7 +167,7 @@
 		"update": "Aktualisieren"
 	},
 	"share": {
-		"share": "Share"
+		"share": "Freigeben"
 	},
 	"error_codes": {
 		"0": "Erfolg.",
@@ -177,7 +177,7 @@
 		"2001": "Ungültiges Token.",
 		"2002": "Datenbankfehler.",
 		"2003": "Die Umfrage-ID ist bereits vorhanden.",
-		"2004": "Invalid."
+		"2004": "Ungültig."
 	},
 	"footer": {
 		"translate": "Die Seite wurde von Microsoft Translator und anderen Mitwirkenden übersetzt."
