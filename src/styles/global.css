@@ -14,3 +14,7 @@ html, body {
 .text-h4 {
     font-weight: 500;
 }
+
+.v-btn {
+    text-transform:none !important;
+}
