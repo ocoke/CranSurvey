@@ -58,7 +58,7 @@ export default {
 				return false
 			}
 			const hashPwd = md5(this.password)
-			const rsp = await $fetch("/api/usr/login", {
+			const rsp = await $fetch("/api/usr/sign-in", {
 				method: "POST",
 				body: JSON.stringify({
 					id: this.username,
