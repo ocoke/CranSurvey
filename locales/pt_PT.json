@@ -73,7 +73,16 @@
 		"details": "Detalhes"
 	},
 	"edit": {
-		"edit": "Editar"
+		"edit": "Editar",
+		"edit_for": "Edit for \"{title}\""
+	},
+	"delete": {
+		"cancel": "Cancel",
+		"confirm": "Confirm",
+		"warning": "Warning",
+		"warning_msg": "Are you sure you want to delete \"{title}\"? All the questions and answers will be deleted. This action can't be undone.",
+		"success": "Survey deleted successfully.",
+		"error": "An error occurred while deleting survey."
 	},
 	"new": {
 		"new": "Nova Pesquisa",
@@ -157,6 +166,9 @@
 		"enter_password_re": "Digite novamente a nova senha para {username}.",
 		"update": "Atualização"
 	},
+	"share": {
+		"share": "Share"
+	},
 	"error_codes": {
 		"0": "Êxito.",
 		"1001": "Parâmetros inválidos.",
@@ -165,7 +177,7 @@
 		"2001": "Token inválido.",
 		"2002": "Erro de banco de dados.",
 		"2003": "O ID da pesquisa já existe.",
-		"2004": "Usuário inválido."
+		"2004": "Invalid."
 	},
 	"footer": {
 		"translate": "A página foi traduzida pelo Microsoft Translator e outros colaboradores."
