@@ -73,7 +73,16 @@
 		"details": "세부 정보"
 	},
 	"edit": {
-		"edit": "편집하다"
+		"edit": "편집하다",
+		"edit_for": "Edit for \"{title}\""
+	},
+	"delete": {
+		"cancel": "Cancel",
+		"confirm": "Confirm",
+		"warning": "Warning",
+		"warning_msg": "Are you sure you want to delete \"{title}\"? All the questions and answers will be deleted. This action can't be undone.",
+		"success": "Survey deleted successfully.",
+		"error": "An error occurred while deleting survey."
 	},
 	"new": {
 		"new": "새 설문조사",
@@ -157,6 +166,9 @@
 		"enter_password_re": "새 비밀번호를 다시 입력하십시오. {username}.",
 		"update": "업데이트"
 	},
+	"share": {
+		"share": "Share"
+	},
 	"error_codes": {
 		"0": "성공.",
 		"1001": "잘못된 매개 변수입니다.",
@@ -165,7 +177,7 @@
 		"2001": "잘못된 토큰입니다.",
 		"2002": "데이터베이스 오류입니다.",
 		"2003": "설문조사 ID가 이미 있습니다.",
-		"2004": "잘못된 사용자입니다."
+		"2004": "Invalid."
 	},
 	"footer": {
 		"translate": "이 페이지는 Microsoft Translator 및 기타 기여자에 의해 번역되었습니다."
