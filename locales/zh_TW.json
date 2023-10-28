@@ -73,7 +73,16 @@
 		"details": "詳"
 	},
 	"edit": {
-		"edit": "編輯"
+		"edit": "編輯",
+		"edit_for": "Edit for \"{title}\""
+	},
+	"delete": {
+		"cancel": "Cancel",
+		"confirm": "Confirm",
+		"warning": "Warning",
+		"warning_msg": "Are you sure you want to delete \"{title}\"? All the questions and answers will be deleted. This action can't be undone.",
+		"success": "Survey deleted successfully.",
+		"error": "An error occurred while deleting survey."
 	},
 	"new": {
 		"new": "新調查",
@@ -157,6 +166,9 @@
 		"enter_password_re": "請重新輸入新密碼 {username}.",
 		"update": "更新"
 	},
+	"share": {
+		"share": "Share"
+	},
 	"error_codes": {
 		"0": "成功。",
 		"1001": "參數無效。",
@@ -165,7 +177,7 @@
 		"2001": "令牌無效。",
 		"2002": "資料庫錯誤。",
 		"2003": "調查ID已存在。",
-		"2004": "無效使用者。"
+		"2004": "Invalid."
 	},
 	"footer": {
 		"translate": "該頁面由 Microsoft Translator 和其他貢獻者翻譯。"
