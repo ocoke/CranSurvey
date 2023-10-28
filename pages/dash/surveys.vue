@@ -88,8 +88,31 @@ import "~/src/styles/dash.css"
 
 						<v-card-actions>
 							<v-spacer></v-spacer>
-							<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/edit?id=' + survey.id))">
+							<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/new?id=' + survey.id))">
 								{{ $t("edit.edit") }}
+							</v-btn>
+							<v-dialog width="500">
+								<template v-slot:activator="{ props }">
+									<v-btn variant="text" color="primary" v-bind="props">
+										{{ $t("results.delete") }}
+									</v-btn>
+								</template>
+
+								<template v-slot:default="{ isActive }">
+									<v-card :title="$t('delete.warning')">
+										<v-card-text>
+											{{ $t('delete.warning_msg', { title: survey.title, }) }}
+										</v-card-text>
+										<v-card-actions>
+											<v-spacer></v-spacer>
+											<v-btn :text="$t('delete.cancel')" @click="isActive.value = false"></v-btn>
+											<v-btn :text="$t('delete.confirm')" @click="deleteSurvey(survey.id);isActive.value = false;"></v-btn>
+										</v-card-actions>
+									</v-card>
+								</template>
+							</v-dialog>
+							<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/share?id=' + survey.id))">
+								{{ $t("share.share") }}
 							</v-btn>
 							<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/results?id=' + survey.id))">
 								{{ $t("results.results") }}
@@ -139,6 +162,22 @@ export default {
 				navigateTo(useLocalePath()("/sign-in"))
 			}
 		},
+		async deleteSurvey(id) {
+			const token = sessionStorage.getItem("_cransurvey_token")
+			const rsp = await $fetch("/api/survey/delete", {
+				method: "POST",
+				body: JSON.stringify({
+					token,
+					uniqueId: id,
+				}),
+			})
+			if (rsp.code == 0) {
+				toast.success(this.$t("delete.success"), toastCfg)
+				this.surveys = this.surveys.filter((survey) => survey.id != id)
+			} else {
+				toast.error(this.$t("delete.error"), toastCfg)
+			}
+		}
 	},
 	async mounted() {
 

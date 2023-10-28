@@ -4,7 +4,7 @@ import checkToken from "~/src/functions/checkToken"
 import escapeText from "~/src/functions/escape"
 export default eventHandler(async (event) => {
 	const storage = useStorage("cransurvey")
-	const { token, title, description, questions, type, site } = await readBody(event)
+	const { token, title, description, questions, type, site, id } = await readBody(event)
 	if (!token || !title || !description || !questions || !type) {
 		return {
 			code: 1001,
@@ -12,7 +12,12 @@ export default eventHandler(async (event) => {
 		}
 	}
 	if (await checkToken(token)) {
-		const uniqueId: string = uuidv4()
+		let uniqueId: string
+		if (!id) {
+			uniqueId = uuidv4()
+		} else {
+			uniqueId = id
+		}
 		const survey: object = await storage.getItem("sid")
 		if (!survey) {
 			return {
@@ -21,10 +26,16 @@ export default eventHandler(async (event) => {
 			}
 		}
 		const surveyId = survey[uniqueId]
-		if (surveyId) {
+		if (surveyId && !id) {
 			return {
 				code: 2003,
 				msg: "Survey ID already exists.",
+			}
+		}
+		if (id && !surveyId) {
+			return {
+				code: 2004,
+				msg: "Survey ID does not exist.",
 			}
 		}
 		for (const i in questions) {

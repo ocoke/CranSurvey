@@ -26,7 +26,8 @@ import "~/src/styles/dash.css"
 </script>
 
 <template>
-	<h1 class="text-h4">{{ $t("new.new") }}</h1>
+	<h1 class="text-h4" v-if="editUpdate">{{ $t("edit.edit_for", { title: surveyTitle, }) }}</h1>
+	<h1 class="text-h4" v-else>{{ $t("new.new") }}</h1>
 	<div class="mainGroup new_survey">
 		<v-card :title="$t('new.q1')" :subtitle="$t('new.q1_sub')" variant="outlined" style="margin-bottom: 20px">
 			<v-card-text>
@@ -266,9 +267,10 @@ import "~/src/styles/dash.css"
 			</v-card-text>
 		</v-card>
 
-		<v-btn variant="outlined" @click="create" style="margin-top: 20px" v-show="surveyType">{{
-			$t("new.create")
-		}}</v-btn>
+		<v-btn variant="outlined" @click="create" style="margin-top: 20px" v-show="surveyType">
+			<span v-if="editUpdate">{{ $t('edit.edit') }}</span>
+			<span v-else>{{ $t('new.create') }}</span>
+		</v-btn>
 	</div>
 </template>
 
@@ -298,6 +300,7 @@ export default {
 			surveyType: "",
 			promptWindowPosition: "bottom_right",
 			priority: 0,
+			editUpdate: false,
 			simple: {
 				type: "short_answer",
 				validate: {
@@ -440,6 +443,9 @@ export default {
 					},
 				}
 			}
+			if (this.editUpdate) {
+				data.id = useRoute().query.id
+			}
 			const rsp = await $fetch("/api/survey/create", {
 				method: "POST",
 				body: JSON.stringify(data),
@@ -516,6 +522,39 @@ export default {
 	},
 	async mounted() {
 		this.username = sessionStorage.getItem("_cransurvey_usr")
+		if (useRoute().query.id) {
+			let editId = useRoute().query.id
+			const rsp = await $fetch("/api/survey/get", {
+				method: "POST",
+				body: JSON.stringify({
+					token: sessionStorage.getItem("_cransurvey_token"),
+					uniqueId: editId,
+				}),
+			})
+			if (rsp.code == 0) {
+				this.editUpdate = true;
+				this.surveyTitle = rsp.survey.title
+				this.surveyDesc = rsp.survey.description
+				this.surveyType = rsp.survey.type
+				this.priority = rsp.survey.site.priority
+				this.promptWindowPosition = rsp.survey.site.promptWindowPosition
+				this.simple.domain = rsp.survey.site.domain
+				if (rsp.survey.type == 'simple') {
+					this.simple = rsp.survey.questions[0]
+					if (rsp.survey.questions[0].validate) {
+						let validate = rsp.survey.questions[0].validate.split(":")
+						this.simple.validate.min = validate[0]
+						this.simple.validate.max = validate[1]
+					}
+				} else if (rsp.survey.type == 'prompt') {
+					this.prompt = rsp.survey.questions[0]
+				} else if (rsp.survey.type == 'advanced') {
+					this.advanced.questions = rsp.survey.questions
+				}
+			} else {
+				toast.error(this.$t("dashboard.error_fetching_data") + " (" + this.$t("error_codes." + rsp.code) + ")", toastCfg)
+			}
+		}
 	},
 }
 </script>

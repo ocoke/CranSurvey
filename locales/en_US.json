@@ -73,7 +73,16 @@
 		"details": "Details"
 	},
 	"edit": {
-		"edit": "Edit"
+		"edit": "Edit",
+		"edit_for": "Edit for \"{title}\""
+	},
+	"delete": {
+		"cancel": "Cancel",
+		"confirm": "Confirm",
+		"warning": "Warning",
+		"warning_msg": "Are you sure you want to delete \"{title}\"? All the questions and answers will be deleted. This action can't be undone.",
+		"success": "Survey deleted successfully.",
+		"error": "An error occurred while deleting survey."
 	},
 	"new": {
 		"new": "New Survey",
@@ -157,6 +166,9 @@
 		"enter_password_re": "Please re-enter the new password for {username}.",
 		"update": "Update"
 	},
+	"share": {
+		"share": "Share"
+	},
 	"error_codes": {
 		"0": "Success.",
 		"1001": "Invalid parameters.",
@@ -165,7 +177,7 @@
 		"2001": "Invalid token.",
 		"2002": "Database error.",
 		"2003": "Survey ID already exists.",
-		"2004": "Invalid user."
+		"2004": "Invalid."
 	},
 	"footer": {
 		"translate": "The page was translated by Microsoft Translator and other contributors."

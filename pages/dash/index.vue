@@ -39,7 +39,7 @@ import "~/src/styles/dash.css"
 			</v-card-actions>
 		</v-card>
 	</div>
-	<div class="card-group">
+	<!-- <div class="card-group">
 		<v-card :title="$t('dashboard.today')" :text="$t('dashboard.today_collected', 1)" variant="tonal">
 			<v-card-actions>
 				<v-btn>{{ $t("dashboard.manage") }}</v-btn>
@@ -50,7 +50,7 @@ import "~/src/styles/dash.css"
 				<v-btn>{{ $t("dashboard.manage") }}</v-btn>
 			</v-card-actions>
 		</v-card>
-	</div>
+	</div> -->
 </template>
 
 <script>
