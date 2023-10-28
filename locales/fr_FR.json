@@ -73,7 +73,16 @@
 		"details": "Détails"
 	},
 	"edit": {
-		"edit": "Éditer"
+		"edit": "Éditer",
+		"edit_for": "Modifier pour »{title}\""
+	},
+	"delete": {
+		"cancel": "Annuler",
+		"confirm": "Confirmer",
+		"warning": "Avertissement",
+		"warning_msg": "Êtes-vous sûr de vouloir supprimer »{title}\"? Toutes les questions et réponses seront supprimées. Cette action ne peut pas être annulée.",
+		"success": "L’enquête a été supprimée avec succès.",
+		"error": "Une erreur s’est produite lors de la suppression de l’enquête."
 	},
 	"new": {
 		"new": "Nouvelle enquête",
@@ -157,6 +166,9 @@
 		"enter_password_re": "Veuillez saisir à nouveau le nouveau mot de passe pour {username}.",
 		"update": "Mettre à jour"
 	},
+	"share": {
+		"share": "Partager"
+	},
 	"error_codes": {
 		"0": "Succès.",
 		"1001": "Paramètres non valides.",
@@ -165,7 +177,7 @@
 		"2001": "Jeton non valide.",
 		"2002": "Erreur de base de données.",
 		"2003": "L’ID d’enquête existe déjà.",
-		"2004": "Utilisateur non valide."
+		"2004": "Non valide."
 	},
 	"footer": {
 		"translate": "La page a été traduite par Microsoft Translator et d’autres contributeurs."

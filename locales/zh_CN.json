@@ -73,7 +73,16 @@
 		"details": "详"
 	},
 	"edit": {
-		"edit": "编辑"
+		"edit": "编辑",
+		"edit_for": "编辑”{title}\""
+	},
+	"delete": {
+		"cancel": "取消",
+		"confirm": "确认",
+		"warning": "警告",
+		"warning_msg": "是否确实要删除”{title}\"? 所有问题和答案都将被删除。此操作无法撤消。",
+		"success": "调查已删除。",
+		"error": "删除调查时出错。"
 	},
 	"new": {
 		"new": "新调查",
@@ -157,6 +166,9 @@
 		"enter_password_re": "请重新输入新密码 {username}.",
 		"update": "更新"
 	},
+	"share": {
+		"share": "共享"
+	},
 	"error_codes": {
 		"0": "成功。",
 		"1001": "参数无效。",
@@ -165,7 +177,7 @@
 		"2001": "令牌无效。",
 		"2002": "数据库错误。",
 		"2003": "调查 ID 已存在。",
-		"2004": "无效用户。"
+		"2004": "无效。"
 	},
 	"footer": {
 		"translate": "该页面由 Microsoft Translator 和其他贡献者翻译。"

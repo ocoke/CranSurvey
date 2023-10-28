@@ -73,7 +73,16 @@
 		"details": "詳"
 	},
 	"edit": {
-		"edit": "編輯"
+		"edit": "編輯",
+		"edit_for": "編輯”{title}\""
+	},
+	"delete": {
+		"cancel": "取消",
+		"confirm": "確認",
+		"warning": "警告",
+		"warning_msg": "是否確實要刪除”{title}\"?所有問題和答案都將被刪除。此操作無法復原。",
+		"success": "調查已刪除。",
+		"error": "刪除調查時出錯。"
 	},
 	"new": {
 		"new": "新調查",
@@ -157,6 +166,9 @@
 		"enter_password_re": "請重新輸入新密碼 {username}.",
 		"update": "更新"
 	},
+	"share": {
+		"share": "共用"
+	},
 	"error_codes": {
 		"0": "成功。",
 		"1001": "參數無效。",
@@ -165,7 +177,7 @@
 		"2001": "令牌無效。",
 		"2002": "資料庫錯誤。",
 		"2003": "調查ID已存在。",
-		"2004": "無效使用者。"
+		"2004": "無效。"
 	},
 	"footer": {
 		"translate": "該頁面由 Microsoft Translator 和其他貢獻者翻譯。"

@@ -73,7 +73,16 @@
 		"details": "Details"
 	},
 	"edit": {
-		"edit": "Redigieren"
+		"edit": "Redigieren",
+		"edit_for": "Bearbeiten für \"{title}\""
+	},
+	"delete": {
+		"cancel": "Abbrechen",
+		"confirm": "Bestätigen",
+		"warning": "Warnung",
+		"warning_msg": "Sind Sie sicher, dass Sie \"{title}\"? Alle Fragen und Antworten werden gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.",
+		"success": "Die Umfrage wurde erfolgreich gelöscht.",
+		"error": "Beim Löschen der Umfrage ist ein Fehler aufgetreten."
 	},
 	"new": {
 		"new": "Neue Umfrage",
@@ -157,6 +166,9 @@
 		"enter_password_re": "Bitte geben Sie das neue Passwort erneut ein, um {username}.",
 		"update": "Aktualisieren"
 	},
+	"share": {
+		"share": "Freigeben"
+	},
 	"error_codes": {
 		"0": "Erfolg.",
 		"1001": "Ungültige Parameter.",
@@ -165,7 +177,7 @@
 		"2001": "Ungültiges Token.",
 		"2002": "Datenbankfehler.",
 		"2003": "Die Umfrage-ID ist bereits vorhanden.",
-		"2004": "Ungültiger Benutzer."
+		"2004": "Ungültig."
 	},
 	"footer": {
 		"translate": "Die Seite wurde von Microsoft Translator und anderen Mitwirkenden übersetzt."

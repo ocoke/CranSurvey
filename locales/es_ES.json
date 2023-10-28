@@ -73,7 +73,16 @@
 		"details": "Detalles"
 	},
 	"edit": {
-		"edit": "Editar"
+		"edit": "Editar",
+		"edit_for": "Editar para \"{title}\""
+	},
+	"delete": {
+		"cancel": "Cancelar",
+		"confirm": "Confirmar",
+		"warning": "Advertencia",
+		"warning_msg": "¿Está seguro de que desea eliminar \"{title}\"? Todas las preguntas y respuestas serán eliminadas. Esta acción no se puede deshacer.",
+		"success": "La encuesta se ha eliminado correctamente.",
+		"error": "Se ha producido un error al eliminar la encuesta."
 	},
 	"new": {
 		"new": "Nueva encuesta",
@@ -157,6 +166,9 @@
 		"enter_password_re": "Vuelva a introducir la nueva contraseña para {username}.",
 		"update": "Actualizar"
 	},
+	"share": {
+		"share": "Compartir"
+	},
 	"error_codes": {
 		"0": "Éxito.",
 		"1001": "Parámetros no válidos.",
@@ -165,7 +177,7 @@
 		"2001": "Token no válido.",
 		"2002": "Error de base de datos.",
 		"2003": "El ID de la encuesta ya existe.",
-		"2004": "Usuario no válido."
+		"2004": "No válido."
 	},
 	"footer": {
 		"translate": "La página fue traducida por Microsoft Translator y otros colaboradores."
