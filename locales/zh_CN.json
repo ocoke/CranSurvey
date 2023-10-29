@@ -156,7 +156,8 @@
 		"add": "新增",
 		"option_exists": "该选项已存在。",
 		"options": "选项",
-		"set_default": "设置为默认值"
+		"set_default": "设置为默认值",
+		"delete_selected": "Delete Selected Items"
 	},
 	"editUser": {
 		"editUser": "编辑 {username}",
