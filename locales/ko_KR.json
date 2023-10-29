@@ -172,10 +172,10 @@
 		"link": "링크",
 		"generate": "창조하다",
 		"shorten_link": "링크 단축",
-		"shortener_link": "단축기 링크",
+		"shortener_link": "Shortened Link",
 		"copy": "복사",
 		"copied": "복사!",
-		"valid_times": "유효 시간(단축기 링크의 경우)"
+		"valid_times": "Valid Times (for shortened link)"
 	},
 	"error_codes": {
 		"0": "성공.",
