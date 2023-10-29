@@ -156,7 +156,8 @@
 		"add": "Ajouter",
 		"option_exists": "L’option existe déjà.",
 		"options": "Options",
-		"set_default": "Définir par défaut"
+		"set_default": "Définir par défaut",
+		"delete_selected": "Delete Selected Items"
 	},
 	"editUser": {
 		"editUser": "Modifier pour {username}",
