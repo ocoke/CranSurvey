@@ -168,14 +168,14 @@
 	},
 	"share": {
 		"share": "Compartilhar",
-		"qrcode": "QR Code",
+		"qrcode": "Código QR",
 		"link": "Link",
-		"generate": "Generate",
-		"shorten_link": "Shorten Link",
-		"shortener_link": "Shortener Link",
-		"copy": "Copy",
-		"copied": "Copied!",
-		"valid_times": "Valid Times (for shortener link)"
+		"generate": "Gerar",
+		"shorten_link": "Encurtar link",
+		"shortener_link": "Link do encurtador",
+		"copy": "Copiar",
+		"copied": "Copiado!",
+		"valid_times": "Tempos válidos (para encurtar link)"
 	},
 	"error_codes": {
 		"0": "Êxito.",
