@@ -168,14 +168,14 @@
 	},
 	"share": {
 		"share": "共用",
-		"qrcode": "QR Code",
-		"link": "Link",
-		"generate": "Generate",
-		"shorten_link": "Shorten Link",
-		"shortener_link": "Shortener Link",
-		"copy": "Copy",
-		"copied": "Copied!",
-		"valid_times": "Valid Times (for shortener link)"
+		"qrcode": "二維碼",
+		"link": "連結",
+		"generate": "生成",
+		"shorten_link": "縮短連結",
+		"shortener_link": "起酥油連結",
+		"copy": "複製",
+		"copied": "複製！",
+		"valid_times": "有效時間（縮短器連結）"
 	},
 	"error_codes": {
 		"0": "成功。",
