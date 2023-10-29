@@ -172,10 +172,10 @@
 		"link": "Verbinden",
 		"generate": "Erzeugen",
 		"shorten_link": "Link kürzen",
-		"shortener_link": "Shortened Link",
+		"shortener_link": "Gekürzter Link",
 		"copy": "Kopieren",
 		"copied": "Kopiert!",
-		"valid_times": "Valid Times (for shortened link)"
+		"valid_times": "Gültige Zeiten (für gekürzten Link)"
 	},
 	"error_codes": {
 		"0": "Erfolg.",
