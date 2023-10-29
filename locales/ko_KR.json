@@ -156,7 +156,8 @@
 		"add": "더하다",
 		"option_exists": "옵션이 이미 있습니다.",
 		"options": "옵션",
-		"set_default": "기본값으로 설정"
+		"set_default": "기본값으로 설정",
+		"delete_selected": "Delete Selected Items"
 	},
 	"editUser": {
 		"editUser": "편집 대상 {username}",
