@@ -1,4 +1,4 @@
-export default function ansValidate(answer: string, type: string, rule: string) {
+export default function ansValidate(answer: any, type: string, rule: string) {
 	if (type == "short_answer") {
 		// Short Answer
 		if (rule.includes(":")) {
@@ -24,8 +24,8 @@ export default function ansValidate(answer: string, type: string, rule: string) 
 		} else if (!rule) {
 			return false
 		}
-	} else if (type == "multiple") {
-		if (!Number(answer)) {
+	} else if (type == "multiple" || type == "dropdown") {
+		if (typeof answer != "number") {
 			return false
 		}
 		if (answer >= rule) {
@@ -36,7 +36,7 @@ export default function ansValidate(answer: string, type: string, rule: string) 
 		if (answer.length > rule) {
 			return false
 		}
-		for (let i in answer) {
+		for (const i in answer) {
 			if (answer[i] !== false && answer[i] !== true) {
 				return false
 			}

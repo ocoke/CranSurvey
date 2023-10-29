@@ -37,6 +37,9 @@
             <div class="checkboxes" v-if="item.type == 'checkboxes' && item.options && item.options.optionsData">
                 <v-checkbox class="viewing-checkboxes" @change="checkboxesItem($event, item.id, item.options.optionsData.length)" :label="i" :value="index" v-for="(i, index) in item.options.optionsData"></v-checkbox>
             </div>
+            <div class="dropdown" v-if="item.type == 'dropdown' && item.options && item.options.optionsData">
+                <v-select :items="item.options.optionsData" v-model="ans[item.id]" item-title="text" item-value="value" label="Select"></v-select>
+            </div>
         </v-card-text>
     </v-card>
     <v-card color="light-green-lighten-4" v-show="collected" style="margin-top: 10px; box-shadow: none;">
@@ -61,6 +64,17 @@ const surveyResp = await $fetch('/api/survey/get', {
         uniqueId,
     }
 })
+
+for (let i of surveyResp.survey.questions) {
+    if (i.type == 'dropdown') {
+        for (let j in i.options.optionsData) {
+            i.options.optionsData[j] = {
+                text: i.options.optionsData[j],
+                value: Number(j),
+            }
+        }
+    }
+}
 
 const surveyInfo = surveyResp.survey
 </script>
@@ -112,9 +126,8 @@ export default {
             })
             
             let surveyInfo = surveyResp.survey
-            
             for (let i in surveyInfo.questions) {
-                if (surveyInfo.questions[i].required && !ans[i]) {
+                if (surveyInfo.questions[i].required && !ans[i] && ans[i] != 0) {
                     toast.error('Please answer all the required questions.', toastCfg)
                     return false
                 }

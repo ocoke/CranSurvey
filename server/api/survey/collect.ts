@@ -25,7 +25,6 @@ export default eventHandler(async (event) => {
 
 	const uniqueAnsId: string = uuidv4()
 
-
 	for (const i in answers) {
 		const q = svId.questions[i]
 		if (!q) {
@@ -34,7 +33,7 @@ export default eventHandler(async (event) => {
 				msg: "Invalid question.",
 			}
 		}
-		if (q.required && !answers[i].answer) {
+		if (q.required && !answers[i].answer && answers[i].answer !== 0) {
 			return {
 				code: 3003,
 				msg: "Required question.",
@@ -43,14 +42,14 @@ export default eventHandler(async (event) => {
 		if (!q.required && !answers[i].answer) {
 			continue
 		}
-		if (q.type == 'checkboxes' || q.type == 'multiple') {
+		if (q.type == "checkboxes" || q.type == "multiple" || q.type == "dropdown") {
 			if (!ansValidate(answers[i].answer, q.type, q.options.optionsData.length)) {
 				return {
 					code: 3002,
 					msg: "Invalid answer.",
 				}
 			}
-		} else if (!ansValidate(answers[i].answer, q.type, (q.validate || "default"))) {
+		} else if (!ansValidate(answers[i].answer, q.type, q.validate || "default")) {
 			return {
 				code: 3002,
 				msg: "Invalid answer.",

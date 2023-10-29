@@ -101,7 +101,7 @@ import "~/src/styles/dash.css"
 						<v-text-field :label="$t('new.validate.max')" type="number" class="inline-num-input" density="compact" v-model="simple.validate.max"></v-text-field>
 					</p></v-card-text>
 				</v-card>
-				<v-card v-if="simple.type == 'multiple' || simple.type == 'checkboxes'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
+				<v-card v-if="simple.type == 'multiple' || simple.type == 'checkboxes' || simple.type == 'dropdown'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
 					<v-card-text style="padding-bottom: 0;">
 						<v-text-field :label="$t('new.validate.text')" variant="outlined" v-model="optionText"></v-text-field>
 						<v-btn variant="outlined" @click="addOptions" style="margin-bottom: 1rem;">{{ $t('new.add') }}</v-btn>
@@ -112,11 +112,14 @@ import "~/src/styles/dash.css"
 									<v-radio v-for="(i, index) in simple.options.optionsData" :label="i" :value="index"></v-radio>
 								</v-radio-group>
 							</div>
+							<div v-else-if="simple.type == 'dropdown'">
+								<v-select :items="simple.options.optionsData" v-model="deleteOptionText" :label="$t('new.validate.preview')"></v-select>
+							</div>
 							<div v-else>
 								<v-checkbox class="preview_checkbox" v-for="i in simple.options.optionsData" :label="i" :value="i" v-model="deleteOptionText"></v-checkbox>
 							</div>
 						</v-card-text></v-card>
-						<v-btn variant="outlined" @click="deleteOption" style="margin-bottom: 1rem;" v-show="simple.options.optionsData.length != 0">{{ $t('results.delete') }}</v-btn>
+						<v-btn variant="outlined" @click="deleteOption" style="margin-bottom: 1rem;" v-show="simple.options.optionsData.length != 0">{{ $t('new.delete_selected') }}</v-btn>
 						<!-- <v-btn variant="outlined" @click="setDefaultOption" style="margin-bottom: 1rem; margin-left: .5rem;" v-show="simple.options.optionsData.length != 0">{{ $t('new.set_default') }}</v-btn> -->
 					</v-card-text>
 				</v-card>
@@ -180,13 +183,13 @@ import "~/src/styles/dash.css"
 								<td>{{ $t('new.question.question_prompt') }}</td>
 								<td>{{ item.prompt }}</td>
 							</tr>
-							<tr>
-								<td>{{ $t('new.question.answer_validate') }}</td>
-								<td>{{ item.validateStr }}</td>
-							</tr>
-							<tr v-if="item.type == 'multiple' || item.type == 'checkboxes'">
+							<tr v-if="item.type == 'multiple' || item.type == 'checkboxes' || item.type == 'dropdown'">
 								<td>{{ $t('new.options') }}</td>
 								<td><code>{{ item.options.optionsData }}</code></td>
+							</tr>
+							<tr v-else>
+								<td>{{ $t('new.question.answer_validate') }}</td>
+								<td>{{ item.validateStr }}</td>
 							</tr>
 							</tbody>
 						</v-table>

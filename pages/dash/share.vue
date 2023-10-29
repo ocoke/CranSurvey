@@ -38,19 +38,22 @@ import "~/src/styles/dash.css"
 					</v-card-actions>
 				</v-card>
 				<v-card :title="$t('share.shorten_link')" variant="outlined" style="margin-top: 20px;">
-					<v-card-text style="padding-bottom: 0;">
+					<v-card-text style="padding-bottom: 0;" v-show="shortened_link_generate">
 						<v-text-field :label="$t('share.shortener_link')" variant="outlined" v-model="page_shorten_link"></v-text-field>
 						<v-text-field :label="$t('share.valid_times')" variant="outlined" v-model="shorten_link_expire" type="number"></v-text-field>
 						<iframe :src="'https://t.cky.im/widget.html?expire=' + shorten_link_expire + '&pid=&url=' + encodeURIComponent(page_link) " frameborder="0" style="width: 100%;"></iframe>
 					</v-card-text>
 					<v-card-actions style="padding-top: 0;">
+						<v-btn @click="shortened_link_generate=true" v-show="!shortened_link_generate">{{ $t("share.generate") }}</v-btn>
 						<v-btn @click="copyShortenLink()">{{ $t("share.copy") }}</v-btn>
 					</v-card-actions>
 				</v-card>
 			</div>
 			<v-card :title="$t('share.qrcode')" variant="outlined">
 				<v-card-text class="qrcode_box">
-					<v-card class="qrcode_img" variant="tonal" v-html="qrcode_html"></v-card>
+					<v-card class="qrcode_img" variant="tonal">
+						<v-card-text v-html="qrcode_html" style="padding: 0;"></v-card-text>
+					</v-card>
 				</v-card-text>
 				<v-card-actions>
 					<v-btn @click="generateQRCode()">{{ $t("share.generate") }}</v-btn>
@@ -86,11 +89,12 @@ export default {
 			page_link: "",
 			page_shorten_link: "",
 			shorten_link_expire: 0,
+			shortened_link_generate: false,
 		}
 	},
 	methods: {
 		generateQRCode() {
-			this.qrcode_html = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=192x192&data=${encodeURIComponent(this.page_link)}">`
+			this.qrcode_html = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(this.page_link)}">`
 		},
 		copyPageLink() {
 			navigator.clipboard.writeText(this.page_link)

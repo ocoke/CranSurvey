@@ -156,7 +156,8 @@
 		"add": "Add",
 		"option_exists": "The option already exists.",
 		"options": "Options",
-		"set_default": "Set as default"
+		"set_default": "Set as default",
+		"delete_selected": "Delete Selected Items"
 	},
 	"editUser": {
 		"editUser": "Edit for {username}",

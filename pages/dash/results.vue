@@ -91,7 +91,7 @@ import "~/src/styles/dash.css"
 										<v-dialog width="500">
 											<template v-slot:activator="{ props }">
 												<p v-bind="props" style="cursor: pointer;">
-													<span v-if="surveyQuestions[index].type == 'multiple' && surveyQuestions[index].options && surveyQuestions[index].options.optionsData">{{ surveyQuestions[index].options.optionsData[item.answer] }}</span>
+													<span v-if="(surveyQuestions[index].type == 'multiple' || surveyQuestions[index].type == 'dropdown') && surveyQuestions[index].options && surveyQuestions[index].options.optionsData">{{ surveyQuestions[index].options.optionsData[item.answer] }}</span>
 													<span v-else-if="surveyQuestions[index].type == 'checkboxes'" style="text-decoration: underline;">{{ $t('results.details') }}</span>
 													<span v-else>{{ desc(item.answer) }}</span>
 												</p>
@@ -100,7 +100,7 @@ import "~/src/styles/dash.css"
 											<template v-slot:default="{ isActive }">
 												<v-card :title="$t('results.results')">
 													<v-card-text>
-														<span v-if="surveyQuestions[index].type == 'multiple' && surveyQuestions[index].options && surveyQuestions[index].options.optionsData">{{ surveyQuestions[index].options.optionsData[item.answer] }}</span>
+														<span v-if="(surveyQuestions[index].type == 'multiple' || surveyQuestions[index].type == 'dropdown') && surveyQuestions[index].options && surveyQuestions[index].options.optionsData">{{ surveyQuestions[index].options.optionsData[item.answer] }}</span>
 														<div v-else-if="surveyQuestions[index].type == 'checkboxes' && surveyQuestions[index].options && surveyQuestions[index].options.optionsData">
 															<v-checkbox hide-details disabled class="viewing-checkboxes" :label="i" v-model="item.answer[index]" v-for="(i, index) in surveyQuestions[index].options.optionsData"></v-checkbox>
 														</div>
