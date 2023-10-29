@@ -39,12 +39,11 @@ import "~/src/styles/dash.css"
 				</v-card>
 				<v-card :title="$t('share.shorten_link')" variant="outlined" style="margin-top: 20px;">
 					<v-card-text style="padding-bottom: 0;">
-						<v-text-field :label="$t('share.shorten_link')" variant="outlined" v-model="page_shorten_link"></v-text-field>
+						<v-text-field :label="$t('share.shortener_link')" variant="outlined" v-model="page_shorten_link"></v-text-field>
 						<v-text-field :label="$t('share.valid_times')" variant="outlined" v-model="shorten_link_expire" type="number"></v-text-field>
 						<iframe :src="'https://t.cky.im/widget.html?expire=' + shorten_link_expire + '&pid=&url=' + encodeURIComponent(page_link) " frameborder="0" style="width: 100%;"></iframe>
 					</v-card-text>
 					<v-card-actions style="padding-top: 0;">
-						<v-btn @click="">{{ $t("share.generate") }}</v-btn>
 						<v-btn @click="copyShortenLink()">{{ $t("share.copy") }}</v-btn>
 					</v-card-actions>
 				</v-card>
