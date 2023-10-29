@@ -167,7 +167,15 @@
 		"update": "Actualizar"
 	},
 	"share": {
-		"share": "Compartir"
+		"share": "Compartir",
+		"qrcode": "Código QR",
+		"link": "Enlace",
+		"generate": "Generar",
+		"shorten_link": "Acortar enlace",
+		"shortener_link": "Enlace acortado",
+		"copy": "Copiar",
+		"copied": "¡Copiado!",
+		"valid_times": "Tiempos válidos (para enlaces acortados)"
 	},
 	"error_codes": {
 		"0": "Éxito.",

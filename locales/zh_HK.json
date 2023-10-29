@@ -167,7 +167,15 @@
 		"update": "Update"
 	},
 	"share": {
-		"share": "Share"
+		"share": "Share",
+		"qrcode": "QR Code",
+		"link": "Link",
+		"generate": "Generate",
+		"shorten_link": "Shorten Link",
+		"shortener_link": "Shortened Link",
+		"copy": "Copy",
+		"copied": "Copied!",
+		"valid_times": "Valid Times (for shortened link)"
 	},
 	"error_codes": {
 		"0": "Success.",

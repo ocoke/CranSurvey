@@ -167,7 +167,15 @@
 		"update": "更新"
 	},
 	"share": {
-		"share": "共享"
+		"share": "共享",
+		"qrcode": "二维码",
+		"link": "链接",
+		"generate": "生成",
+		"shorten_link": "缩短链接",
+		"shortener_link": "缩短链接",
+		"copy": "复制",
+		"copied": "复制！",
+		"valid_times": "有效时间（缩短链接）"
 	},
 	"error_codes": {
 		"0": "成功。",
