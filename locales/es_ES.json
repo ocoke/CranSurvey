@@ -172,10 +172,10 @@
 		"link": "Enlace",
 		"generate": "Generar",
 		"shorten_link": "Acortar enlace",
-		"shortener_link": "Eslabón acortador",
+		"shortener_link": "Shortened Link",
 		"copy": "Copiar",
 		"copied": "¡Copiado!",
-		"valid_times": "Tiempos válidos (para el enlace del acortador)"
+		"valid_times": "Valid Times (for shortened link)"
 	},
 	"error_codes": {
 		"0": "Éxito.",
