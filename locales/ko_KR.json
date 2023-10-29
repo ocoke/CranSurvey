@@ -168,14 +168,14 @@
 	},
 	"share": {
 		"share": "공유",
-		"qrcode": "QR Code",
-		"link": "Link",
-		"generate": "Generate",
-		"shorten_link": "Shorten Link",
-		"shortener_link": "Shortener Link",
-		"copy": "Copy",
-		"copied": "Copied!",
-		"valid_times": "Valid Times (for shortener link)"
+		"qrcode": "QR 코드",
+		"link": "링크",
+		"generate": "창조하다",
+		"shorten_link": "링크 단축",
+		"shortener_link": "단축기 링크",
+		"copy": "복사",
+		"copied": "복사!",
+		"valid_times": "유효 시간(단축기 링크의 경우)"
 	},
 	"error_codes": {
 		"0": "성공.",
