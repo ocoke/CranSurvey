@@ -172,10 +172,10 @@
 		"link": "リンク",
 		"generate": "生成する",
 		"shorten_link": "リンクを短縮",
-		"shortener_link": "短縮リンク",
+		"shortener_link": "Shortened Link",
 		"copy": "写し",
 		"copied": "コピー！",
-		"valid_times": "有効時間(短縮リンク用)"
+		"valid_times": "Valid Times (for shortened link)"
 	},
 	"error_codes": {
 		"0": "成功。",
