@@ -172,10 +172,10 @@
 		"link": "連結",
 		"generate": "生成",
 		"shorten_link": "縮短連結",
-		"shortener_link": "Shortened Link",
+		"shortener_link": "縮短連結",
 		"copy": "複製",
 		"copied": "複製！",
-		"valid_times": "Valid Times (for shortened link)"
+		"valid_times": "有效時間（縮短連結）"
 	},
 	"error_codes": {
 		"0": "成功。",
