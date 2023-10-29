@@ -81,7 +81,7 @@ import "~/src/styles/dash.css"
 									<td>{{ $t("surveys.enable_" + (survey.enable || false).toString()) }}</td>
 									<td>{{ $t("new.q1_" + survey.type) }}</td>
 									<td>{{ survey.questions.length }}</td>
-									<td>{{ new Date(survey.created_at) }}</td>
+									<td>{{ new Date(survey.created_at).toLocaleString() }}</td>
 								</tr>
 							</tbody>
 						</v-table>

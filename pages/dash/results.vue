@@ -47,7 +47,7 @@ import "~/src/styles/dash.css"
 						</template>
 					</v-expansion-panel-title>
 					<v-expansion-panel-text>
-						<p>{{ $t("results.collected_at", { date: new Date(asw.created_at) }) }}</p>
+						<p>{{ $t("results.collected_at", { date: new Date(asw.created_at).toLocaleString() }) }}</p>
 						<!-- <div v-for="aw in asw.ans" style="margin-top: 1.5rem;">
 							<v-text-field :label="aw.answer" variant="outlined" :value="aw.answer"></v-text-field>
 						</div> -->
@@ -201,7 +201,7 @@ export default {
 			this.surveyText = this.$t("results.survey_preview", {
 				count: surveyData.answers.length,
 				id: surveyData.survey.id,
-				time: "`" + new Date(surveyData.survey.created_at) + "`",
+				time: "`" + new Date(surveyData.survey.created_at).toLocaleString() + "`",
 				title: surveyData.survey.title,
 			})
 			this.surveyAnswers = surveyData.answers
