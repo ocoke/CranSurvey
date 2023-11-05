@@ -101,7 +101,7 @@ import "~/src/styles/dash.css"
 						<v-text-field :label="$t('new.validate.max')" type="number" class="inline-num-input" density="compact" v-model="simple.validate.max"></v-text-field>
 					</p></v-card-text>
 				</v-card>
-				<v-card v-if="simple.type == 'date'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
+				<v-card v-else-if="simple.type == 'date'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
 					<v-card-text>
 					
 						<v-dialog width="500">
@@ -153,7 +153,7 @@ import "~/src/styles/dash.css"
 						</v-dialog>
 					</v-card-text>
 				</v-card>
-				<v-card v-if="simple.type == 'time'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
+				<v-card v-else-if="simple.type == 'time'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
 					<v-card-text style="padding-bottom: 0;"><p style="display: flex; align-items: center; font-size: 1rem;" class="validateText">
 						<span>{{ $t('new.validate.length') }} {{ $t('new.validate.from') }} </span>
 						<v-text-field :label="$t('new.validate.min')" type="number" class="inline-num-input" density="compact" v-model="simple.validate.min"></v-text-field> 
@@ -161,7 +161,7 @@ import "~/src/styles/dash.css"
 						<v-text-field :label="$t('new.validate.max')" type="number" class="inline-num-input" density="compact" v-model="simple.validate.max"></v-text-field>
 					</p></v-card-text>
 				</v-card>
-				<v-card v-if="simple.type == 'multiple' || simple.type == 'checkboxes' || simple.type == 'dropdown'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
+				<v-card v-else-if="simple.type == 'multiple' || simple.type == 'checkboxes' || simple.type == 'dropdown'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
 					<v-card-text style="padding-bottom: 0;">
 						<v-text-field :label="$t('new.validate.text')" variant="outlined" v-model="optionText"></v-text-field>
 						<v-btn variant="outlined" @click="addOptions" style="margin-bottom: 1rem;">{{ $t('new.add') }}</v-btn>
@@ -183,6 +183,9 @@ import "~/src/styles/dash.css"
 						<!-- <v-btn variant="outlined" @click="setDefaultOption" style="margin-bottom: 1rem; margin-left: .5rem;" v-show="simple.options.optionsData.length != 0">{{ $t('new.set_default') }}</v-btn> -->
 					</v-card-text>
 				</v-card>
+				<blockquote v-else  style="margin-bottom: 1rem; overflow-x: initial;" class="blockquote">
+					{{ $t('new.question.answer_validate_unavailable') }}
+				</blockquote>
 				<h3 class="ques_title">{{ $t("new.question.question_placeholder") }}</h3>
 				<v-text-field
 					:label="$t('new.question.question_placeholder_sub')"
@@ -408,22 +411,22 @@ export default {
 					name: this.$t("new.types.dropdown"),
 					value: "dropdown",
 				},
-				{
-					name: this.$t("new.types.linear"),
-					value: "linear",
-				},
-				{
-					name: this.$t("new.types.file"),
-					value: "file",
-				},
+				// {
+				// 	name: this.$t("new.types.linear"),
+				// 	value: "linear",
+				// },
+				// {
+				// 	name: this.$t("new.types.file"),
+				// 	value: "file",
+				// },
 				{
 					name: this.$t("new.types.date"),
 					value: "date",
 				},
-				{
-					name: this.$t("new.types.time"),
-					value: "time",
-				},
+				// {
+				// 	name: this.$t("new.types.time"),
+				// 	value: "time",
+				// },
 			]
 		}
 	},

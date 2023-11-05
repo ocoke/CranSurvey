@@ -189,7 +189,11 @@
 		"2001": "Invalid token.",
 		"2002": "Database error.",
 		"2003": "Survey ID already exists.",
-		"2004": "Invalid."
+		"2004": "Invalid.",
+		"3001": "Invalid question.",
+		"3002": "Invalid answer.",
+		"3003": "Required question.",
+
 	},
 	"footer": {
 		"translate": "The page was translated by Microsoft Translator and other contributors."
