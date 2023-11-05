@@ -70,7 +70,8 @@
 		"delete": "削除",
 		"attributes": "属性",
 		"value": "価値",
-		"details": "細部"
+		"details": "細部",
+		"clear": "Clear"
 	},
 	"edit": {
 		"edit": "編集",
@@ -151,7 +152,9 @@
 			"min": "分",
 			"max": "マックス",
 			"text": "テキスト",
-			"preview": "プレビュー"
+			"preview": "プレビュー",
+			"start": "Set start time",
+			"end": "Set end time"
 		},
 		"add": "足す",
 		"option_exists": "このオプションは既に存在します。",
