@@ -70,7 +70,8 @@
 		"delete": "Supprimer",
 		"attributes": "Attributs",
 		"value": "Valeur",
-		"details": "Détails"
+		"details": "Détails",
+		"clear": "Clear"
 	},
 	"edit": {
 		"edit": "Éditer",
@@ -151,7 +152,9 @@
 			"min": "Min",
 			"max": "Max",
 			"text": "SMS",
-			"preview": "Aperçu"
+			"preview": "Aperçu",
+			"start": "Set start time",
+			"end": "Set end time"
 		},
 		"add": "Ajouter",
 		"option_exists": "L’option existe déjà.",
