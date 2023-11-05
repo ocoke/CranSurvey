@@ -70,7 +70,8 @@
 		"delete": "Delete",
 		"attributes": "Attributes",
 		"value": "Value",
-		"details": "Details"
+		"details": "Details",
+		"clear": "Clear"
 	},
 	"edit": {
 		"edit": "Edit",
@@ -151,7 +152,9 @@
 			"min": "Min",
 			"max": "Max",
 			"text": "Text",
-			"preview": "Preview"
+			"preview": "Preview",
+			"start": "Set start time",
+			"end": "Set end time"
 		},
 		"add": "Add",
 		"option_exists": "The option already exists.",
