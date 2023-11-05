@@ -49,6 +49,13 @@ export default eventHandler(async (event) => {
 					msg: "Invalid answer.",
 				}
 			}
+		} else if (q.type == "date") {
+			if (!ansValidate(answers[i].answer, q.type, q.options.optionsData)) {
+				return {
+					code: 3002,
+					msg: "Invalid answer.",
+				}
+			}
 		} else if (!ansValidate(answers[i].answer, q.type, q.validate || "default")) {
 			return {
 				code: 3002,

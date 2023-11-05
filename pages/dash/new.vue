@@ -101,6 +101,66 @@ import "~/src/styles/dash.css"
 						<v-text-field :label="$t('new.validate.max')" type="number" class="inline-num-input" density="compact" v-model="simple.validate.max"></v-text-field>
 					</p></v-card-text>
 				</v-card>
+				<v-card v-if="simple.type == 'date'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
+					<v-card-text>
+					
+						<v-dialog width="500">
+							<template v-slot:activator="{ props }">
+								<p><v-btn v-bind="props" :text="$t('new.validate.start')" variant="outlined"></v-btn>
+								<span v-show="simple.options.optionsData[0]" style="margin-left: 1rem;">{{ new Date(simple.options.optionsData[0]).toLocaleString() }}</span></p>
+							</template>
+
+							<template v-slot:default="{ isActive }">
+								<v-card title="Date">
+								<v-card-text>
+									<v-date-picker v-model="simple.options.optionsData[0]" variant="outlined" style="margin: 0 auto; box-shadow: none;"></v-date-picker>
+								</v-card-text>
+
+								<v-card-actions>
+									<v-spacer></v-spacer>
+
+									<v-btn
+										:text="$t('results.close')"
+										@click="isActive.value = false"
+									></v-btn>
+									
+								</v-card-actions>
+								</v-card>
+							</template>
+						</v-dialog>
+						<v-dialog width="500">
+							<template v-slot:activator="{ props }">
+								<p style="margin-top: .5rem;"><v-btn v-bind="props" :text="$t('new.validate.end')" variant="outlined"></v-btn>
+								<span v-show="simple.options.optionsData[1]" style="margin-left: 1rem;">{{ new Date(simple.options.optionsData[1]).toLocaleString() }}</span></p>
+							</template>
+
+							<template v-slot:default="{ isActive }">
+								<v-card title="Date">
+								<v-card-text>
+									<v-date-picker v-model="simple.options.optionsData[1]" variant="outlined" style="margin: 0 auto; box-shadow: none;"></v-date-picker>
+								</v-card-text>
+
+								<v-card-actions>
+									<v-spacer></v-spacer>
+
+									<v-btn
+									:text="$t('results.close')"
+									@click="isActive.value = false"
+									></v-btn>
+								</v-card-actions>
+								</v-card>
+							</template>
+						</v-dialog>
+					</v-card-text>
+				</v-card>
+				<v-card v-if="simple.type == 'time'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
+					<v-card-text style="padding-bottom: 0;"><p style="display: flex; align-items: center; font-size: 1rem;" class="validateText">
+						<span>{{ $t('new.validate.length') }} {{ $t('new.validate.from') }} </span>
+						<v-text-field :label="$t('new.validate.min')" type="number" class="inline-num-input" density="compact" v-model="simple.validate.min"></v-text-field> 
+						<span>{{ $t('new.validate.to') }} </span>
+						<v-text-field :label="$t('new.validate.max')" type="number" class="inline-num-input" density="compact" v-model="simple.validate.max"></v-text-field>
+					</p></v-card-text>
+				</v-card>
 				<v-card v-if="simple.type == 'multiple' || simple.type == 'checkboxes' || simple.type == 'dropdown'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
 					<v-card-text style="padding-bottom: 0;">
 						<v-text-field :label="$t('new.validate.text')" variant="outlined" v-model="optionText"></v-text-field>
@@ -129,7 +189,7 @@ import "~/src/styles/dash.css"
 					variant="outlined"
 					maxlength="500"
 					v-model="simple.placeholder"
-					:disabled="simple.type == 'multiple' || simple.type == 'checkboxes'"
+					:disabled="simple.type == 'multiple' || simple.type == 'checkboxes' || simple.type == 'dropdown' || simple.type == 'date' || simple.type == 'time'"
 				></v-text-field>
 				<v-btn variant="outlined" v-show="surveyType == 'advanced'" @click="addQuestion">{{ $t('new.add') }}</v-btn>
 			</v-card-text>
@@ -183,7 +243,7 @@ import "~/src/styles/dash.css"
 								<td>{{ $t('new.question.question_prompt') }}</td>
 								<td>{{ item.prompt }}</td>
 							</tr>
-							<tr v-if="item.type == 'multiple' || item.type == 'checkboxes' || item.type == 'dropdown'">
+							<tr v-if="item.type == 'multiple' || item.type == 'checkboxes' || item.type == 'dropdown' || item.type == 'date' || item.date == 'time'">
 								<td>{{ $t('new.options') }}</td>
 								<td><code>{{ item.options.optionsData }}</code></td>
 							</tr>

@@ -40,6 +40,33 @@
             <div class="dropdown" v-if="item.type == 'dropdown' && item.options && item.options.optionsData">
                 <v-select :items="item.options.optionsData" v-model="ans[item.id]" item-title="text" item-value="value" label="Select"></v-select>
             </div>
+            <div class="date" v-if="item.type == 'date' && item.options && item.options.optionsData">
+                <v-dialog width="500">
+                    <template v-slot:activator="{ props }" >
+                        <p><v-btn v-bind="props" text="Select Date" variant="outlined"></v-btn>
+                        <span v-show="ans[item.id]" style="margin-left: 1rem;">{{ new Date(ans[item.id]).toLocaleString() }}</span></p>
+                        <p v-if="ans[item.id] && !ansValidate(new Date(ans[item.id]).getTime(), 'date', item.options.optionsData)" class="text-deep-orange-darken-3" style="margin-top: 1rem;">Your answer doesn't meet the requirements.</p>
+                    </template>
+
+                    <template v-slot:default="{ isActive }">
+                        <v-card title="Date">
+                        <v-card-text>
+                            <v-date-picker v-model="ans[item.id]" variant="outlined" style="margin: 0 auto; box-shadow: none;"></v-date-picker>
+                        </v-card-text>
+
+                        <v-card-actions>
+                            <v-spacer></v-spacer>
+
+                            <v-btn
+                                :text="$t('results.close')"
+                                @click="isActive.value = false"
+                            ></v-btn>
+                            
+                        </v-card-actions>
+                        </v-card>
+                    </template>
+                </v-dialog>
+            </div>
         </v-card-text>
     </v-card>
     <v-card color="light-green-lighten-4" v-show="collected" style="margin-top: 10px; box-shadow: none;">
@@ -48,6 +75,7 @@
         </v-card-text>
     </v-card>
     <v-btn style="box-shadow: none; background-color: #DCEDC8!important; float: right; color: rgba(0, 0, 0, .8)!important; margin-top: 10px; text-align: right; margin-bottom: 30px;" @click="submit" :disabled="!ans" v-show="!collected">Submit</v-btn>
+    <span style="display: none;" id="_info">{{ surveyInfo }}</span>
 </div>  
 </template>
 <script setup>
@@ -118,18 +146,15 @@ export default {
             }
             let answers = []
 
-            const surveyResp = await $fetch('/api/survey/get', {
-                method: "POST",
-                body: {
-                    uniqueId,
-                }
-            })
-            
-            let surveyInfo = surveyResp.survey
+            const surveyInfo = JSON.parse(document.getElementById('_info').innerText)
             for (let i in surveyInfo.questions) {
                 if (surveyInfo.questions[i].required && !ans[i] && ans[i] != 0) {
                     toast.error('Please answer all the required questions.', toastCfg)
                     return false
+                }
+                if (surveyInfo.questions[i].type == 'date') {
+                    ans[i] = new Date(ans[i]).getTime()
+                    surveyInfo.questions[i].validate = surveyInfo.questions[i].options.optionsData
                 }
                 if (ans[i] && !ansValidate(ans[i], surveyInfo.questions[i].type, surveyInfo.questions[i].validate)) {
                     toast.error('The answer doesn\'t meet the requirements. Please check it and try again.', toastCfg)

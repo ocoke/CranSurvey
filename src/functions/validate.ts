@@ -1,4 +1,4 @@
-export default function ansValidate(answer: any, type: string, rule: string) {
+export default function ansValidate(answer: any, type: string, rule: any) {
 	if (type == "short_answer") {
 		// Short Answer
 		if (rule.includes(":")) {
@@ -42,6 +42,15 @@ export default function ansValidate(answer: any, type: string, rule: string) {
 			}
 		}
 		return true
+	} else if (type == "date") {
+		if (typeof answer != "number") {
+			return false
+		}
+		if (answer >= rule[0] && answer <= rule[1]) {
+			return true
+		} else {
+			return false
+		}
 	} else {
 		return false
 	}

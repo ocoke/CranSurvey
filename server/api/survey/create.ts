@@ -42,6 +42,10 @@ export default eventHandler(async (event) => {
 			questions[i]["question"] = escapeText(questions[i]["question"])
 			if (questions[i]["placeholder"]) questions[i]["placeholder"] = escapeText(questions[i]["placeholder"])
 			if (questions[i]["prompt"]) questions[i]["prompt"] = escapeText(questions[i]["prompt"])
+			if (questions[i].type == "date") {
+				questions[i].options.optionsData[0] = new Date(questions[i].options.optionsData[0]).getTime()
+				questions[i].options.optionsData[1] = new Date(questions[i].options.optionsData[1]).getTime()
+			}
 		}
 
 		const new_survey = {
