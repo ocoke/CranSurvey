@@ -70,7 +70,8 @@
 		"delete": "삭제하다",
 		"attributes": "특성",
 		"value": "값",
-		"details": "세부 정보"
+		"details": "세부 정보",
+		"clear": "Clear"
 	},
 	"edit": {
 		"edit": "편집하다",
@@ -151,7 +152,9 @@
 			"min": "분",
 			"max": "최대",
 			"text": "문자 메시지",
-			"preview": "미리 보기"
+			"preview": "미리 보기",
+			"start": "Set start time",
+			"end": "Set end time"
 		},
 		"add": "더하다",
 		"option_exists": "옵션이 이미 있습니다.",
