@@ -160,7 +160,19 @@
 		"option_exists": "該選項已存在。",
 		"options": "選項",
 		"set_default": "設置為預設值",
-		"delete_selected": "Delete Selected Items"
+		"delete_selected": "Delete Selected Items",
+		"files": {
+			"specific": "Specific File Types",
+			"specific_sub": "Enter the file types you want to allow, leave blank for all.",
+			"docs": "Documents",
+			"images": "Images",
+			"videos": "Videos",
+			"audios": "Audios",
+			"pdf": "PDF",
+			"sheets": "Sheets",
+			"slides": "Slides",
+			"archives": "Archives"
+		}
 	},
 	"editUser": {
 		"editUser": "編輯 {username}",
@@ -189,7 +201,10 @@
 		"2001": "令牌無效。",
 		"2002": "資料庫錯誤。",
 		"2003": "調查ID已存在。",
-		"2004": "無效。"
+		"2004": "無效。",
+		"3001": "Invalid question.",
+		"3002": "Invalid answer.",
+		"3003": "Required question."
 	},
 	"footer": {
 		"translate": "該頁面由 Microsoft Translator 和其他貢獻者翻譯。"
