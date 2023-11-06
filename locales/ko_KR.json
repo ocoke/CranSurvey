@@ -160,7 +160,19 @@
 		"option_exists": "옵션이 이미 있습니다.",
 		"options": "옵션",
 		"set_default": "기본값으로 설정",
-		"delete_selected": "Delete Selected Items"
+		"delete_selected": "Delete Selected Items",
+		"files": {
+			"specific": "Specific File Types",
+			"specific_sub": "Enter the file types you want to allow, leave blank for all.",
+			"docs": "Documents",
+			"images": "Images",
+			"videos": "Videos",
+			"audios": "Audios",
+			"pdf": "PDF",
+			"sheets": "Sheets",
+			"slides": "Slides",
+			"archives": "Archives"
+		}
 	},
 	"editUser": {
 		"editUser": "편집 대상 {username}",
@@ -189,7 +201,10 @@
 		"2001": "잘못된 토큰입니다.",
 		"2002": "데이터베이스 오류입니다.",
 		"2003": "설문조사 ID가 이미 있습니다.",
-		"2004": "올바르지 않음."
+		"2004": "올바르지 않음.",
+		"3001": "Invalid question.",
+		"3002": "Invalid answer.",
+		"3003": "Required question."
 	},
 	"footer": {
 		"translate": "이 페이지는 Microsoft Translator 및 기타 기여자에 의해 번역되었습니다."
