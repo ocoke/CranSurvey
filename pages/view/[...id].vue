@@ -16,7 +16,7 @@
             <p>Your response has been recorded.</p>
         </v-card-text>
     </v-card> -->
-    <v-card color="light-green-lighten-4" v-for="item in surveyInfo.questions" style="margin-top: 10px; box-shadow: none;" v-show="!collected">
+    <v-card color="light-green-lighten-4" v-for="item in surveyInfo.questions" style="margin-top: 10px; box-shadow: none;" v-show="!collected" :loading="cardloading[item.id]">
         <v-card-title class="quesition_card_title" style="font-size: 1rem;">{{ item.question }}<span v-show="item.required">*</span></v-card-title>
         <v-card-subtitle v-show="item.type != 'info' && item.prompt" class="question_card_subtitle">{{ item.prompt }}</v-card-subtitle>
         <v-card-text class="question_card_text">
@@ -67,6 +67,10 @@
                     </template>
                 </v-dialog>
             </div>
+            <div class="file" v-show="item.type == 'file' && item.options && item.options.optionsData" style="padding-top: 20px;">
+                <v-file-input label="File Input" variant="outlined" :accept="fileSuffixes(item.options.optionsData)" @change="upload($event, item.id)"></v-file-input>
+                <p style="margin-bottom: .3rem;" v-if="ans[item.id]">Upload completed! URL: {{ ans[item.id] }}</p>
+            </div>
         </v-card-text>
     </v-card>
     <v-card color="light-green-lighten-4" v-show="collected" style="margin-top: 10px; box-shadow: none;">
@@ -105,6 +109,26 @@ for (let i of surveyResp.survey.questions) {
 }
 
 const surveyInfo = surveyResp.survey
+const suffixes = {
+    images: ["png", "jpg", "jpeg", "gif", "webp", "svg", "ico", "bmp", "tiff", "tif"],
+    docs: ["docs", "doc", "docx", "odt", "rtf", "tex", "txt", "wpd"],
+    pdf: ["pdf"],
+    sheets: ["sheets", "xls", "xlsx", "ods", "csv"],
+    slides: ["slides", "ppt", "pptx", "odp"],
+    audios: ["mp3", "wav", "wma", "m4a", "aac", "oga", "flac", "webma"],
+    videos: ["mp4", "webm", "mov", "mkv", "flv", "ogv", "avi", "wmv", "m4v"],
+    archives: ["zip", "tar.gz", "tar.xz", "tar.lz", "tar.bz2", "tar"],
+}
+const fileSuffixes = (labels) => {
+    let a = [] 
+    for (let i in labels) {
+        for (let _ in suffixes[labels[i]]) {
+            a.push('.' + suffixes[labels[i]][_])
+        }
+    }
+    return a.toString()
+}
+
 </script>
 <script>
 import { useToast } from "vue-toastification"
@@ -129,7 +153,9 @@ export default {
     data() {
         return {
             ans: [],
+            cardloading: [],
             surveyInfo: {},
+            ans_temp: [],
             collected: false,
         }
     },
@@ -156,6 +182,9 @@ export default {
                     ans[i] = new Date(ans[i]).getTime()
                     surveyInfo.questions[i].validate = surveyInfo.questions[i].options.optionsData
                 }
+                if (surveyInfo.questions[i].type == 'file') {
+                    surveyInfo.questions[i].validate = surveyInfo.questions[i].options.optionsData
+                }
                 if (ans[i] && !ansValidate(ans[i], surveyInfo.questions[i].type, surveyInfo.questions[i].validate)) {
                     toast.error('The answer doesn\'t meet the requirements. Please check it and try again.', toastCfg)
                     return false
@@ -164,6 +193,11 @@ export default {
                     id: i,
                     answer: ans[i]
                 })
+            }
+
+            if (this.cardloading.includes(true)) {
+                toast.error('Please wait for the file to upload.', toastCfg)
+                return false
             }
             const resp = await $fetch('/api/survey/collect', {
                 method: "POST",
@@ -196,6 +230,18 @@ export default {
             } else {
                 ans[id][v] = true
             }
+        },
+        async upload(e, id) {
+            const formData = new FormData();
+            formData.append('file', e.target.files[0])
+            this.cardloading[id] = true
+            const resp = await $fetch('/api/upload/' + e.target.files[0].name, {
+                method: "PUT",
+                body: formData,
+            })
+            console.log(e.target.files[0])
+            this.ans[id] = resp
+            this.cardloading[id] = false
         }
     },
     async mounted() {

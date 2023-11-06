@@ -49,7 +49,7 @@ export default eventHandler(async (event) => {
 					msg: "Invalid answer.",
 				}
 			}
-		} else if (q.type == "date") {
+		} else if (q.type == "date" || q.type == "file") {
 			if (!ansValidate(answers[i].answer, q.type, q.options.optionsData)) {
 				return {
 					code: 3002,
@@ -62,6 +62,7 @@ export default eventHandler(async (event) => {
 				msg: "Invalid answer.",
 			}
 		}
+		q.id = Number(q.id)
 		// answers[i].answer = escapeText(answers[i].answer)
 	}
 

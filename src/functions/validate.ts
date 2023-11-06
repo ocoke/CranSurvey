@@ -51,6 +51,33 @@ export default function ansValidate(answer: any, type: string, rule: any) {
 		} else {
 			return false
 		}
+	} else if (type == "file") {
+		// using transfer.sh
+		const url = new URL(answer)
+		if (url.hostname == "transfer.sh" && answer.length <= 2048) {
+			// suffix for all images files
+			const suffixes = {
+				images: ["png", "jpg", "jpeg", "gif", "webp", "svg", "ico", "bmp", "tiff", "tif"],
+				docs: ["docs", "doc", "docx", "odt", "rtf", "tex", "txt", "wpd"],
+				pdf: ["pdf"],
+				sheets: ["sheets", "xls", "xlsx", "ods", "csv"],
+				slides: ["slides", "ppt", "pptx", "odp"],
+				audios: ["mp3", "wav", "wma", "m4a", "aac", "oga", "flac", "webma"],
+				videos: ["mp4", "webm", "mov", "mkv", "flv", "ogv", "avi", "wmv", "m4v"],
+				archives: ["zip", "tar.gz", "tar.xz", "tar.lz", "tar.bz2", "tar"],
+			}
+			// rule: ['images', 'docs']
+			if (rule.length == 0) {
+				return true
+			}
+			for (const i in rule) {
+				if (suffixes[rule[i]].includes(url.pathname.split(".").pop())) {
+					return true
+				}
+			}
+		} else {
+			return false
+		}
 	} else {
 		return false
 	}

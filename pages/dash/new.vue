@@ -161,6 +161,7 @@ import "~/src/styles/dash.css"
 						<v-text-field :label="$t('new.validate.max')" type="number" class="inline-num-input" density="compact" v-model="simple.validate.max"></v-text-field>
 					</p></v-card-text>
 				</v-card>
+				<!-- multiple choices, checkboxes and dropdowns -->
 				<v-card v-else-if="simple.type == 'multiple' || simple.type == 'checkboxes' || simple.type == 'dropdown'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
 					<v-card-text style="padding-bottom: 0;">
 						<v-text-field :label="$t('new.validate.text')" variant="outlined" v-model="optionText"></v-text-field>
@@ -180,7 +181,21 @@ import "~/src/styles/dash.css"
 							</div>
 						</v-card-text></v-card>
 						<v-btn variant="outlined" @click="deleteOption" style="margin-bottom: 1rem;" v-show="simple.options.optionsData.length != 0">{{ $t('new.delete_selected') }}</v-btn>
-						<!-- <v-btn variant="outlined" @click="setDefaultOption" style="margin-bottom: 1rem; margin-left: .5rem;" v-show="simple.options.optionsData.length != 0">{{ $t('new.set_default') }}</v-btn> -->
+					</v-card-text>
+				</v-card>
+				<!-- file -->
+				<v-card v-else-if="simple.type == 'file'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial;">
+					<v-card-text style="padding-bottom: 0;">
+						<v-autocomplete
+							:label="$t('new.files.specific')"
+							:items="fileTypes"
+							item-title="name"
+							item-value="value"
+							multiple
+							variant="outlined"
+							v-model="simple.options.optionsData"
+							chips
+						></v-autocomplete>
 					</v-card-text>
 				</v-card>
 				<blockquote v-else  style="margin-bottom: 1rem; overflow-x: initial;" class="blockquote">
@@ -246,7 +261,7 @@ import "~/src/styles/dash.css"
 								<td>{{ $t('new.question.question_prompt') }}</td>
 								<td>{{ item.prompt }}</td>
 							</tr>
-							<tr v-if="item.type == 'multiple' || item.type == 'checkboxes' || item.type == 'dropdown' || item.type == 'date' || item.date == 'time'">
+							<tr v-if="item.type == 'multiple' || item.type == 'checkboxes' || item.type == 'dropdown' || item.type == 'date' || item.type == 'time' || item.type == 'file'">
 								<td>{{ $t('new.options') }}</td>
 								<td><code>{{ item.options.optionsData }}</code></td>
 							</tr>
@@ -415,10 +430,10 @@ export default {
 				// 	name: this.$t("new.types.linear"),
 				// 	value: "linear",
 				// },
-				// {
-				// 	name: this.$t("new.types.file"),
-				// 	value: "file",
-				// },
+				{
+					name: this.$t("new.types.file"),
+					value: "file",
+				},
 				{
 					name: this.$t("new.types.date"),
 					value: "date",
@@ -427,6 +442,37 @@ export default {
 				// 	name: this.$t("new.types.time"),
 				// 	value: "time",
 				// },
+			],
+			fileTypes: [
+				{
+					name: this.$t("new.files.images"),
+					value: "images",
+				},
+				// docs, videos, audios, sheets, slides, others ...
+				{
+					name: this.$t("new.files.docs"),
+					value: "docs",
+				},
+				{
+					name: this.$t("new.files.videos"),
+					value: "videos",
+				},
+				{
+					name: this.$t("new.files.audios"),
+					value: "audios",
+				},
+				{
+					name: this.$t("new.files.sheets"),
+					value: "sheets",
+				},
+				{
+					name: this.$t("new.files.slides"),
+					value: "slides",
+				},
+				{
+					name: this.$t("new.files.archives"),
+					value: "archives",
+				},
 			]
 		}
 	},
