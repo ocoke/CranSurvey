@@ -160,7 +160,19 @@
 		"option_exists": "La opción ya existe.",
 		"options": "Opciones",
 		"set_default": "Establecer como predeterminado",
-		"delete_selected": "Delete Selected Items"
+		"delete_selected": "Delete Selected Items",
+		"files": {
+			"specific": "Specific File Types",
+			"specific_sub": "Enter the file types you want to allow, leave blank for all.",
+			"docs": "Documents",
+			"images": "Images",
+			"videos": "Videos",
+			"audios": "Audios",
+			"pdf": "PDF",
+			"sheets": "Sheets",
+			"slides": "Slides",
+			"archives": "Archives"
+		}
 	},
 	"editUser": {
 		"editUser": "Editar para {username}",
@@ -189,7 +201,10 @@
 		"2001": "Token no válido.",
 		"2002": "Error de base de datos.",
 		"2003": "El ID de la encuesta ya existe.",
-		"2004": "No válido."
+		"2004": "No válido.",
+		"3001": "Invalid question.",
+		"3002": "Invalid answer.",
+		"3003": "Required question."
 	},
 	"footer": {
 		"translate": "La página fue traducida por Microsoft Translator y otros colaboradores."
