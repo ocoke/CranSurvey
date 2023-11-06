@@ -160,7 +160,19 @@
 		"option_exists": "Die Option ist bereits vorhanden.",
 		"options": "Optionen",
 		"set_default": "Als Standard festlegen",
-		"delete_selected": "Delete Selected Items"
+		"delete_selected": "Delete Selected Items",
+		"files": {
+			"specific": "Specific File Types",
+			"specific_sub": "Enter the file types you want to allow, leave blank for all.",
+			"docs": "Documents",
+			"images": "Images",
+			"videos": "Videos",
+			"audios": "Audios",
+			"pdf": "PDF",
+			"sheets": "Sheets",
+			"slides": "Slides",
+			"archives": "Archives"
+		}
 	},
 	"editUser": {
 		"editUser": "Bearbeiten für {username}",
@@ -189,7 +201,10 @@
 		"2001": "Ungültiges Token.",
 		"2002": "Datenbankfehler.",
 		"2003": "Die Umfrage-ID ist bereits vorhanden.",
-		"2004": "Ungültig."
+		"2004": "Ungültig.",
+		"3001": "Invalid question.",
+		"3002": "Invalid answer.",
+		"3003": "Required question."
 	},
 	"footer": {
 		"translate": "Die Seite wurde von Microsoft Translator und anderen Mitwirkenden übersetzt."
