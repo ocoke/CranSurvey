@@ -160,7 +160,19 @@
 		"option_exists": "该选项已存在。",
 		"options": "选项",
 		"set_default": "设置为默认值",
-		"delete_selected": "Delete Selected Items"
+		"delete_selected": "Delete Selected Items",
+		"files": {
+			"specific": "Specific File Types",
+			"specific_sub": "Enter the file types you want to allow, leave blank for all.",
+			"docs": "Documents",
+			"images": "Images",
+			"videos": "Videos",
+			"audios": "Audios",
+			"pdf": "PDF",
+			"sheets": "Sheets",
+			"slides": "Slides",
+			"archives": "Archives"
+		}
 	},
 	"editUser": {
 		"editUser": "编辑 {username}",
@@ -189,7 +201,10 @@
 		"2001": "令牌无效。",
 		"2002": "数据库错误。",
 		"2003": "调查 ID 已存在。",
-		"2004": "无效。"
+		"2004": "无效。",
+		"3001": "Invalid question.",
+		"3002": "Invalid answer.",
+		"3003": "Required question."
 	},
 	"footer": {
 		"translate": "该页面由 Microsoft Translator 和其他贡献者翻译。"
