@@ -160,7 +160,19 @@
 		"option_exists": "このオプションは既に存在します。",
 		"options": "オプション",
 		"set_default": "デフォルトとして設定",
-		"delete_selected": "Delete Selected Items"
+		"delete_selected": "Delete Selected Items",
+		"files": {
+			"specific": "Specific File Types",
+			"specific_sub": "Enter the file types you want to allow, leave blank for all.",
+			"docs": "Documents",
+			"images": "Images",
+			"videos": "Videos",
+			"audios": "Audios",
+			"pdf": "PDF",
+			"sheets": "Sheets",
+			"slides": "Slides",
+			"archives": "Archives"
+		}
 	},
 	"editUser": {
 		"editUser": "編集対象 {username}",
@@ -189,7 +201,10 @@
 		"2001": "トークンが無効です。",
 		"2002": "データベース エラー。",
 		"2003": "調査 ID は既に存在します。",
-		"2004": "無効です。"
+		"2004": "無効です。",
+		"3001": "Invalid question.",
+		"3002": "Invalid answer.",
+		"3003": "Required question."
 	},
 	"footer": {
 		"translate": "このページは、Microsoft Translator およびその他の寄稿者によって翻訳されました。"
