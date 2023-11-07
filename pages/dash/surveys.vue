@@ -109,7 +109,7 @@ import "~/src/styles/dash.css"
 											<v-btn
 												:text="$t('delete.confirm')"
 												@click="
-													deleteSurvey(survey.id);
+													deleteSurvey(survey.id)
 													isActive.value = false
 												"
 											></v-btn>
