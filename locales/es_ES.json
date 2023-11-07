@@ -71,7 +71,7 @@
 		"attributes": "Atributos",
 		"value": "Valor",
 		"details": "Detalles",
-		"clear": "Clear"
+		"clear": "Claro"
 	},
 	"edit": {
 		"edit": "Editar",
@@ -153,25 +153,25 @@
 			"max": "Máximo",
 			"text": "Mensaje de texto",
 			"preview": "Vista previa",
-			"start": "Set start time",
-			"end": "Set end time"
+			"start": "Establecer la hora de inicio",
+			"end": "Establecer la hora de finalización"
 		},
 		"add": "Agregar",
 		"option_exists": "La opción ya existe.",
 		"options": "Opciones",
 		"set_default": "Establecer como predeterminado",
-		"delete_selected": "Delete Selected Items",
+		"delete_selected": "Eliminar elementos seleccionados",
 		"files": {
-			"specific": "Specific File Types",
-			"specific_sub": "Enter the file types you want to allow, leave blank for all.",
-			"docs": "Documents",
-			"images": "Images",
+			"specific": "Tipos de archivos específicos",
+			"specific_sub": "Ingrese los tipos de archivo que desea permitir, déjelos en blanco para todos.",
+			"docs": "Documentos",
+			"images": "Imágenes",
 			"videos": "Videos",
 			"audios": "Audios",
-			"pdf": "PDF",
-			"sheets": "Sheets",
-			"slides": "Slides",
-			"archives": "Archives"
+			"pdf": ".PDF",
+			"sheets": "Sabanas",
+			"slides": "Diapositivas",
+			"archives": "Archivo"
 		}
 	},
 	"editUser": {
@@ -202,9 +202,9 @@
 		"2002": "Error de base de datos.",
 		"2003": "El ID de la encuesta ya existe.",
 		"2004": "No válido.",
-		"3001": "Invalid question.",
-		"3002": "Invalid answer.",
-		"3003": "Required question."
+		"3001": "Pregunta no válida.",
+		"3002": "Respuesta no válida.",
+		"3003": "Pregunta obligatoria."
 	},
 	"footer": {
 		"translate": "La página fue traducida por Microsoft Translator y otros colaboradores."
