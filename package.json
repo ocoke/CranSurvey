@@ -1,7 +1,7 @@
 {
   "name": "cransurvey",
-  "version": "0.2.0-alpha",
-  "description": "🗒️ Add a prompt window to get surveys from your website.",
+  "version": "0.3.0-alpha",
+  "description": "🗒️ Open-source forms & surveys collector, marketing tool with serverless deployment. Add it to your website with the powerful widget plugin.",
   "author": "CK Yu <hi@cky.im>",
   "scripts": {
     "prepare": "nuxt prepare",
