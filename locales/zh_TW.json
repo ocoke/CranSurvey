@@ -71,7 +71,7 @@
 		"attributes": "屬性",
 		"value": "值",
 		"details": "詳",
-		"clear": "Clear"
+		"clear": "清楚"
 	},
 	"edit": {
 		"edit": "編輯",
@@ -153,25 +153,25 @@
 			"max": "最大值",
 			"text": "文字",
 			"preview": "預覽",
-			"start": "Set start time",
-			"end": "Set end time"
+			"start": "設置開始時間",
+			"end": "設置結束時間"
 		},
 		"add": "新增",
 		"option_exists": "該選項已存在。",
 		"options": "選項",
 		"set_default": "設置為預設值",
-		"delete_selected": "Delete Selected Items",
+		"delete_selected": "刪除選取選取專案",
 		"files": {
-			"specific": "Specific File Types",
-			"specific_sub": "Enter the file types you want to allow, leave blank for all.",
-			"docs": "Documents",
-			"images": "Images",
-			"videos": "Videos",
-			"audios": "Audios",
-			"pdf": "PDF",
-			"sheets": "Sheets",
-			"slides": "Slides",
-			"archives": "Archives"
+			"specific": "特定文件類型",
+			"specific_sub": "輸入要允許的檔案類型，全部留空。",
+			"docs": "檔",
+			"images": "圖像",
+			"videos": "視頻",
+			"audios": "音訊",
+			"pdf": "。.PDF",
+			"sheets": "床單",
+			"slides": "幻燈片",
+			"archives": "檔案"
 		}
 	},
 	"editUser": {
@@ -202,9 +202,9 @@
 		"2002": "資料庫錯誤。",
 		"2003": "調查ID已存在。",
 		"2004": "無效。",
-		"3001": "Invalid question.",
-		"3002": "Invalid answer.",
-		"3003": "Required question."
+		"3001": "無效的問題。",
+		"3002": "無效的答案。",
+		"3003": "必答題。"
 	},
 	"footer": {
 		"translate": "該頁面由 Microsoft Translator 和其他貢獻者翻譯。"
