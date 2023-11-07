@@ -54,7 +54,12 @@ import "~/src/styles/dash.css"
 					<v-expansion-panel-text>
 						<v-card-actions>
 							<v-spacer></v-spacer>
-							<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/users/edit?username=' + username))" v-show="user.title == username">
+							<v-btn
+								variant="text"
+								color="primary"
+								@click="navigateTo(localePath('/dash/users/edit?username=' + username))"
+								v-show="user.title == username"
+							>
 								{{ $t("edit.edit") }}
 							</v-btn>
 						</v-card-actions>

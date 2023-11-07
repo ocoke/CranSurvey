@@ -5,10 +5,10 @@
 
 import checkToken from "~/src/functions/checkToken"
 export default eventHandler(async (event) => {
-    const storage = useStorage("cransurvey")
+	const storage = useStorage("cransurvey")
 	const { uniqueId, userId, date, token } = await readBody(event)
 	const _ans: object = await storage.getItem("ans")
-    if (!token || !(await checkToken(token))) {
+	if (!token || !(await checkToken(token))) {
 		return {
 			code: 2001,
 			msg: "Invalid token.",

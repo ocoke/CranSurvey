@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid"
 import ansValidate from "~/src/functions/validate"
-import escapeText from "~/src/functions/escape"
+// import escapeText from "~/src/functions/escape"
 export default eventHandler(async (event) => {
 	const storage = useStorage("cransurvey")
 	const { uniqueId, userId, answers } = await readBody(event)

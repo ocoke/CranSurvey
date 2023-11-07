@@ -34,9 +34,9 @@ export default eventHandler(async (event) => {
 			survey: svId,
 		}
 	} else {
-        return {
-            code: 2001,
-            msg: "Invalid token.",
-        }
-    }
+		return {
+			code: 2001,
+			msg: "Invalid token.",
+		}
+	}
 })

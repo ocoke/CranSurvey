@@ -26,22 +26,29 @@ if (process.client) {
 import "~/src/styles/dash.css"
 </script>
 <template>
-    <h1 class="text-h4">{{ $t("editUser.editUser", { username, }) }}</h1>
+	<h1 class="text-h4">{{ $t("editUser.editUser", { username }) }}</h1>
 	<div class="mainGroup">
-        <v-card variant="outlined">
-            <v-card-title>{{ $t("editUser.password", { username, }) }}</v-card-title>
-            <v-card-text style="padding-bottom: 0;">
-                <v-text-field :label="$t('signup.password')" type="password" v-model="password"></v-text-field>
-                <v-text-field :label="$t('editUser.enter_password', { username, })" type="password" v-model="newPassword"></v-text-field>
-		        <v-text-field :label="$t('editUser.enter_password_re', { username, })" type="password" v-model="newPasswordRe"></v-text-field>
-                <v-card-actions style="padding-top: 0;">
-                    <v-spacer></v-spacer>
-                    <v-btn variant="text" @click="updatePwd">{{ $t("editUser.update") }}</v-btn>
-                </v-card-actions>
-            </v-card-text>
-            
-        </v-card>
-    </div>
+		<v-card variant="outlined">
+			<v-card-title>{{ $t("editUser.password", { username }) }}</v-card-title>
+			<v-card-text style="padding-bottom: 0">
+				<v-text-field :label="$t('signup.password')" type="password" v-model="password"></v-text-field>
+				<v-text-field
+					:label="$t('editUser.enter_password', { username })"
+					type="password"
+					v-model="newPassword"
+				></v-text-field>
+				<v-text-field
+					:label="$t('editUser.enter_password_re', { username })"
+					type="password"
+					v-model="newPasswordRe"
+				></v-text-field>
+				<v-card-actions style="padding-top: 0">
+					<v-spacer></v-spacer>
+					<v-btn variant="text" @click="updatePwd">{{ $t("editUser.update") }}</v-btn>
+				</v-card-actions>
+			</v-card-text>
+		</v-card>
+	</div>
 </template>
 <script>
 import { useToast } from "vue-toastification"
@@ -67,35 +74,34 @@ export default {
 			drawer: true,
 			rail: true,
 			password: "",
-            newPassword: "",
-            newPasswordRe: "",
+			newPassword: "",
+			newPasswordRe: "",
 		}
 	},
 	methods: {
 		async updatePwd() {
-            if (!this.password || !this.newPassword || !this.newPasswordRe) {
-                toast.error(this.$t("signup.invalid_params"), toastCfg)
-                return false
-            }
-            if (this.newPassword != this.newPasswordRe) {
-                toast.error(this.$t("signup.invalid_password"), toastCfg)
-                return false
-            }
-            const updatePwdStatus = await $fetch("/api/usr/update", {
-                method: "POST",
-                body: JSON.stringify({
-                    token: sessionStorage.getItem("_cransurvey_token"),
-                    username: useRoute().query.username,
-                    password: this.password,
-                    newPassword: this.newPassword,
-                    type: "pwd"
-                }),
-            })
-            
-        },
+			if (!this.password || !this.newPassword || !this.newPasswordRe) {
+				toast.error(this.$t("signup.invalid_params"), toastCfg)
+				return false
+			}
+			if (this.newPassword != this.newPasswordRe) {
+				toast.error(this.$t("signup.invalid_password"), toastCfg)
+				return false
+			}
+			// todo
+			// const updatePwdStatus = await $fetch("/api/usr/update", {
+			//     method: "POST",
+			//     body: JSON.stringify({
+			//         token: sessionStorage.getItem("_cransurvey_token"),
+			//         username: useRoute().query.username,
+			//         password: this.password,
+			//         newPassword: this.newPassword,
+			//         type: "pwd"
+			//     }),
+			// })
+		},
 	},
-	async mounted() {
-	},
+	async mounted() {},
 }
 </script>
 <style>

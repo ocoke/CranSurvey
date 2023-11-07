@@ -101,12 +101,18 @@ import "~/src/styles/dash.css"
 								<template v-slot:default="{ isActive }">
 									<v-card :title="$t('delete.warning')">
 										<v-card-text>
-											{{ $t('delete.warning_msg', { title: survey.title, }) }}
+											{{ $t("delete.warning_msg", { title: survey.title }) }}
 										</v-card-text>
 										<v-card-actions>
 											<v-spacer></v-spacer>
 											<v-btn :text="$t('delete.cancel')" @click="isActive.value = false"></v-btn>
-											<v-btn :text="$t('delete.confirm')" @click="deleteSurvey(survey.id);isActive.value = false;"></v-btn>
+											<v-btn
+												:text="$t('delete.confirm')"
+												@click="
+													deleteSurvey(survey.id);
+													isActive.value = false
+												"
+											></v-btn>
 										</v-card-actions>
 									</v-card>
 								</template>
@@ -177,11 +183,9 @@ export default {
 			} else {
 				toast.error(this.$t("delete.error"), toastCfg)
 			}
-		}
+		},
 	},
 	async mounted() {
-
-
 		const ongoingSurveys = await $fetch("/api/dash/ongoing", {
 			method: "POST",
 			body: JSON.stringify({
