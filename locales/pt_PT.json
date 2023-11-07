@@ -71,7 +71,7 @@
 		"attributes": "Atributos",
 		"value": "Valor",
 		"details": "Detalhes",
-		"clear": "Clear"
+		"clear": "Claro"
 	},
 	"edit": {
 		"edit": "Editar",
@@ -153,25 +153,25 @@
 			"max": "Max",
 			"text": "Texto",
 			"preview": "Visualizar",
-			"start": "Set start time",
-			"end": "Set end time"
+			"start": "Definir hora de início",
+			"end": "Definir hora de término"
 		},
 		"add": "Adicionar",
 		"option_exists": "A opção já existe.",
 		"options": "Opções",
 		"set_default": "Definir como padrão",
-		"delete_selected": "Delete Selected Items",
+		"delete_selected": "Excluir itens selecionados",
 		"files": {
-			"specific": "Specific File Types",
-			"specific_sub": "Enter the file types you want to allow, leave blank for all.",
-			"docs": "Documents",
-			"images": "Images",
-			"videos": "Videos",
-			"audios": "Audios",
-			"pdf": "PDF",
-			"sheets": "Sheets",
+			"specific": "Tipos de arquivo específicos",
+			"specific_sub": "Digite os tipos de arquivo que deseja permitir, deixe em branco para todos.",
+			"docs": "Documentos",
+			"images": "Imagens",
+			"videos": "Vídeos",
+			"audios": "Áudios",
+			"pdf": ".PDF",
+			"sheets": "Folhas",
 			"slides": "Slides",
-			"archives": "Archives"
+			"archives": "Arquivo"
 		}
 	},
 	"editUser": {
@@ -202,9 +202,9 @@
 		"2002": "Erro de banco de dados.",
 		"2003": "O ID da pesquisa já existe.",
 		"2004": "Inválido.",
-		"3001": "Invalid question.",
-		"3002": "Invalid answer.",
-		"3003": "Required question."
+		"3001": "Pergunta inválida.",
+		"3002": "Resposta inválida.",
+		"3003": "Pergunta obrigatória."
 	},
 	"footer": {
 		"translate": "A página foi traduzida pelo Microsoft Translator e outros colaboradores."
