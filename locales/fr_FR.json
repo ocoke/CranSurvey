@@ -70,7 +70,8 @@
 		"delete": "Supprimer",
 		"attributes": "Attributs",
 		"value": "Valeur",
-		"details": "Détails"
+		"details": "Détails",
+		"clear": "Clair"
 	},
 	"edit": {
 		"edit": "Éditer",
@@ -151,12 +152,27 @@
 			"min": "Min",
 			"max": "Max",
 			"text": "SMS",
-			"preview": "Aperçu"
+			"preview": "Aperçu",
+			"start": "Définir l’heure de début",
+			"end": "Définir l’heure de fin"
 		},
 		"add": "Ajouter",
 		"option_exists": "L’option existe déjà.",
 		"options": "Options",
-		"set_default": "Définir par défaut"
+		"set_default": "Définir par défaut",
+		"delete_selected": "Supprimer les éléments sélectionnés",
+		"files": {
+			"specific": "Types de fichiers spécifiques",
+			"specific_sub": "Entrez les types de fichiers que vous souhaitez autoriser, laissez les champs vides pour tous.",
+			"docs": "Documents",
+			"images": "Images",
+			"videos": "Vidéos",
+			"audios": "Les audios",
+			"pdf": ".PDF",
+			"sheets": "Feuilles",
+			"slides": "Diapositives",
+			"archives": "Archives"
+		}
 	},
 	"editUser": {
 		"editUser": "Modifier pour {username}",
@@ -185,7 +201,10 @@
 		"2001": "Jeton non valide.",
 		"2002": "Erreur de base de données.",
 		"2003": "L’ID d’enquête existe déjà.",
-		"2004": "Non valide."
+		"2004": "Non valide.",
+		"3001": "Question non valide.",
+		"3002": "Réponse non valide.",
+		"3003": "Question obligatoire."
 	},
 	"footer": {
 		"translate": "La page a été traduite par Microsoft Translator et d’autres contributeurs."

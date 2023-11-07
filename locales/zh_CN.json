@@ -70,7 +70,8 @@
 		"delete": "删除",
 		"attributes": "属性",
 		"value": "值",
-		"details": "详"
+		"details": "详",
+		"clear": "清楚"
 	},
 	"edit": {
 		"edit": "编辑",
@@ -151,12 +152,27 @@
 			"min": "最小值",
 			"max": "最大值",
 			"text": "文本",
-			"preview": "预览"
+			"preview": "预览",
+			"start": "设置开始时间",
+			"end": "设置结束时间"
 		},
 		"add": "新增",
 		"option_exists": "该选项已存在。",
 		"options": "选项",
-		"set_default": "设置为默认值"
+		"set_default": "设置为默认值",
+		"delete_selected": "删除所选项目",
+		"files": {
+			"specific": "特定文件类型",
+			"specific_sub": "输入要允许的文件类型，全部留空。",
+			"docs": "文件",
+			"images": "图像",
+			"videos": "视频",
+			"audios": "音频",
+			"pdf": ".PDF",
+			"sheets": "床单",
+			"slides": "幻灯片",
+			"archives": "档案"
+		}
 	},
 	"editUser": {
 		"editUser": "编辑 {username}",
@@ -185,7 +201,10 @@
 		"2001": "令牌无效。",
 		"2002": "数据库错误。",
 		"2003": "调查 ID 已存在。",
-		"2004": "无效。"
+		"2004": "无效。",
+		"3001": "无效的问题。",
+		"3002": "无效的答案。",
+		"3003": "必答题。"
 	},
 	"footer": {
 		"translate": "该页面由 Microsoft Translator 和其他贡献者翻译。"

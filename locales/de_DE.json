@@ -70,7 +70,8 @@
 		"delete": "Löschen",
 		"attributes": "Attribute",
 		"value": "Wert",
-		"details": "Details"
+		"details": "Details",
+		"clear": "Klar"
 	},
 	"edit": {
 		"edit": "Redigieren",
@@ -151,12 +152,27 @@
 			"min": "Min",
 			"max": "Max",
 			"text": "Text",
-			"preview": "Vorschau"
+			"preview": "Vorschau",
+			"start": "Startzeit festlegen",
+			"end": "Endzeit festlegen"
 		},
 		"add": "Hinzufügen",
 		"option_exists": "Die Option ist bereits vorhanden.",
 		"options": "Optionen",
-		"set_default": "Als Standard festlegen"
+		"set_default": "Als Standard festlegen",
+		"delete_selected": "Ausgewählte Elemente löschen",
+		"files": {
+			"specific": "Bestimmte Dateitypen",
+			"specific_sub": "Geben Sie die Dateitypen ein, die Sie zulassen möchten, und lassen Sie das Feld für alle leer.",
+			"docs": "Urkunden",
+			"images": "Bilder",
+			"videos": "Videos",
+			"audios": "Audios",
+			"pdf": ".PDF",
+			"sheets": "Blätter",
+			"slides": "Diapositive",
+			"archives": "Archiv"
+		}
 	},
 	"editUser": {
 		"editUser": "Bearbeiten für {username}",
@@ -185,7 +201,10 @@
 		"2001": "Ungültiges Token.",
 		"2002": "Datenbankfehler.",
 		"2003": "Die Umfrage-ID ist bereits vorhanden.",
-		"2004": "Ungültig."
+		"2004": "Ungültig.",
+		"3001": "Ungültige Frage.",
+		"3002": "Ungültige Antwort.",
+		"3003": "Erforderliche Frage."
 	},
 	"footer": {
 		"translate": "Die Seite wurde von Microsoft Translator und anderen Mitwirkenden übersetzt."
