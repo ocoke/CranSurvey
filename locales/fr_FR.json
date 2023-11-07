@@ -71,7 +71,7 @@
 		"attributes": "Attributs",
 		"value": "Valeur",
 		"details": "Détails",
-		"clear": "Clear"
+		"clear": "Clair"
 	},
 	"edit": {
 		"edit": "Éditer",
@@ -153,24 +153,24 @@
 			"max": "Max",
 			"text": "SMS",
 			"preview": "Aperçu",
-			"start": "Set start time",
-			"end": "Set end time"
+			"start": "Définir l’heure de début",
+			"end": "Définir l’heure de fin"
 		},
 		"add": "Ajouter",
 		"option_exists": "L’option existe déjà.",
 		"options": "Options",
 		"set_default": "Définir par défaut",
-		"delete_selected": "Delete Selected Items",
+		"delete_selected": "Supprimer les éléments sélectionnés",
 		"files": {
-			"specific": "Specific File Types",
-			"specific_sub": "Enter the file types you want to allow, leave blank for all.",
+			"specific": "Types de fichiers spécifiques",
+			"specific_sub": "Entrez les types de fichiers que vous souhaitez autoriser, laissez les champs vides pour tous.",
 			"docs": "Documents",
 			"images": "Images",
-			"videos": "Videos",
-			"audios": "Audios",
-			"pdf": "PDF",
-			"sheets": "Sheets",
-			"slides": "Slides",
+			"videos": "Vidéos",
+			"audios": "Les audios",
+			"pdf": ".PDF",
+			"sheets": "Feuilles",
+			"slides": "Diapositives",
 			"archives": "Archives"
 		}
 	},
@@ -202,9 +202,9 @@
 		"2002": "Erreur de base de données.",
 		"2003": "L’ID d’enquête existe déjà.",
 		"2004": "Non valide.",
-		"3001": "Invalid question.",
-		"3002": "Invalid answer.",
-		"3003": "Required question."
+		"3001": "Question non valide.",
+		"3002": "Réponse non valide.",
+		"3003": "Question obligatoire."
 	},
 	"footer": {
 		"translate": "La page a été traduite par Microsoft Translator et d’autres contributeurs."
