@@ -106,6 +106,7 @@ import "~/src/styles/dash.css"
 										<v-card-actions>
 											<v-spacer></v-spacer>
 											<v-btn :text="$t('delete.cancel')" @click="isActive.value = false"></v-btn>
+											<!-- prettier-ignore -->
 											<v-btn
 												:text="$t('delete.confirm')"
 												@click="
