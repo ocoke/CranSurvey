@@ -71,7 +71,7 @@
 		"attributes": "属性",
 		"value": "值",
 		"details": "详",
-		"clear": "Clear"
+		"clear": "清楚"
 	},
 	"edit": {
 		"edit": "编辑",
@@ -153,25 +153,25 @@
 			"max": "最大值",
 			"text": "文本",
 			"preview": "预览",
-			"start": "Set start time",
-			"end": "Set end time"
+			"start": "设置开始时间",
+			"end": "设置结束时间"
 		},
 		"add": "新增",
 		"option_exists": "该选项已存在。",
 		"options": "选项",
 		"set_default": "设置为默认值",
-		"delete_selected": "Delete Selected Items",
+		"delete_selected": "删除所选项目",
 		"files": {
-			"specific": "Specific File Types",
-			"specific_sub": "Enter the file types you want to allow, leave blank for all.",
-			"docs": "Documents",
-			"images": "Images",
-			"videos": "Videos",
-			"audios": "Audios",
-			"pdf": "PDF",
-			"sheets": "Sheets",
-			"slides": "Slides",
-			"archives": "Archives"
+			"specific": "特定文件类型",
+			"specific_sub": "输入要允许的文件类型，全部留空。",
+			"docs": "文件",
+			"images": "图像",
+			"videos": "视频",
+			"audios": "音频",
+			"pdf": ".PDF",
+			"sheets": "床单",
+			"slides": "幻灯片",
+			"archives": "档案"
 		}
 	},
 	"editUser": {
@@ -202,9 +202,9 @@
 		"2002": "数据库错误。",
 		"2003": "调查 ID 已存在。",
 		"2004": "无效。",
-		"3001": "Invalid question.",
-		"3002": "Invalid answer.",
-		"3003": "Required question."
+		"3001": "无效的问题。",
+		"3002": "无效的答案。",
+		"3003": "必答题。"
 	},
 	"footer": {
 		"translate": "该页面由 Microsoft Translator 和其他贡献者翻译。"
