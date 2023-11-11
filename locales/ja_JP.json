@@ -71,7 +71,8 @@
 		"attributes": "属性",
 		"value": "価値",
 		"details": "細部",
-		"clear": "クリア"
+		"clear": "クリア",
+		"country_area": "Country/Area"
 	},
 	"edit": {
 		"edit": "編集",
