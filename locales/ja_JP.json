@@ -172,7 +172,9 @@
 			"sheets": "シート",
 			"slides": "スライド",
 			"archives": "史料"
-		}
+		},
+		"webhook": "Webhook",
+		"webhook_sub": "Enter your webhook url here, leave blank for none."
 	},
 	"editUser": {
 		"editUser": "編集対象 {username}",
