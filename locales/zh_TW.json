@@ -72,7 +72,7 @@
 		"value": "值",
 		"details": "詳",
 		"clear": "清楚",
-		"country_area": "Country/Area"
+		"country_area": "國家/地區"
 	},
 	"edit": {
 		"edit": "編輯",
@@ -175,7 +175,7 @@
 			"archives": "檔案"
 		},
 		"webhook": "Webhook",
-		"webhook_sub": "Enter your webhook url here, leave blank for none."
+		"webhook_sub": "在此處輸入您的 webhook 網址，將「無」留空。"
 	},
 	"editUser": {
 		"editUser": "編輯 {username}",
