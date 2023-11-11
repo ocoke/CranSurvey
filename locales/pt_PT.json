@@ -72,7 +72,7 @@
 		"value": "Valor",
 		"details": "Detalhes",
 		"clear": "Claro",
-		"country_area": "Country/Area"
+		"country_area": "País/Área"
 	},
 	"edit": {
 		"edit": "Editar",
@@ -174,8 +174,8 @@
 			"slides": "Slides",
 			"archives": "Arquivo"
 		},
-		"webhook": "Webhook",
-		"webhook_sub": "Enter your webhook url here, leave blank for none."
+		"webhook": "Gancho da Web",
+		"webhook_sub": "Digite sua url webhook aqui, deixe em branco para nenhum."
 	},
 	"editUser": {
 		"editUser": "Editar para {username}",
