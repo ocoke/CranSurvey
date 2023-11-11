@@ -71,7 +71,8 @@
 		"attributes": "Attributs",
 		"value": "Valeur",
 		"details": "Détails",
-		"clear": "Clair"
+		"clear": "Clair",
+		"country_area": "Country/Area"
 	},
 	"edit": {
 		"edit": "Éditer",
