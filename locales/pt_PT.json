@@ -172,7 +172,9 @@
 			"sheets": "Folhas",
 			"slides": "Slides",
 			"archives": "Arquivo"
-		}
+		},
+		"webhook": "Webhook",
+		"webhook_sub": "Enter your webhook url here, leave blank for none."
 	},
 	"editUser": {
 		"editUser": "Editar para {username}",
