@@ -1,9 +1,11 @@
 import { v4 as uuidv4 } from "uuid"
 import ansValidate from "~/src/functions/validate"
+import getGeoIp from "~/src/functions/geoip"
 // import escapeText from "~/src/functions/escape"
 export default eventHandler(async (event) => {
 	const storage = useStorage("cransurvey")
 	const { uniqueId, userId, answers } = await readBody(event)
+	const geoip: object = await getGeoIp(event)
 
 	if (!uniqueId || !userId || !answers) {
 		return {
@@ -71,6 +73,7 @@ export default eventHandler(async (event) => {
 		ans: answers,
 		created_at: new Date().getTime(),
 		id: uniqueAnsId,
+		geoip: [ geoip.city, geoip.country, geoip.region, geoip.region_code, geoip.country_code, ],
 	}
 
 	await storage.setItem("ans", { ...ans, [uniqueId]: [...(ans[uniqueId] || []), new_ans] })
