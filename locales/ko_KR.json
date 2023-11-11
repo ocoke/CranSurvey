@@ -71,7 +71,8 @@
 		"attributes": "특성",
 		"value": "값",
 		"details": "세부 정보",
-		"clear": "맑다"
+		"clear": "맑다",
+		"country_area": "Country/Area"
 	},
 	"edit": {
 		"edit": "편집하다",
