@@ -172,7 +172,9 @@
 			"sheets": "시트",
 			"slides": "슬라이드",
 			"archives": "공문서"
-		}
+		},
+		"webhook": "Webhook",
+		"webhook_sub": "Enter your webhook url here, leave blank for none."
 	},
 	"editUser": {
 		"editUser": "편집 대상 {username}",
