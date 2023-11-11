@@ -72,7 +72,7 @@
 		"value": "価値",
 		"details": "細部",
 		"clear": "クリア",
-		"country_area": "Country/Area"
+		"country_area": "国/地域"
 	},
 	"edit": {
 		"edit": "編集",
@@ -174,8 +174,8 @@
 			"slides": "スライド",
 			"archives": "史料"
 		},
-		"webhook": "Webhook",
-		"webhook_sub": "Enter your webhook url here, leave blank for none."
+		"webhook": "Webhook (英語)",
+		"webhook_sub": "ここに Webhook の URL を入力し、なしの場合は空白のままにします。"
 	},
 	"editUser": {
 		"editUser": "編集対象 {username}",
