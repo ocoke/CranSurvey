@@ -172,7 +172,9 @@
 			"sheets": "床单",
 			"slides": "幻灯片",
 			"archives": "档案"
-		}
+		},
+		"webhook": "Webhook",
+		"webhook_sub": "Enter your webhook url here, leave blank for none."
 	},
 	"editUser": {
 		"editUser": "编辑 {username}",
