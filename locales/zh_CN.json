@@ -71,7 +71,8 @@
 		"attributes": "属性",
 		"value": "值",
 		"details": "详",
-		"clear": "清楚"
+		"clear": "清楚",
+		"country_area": "Country/Area"
 	},
 	"edit": {
 		"edit": "编辑",
