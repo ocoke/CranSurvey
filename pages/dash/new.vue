@@ -422,7 +422,6 @@ import "~/src/styles/dash.css"
 					</template>
 				</v-slider>
 
-
 				<h3 class="ques_title">Webhook</h3>
 				<v-text-field
 					:label="$t('new.webhook_sub')"
