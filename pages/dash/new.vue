@@ -421,6 +421,15 @@ import "~/src/styles/dash.css"
 						></v-text-field>
 					</template>
 				</v-slider>
+
+
+				<h3 class="ques_title">Webhook</h3>
+				<v-text-field
+					:label="$t('new.webhook_sub')"
+					variant="outlined"
+					maxlength="500"
+					v-model="simple.webhook"
+				></v-text-field>
 			</v-card-text>
 		</v-card>
 
