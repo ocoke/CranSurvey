@@ -61,8 +61,12 @@ import "~/src/styles/dash.css"
 										{{ $t("results.answer") }}
 									</th>
 									<th class="text-left">
+										{{ $t("results.country_area") }}
+									</th>
+									<th class="text-left">
 										{{ $t("results.type") }}
 									</th>
+
 								</tr>
 							</thead>
 							<tbody>
@@ -143,6 +147,26 @@ import "~/src/styles/dash.css"
 													<v-card-actions>
 														<v-spacer></v-spacer>
 
+														<v-btn :text="$t('results.close')" @click="isActive.value = false"></v-btn>
+													</v-card-actions>
+												</v-card>
+											</template>
+										</v-dialog>
+									</td>
+									<td>
+			
+										<v-dialog width="500">
+											<template v-slot:activator="{ props }">
+												<p v-bind="props" style="cursor: pointer;">{{ asw.geoip[0] + ', ' + asw.geoip[2] + ', ' + asw.geoip[4] || 'Unknown' }}</p>
+											</template>
+
+											<template v-slot:default="{ isActive }">
+												<v-card :title="$t('results.results')">
+													<v-card-text>
+														{{ asw.geoip[0] + ', ' + asw.geoip[2] + ', ' + asw.geoip[1] || 'Unknown' }}
+													</v-card-text>
+													<v-card-actions>
+														<v-spacer></v-spacer>
 														<v-btn :text="$t('results.close')" @click="isActive.value = false"></v-btn>
 													</v-card-actions>
 												</v-card>
