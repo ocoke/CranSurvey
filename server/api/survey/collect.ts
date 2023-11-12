@@ -73,7 +73,7 @@ export default eventHandler(async (event) => {
 		ans: answers,
 		created_at: new Date().getTime(),
 		id: uniqueAnsId,
-		geoip: [geoip.city, geoip.country, geoip.region, geoip.region_code, geoip.country_code],
+		geoip: [geoip.city, geoip.country, geoip.region, geoip.region_code, geoip.country_code, geoip.clientIp],
 	}
 
 	await storage.setItem("ans", { ...ans, [uniqueId]: [...(ans[uniqueId] || []), new_ans] })

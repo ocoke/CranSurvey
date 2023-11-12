@@ -14,7 +14,8 @@ export default async function getGeoIp(event) {
 			region_code: "Local",
 		}
 	}
-	const geoip: object = await $fetch("https://api.ip.sb/geoip/" + clientIp)
+	// const geoip: object = await $fetch("https://api.ip.sb/geoip/" + clientIp)
+	const geoip: object = await $fetch("https://ipapi.co/" + clientIp + "/json")
 	const city = geoip["city"] || "Unknown"
 	const country = geoip["country"] || "Unknown"
 	const region = geoip["region"] || "Unknown"
