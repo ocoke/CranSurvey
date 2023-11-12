@@ -66,7 +66,6 @@ import "~/src/styles/dash.css"
 									<th class="text-left">
 										{{ $t("results.type") }}
 									</th>
-
 								</tr>
 							</thead>
 							<tbody>
@@ -154,16 +153,17 @@ import "~/src/styles/dash.css"
 										</v-dialog>
 									</td>
 									<td>
-			
 										<v-dialog width="500">
 											<template v-slot:activator="{ props }">
-												<p v-bind="props" style="cursor: pointer;">{{ asw.geoip[0] + ', ' + asw.geoip[2] + ', ' + asw.geoip[4] || 'Unknown' }}</p>
+												<p v-bind="props" style="cursor: pointer">
+													{{ asw.geoip[0] + ", " + asw.geoip[2] + ", " + asw.geoip[4] || "Unknown" }}
+												</p>
 											</template>
 
 											<template v-slot:default="{ isActive }">
 												<v-card :title="$t('results.results')">
 													<v-card-text>
-														{{ asw.geoip[0] + ', ' + asw.geoip[2] + ', ' + asw.geoip[1] || 'Unknown' }}
+														{{ asw.geoip[0] + ", " + asw.geoip[2] + ", " + asw.geoip[1] || "Unknown" }}
 													</v-card-text>
 													<v-card-actions>
 														<v-spacer></v-spacer>
