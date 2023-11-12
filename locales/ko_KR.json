@@ -71,7 +71,8 @@
 		"attributes": "특성",
 		"value": "값",
 		"details": "세부 정보",
-		"clear": "맑다"
+		"clear": "맑다",
+		"country_area": "국가/지역"
 	},
 	"edit": {
 		"edit": "편집하다",
@@ -172,7 +173,9 @@
 			"sheets": "시트",
 			"slides": "슬라이드",
 			"archives": "공문서"
-		}
+		},
+		"webhook": "웹훅",
+		"webhook_sub": "여기에 웹훅 URL을 입력하고 비워 두지 않습니다."
 	},
 	"editUser": {
 		"editUser": "편집 대상 {username}",

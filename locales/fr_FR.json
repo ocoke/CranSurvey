@@ -71,7 +71,8 @@
 		"attributes": "Attributs",
 		"value": "Valeur",
 		"details": "Détails",
-		"clear": "Clair"
+		"clear": "Clair",
+		"country_area": "Pays/Région"
 	},
 	"edit": {
 		"edit": "Éditer",
@@ -172,7 +173,9 @@
 			"sheets": "Feuilles",
 			"slides": "Diapositives",
 			"archives": "Archives"
-		}
+		},
+		"webhook": "Webhook (en anglais)",
+		"webhook_sub": "Entrez l’URL de votre webhook ici, laissez vide pour aucune."
 	},
 	"editUser": {
 		"editUser": "Modifier pour {username}",

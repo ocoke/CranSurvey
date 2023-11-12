@@ -71,7 +71,8 @@
 		"attributes": "Atributos",
 		"value": "Valor",
 		"details": "Detalhes",
-		"clear": "Claro"
+		"clear": "Claro",
+		"country_area": "País/Área"
 	},
 	"edit": {
 		"edit": "Editar",
@@ -172,7 +173,9 @@
 			"sheets": "Folhas",
 			"slides": "Slides",
 			"archives": "Arquivo"
-		}
+		},
+		"webhook": "Gancho da Web",
+		"webhook_sub": "Digite sua url webhook aqui, deixe em branco para nenhum."
 	},
 	"editUser": {
 		"editUser": "Editar para {username}",
