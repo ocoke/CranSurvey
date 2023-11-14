@@ -119,6 +119,8 @@
 										v-model="ans[item.id]"
 										variant="outlined"
 										style="margin: 0 auto; box-shadow: none"
+										:min="item.options.optionsData[0]"
+										:max="item.options.optionsData[1]"
 									></v-date-picker>
 								</v-card-text>
 
