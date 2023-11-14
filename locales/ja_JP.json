@@ -183,7 +183,9 @@
 		"password_sub": "のパスワードをリセットする {username}.",
 		"enter_password": "新しいパスワードを入力してください {username}.",
 		"enter_password_re": "新しいパスワードを再入力してください {username}.",
-		"update": "更新"
+		"update": "更新",
+		"update_success": "Updated successfully.",
+		"update_error": "An error occurred while updating."
 	},
 	"share": {
 		"share": "共有",
