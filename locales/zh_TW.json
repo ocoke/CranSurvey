@@ -183,7 +183,9 @@
 		"password_sub": "重置密碼 {username}.",
 		"enter_password": "請輸入新密碼 {username}.",
 		"enter_password_re": "請重新輸入新密碼 {username}.",
-		"update": "更新"
+		"update": "更新",
+		"update_success": "Updated successfully.",
+		"update_error": "An error occurred while updating."
 	},
 	"share": {
 		"share": "共用",
