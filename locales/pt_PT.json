@@ -183,7 +183,9 @@
 		"password_sub": "Redefinir o passwod para {username}.",
 		"enter_password": "Introduza a nova palavra-passe para {username}.",
 		"enter_password_re": "Digite novamente a nova senha para {username}.",
-		"update": "Atualização"
+		"update": "Atualização",
+		"update_success": "Updated successfully.",
+		"update_error": "An error occurred while updating."
 	},
 	"share": {
 		"share": "Compartilhar",
