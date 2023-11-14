@@ -97,7 +97,7 @@ export default {
 			siteUsersLoading: true,
 			siteUsersData: "",
 			siteUsers: [],
-			siteAdmins: []
+			siteAdmins: [],
 		}
 	},
 	methods: {
