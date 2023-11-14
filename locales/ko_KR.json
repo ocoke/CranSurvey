@@ -183,7 +183,9 @@
 		"password_sub": "에 대한 passwod 재설정 {username}.",
 		"enter_password": "에 대한 새 비밀번호를 입력하세요. {username}.",
 		"enter_password_re": "새 비밀번호를 다시 입력하십시오. {username}.",
-		"update": "업데이트"
+		"update": "업데이트",
+		"update_success": "Updated successfully.",
+		"update_error": "An error occurred while updating."
 	},
 	"share": {
 		"share": "공유",
