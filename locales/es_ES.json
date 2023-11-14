@@ -183,7 +183,9 @@
 		"password_sub": "Restablecer el passwod para {username}.",
 		"enter_password": "Introduzca la nueva contraseña para {username}.",
 		"enter_password_re": "Vuelva a introducir la nueva contraseña para {username}.",
-		"update": "Actualizar"
+		"update": "Actualizar",
+		"update_success": "Updated successfully.",
+		"update_error": "An error occurred while updating."
 	},
 	"share": {
 		"share": "Compartir",
