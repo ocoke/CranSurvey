@@ -58,7 +58,7 @@ import "~/src/styles/dash.css"
 								variant="text"
 								color="primary"
 								@click="navigateTo(localePath('/dash/users/edit?username=' + username))"
-								v-show="user.title == username"
+								v-if="user.title == username || siteAdmins.includes(username)"
 							>
 								{{ $t("edit.edit") }}
 							</v-btn>
@@ -97,6 +97,7 @@ export default {
 			siteUsersLoading: true,
 			siteUsersData: "",
 			siteUsers: [],
+			siteAdmins: []
 		}
 	},
 	methods: {
@@ -118,6 +119,7 @@ export default {
 		})
 
 		let uid = 0
+		this.siteAdmins = siteUsers.admins
 
 		for (const i in siteUsers.list) {
 			uid++

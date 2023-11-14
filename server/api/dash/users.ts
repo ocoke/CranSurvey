@@ -13,10 +13,14 @@ export default eventHandler(async (event) => {
 		const users: object = await storage.getItem("usr")
 
 		const list: object = []
+		const admins: object = []
 		let count: number = 0
 
 		for (const i in users) {
 			list.push(i)
+			if (users[i]["admin"]) {
+				admins.push(i)
+			}
 			count++
 		}
 
@@ -24,6 +28,7 @@ export default eventHandler(async (event) => {
 			code: 0,
 			msg: "Success.",
 			list,
+			admins,
 			count,
 		}
 	} else {

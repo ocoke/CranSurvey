@@ -25,7 +25,7 @@ export default eventHandler(async (event) => {
 				}
 			}
 			const tk = jwt.decode(token, process.env.JWT_SECRET || "_cransurvey_")
-			if (!user[tk.id].admin) {
+			if (!user[tk.id].admin && tk.id != username) {
 				return {
 					code: 4001,
 					msg: "Permission denied.",
