@@ -33,7 +33,7 @@ export default eventHandler(async (event) => {
 		}
 	} else {
 		return {
-			code: 1002,
+			code: 2001,
 			msg: "Invalid token.",
 		}
 	}

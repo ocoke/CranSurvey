@@ -183,7 +183,9 @@
 		"password_sub": "Reset the passwod for {username}.",
 		"enter_password": "Please enter the new password for {username}.",
 		"enter_password_re": "Please re-enter the new password for {username}.",
-		"update": "Update"
+		"update": "Update",
+		"update_success": "Updated successfully.",
+		"update_error": "An error occurred while updating."
 	},
 	"share": {
 		"share": "Share",

@@ -52,7 +52,7 @@ import "~/src/styles/dash.css"
 </template>
 <script>
 import { useToast } from "vue-toastification"
-
+import md5 from "md5"
 const toast = useToast()
 const toastCfg = {
 	position: "top-right",
@@ -89,16 +89,21 @@ export default {
 				return false
 			}
 			// todo
-			// const updatePwdStatus = await $fetch("/api/usr/update", {
-			//     method: "POST",
-			//     body: JSON.stringify({
-			//         token: sessionStorage.getItem("_cransurvey_token"),
-			//         username: useRoute().query.username,
-			//         password: this.password,
-			//         newPassword: this.newPassword,
-			//         type: "pwd"
-			//     }),
-			// })
+			const updatePwdStatus = await $fetch("/api/usr/update", {
+			    method: "POST",
+			    body: JSON.stringify({
+			        token: sessionStorage.getItem("_cransurvey_token"),
+			        username: useRoute().query.username,
+			        password: md5(this.password),
+			        newPassword: md5(this.newPassword),
+			        type: "pwd"
+			    }),
+			})
+			if (updatePwdStatus.code == 0) {
+				toast.success(this.$t("editUser.update_success"), toastCfg)
+			} else {
+				toast.error(this.$t("editUser.update_error") + ' (' + this.$t("error_codes." + updatePwdStatus.code) + ')', toastCfg)
+			}
 		},
 	},
 	async mounted() {},
