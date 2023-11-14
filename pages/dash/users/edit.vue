@@ -90,19 +90,22 @@ export default {
 			}
 			// todo
 			const updatePwdStatus = await $fetch("/api/usr/update", {
-			    method: "POST",
-			    body: JSON.stringify({
-			        token: sessionStorage.getItem("_cransurvey_token"),
-			        username: useRoute().query.username,
-			        password: md5(this.password),
-			        newPassword: md5(this.newPassword),
-			        type: "pwd"
-			    }),
+				method: "POST",
+				body: JSON.stringify({
+					token: sessionStorage.getItem("_cransurvey_token"),
+					username: useRoute().query.username,
+					password: md5(this.password),
+					newPassword: md5(this.newPassword),
+					type: "pwd",
+				}),
 			})
 			if (updatePwdStatus.code == 0) {
 				toast.success(this.$t("editUser.update_success"), toastCfg)
 			} else {
-				toast.error(this.$t("editUser.update_error") + ' (' + this.$t("error_codes." + updatePwdStatus.code) + ')', toastCfg)
+				toast.error(
+					this.$t("editUser.update_error") + " (" + this.$t("error_codes." + updatePwdStatus.code) + ")",
+					toastCfg,
+				)
 			}
 		},
 	},
