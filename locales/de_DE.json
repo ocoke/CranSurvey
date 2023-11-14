@@ -183,7 +183,9 @@
 		"password_sub": "Setzen Sie den Passwod für {username}.",
 		"enter_password": "Bitte geben Sie das neue Passwort für {username}.",
 		"enter_password_re": "Bitte geben Sie das neue Passwort erneut ein, um {username}.",
-		"update": "Aktualisieren"
+		"update": "Aktualisieren",
+		"update_success": "Updated successfully.",
+		"update_error": "An error occurred while updating."
 	},
 	"share": {
 		"share": "Freigeben",
