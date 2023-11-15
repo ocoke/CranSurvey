@@ -72,7 +72,12 @@
 		"value": "価値",
 		"details": "細部",
 		"clear": "クリア",
-		"country_area": "国/地域"
+		"country_area": "国/地域",
+		"country": "Country",
+		"city": "City",
+		"search": "Search",
+		"user": "User",
+		"answers": "Answers"
 	},
 	"edit": {
 		"edit": "編集",
