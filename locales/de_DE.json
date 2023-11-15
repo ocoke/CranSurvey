@@ -73,11 +73,11 @@
 		"details": "Details",
 		"clear": "Klar",
 		"country_area": "Land/Region",
-		"country": "Country",
-		"city": "City",
-		"search": "Search",
-		"user": "User",
-		"answers": "Answers"
+		"country": "Land",
+		"city": "Stadt",
+		"search": "Suchen",
+		"user": "Benutzer",
+		"answers": "Erwiderungen"
 	},
 	"edit": {
 		"edit": "Redigieren",
@@ -189,8 +189,8 @@
 		"enter_password": "Bitte geben Sie das neue Passwort für {username}.",
 		"enter_password_re": "Bitte geben Sie das neue Passwort erneut ein, um {username}.",
 		"update": "Aktualisieren",
-		"update_success": "Updated successfully.",
-		"update_error": "An error occurred while updating."
+		"update_success": "Erfolgreich aktualisiert.",
+		"update_error": "Beim Aktualisieren ist ein Fehler aufgetreten."
 	},
 	"share": {
 		"share": "Freigeben",
