@@ -72,7 +72,12 @@
 		"value": "Valeur",
 		"details": "Détails",
 		"clear": "Clair",
-		"country_area": "Pays/Région"
+		"country_area": "Pays/Région",
+		"country": "Pays",
+		"city": "Ville",
+		"search": "Rechercher",
+		"user": "Utilisateur",
+		"answers": "Réponses"
 	},
 	"edit": {
 		"edit": "Éditer",
@@ -183,7 +188,9 @@
 		"password_sub": "Réinitialiser le mot de passe pour {username}.",
 		"enter_password": "Veuillez saisir le nouveau mot de passe pour {username}.",
 		"enter_password_re": "Veuillez saisir à nouveau le nouveau mot de passe pour {username}.",
-		"update": "Mettre à jour"
+		"update": "Mettre à jour",
+		"update_success": "Mise à jour réussie.",
+		"update_error": "Une erreur s’est produite lors de la mise à jour."
 	},
 	"share": {
 		"share": "Partager",

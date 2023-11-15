@@ -72,7 +72,12 @@
 		"value": "Valor",
 		"details": "Detalhes",
 		"clear": "Claro",
-		"country_area": "País/Área"
+		"country_area": "País/Área",
+		"country": "País",
+		"city": "Cidade",
+		"search": "Procurar",
+		"user": "Utilizador",
+		"answers": "Respostas"
 	},
 	"edit": {
 		"edit": "Editar",
@@ -183,7 +188,9 @@
 		"password_sub": "Redefinir o passwod para {username}.",
 		"enter_password": "Introduza a nova palavra-passe para {username}.",
 		"enter_password_re": "Digite novamente a nova senha para {username}.",
-		"update": "Atualização"
+		"update": "Atualização",
+		"update_success": "Atualizado com êxito.",
+		"update_error": "Ocorreu um erro durante a atualização."
 	},
 	"share": {
 		"share": "Compartilhar",

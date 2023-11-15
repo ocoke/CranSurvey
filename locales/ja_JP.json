@@ -72,7 +72,12 @@
 		"value": "価値",
 		"details": "細部",
 		"clear": "クリア",
-		"country_area": "国/地域"
+		"country_area": "国/地域",
+		"country": "国",
+		"city": "都市",
+		"search": "捜索",
+		"user": "利用者",
+		"answers": "答え"
 	},
 	"edit": {
 		"edit": "編集",
@@ -183,7 +188,9 @@
 		"password_sub": "のパスワードをリセットする {username}.",
 		"enter_password": "新しいパスワードを入力してください {username}.",
 		"enter_password_re": "新しいパスワードを再入力してください {username}.",
-		"update": "更新"
+		"update": "更新",
+		"update_success": "正常に更新されました。",
+		"update_error": "更新中にエラーが発生しました。"
 	},
 	"share": {
 		"share": "共有",
