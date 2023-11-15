@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from "uuid"
 import ansValidate from "~/src/functions/validate"
 import getGeoIp from "~/src/functions/geoip"
+import generateWebhookData from "~/src/functions/webhookData"
 // import escapeText from "~/src/functions/escape"
 export default eventHandler(async (event) => {
 	const storage = useStorage("cransurvey")
@@ -78,6 +79,28 @@ export default eventHandler(async (event) => {
 
 	await storage.setItem("ans", { ...ans, [uniqueId]: [...(ans[uniqueId] || []), new_ans] })
 
+
+	if (svId.webhook) {
+		const webhookData = generateWebhookData(new_ans, uniqueId, "form_response")
+		try {
+			const webhook = await $fetch(svId.webhook, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					code: 0,
+					type: "form_response",
+					data: webhookData,
+				}),
+			})
+			if (webhook.code != 0) {
+				console.warn('Webhook Error:', webhook)
+			}
+		} catch(e) {
+			console.warn('Webhook Error:', e)
+		}
+	}
 	return {
 		code: 0,
 		msg: "Success.",

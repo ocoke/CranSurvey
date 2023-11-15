@@ -57,7 +57,7 @@ import "~/src/styles/dash.css"
 							<v-btn
 								variant="text"
 								color="primary"
-								@click="navigateTo(localePath('/dash/users/edit?username=' + username))"
+								@click="navigateTo(localePath('/dash/users/edit?username=' + user.title))"
 								v-if="user.title == username || siteAdmins.includes(username)"
 							>
 								{{ $t("edit.edit") }}
