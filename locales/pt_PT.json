@@ -73,11 +73,11 @@
 		"details": "Detalhes",
 		"clear": "Claro",
 		"country_area": "País/Área",
-		"country": "Country",
-		"city": "City",
-		"search": "Search",
-		"user": "User",
-		"answers": "Answers"
+		"country": "País",
+		"city": "Cidade",
+		"search": "Procurar",
+		"user": "Utilizador",
+		"answers": "Respostas"
 	},
 	"edit": {
 		"edit": "Editar",
@@ -189,8 +189,8 @@
 		"enter_password": "Introduza a nova palavra-passe para {username}.",
 		"enter_password_re": "Digite novamente a nova senha para {username}.",
 		"update": "Atualização",
-		"update_success": "Updated successfully.",
-		"update_error": "An error occurred while updating."
+		"update_success": "Atualizado com êxito.",
+		"update_error": "Ocorreu um erro durante a atualização."
 	},
 	"share": {
 		"share": "Compartilhar",
