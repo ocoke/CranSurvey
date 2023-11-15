@@ -72,7 +72,12 @@
 		"value": "Valor",
 		"details": "Detalles",
 		"clear": "Claro",
-		"country_area": "País/Área"
+		"country_area": "País/Área",
+		"country": "Country",
+		"city": "City",
+		"search": "Search",
+		"user": "User",
+		"answers": "Answers"
 	},
 	"edit": {
 		"edit": "Editar",
