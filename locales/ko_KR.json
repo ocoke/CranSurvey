@@ -73,11 +73,11 @@
 		"details": "세부 정보",
 		"clear": "맑다",
 		"country_area": "국가/지역",
-		"country": "Country",
-		"city": "City",
-		"search": "Search",
-		"user": "User",
-		"answers": "Answers"
+		"country": "나라",
+		"city": "도시",
+		"search": "검색",
+		"user": "사용자",
+		"answers": "답변"
 	},
 	"edit": {
 		"edit": "편집하다",
@@ -189,8 +189,8 @@
 		"enter_password": "에 대한 새 비밀번호를 입력하세요. {username}.",
 		"enter_password_re": "새 비밀번호를 다시 입력하십시오. {username}.",
 		"update": "업데이트",
-		"update_success": "Updated successfully.",
-		"update_error": "An error occurred while updating."
+		"update_success": "성공적으로 업데이트되었습니다.",
+		"update_error": "업데이트하는 동안 오류가 발생했습니다."
 	},
 	"share": {
 		"share": "공유",
