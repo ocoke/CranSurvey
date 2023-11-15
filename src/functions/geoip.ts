@@ -17,16 +17,16 @@ export default async function getGeoIp(event) {
 	// const geoip: object = await $fetch("https://api.ip.sb/geoip/" + clientIp)
 	const geoip: object = await $fetch("https://ipapi.co/" + clientIp + "/json")
 	const city = geoip["city"] || "Unknown"
-	const country = geoip["country"] || "Unknown"
+	const country = geoip["country_name"] || "Unknown"
 	const region = geoip["region"] || "Unknown"
 	const country_code = geoip["country_code"] || "Unknown"
 	const region_code = geoip["region_code"] || "Unknown"
 	return {
 		clientIp,
 		city,
-		country,
 		region,
-		country_code,
+		country,
 		region_code,
+		country_code,
 	}
 }
