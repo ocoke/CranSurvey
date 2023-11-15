@@ -73,11 +73,11 @@
 		"details": "詳",
 		"clear": "清楚",
 		"country_area": "國家/地區",
-		"country": "Country",
-		"city": "City",
-		"search": "Search",
-		"user": "User",
-		"answers": "Answers"
+		"country": "國家",
+		"city": "城市",
+		"search": "搜索",
+		"user": "使用者",
+		"answers": "答案"
 	},
 	"edit": {
 		"edit": "編輯",
@@ -189,8 +189,8 @@
 		"enter_password": "請輸入新密碼 {username}.",
 		"enter_password_re": "請重新輸入新密碼 {username}.",
 		"update": "更新",
-		"update_success": "Updated successfully.",
-		"update_error": "An error occurred while updating."
+		"update_success": "更新成功。",
+		"update_error": "更新時出錯。"
 	},
 	"share": {
 		"share": "共用",
