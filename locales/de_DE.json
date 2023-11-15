@@ -72,7 +72,12 @@
 		"value": "Wert",
 		"details": "Details",
 		"clear": "Klar",
-		"country_area": "Land/Region"
+		"country_area": "Land/Region",
+		"country": "Country",
+		"city": "City",
+		"search": "Search",
+		"user": "User",
+		"answers": "Answers"
 	},
 	"edit": {
 		"edit": "Redigieren",
