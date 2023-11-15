@@ -72,7 +72,12 @@
 		"value": "값",
 		"details": "세부 정보",
 		"clear": "맑다",
-		"country_area": "국가/지역"
+		"country_area": "국가/지역",
+		"country": "Country",
+		"city": "City",
+		"search": "Search",
+		"user": "User",
+		"answers": "Answers"
 	},
 	"edit": {
 		"edit": "편집하다",
