@@ -43,6 +43,8 @@ CranSurvey is still in development, to see the progress, please check the [ocoke
 
 ## ❤️ Thanks
 
-> The icon of this project has been designed using images from Flaticon.com & Twemoji.
->
-> We use [Nuxt](https://nuxt.com) and [Vuetify](https://vuetifyjs.com) to build our application.
+- [Flaticon.com](https://flaticon.com/): Logo / Icon for CranSurvey.
+- [Twemoji](https://twemoji.twitter.com/): Logo / Icon for CranSurvey.
+- [Nuxt](https://nuxt.com): Powerful Vue Framework.
+- [Vuetify](https://vuetifyjs.com/): Powerful Component Framework.
+- [ipapi.co](https://ipapi.co/): API for GeoIP.
