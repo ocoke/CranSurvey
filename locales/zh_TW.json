@@ -72,7 +72,12 @@
 		"value": "值",
 		"details": "詳",
 		"clear": "清楚",
-		"country_area": "國家/地區"
+		"country_area": "國家/地區",
+		"country": "Country",
+		"city": "City",
+		"search": "Search",
+		"user": "User",
+		"answers": "Answers"
 	},
 	"edit": {
 		"edit": "編輯",
