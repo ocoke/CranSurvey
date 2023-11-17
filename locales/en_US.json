@@ -203,6 +203,11 @@
 		"copied": "Copied!",
 		"valid_times": "Valid Times (for shortened link)"
 	},
+	"settings": {
+		"settings": "Settings",
+		"no_change": "The settings have not changed.",
+		"confirm_leave": "Are you sure you want to leave this page? Your changes will not be saved."
+	},
 	"error_codes": {
 		"0": "Success.",
 		"1001": "Invalid parameters.",

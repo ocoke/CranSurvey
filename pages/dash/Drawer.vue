@@ -54,6 +54,14 @@ function toggleTheme() {
 			<v-list-item
 				rounded="xl"
 				color="primary"
+				prepend-icon="mdi-cog-outline"
+				:title="$t('settings.settings')"
+				value="settings"
+				@click="navigateTo(localePath('/dash/settings'))"
+			></v-list-item>
+			<v-list-item
+				rounded="xl"
+				color="primary"
 				prepend-icon="mdi-brightness-6"
 				:title="$t('dashboard.toggleTheme')"
 				value="theme"
