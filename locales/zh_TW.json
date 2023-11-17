@@ -220,7 +220,18 @@
 	"settings": {
 		"settings": "設置",
 		"no_change": "設置未更改。",
-		"confirm_leave": "您確定要離開此頁面嗎？您的更改將不會被保存。"
+		"confirm_leave": "您確定要離開此頁面嗎？您的更改將不會被保存。",
+		"site": "網站",
+		"site_title": "Site Title",
+		"site_url": "Site URL",
+		"users": "使用者",
+		"use_captcha_sign": "Use CAPTCHA in Signing in/up",
+		"allow_signup": "Allow Sign up",
+		"invite_code": "Invite Code for Signing Up",
+		"surveys": "調查",
+		"use_captcha_survey": "Use CAPTCHA in Collecting Data",
+		"captcha": "CAPTCHA",
+		"update": "更新"
 	},
 	"error_codes": {
 		"0": "成功。",
