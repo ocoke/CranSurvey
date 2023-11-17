@@ -54,7 +54,21 @@
 		"created_at": "Created At",
 		"number_of_questions": "Number of Questions",
 		"enable_true": "Yes",
-		"enable_false": "No"
+		"enable_false": "No",
+		"view": "View",
+		"headers": {
+			"id": "ID",
+			"title": "Title",
+			"enabled": "Enabled",
+			"date": "Date",
+			"description": "Description",
+			"questions": "Questions",
+			"view": "View"
+		},
+		"boolean": {
+			"true": "Yes",
+			"false": "No"
+		}
 	},
 	"results": {
 		"results": "Results",

@@ -27,7 +27,6 @@ import "~/src/styles/dash.css"
 <template>
     <h1 class="text-h4">{{ $t("results.results") }}</h1>
         <v-card
-            :title="$t('results.results')"
             variant="outlined"
             style="margin: 20px auto; padding: 15px"
         >

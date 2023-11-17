@@ -31,105 +31,101 @@ import "~/src/styles/dash.css"
 		$t("new.new")
 	}}</v-btn>
 	<div class="mainGroup">
-		<code
-			class="text-subtitle-1"
-			style="font-family: monospace !important"
-			v-text="$t('users.signed', { username: '`' + username + '`' })"
-		></code>
-		<p class="text-subtitle-1">{{ ongoingSurveysData }}</p>
-		<v-card variant="outlined" style="margin: 20px auto; padding: 15px">
-			<v-expansion-panels>
-				<v-expansion-panel v-for="survey in surveys">
-					<v-expansion-panel-title>
-						<template v-slot:default="{ expanded }">
-							<v-row no-gutters>
-								<v-col cols="4" class="d-flex justify-start">
-									{{ survey.title }}
-								</v-col>
-								<v-col cols="8" class="text-grey">
-									<v-fade-transition leave-absolute>
-										<span v-if="expanded"> #{{ survey.id.slice(-6) }} </span>
-									</v-fade-transition>
-								</v-col>
-							</v-row>
-						</template>
-					</v-expansion-panel-title>
-					<v-expansion-panel-text>
-						<v-table>
-							<thead>
-								<tr>
-									<th class="text-left">
-										{{ $t("surveys.description") }}
-									</th>
-									<th class="text-left">
-										{{ $t("surveys.enabled") }}
-									</th>
-									<th class="text-left">
-										{{ $t("results.type") }}
-									</th>
-									<th class="text-left">
-										{{ $t("surveys.number_of_questions") }}
-									</th>
-									<th class="text-left">
-										{{ $t("surveys.created_at") }}
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>{{ survey.description }}</td>
-									<td>{{ $t("surveys.enable_" + (survey.enable || false).toString()) }}</td>
-									<td>{{ $t("new.q1_" + survey.type) }}</td>
-									<td>{{ survey.questions.length }}</td>
-									<td>{{ new Date(survey.created_at).toLocaleString() }}</td>
-								</tr>
-							</tbody>
-						</v-table>
+		<v-card
+            variant="outlined"
+            style="margin: 20px auto; padding: 15px"
+			:loading="loading"
+        >
+            <template v-slot:text>
+            <v-text-field
+                v-model="search"
+                :label="$t('results.search')"
+                prepend-inner-icon="mdi-magnify"
+                single-line
+                variant="outlined"
+                hide-details
+            ></v-text-field>
+            </template>
 
-						<v-card-actions>
+            <v-card-text>
+                <v-data-table-server
+                    :headers="headers"
+                    :items="tableItems"
+                    :search="search"
+                    v-model:items-per-page="itemsPerPage"
+                    :items-length="totalItems"
+                    :loading="loading"
+                    @update:options="loadItems"
+					class="resultsDataTable"
+                >
+                <template v-slot:item="{ item }">
+                    <tr>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.title }}</td>
+                        
+                       
+                        <td>{{ desc(item.description) }}</td>
+                        <td>{{ item.date }}</td>
+						<td>{{ $t('surveys.boolean.' + item.enabled) }}</td>
+						<td>{{ item.questions }}</td>
+						<v-dialog width="500">
+
+							<template v-slot:activator="{ props }">
+                                    <td><v-btn variant="tonal" density="comfortable" v-bind="props">{{ $t('surveys.view') }}</v-btn></td>
+                            </template>
+                            <template v-slot:default="{ isActive }">
+							<v-card>
+								<v-card-title>{{ $t('surveys.view') }}</v-card-title>
+								<v-card-actions>
 							<v-spacer></v-spacer>
-							<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/new?id=' + survey.id))">
+							<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/new?id=' + item.fullId))">
 								{{ $t("edit.edit") }}
 							</v-btn>
-							<v-dialog width="500">
-								<template v-slot:activator="{ props }">
-									<v-btn variant="text" color="primary" v-bind="props">
-										{{ $t("results.delete") }}
-									</v-btn>
-								</template>
-
-								<template v-slot:default="{ isActive }">
-									<v-card :title="$t('delete.warning')">
-										<v-card-text>
-											{{ $t("delete.warning_msg", { title: survey.title }) }}
-										</v-card-text>
-										<v-card-actions>
-											<v-spacer></v-spacer>
-											<v-btn :text="$t('delete.cancel')" @click="isActive.value = false"></v-btn>
-											<!-- prettier-ignore -->
-											<v-btn
-												:text="$t('delete.confirm')"
-												@click="
-													deleteSurvey(survey.id);
-													isActive.value = false
-												"
-											></v-btn>
-										</v-card-actions>
-									</v-card>
-								</template>
-							</v-dialog>
-							<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/share?id=' + survey.id))">
-								{{ $t("share.share") }}
+							<!-- prettier-ignore -->
+							<v-btn variant="text" color="primary" @click="deleteItem = item; deleteConfirm = true;">
+								{{ $t("results.delete") }}
 							</v-btn>
-							<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/results?id=' + survey.id))">
-								{{ $t("results.results") }}
-							</v-btn>
-						</v-card-actions>
-					</v-expansion-panel-text>
-				</v-expansion-panel>
-			</v-expansion-panels>
-		</v-card>
+								<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/share?id=' + item.fullId))">
+									{{ $t("share.share") }}
+								</v-btn>
+								<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/details?id=' + item.fullId))">
+									{{ $t("results.results") }}
+								</v-btn>
+								<v-btn variant="text" color="primary" @click="isActive.value = false">
+									{{ $t("results.close") }}
+								</v-btn>
+							</v-card-actions>
+							</v-card>
+							</template>
+						</v-dialog>
+						
+                    </tr>
+                    </template>
+                    
+                </v-data-table-server>
+            </v-card-text>
+        </v-card>
 	</div>
+
+	<v-dialog width="500" v-model="deleteConfirm">
+		<v-card :title="$t('delete.warning')">
+			<v-card-text>
+				{{ $t("delete.warning_msg", { title: deleteItem.title }) }}
+			</v-card-text>
+			<v-card-actions>
+				<v-spacer></v-spacer>
+				<v-btn :text="$t('delete.cancel')" @click="deleteConfirm = false"></v-btn>
+				<!-- prettier-ignore -->
+				<v-btn
+					:text="$t('delete.confirm')"
+					@click="
+						deleteSurvey(deleteItem.id);
+						deleteConfirm = false
+					"
+				></v-btn>
+			</v-card-actions>
+		</v-card>
+	</v-dialog>
 </template>
 
 <script>
@@ -156,17 +152,106 @@ export default {
 			drawer: true,
 			rail: true,
 			surveys: [],
-			ongoingLoading: true,
-			ongoingSurveysData: "",
+			tableItems: [],
+			itemsPerPage: 10,
+			totalItems: 0,
+			search: '',
+			loading: true,
+			token: '',
+			deleteConfirm: false,
+			deleteItem: {},
+			headers: [
+				{
+					align: 'start',
+					key: 'id',
+					sortable: false,
+					title: 'ID',
+				},
+				{
+					align: 'start',
+					key: 'title',
+					sortable: false,
+					title: 'Title',
+				},
+				{
+					align: 'start',
+					key: 'description',
+					sortable: false,
+					title: 'Description',
+				},
+				{
+					align: 'start',
+					key: 'date',
+					sortable: true,
+					title: 'Date',
+				},
+				{
+					align: 'start',
+					key: 'enabled',
+					sortable: true,
+					title: 'Enabled',
+				},
+				{
+					align: 'start',
+					key: 'questions',
+					sortable: false,
+					title: 'Questions',
+				},
+				{
+					align: 'start',
+					key: 'view',
+					sortable: false,
+					title: 'View',
+				},
+				
+			],
 		}
 	},
 	methods: {
-		signout() {
-			if (process.client) {
-				sessionStorage.removeItem("_cransurvey_token")
-				sessionStorage.removeItem("_cransurvey_usr")
-				toast.success(this.$t("users.signout_success"), toastCfg)
-				navigateTo(useLocalePath()("/sign-in"))
+		loadItems({ page, itemsPerPage, sortBy }) {
+			this.loading = true
+			if (!this.token) return
+            $fetch('/api/survey/lists', {
+                method: 'POST',
+                body: JSON.stringify({
+                    token: this.token,
+                    uniqueId: useRoute().query.id,
+                    page,
+                    pagesize: itemsPerPage,
+                    sortBy,
+                    search: this.search,
+                }),
+            }).then(resp => {
+                if (resp.code == 0) {
+                    let list = []
+                    for (let i in resp.list) {
+                        list.push({
+                            id: '#' + resp.list[i].id.slice(-6),
+							fullId: resp.list[i].id,
+							title: resp.list[i].title,
+							description: resp.list[i].description,
+                            date: new Date(resp.list[i].created_at).toLocaleString(),
+							enabled: resp.list[i].enable,
+							questions: resp.list[i].questions.length,
+                        })
+                    }
+                    this.tableItems = list
+                    this.totalItems = resp.count
+                } else {
+                    this.tableItems = []
+                    this.totalItems = 0
+                }
+                this.loading = false
+            })
+		},
+		desc(text) {
+			if (typeof text != "string") return text
+			if (text.length <= 80) return text
+			text = text.slice(0, 80)
+			if (text.endsWith(" ")) {
+				return text.slice(0, 79) + "..."
+			} else {
+				return text + "..."
 			}
 		},
 		async deleteSurvey(id) {
@@ -187,29 +272,14 @@ export default {
 		},
 	},
 	async mounted() {
-		const ongoingSurveys = await $fetch("/api/dash/ongoing", {
-			method: "POST",
-			body: JSON.stringify({
-				token: sessionStorage.getItem("_cransurvey_token"),
-				isdash: true,
-			}),
-		})
 
-		if (ongoingSurveys.code == 0) {
-			this.ongoingSurveysData = this.$t("dashboard.ongoing_surveys", ongoingSurveys.count)
-		} else {
-			this.ongoingSurveysData = this.$t("dashboard.error_fetching_data")
+		for (let i in this.headers) {
+			this.headers[i].title = this.$t('surveys.headers.' + this.headers[i].key)
 		}
 
-		this.ongoingLoading = false
+		this.token = sessionStorage.getItem("_cransurvey_token")
 
-		//   for (let i in ongoingSurveys.list) {
-		//     this.surveys.push({
-		//         title: ongoingSurveys.list[i].title,
-		//     })
-		//   }
-
-		this.surveys = ongoingSurveys.list
+		this.loadItems({ page: 1, itemsPerPage: 10 })
 
 		this.username = sessionStorage.getItem("_cransurvey_usr")
 	},

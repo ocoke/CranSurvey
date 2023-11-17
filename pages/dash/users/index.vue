@@ -34,7 +34,7 @@ import "~/src/styles/dash.css"
 			v-text="$t('users.signed', { username: '`' + username + '`' })"
 		></code>
 		<p class="text-subtitle-1">{{ siteUsersData }}</p>
-		<v-card variant="outlined" style="margin: 20px auto; padding: 15px">
+		<v-card variant="flat" style="margin: 20px auto; padding: 15px" :loading="loading">
 			<v-expansion-panels>
 				<v-expansion-panel v-for="user in siteUsers">
 					<v-expansion-panel-title>
@@ -98,6 +98,7 @@ export default {
 			siteUsersData: "",
 			siteUsers: [],
 			siteAdmins: [],
+			loading: true,
 		}
 	},
 	methods: {
@@ -141,6 +142,7 @@ export default {
 		this.siteUsersLoading = false
 
 		this.username = sessionStorage.getItem("_cransurvey_usr")
+		this.loading = false
 	},
 }
 </script>
