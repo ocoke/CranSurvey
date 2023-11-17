@@ -54,7 +54,21 @@
 		"created_at": "Criado em",
 		"number_of_questions": "Número de Perguntas",
 		"enable_true": "Sim",
-		"enable_false": "Não"
+		"enable_false": "Não",
+		"view": "Vista",
+		"headers": {
+			"id": "ID",
+			"title": "Título",
+			"enabled": "Habilitado",
+			"date": "Data",
+			"description": "Descrição",
+			"questions": "Perguntas",
+			"view": "Vista"
+		},
+		"boolean": {
+			"true": "Sim",
+			"false": "Não"
+		}
 	},
 	"results": {
 		"results": "Resultados",
@@ -202,6 +216,11 @@
 		"copy": "Copiar",
 		"copied": "Copiado!",
 		"valid_times": "Tempos válidos (para link encurtado)"
+	},
+	"settings": {
+		"settings": "Configurações",
+		"no_change": "As configurações não foram alteradas.",
+		"confirm_leave": "Tem certeza de que deseja sair desta página? Suas alterações não serão salvas."
 	},
 	"error_codes": {
 		"0": "Êxito.",

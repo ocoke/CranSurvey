@@ -54,7 +54,21 @@
 		"created_at": "作成日",
 		"number_of_questions": "質問数",
 		"enable_true": "はい",
-		"enable_false": "いいえ"
+		"enable_false": "いいえ",
+		"view": "眺める",
+		"headers": {
+			"id": "身分証明書",
+			"title": "タイトル",
+			"enabled": "有効",
+			"date": "日付",
+			"description": "形容",
+			"questions": "問",
+			"view": "眺める"
+		},
+		"boolean": {
+			"true": "はい",
+			"false": "いいえ"
+		}
 	},
 	"results": {
 		"results": "業績",
@@ -202,6 +216,11 @@
 		"copy": "写し",
 		"copied": "コピー！",
 		"valid_times": "有効時間(短縮リンクの場合)"
+	},
+	"settings": {
+		"settings": "設定",
+		"no_change": "設定は変更されていません。",
+		"confirm_leave": "このページを離れてもよろしいですか?変更は保存されません。"
 	},
 	"error_codes": {
 		"0": "成功。",

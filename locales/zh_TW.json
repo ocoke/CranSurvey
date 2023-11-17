@@ -54,7 +54,21 @@
 		"created_at": "創建於",
 		"number_of_questions": "問題數量",
 		"enable_true": "是的",
-		"enable_false": "不"
+		"enable_false": "不",
+		"view": "視圖",
+		"headers": {
+			"id": "編號",
+			"title": "標題",
+			"enabled": "啟用",
+			"date": "日期",
+			"description": "描述",
+			"questions": "問題",
+			"view": "視圖"
+		},
+		"boolean": {
+			"true": "是的",
+			"false": "不"
+		}
 	},
 	"results": {
 		"results": "結果",
@@ -202,6 +216,11 @@
 		"copy": "複製",
 		"copied": "複製！",
 		"valid_times": "有效時間（縮短連結）"
+	},
+	"settings": {
+		"settings": "設置",
+		"no_change": "設置未更改。",
+		"confirm_leave": "您確定要離開此頁面嗎？您的更改將不會被保存。"
 	},
 	"error_codes": {
 		"0": "成功。",
