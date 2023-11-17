@@ -55,15 +55,15 @@
 		"number_of_questions": "Nombre de questions",
 		"enable_true": "Oui",
 		"enable_false": "Non",
-		"view": "View",
+		"view": "Vue",
 		"headers": {
 			"id": "ID",
-			"title": "Title",
+			"title": "Titre",
 			"enabled": "Activé",
 			"date": "Date",
 			"description": "Description",
-			"questions": "Questions",
-			"view": "View"
+			"questions": "Questionne",
+			"view": "Vue"
 		},
 		"boolean": {
 			"true": "Oui",
@@ -218,9 +218,9 @@
 		"valid_times": "Heures de validité (pour le lien raccourci)"
 	},
 	"settings": {
-		"settings": "Settings",
-		"no_change": "The settings have not changed.",
-		"confirm_leave": "Are you sure you want to leave this page? Your changes will not be saved."
+		"settings": "Paramètres",
+		"no_change": "Les paramètres n’ont pas changé.",
+		"confirm_leave": "Êtes-vous sûr de vouloir quitter cette page ? Vos modifications ne seront pas enregistrées."
 	},
 	"error_codes": {
 		"0": "Succès.",
