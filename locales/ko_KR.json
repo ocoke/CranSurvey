@@ -220,7 +220,18 @@
 	"settings": {
 		"settings": "설정",
 		"no_change": "설정이 변경되지 않았습니다.",
-		"confirm_leave": "이 페이지에서 나가시겠습니까? 변경 사항은 저장되지 않습니다."
+		"confirm_leave": "이 페이지에서 나가시겠습니까? 변경 사항은 저장되지 않습니다.",
+		"site": "사이트",
+		"site_title": "Site Title",
+		"site_url": "Site URL",
+		"users": "사용자",
+		"use_captcha_sign": "Use CAPTCHA in Signing in/up",
+		"allow_signup": "Allow Sign up",
+		"invite_code": "Invite Code for Signing Up",
+		"surveys": "설문 조사",
+		"use_captcha_survey": "Use CAPTCHA in Collecting Data",
+		"captcha": "CAPTCHA",
+		"update": "업데이트"
 	},
 	"error_codes": {
 		"0": "성공.",
