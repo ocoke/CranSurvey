@@ -54,7 +54,21 @@
 		"created_at": "Created At",
 		"number_of_questions": "Number of Questions",
 		"enable_true": "Yes",
-		"enable_false": "No"
+		"enable_false": "No",
+		"view": "View",
+		"headers": {
+			"id": "ID",
+			"title": "Title",
+			"enabled": "Enabled",
+			"date": "Date",
+			"description": "Description",
+			"questions": "Questions",
+			"view": "View"
+		},
+		"boolean": {
+			"true": "Yes",
+			"false": "No"
+		}
 	},
 	"results": {
 		"results": "Results",
@@ -202,6 +216,11 @@
 		"copy": "Copy",
 		"copied": "Copied!",
 		"valid_times": "Valid Times (for shortened link)"
+	},
+	"settings": {
+		"settings": "Settings",
+		"no_change": "The settings have not changed.",
+		"confirm_leave": "Are you sure you want to leave this page? Your changes will not be saved."
 	},
 	"error_codes": {
 		"0": "Success.",
