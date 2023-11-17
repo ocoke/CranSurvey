@@ -220,7 +220,18 @@
 	"settings": {
 		"settings": "設定",
 		"no_change": "設定は変更されていません。",
-		"confirm_leave": "このページを離れてもよろしいですか?変更は保存されません。"
+		"confirm_leave": "このページを離れてもよろしいですか?変更は保存されません。",
+		"site": "敷地",
+		"site_title": "サイトタイトル",
+		"site_url": "サイトURL",
+		"users": "ユーザー",
+		"use_captcha_sign": "サインイン/アップでCAPTCHAを使用する",
+		"allow_signup": "サインアップを許可",
+		"invite_code": "サインアップ用の招待コード",
+		"surveys": "調査",
+		"use_captcha_survey": "データ収集での CAPTCHA の使用",
+		"captcha": "キャプチャ",
+		"update": "更新"
 	},
 	"error_codes": {
 		"0": "成功。",

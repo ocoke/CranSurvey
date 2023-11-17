@@ -220,7 +220,18 @@
 	"settings": {
 		"settings": "設置",
 		"no_change": "設置未更改。",
-		"confirm_leave": "您確定要離開此頁面嗎？您的更改將不會被保存。"
+		"confirm_leave": "您確定要離開此頁面嗎？您的更改將不會被保存。",
+		"site": "網站",
+		"site_title": "網站標題",
+		"site_url": "網站 URL",
+		"users": "使用者",
+		"use_captcha_sign": "在登錄/註冊中使用驗證碼",
+		"allow_signup": "允許註冊",
+		"invite_code": "邀請碼註冊",
+		"surveys": "調查",
+		"use_captcha_survey": "使用 CAPTCHA 收集數據",
+		"captcha": "驗證碼",
+		"update": "更新"
 	},
 	"error_codes": {
 		"0": "成功。",

@@ -220,7 +220,18 @@
 	"settings": {
 		"settings": "Paramètres",
 		"no_change": "Les paramètres n’ont pas changé.",
-		"confirm_leave": "Êtes-vous sûr de vouloir quitter cette page ? Vos modifications ne seront pas enregistrées."
+		"confirm_leave": "Êtes-vous sûr de vouloir quitter cette page ? Vos modifications ne seront pas enregistrées.",
+		"site": "Site",
+		"site_title": "Titre du site",
+		"site_url": "Site URL",
+		"users": "Utilisateurs",
+		"use_captcha_sign": "Utiliser le CAPTCHA pour se connecter/se connecter",
+		"allow_signup": "Autoriser l’inscription",
+		"invite_code": "Code d’invitation pour l’inscription",
+		"surveys": "Enquêtes",
+		"use_captcha_survey": "Utiliser le CAPTCHA pour collecter des données",
+		"captcha": "CAPTCHA",
+		"update": "Mettre à jour"
 	},
 	"error_codes": {
 		"0": "Succès.",

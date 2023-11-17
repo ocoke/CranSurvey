@@ -220,7 +220,18 @@
 	"settings": {
 		"settings": "设置",
 		"no_change": "设置未更改。",
-		"confirm_leave": "您确定要离开此页面吗？您的更改将不会被保存。"
+		"confirm_leave": "您确定要离开此页面吗？您的更改将不会被保存。",
+		"site": "网站",
+		"site_title": "网站标题",
+		"site_url": "站点 URL",
+		"users": "用户",
+		"use_captcha_sign": "在登录/注册中使用验证码",
+		"allow_signup": "允许注册",
+		"invite_code": "邀请码注册",
+		"surveys": "调查",
+		"use_captcha_survey": "使用 CAPTCHA 收集数据",
+		"captcha": "验证码",
+		"update": "更新"
 	},
 	"error_codes": {
 		"0": "成功。",

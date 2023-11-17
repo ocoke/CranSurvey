@@ -220,7 +220,18 @@
 	"settings": {
 		"settings": "Configurações",
 		"no_change": "As configurações não foram alteradas.",
-		"confirm_leave": "Tem certeza de que deseja sair desta página? Suas alterações não serão salvas."
+		"confirm_leave": "Tem certeza de que deseja sair desta página? Suas alterações não serão salvas.",
+		"site": "Local",
+		"site_title": "Título do Site",
+		"site_url": "Site URL",
+		"users": "Usuários",
+		"use_captcha_sign": "Usar CAPTCHA em Entrar/Subir",
+		"allow_signup": "Permitir inscrição",
+		"invite_code": "Código de convite para inscrição",
+		"surveys": "Pesquisas",
+		"use_captcha_survey": "Usar CAPTCHA na coleta de dados",
+		"captcha": "CAPTCHA",
+		"update": "Atualização"
 	},
 	"error_codes": {
 		"0": "Êxito.",
