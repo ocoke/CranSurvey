@@ -55,15 +55,15 @@
 		"number_of_questions": "问题数量",
 		"enable_true": "是的",
 		"enable_false": "不",
-		"view": "View",
+		"view": "视图",
 		"headers": {
-			"id": "ID",
-			"title": "Title",
+			"id": "编号",
+			"title": "标题",
 			"enabled": "启用",
 			"date": "日期",
 			"description": "描述",
-			"questions": "Questions",
-			"view": "View"
+			"questions": "问题",
+			"view": "视图"
 		},
 		"boolean": {
 			"true": "是的",
@@ -218,9 +218,9 @@
 		"valid_times": "有效时间（缩短链接）"
 	},
 	"settings": {
-		"settings": "Settings",
-		"no_change": "The settings have not changed.",
-		"confirm_leave": "Are you sure you want to leave this page? Your changes will not be saved."
+		"settings": "设置",
+		"no_change": "设置未更改。",
+		"confirm_leave": "您确定要离开此页面吗？您的更改将不会被保存。"
 	},
 	"error_codes": {
 		"0": "成功。",
