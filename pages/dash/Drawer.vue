@@ -26,6 +26,7 @@ const { mobile } = useDisplay()
 
 <template>
 	<v-app-bar collapse :elevation="0" density="compact" style="width: 256px;" v-if="mobile">
+		<!-- prettier-ignore-attribute -->
 		<v-app-bar-nav-icon @click.stop="drawer = !drawer; rail = false;"></v-app-bar-nav-icon>
 		<v-app-bar-title>CranSurvey</v-app-bar-title>
 	</v-app-bar>
