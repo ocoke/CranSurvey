@@ -55,15 +55,15 @@
 		"number_of_questions": "質問数",
 		"enable_true": "はい",
 		"enable_false": "いいえ",
-		"view": "View",
+		"view": "眺める",
 		"headers": {
-			"id": "ID",
-			"title": "Title",
+			"id": "身分証明書",
+			"title": "タイトル",
 			"enabled": "有効",
 			"date": "日付",
 			"description": "形容",
-			"questions": "Questions",
-			"view": "View"
+			"questions": "問",
+			"view": "眺める"
 		},
 		"boolean": {
 			"true": "はい",
@@ -218,9 +218,9 @@
 		"valid_times": "有効時間(短縮リンクの場合)"
 	},
 	"settings": {
-		"settings": "Settings",
-		"no_change": "The settings have not changed.",
-		"confirm_leave": "Are you sure you want to leave this page? Your changes will not be saved."
+		"settings": "設定",
+		"no_change": "設定は変更されていません。",
+		"confirm_leave": "このページを離れてもよろしいですか?変更は保存されません。"
 	},
 	"error_codes": {
 		"0": "成功。",
