@@ -54,7 +54,21 @@
 		"created_at": "创建于",
 		"number_of_questions": "问题数量",
 		"enable_true": "是的",
-		"enable_false": "不"
+		"enable_false": "不",
+		"view": "View",
+		"headers": {
+			"id": "ID",
+			"title": "Title",
+			"enabled": "启用",
+			"date": "日期",
+			"description": "描述",
+			"questions": "Questions",
+			"view": "View"
+		},
+		"boolean": {
+			"true": "是的",
+			"false": "不"
+		}
 	},
 	"results": {
 		"results": "结果",
@@ -202,6 +216,11 @@
 		"copy": "复制",
 		"copied": "复制！",
 		"valid_times": "有效时间（缩短链接）"
+	},
+	"settings": {
+		"settings": "Settings",
+		"no_change": "The settings have not changed.",
+		"confirm_leave": "Are you sure you want to leave this page? Your changes will not be saved."
 	},
 	"error_codes": {
 		"0": "成功。",
