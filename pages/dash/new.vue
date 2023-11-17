@@ -62,8 +62,8 @@ import "~/src/styles/dash.css"
 		<v-card variant="outlined" v-show="surveyType == 'simple' || surveyType == 'advanced'">
 			<v-card-title v-if="surveyType == 'simple'">{{ $t("new.q1_simple") }}</v-card-title>
 			<v-card-title v-else>{{ $t("new.advanced_q") }}</v-card-title>
-			<v-card-subtitle v-if="surveyType == 'advanced'">{{ $t("new.simple_sub") }}</v-card-subtitle>
-			<v-card-subtitle v-else>{{ $t("new.advanced_q_sub") }}</v-card-subtitle>
+			<v-card-subtitle v-if="surveyType == 'advanced'">{{ $t("new.advanced_q_sub") }}</v-card-subtitle>
+			<v-card-subtitle v-else>{{ $t("new.simple_sub") }}</v-card-subtitle>
 			<v-card-text>
 				<h3 class="ques_title">{{ $t("new.question.question") }}</h3>
 				<v-text-field
@@ -677,6 +677,17 @@ export default {
 			if (this.simple.options.optionsData.length != 0) {
 				this.simple.options.optionsData = []
 			}
+			this.simple =  {
+				type: "short_answer",
+				validate: {
+					min: 1,
+					max: 2048,
+				},
+				required: true,
+				options: {
+					optionsData: [],
+				},
+			}
 		},
 		deleteQuestion(id) {
 			this.advanced.questions.splice(id, 1)
@@ -696,16 +707,20 @@ export default {
 			this.optionText = ""
 		},
 		deleteOption() {
-			if (!this.deleteOptionText) {
-				return false
-			}
 			if (!this.simple.options.optionsData) {
 				this.simple.options.optionsData = []
 			}
+			if (this.simple.type == 'multiple') {
+				this.deleteOptionText = this.simple.options.optionsData[this.deleteOptionText]
+			}
+			if (!this.deleteOptionText) {
+				return false
+			}
+			
 			this.simple.options.optionsData = this.simple.options.optionsData.filter((item) => {
 				return item != this.deleteOptionText
 			})
-			this.deleteOptionText = ""
+			this.deleteOptionText = null
 		},
 		setDefaultOption() {
 			if (this.deleteOptionText == null) {
