@@ -1,5 +1,4 @@
 <script setup>
-import { onMounted } from 'vue'
 import { useDisplay } from 'vuetify'
 
 const localePath = useLocalePath()

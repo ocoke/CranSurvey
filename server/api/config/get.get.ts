@@ -1,6 +1,5 @@
-import checkToken from "~/src/functions/checkToken"
 
-export default eventHandler(async (event) => {
+export default eventHandler(async () => {
 	const storage = useStorage("cransurvey")
     const cfg: object = await storage.getItem("cfg")
     return {
