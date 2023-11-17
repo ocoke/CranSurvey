@@ -677,7 +677,7 @@ export default {
 			if (this.simple.options.optionsData.length != 0) {
 				this.simple.options.optionsData = []
 			}
-			this.simple =  {
+			this.simple = {
 				type: "short_answer",
 				validate: {
 					min: 1,
@@ -710,13 +710,13 @@ export default {
 			if (!this.simple.options.optionsData) {
 				this.simple.options.optionsData = []
 			}
-			if (this.simple.type == 'multiple') {
+			if (this.simple.type == "multiple") {
 				this.deleteOptionText = this.simple.options.optionsData[this.deleteOptionText]
 			}
 			if (!this.deleteOptionText) {
 				return false
 			}
-			
+
 			this.simple.options.optionsData = this.simple.options.optionsData.filter((item) => {
 				return item != this.deleteOptionText
 			})

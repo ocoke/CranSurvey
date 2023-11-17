@@ -79,7 +79,6 @@ export default eventHandler(async (event) => {
 
 	await storage.setItem("ans", { ...ans, [uniqueId]: [...(ans[uniqueId] || []), new_ans] })
 
-
 	if (svId.webhook) {
 		const webhookData = generateWebhookData(new_ans, uniqueId, "form_response")
 		try {
@@ -95,10 +94,10 @@ export default eventHandler(async (event) => {
 				}),
 			})
 			if (webhook.code != 0) {
-				console.warn('Webhook Error:', webhook)
+				console.warn("Webhook Error:", webhook)
 			}
-		} catch(e) {
-			console.warn('Webhook Error:', e)
+		} catch (e) {
+			console.warn("Webhook Error:", e)
 		}
 	}
 	return {

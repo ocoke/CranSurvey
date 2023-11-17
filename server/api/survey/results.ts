@@ -37,54 +37,54 @@ export default eventHandler(async (event) => {
 	} else {
 		answers = ans
 	}
-    let total = answers.length
+	const total = answers.length
 
-	let sort = sortBy ? sortBy : []
+	const sort = sortBy ? sortBy : []
 
 	if (!sort[0]) {
 		answers.reverse()
-	} else if (sort[0].key == 'date' && sort[0].order == 'desc') {
+	} else if (sort[0].key == "date" && sort[0].order == "desc") {
 		answers.reverse()
 	}
 
+	if (search) {
+		answers = answers.filter((a) => {
+			if (a.usr.toLowerCase().includes(search.toLowerCase())) {
+				return true
+			}
+			if (
+				a.geoip[0].toLowerCase().includes(search.toLowerCase()) ||
+				a.geoip[1].toLowerCase().includes(search.toLowerCase())
+			) {
+				return true
+			}
 
-    
-    if (search) {
-        answers = answers.filter((a) => {
-            if ((a.usr).toLowerCase().includes(search.toLowerCase())) {
-                return true
-            }
-            if ((a.geoip[0]).toLowerCase().includes(search.toLowerCase()) || (a.geoip[1]).toLowerCase().includes(search.toLowerCase())) {
-                return true
-            }
-
-            for (const i in a.ans) {
-                if (typeof a.ans[i].answer == "string" && (a.ans[i].answer).toLowerCase().includes(search.toLowerCase())) {
-                    return true
-                }
-				if (svId.questions[i].type == 'dropdown' || svId.questions[i].type == 'multiple') {
-					let ans = svId.questions[i].options.optionsData[Number(a.ans[i].answer)]
+			for (const i in a.ans) {
+				if (typeof a.ans[i].answer == "string" && a.ans[i].answer.toLowerCase().includes(search.toLowerCase())) {
+					return true
+				}
+				if (svId.questions[i].type == "dropdown" || svId.questions[i].type == "multiple") {
+					const ans = svId.questions[i].options.optionsData[Number(a.ans[i].answer)]
 					if (typeof ans == "string" && ans.toLowerCase().includes(search.toLowerCase())) {
 						return true
 					}
 				}
-            }
+			}
 			// if () {
 
 			// }
-            return false
-        })
-    }
-    if (page && pagesize) {
-        answers = answers.slice((page-1) * pagesize, pagesize * page)
-    }
-
+			return false
+		})
+	}
+	if (page && pagesize) {
+		answers = answers.slice((page - 1) * pagesize, pagesize * page)
+	}
 
 	return {
 		code: 0,
 		msg: "Success.",
 		answers,
-        total,
+		total,
 		survey: svId,
 	}
 })

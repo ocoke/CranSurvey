@@ -31,84 +31,91 @@ import "~/src/styles/dash.css"
 		$t("new.new")
 	}}</v-btn>
 	<div class="mainGroup">
-		<v-card
-            variant="outlined"
-            style="margin: 20px auto; padding: 15px"
-			:loading="loading"
-        >
-            <template v-slot:text>
-            <v-text-field
-                v-model="search"
-                :label="$t('results.search')"
-                prepend-inner-icon="mdi-magnify"
-                single-line
-                variant="outlined"
-                hide-details
-            ></v-text-field>
-            </template>
+		<v-card variant="outlined" style="margin: 20px auto; padding: 15px" :loading="loading">
+			<template v-slot:text>
+				<v-text-field
+					v-model="search"
+					:label="$t('results.search')"
+					prepend-inner-icon="mdi-magnify"
+					single-line
+					variant="outlined"
+					hide-details
+				></v-text-field>
+			</template>
 
-            <v-card-text>
-                <v-data-table-server
-                    :headers="headers"
-                    :items="tableItems"
-                    :search="search"
-                    v-model:items-per-page="itemsPerPage"
-                    :items-length="totalItems"
-                    :loading="loading"
-                    @update:options="loadItems"
+			<v-card-text>
+				<v-data-table-server
+					:headers="headers"
+					:items="tableItems"
+					:search="search"
+					v-model:items-per-page="itemsPerPage"
+					:items-length="totalItems"
+					:loading="loading"
+					@update:options="loadItems"
 					class="resultsDataTable"
-                >
-                <template v-slot:item="{ item }">
-                    <tr>
-                        <td>{{ item.id }}</td>
-                        <td>{{ item.title }}</td>
-                        
-                       
-                        <td>{{ desc(item.description) }}</td>
-                        <td>{{ item.date }}</td>
-						<td>{{ $t('surveys.boolean.' + item.enabled) }}</td>
-						<td>{{ item.questions }}</td>
-						<v-dialog width="500">
+				>
+					<template v-slot:item="{ item }">
+						<tr>
+							<td>{{ item.id }}</td>
+							<td>{{ item.title }}</td>
 
-							<template v-slot:activator="{ props }">
-                                    <td><v-btn variant="tonal" density="comfortable" v-bind="props">{{ $t('surveys.view') }}</v-btn></td>
-                            </template>
-                            <template v-slot:default="{ isActive }">
-							<v-card>
-								<v-card-title>{{ $t('surveys.view') }}</v-card-title>
-								<v-card-text>
-								<p>{{ $t('surveys.headers.id') }}: {{ item.id }}</p>
-								<p>{{ $t('surveys.headers.title') }}: {{ item.title }}</p></v-card-text>
+							<td>{{ desc(item.description) }}</td>
+							<td>{{ item.date }}</td>
+							<td>{{ $t("surveys.boolean." + item.enabled) }}</td>
+							<td>{{ item.questions }}</td>
+							<v-dialog width="500">
+								<template v-slot:activator="{ props }">
+									<td>
+										<v-btn variant="tonal" density="comfortable" v-bind="props">{{ $t("surveys.view") }}</v-btn>
+									</td>
+								</template>
+								<template v-slot:default="{ isActive }">
+									<v-card>
+										<v-card-title>{{ $t("surveys.view") }}</v-card-title>
+										<v-card-text>
+											<p>{{ $t("surveys.headers.id") }}: {{ item.id }}</p>
+											<p>{{ $t("surveys.headers.title") }}: {{ item.title }}</p></v-card-text
+										>
 
-								<v-card-actions>
-							<v-spacer></v-spacer>
-							<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/new?id=' + item.fullId))">
-								{{ $t("edit.edit") }}
-							</v-btn>
-							<!-- prettier-ignore -->
-							<v-btn variant="text" color="primary" @click="deleteItem = item; deleteConfirm = true;">
+										<v-card-actions>
+											<v-spacer></v-spacer>
+											<v-btn
+												variant="text"
+												color="primary"
+												@click="navigateTo(localePath('/dash/new?id=' + item.fullId))"
+											>
+												{{ $t("edit.edit") }}
+											</v-btn>
+											<!-- prettier-ignore -->
+											<v-btn variant="text" color="primary" @click="deleteItem = item; deleteConfirm = true;">
 								{{ $t("results.delete") }}
 							</v-btn>
-								<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/share?id=' + item.fullId))">
-									{{ $t("share.share") }}
-								</v-btn>
-								<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/details?id=' + item.fullId))">
-									{{ $t("results.results") }}
-								</v-btn>
-								<v-btn variant="text" color="primary" @click="isActive.value = false">
-									{{ $t("results.close") }}
-								</v-btn>
-							</v-card-actions>
-							</v-card>
-							</template>
-						</v-dialog>
-						
-                    </tr>
-                    </template>
-                    
-                </v-data-table-server>
-            </v-card-text>
-        </v-card>
+											<v-btn
+												variant="text"
+												color="primary"
+												@click="navigateTo(localePath('/dash/share?id=' + item.fullId))"
+											>
+												{{ $t("share.share") }}
+											</v-btn>
+											<v-btn
+												variant="text"
+												color="primary"
+												@click="navigateTo(localePath('/dash/details?id=' + item.fullId))"
+											>
+												{{ $t("results.results") }}
+											</v-btn>
+											<v-btn variant="text" color="primary" @click="isActive.value = false">
+												{{ $t("results.close") }}
+											</v-btn>
+										</v-card-actions>
+									</v-card>
+								</template>
+							</v-dialog>
+						</tr>
+					</template>
+				</v-data-table-server>
+			</v-card-text>
+		</v-card>
 	</div>
 
 	<v-dialog width="500" v-model="deleteConfirm">
@@ -159,55 +166,54 @@ export default {
 			tableItems: [],
 			itemsPerPage: 10,
 			totalItems: 0,
-			search: '',
+			search: "",
 			loading: true,
-			token: '',
+			token: "",
 			deleteConfirm: false,
 			deleteItem: {},
 			headers: [
 				{
-					align: 'start',
-					key: 'id',
+					align: "start",
+					key: "id",
 					sortable: false,
-					title: 'ID',
+					title: "ID",
 				},
 				{
-					align: 'start',
-					key: 'title',
+					align: "start",
+					key: "title",
 					sortable: false,
-					title: 'Title',
+					title: "Title",
 				},
 				{
-					align: 'start',
-					key: 'description',
+					align: "start",
+					key: "description",
 					sortable: false,
-					title: 'Description',
+					title: "Description",
 				},
 				{
-					align: 'start',
-					key: 'date',
+					align: "start",
+					key: "date",
 					sortable: true,
-					title: 'Date',
+					title: "Date",
 				},
 				{
-					align: 'start',
-					key: 'enabled',
+					align: "start",
+					key: "enabled",
 					sortable: true,
-					title: 'Enabled',
+					title: "Enabled",
 				},
 				{
-					align: 'start',
-					key: 'questions',
+					align: "start",
+					key: "questions",
 					sortable: false,
-					title: 'Questions',
+					title: "Questions",
 				},
 				{
-					align: 'start',
-					key: 'view',
+					align: "start",
+					key: "view",
 					sortable: false,
-					title: 'View',
+					title: "View",
 				},
-				
 			],
 		}
 	},
@@ -215,38 +221,38 @@ export default {
 		loadItems({ page, itemsPerPage, sortBy }) {
 			this.loading = true
 			if (!this.token) return
-            $fetch('/api/survey/lists', {
-                method: 'POST',
-                body: JSON.stringify({
-                    token: this.token,
-                    uniqueId: useRoute().query.id,
-                    page,
-                    pagesize: itemsPerPage,
-                    sortBy,
-                    search: this.search,
-                }),
-            }).then(resp => {
-                if (resp.code == 0) {
-                    let list = []
-                    for (let i in resp.list) {
-                        list.push({
-                            id: '#' + resp.list[i].id.slice(-6),
+			$fetch("/api/survey/lists", {
+				method: "POST",
+				body: JSON.stringify({
+					token: this.token,
+					uniqueId: useRoute().query.id,
+					page,
+					pagesize: itemsPerPage,
+					sortBy,
+					search: this.search,
+				}),
+			}).then((resp) => {
+				if (resp.code == 0) {
+					const list = []
+					for (const i in resp.list) {
+						list.push({
+							id: "#" + resp.list[i].id.slice(-6),
 							fullId: resp.list[i].id,
 							title: resp.list[i].title,
 							description: resp.list[i].description,
-                            date: new Date(resp.list[i].created_at).toLocaleString(),
+							date: new Date(resp.list[i].created_at).toLocaleString(),
 							enabled: resp.list[i].enable,
 							questions: resp.list[i].questions.length,
-                        })
-                    }
-                    this.tableItems = list
-                    this.totalItems = resp.count
-                } else {
-                    this.tableItems = []
-                    this.totalItems = 0
-                }
-                this.loading = false
-            })
+						})
+					}
+					this.tableItems = list
+					this.totalItems = resp.count
+				} else {
+					this.tableItems = []
+					this.totalItems = 0
+				}
+				this.loading = false
+			})
 		},
 		desc(text) {
 			if (typeof text != "string") return text
@@ -276,9 +282,8 @@ export default {
 		},
 	},
 	async mounted() {
-
-		for (let i in this.headers) {
-			this.headers[i].title = this.$t('surveys.headers.' + this.headers[i].key)
+		for (const i in this.headers) {
+			this.headers[i].title = this.$t("surveys.headers." + this.headers[i].key)
 		}
 
 		this.token = sessionStorage.getItem("_cransurvey_token")
