@@ -32,47 +32,47 @@ import "~/src/styles/dash.css"
 		<v-card variant="flat" style="margin: 10px auto 30px 0; padding: 10px;" :loading="loading" :disabled="loading">
 			<v-expansion-panels multiple>
                 <v-expansion-panel>
-                    <v-expansion-panel-title>Site</v-expansion-panel-title>
+                    <v-expansion-panel-title>{{ $t('settings.site') }}</v-expansion-panel-title>
                     <v-expansion-panel-text>
 
                         <div style="margin-top: 20px;">
-                            <v-text-field label="Site Title" variant="outlined" placeholder="CranSurvey" v-model="config.site.title"></v-text-field>
+                            <v-text-field :label="$t('settings.site_title')" variant="outlined" placeholder="CranSurvey" v-model="config.site.title"></v-text-field>
                         </div>
                         <div style="margin-top: 10px;">
-                            <v-text-field label="Site URL" variant="outlined" placeholder="https://csur-preview.vercel.app" v-model="config.site.url"></v-text-field>
+                            <v-text-field :label="$t('settings.site_url')" variant="outlined" placeholder="https://csur-preview.vercel.app" v-model="config.site.url"></v-text-field>
                         </div>
                     </v-expansion-panel-text>
 				</v-expansion-panel>
                 <v-expansion-panel>
-                    <v-expansion-panel-title>Users</v-expansion-panel-title>
+                    <v-expansion-panel-title>{{ $t('settings.users') }}</v-expansion-panel-title>
                     <v-expansion-panel-text>
                         <div>
-                            <v-switch label="Use CAPTCHA in Signing in/up" inset v-model="config.users.useCaptcha"></v-switch>
+                            <v-switch :label="$t('settings.use_captcha_sign')" inset v-model="config.users.useCaptcha"></v-switch>
                         </div>
                         <div>
-                            <v-switch label="Allow Sign up" inset v-model="config.users.allowSignUp"></v-switch>
+                            <v-switch :label="$t('settings.allow_signup')" inset v-model="config.users.allowSignUp"></v-switch>
                         </div>
                         
                         <div style="margin-top: 10px;" v-if="config.users.allowSignUp">
-                            <v-text-field label="Invite Code for Signing Up" variant="outlined" placeholder="" v-model="config.users.inviteCode"></v-text-field>
+                            <v-text-field :label="$t('settings.invite_code')" variant="outlined" placeholder="" v-model="config.users.inviteCode"></v-text-field>
                         </div>
                     </v-expansion-panel-text>
 				</v-expansion-panel>
                 <v-expansion-panel>
-                    <v-expansion-panel-title>Surveys</v-expansion-panel-title>
+                    <v-expansion-panel-title>{{ $t('settings.surveys') }}</v-expansion-panel-title>
                     <v-expansion-panel-text>
                         <div>
-                            <v-switch label="Use CAPTCHA in Collecting Data" inset v-model="config.surveys.useCaptcha"></v-switch>
+                            <v-switch :label="$t('settings.use_captcha_survey')" inset v-model="config.surveys.useCaptcha"></v-switch>
                         </div>
                     </v-expansion-panel-text>
 				</v-expansion-panel>
                 <v-expansion-panel>
-                    <v-expansion-panel-title>CAPTCHA</v-expansion-panel-title>
+                    <v-expansion-panel-title>{{ $t('settings.captcha') }}</v-expansion-panel-title>
                     <v-expansion-panel-text></v-expansion-panel-text>
 				</v-expansion-panel>
 			</v-expansion-panels></v-card
 		>
-		<v-btn variant="outlined" @click="update">Update</v-btn>
+		<v-btn variant="outlined" @click="update">{{ $t('settings.update') }}</v-btn>
 	</div>
 </template>
 
