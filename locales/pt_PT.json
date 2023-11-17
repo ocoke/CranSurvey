@@ -55,15 +55,15 @@
 		"number_of_questions": "Número de Perguntas",
 		"enable_true": "Sim",
 		"enable_false": "Não",
-		"view": "View",
+		"view": "Vista",
 		"headers": {
 			"id": "ID",
-			"title": "Title",
+			"title": "Título",
 			"enabled": "Habilitado",
 			"date": "Data",
 			"description": "Descrição",
-			"questions": "Questions",
-			"view": "View"
+			"questions": "Perguntas",
+			"view": "Vista"
 		},
 		"boolean": {
 			"true": "Sim",
@@ -218,9 +218,9 @@
 		"valid_times": "Tempos válidos (para link encurtado)"
 	},
 	"settings": {
-		"settings": "Settings",
-		"no_change": "The settings have not changed.",
-		"confirm_leave": "Are you sure you want to leave this page? Your changes will not be saved."
+		"settings": "Configurações",
+		"no_change": "As configurações não foram alteradas.",
+		"confirm_leave": "Tem certeza de que deseja sair desta página? Suas alterações não serão salvas."
 	},
 	"error_codes": {
 		"0": "Êxito.",
