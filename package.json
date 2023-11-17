@@ -1,6 +1,6 @@
 {
   "name": "cransurvey",
-  "version": "0.3.0-alpha",
+  "version": "1.0.0-beta",
   "description": "🗒️ Open-source forms & surveys collector, marketing tool with serverless deployment. Add it to your website with the powerful widget plugin.",
   "author": "CK Yu <hi@cky.im>",
   "scripts": {
