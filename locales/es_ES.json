@@ -233,6 +233,20 @@
 		"captcha": "CAPTCHA",
 		"update": "Actualizar"
 	},
+	"view": {
+		"required": "* Indica la pregunta requerida",
+		"your_answer": "Su respuesta",
+		"requirements": "La respuesta no cumple con los requisitos.",
+		"select": "Escoger",
+		"file": "Entrada de archivos",
+		"uploaded": "¡Carga completada! URL:",
+		"submited": "Su respuesta ha sido grabada.",
+		"submit": "Enviar",
+		"required_question": "Por favor, responda a todas las preguntas requeridas.",
+		"requirements_submit": "La respuesta no cumple con los requisitos. Compruébelo e inténtelo de nuevo.",
+		"wait_upload": "Espere a que se cargue el archivo.",
+		"went_wrong": "Algo salió mal. Por favor, inténtelo de nuevo más tarde."
+	},
 	"error_codes": {
 		"0": "Éxito.",
 		"1001": "Parámetros no válidos.",
