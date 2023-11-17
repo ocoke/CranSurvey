@@ -76,6 +76,10 @@ import "~/src/styles/dash.css"
                             <template v-slot:default="{ isActive }">
 							<v-card>
 								<v-card-title>{{ $t('surveys.view') }}</v-card-title>
+								<v-card-text>
+								<p>{{ $t('surveys.headers.id') }}: {{ item.id }}</p>
+								<p>{{ $t('surveys.headers.title') }}: {{ item.title }}</p></v-card-text>
+
 								<v-card-actions>
 							<v-spacer></v-spacer>
 							<v-btn variant="text" color="primary" @click="navigateTo(localePath('/dash/new?id=' + item.fullId))">
@@ -119,7 +123,7 @@ import "~/src/styles/dash.css"
 				<v-btn
 					:text="$t('delete.confirm')"
 					@click="
-						deleteSurvey(deleteItem.id);
+						deleteSurvey(deleteItem.fullId);
 						deleteConfirm = false
 					"
 				></v-btn>
