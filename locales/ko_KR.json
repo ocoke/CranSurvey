@@ -54,7 +54,21 @@
 		"created_at": "만든 날짜",
 		"number_of_questions": "질문 수",
 		"enable_true": "예",
-		"enable_false": "아니요"
+		"enable_false": "아니요",
+		"view": "View",
+		"headers": {
+			"id": "ID",
+			"title": "Title",
+			"enabled": "사용",
+			"date": "날짜",
+			"description": "묘사",
+			"questions": "Questions",
+			"view": "View"
+		},
+		"boolean": {
+			"true": "예",
+			"false": "아니요"
+		}
 	},
 	"results": {
 		"results": "결과",
@@ -202,6 +216,11 @@
 		"copy": "복사",
 		"copied": "복사!",
 		"valid_times": "유효 시간(단축 링크의 경우)"
+	},
+	"settings": {
+		"settings": "Settings",
+		"no_change": "The settings have not changed.",
+		"confirm_leave": "Are you sure you want to leave this page? Your changes will not be saved."
 	},
 	"error_codes": {
 		"0": "성공.",
