@@ -56,7 +56,12 @@ import "~/src/styles/dash.css"
 					<v-expansion-panel-title>{{ $t("settings.users") }}</v-expansion-panel-title>
 					<v-expansion-panel-text>
 						<div>
-							<v-switch :label="$t('settings.use_captcha_sign')" inset v-model="config.users.useCaptcha" disabled></v-switch>
+							<v-switch
+								:label="$t('settings.use_captcha_sign')"
+								inset
+								v-model="config.users.useCaptcha"
+								disabled
+							></v-switch>
 						</div>
 						<div>
 							<v-switch :label="$t('settings.allow_signup')" inset v-model="config.users.allowSignUp"></v-switch>
@@ -76,7 +81,12 @@ import "~/src/styles/dash.css"
 					<v-expansion-panel-title>{{ $t("settings.surveys") }}</v-expansion-panel-title>
 					<v-expansion-panel-text>
 						<div>
-							<v-switch :label="$t('settings.use_captcha_survey')" inset v-model="config.surveys.useCaptcha" disabled></v-switch>
+							<v-switch
+								:label="$t('settings.use_captcha_survey')"
+								inset
+								v-model="config.surveys.useCaptcha"
+								disabled
+							></v-switch>
 						</div>
 					</v-expansion-panel-text>
 				</v-expansion-panel>
