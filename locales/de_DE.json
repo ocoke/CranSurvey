@@ -220,7 +220,18 @@
 	"settings": {
 		"settings": "Einstellungen",
 		"no_change": "Die Einstellungen haben sich nicht geändert.",
-		"confirm_leave": "Sind Sie sicher, dass Sie diese Seite verlassen möchten? Ihre Änderungen werden nicht gespeichert."
+		"confirm_leave": "Sind Sie sicher, dass Sie diese Seite verlassen möchten? Ihre Änderungen werden nicht gespeichert.",
+		"site": "Platz",
+		"site_title": "Site Title",
+		"site_url": "Site URL",
+		"users": "Benutzer",
+		"use_captcha_sign": "Use CAPTCHA in Signing in/up",
+		"allow_signup": "Allow Sign up",
+		"invite_code": "Invite Code for Signing Up",
+		"surveys": "Befragungen",
+		"use_captcha_survey": "Use CAPTCHA in Collecting Data",
+		"captcha": "CAPTCHA",
+		"update": "Aktualisieren"
 	},
 	"error_codes": {
 		"0": "Erfolg.",
