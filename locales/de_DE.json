@@ -55,15 +55,15 @@
 		"number_of_questions": "Anzahl der Fragen",
 		"enable_true": "Ja",
 		"enable_false": "Nein",
-		"view": "View",
+		"view": "Ansehen",
 		"headers": {
 			"id": "ID",
-			"title": "Title",
+			"title": "Titel",
 			"enabled": "Ermöglichte",
 			"date": "Datum",
 			"description": "Beschreibung",
-			"questions": "Questions",
-			"view": "View"
+			"questions": "Fragen",
+			"view": "Ansehen"
 		},
 		"boolean": {
 			"true": "Ja",
@@ -218,9 +218,9 @@
 		"valid_times": "Gültige Zeiten (für gekürzten Link)"
 	},
 	"settings": {
-		"settings": "Settings",
-		"no_change": "The settings have not changed.",
-		"confirm_leave": "Are you sure you want to leave this page? Your changes will not be saved."
+		"settings": "Einstellungen",
+		"no_change": "Die Einstellungen haben sich nicht geändert.",
+		"confirm_leave": "Sind Sie sicher, dass Sie diese Seite verlassen möchten? Ihre Änderungen werden nicht gespeichert."
 	},
 	"error_codes": {
 		"0": "Erfolg.",
