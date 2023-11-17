@@ -4,8 +4,12 @@
 			&copy; 2023
 			<NuxtLink style="color: unset; text-decoration: underline" to="https://github.com/ocoke/CranSurvey"
 				>CranSurvey</NuxtLink
-			> <NuxtLink style="color: unset; text-decoration: underline" :to="'https://github.com/ocoke/CranSurvey/releases/tag/' + version"
-				>(v{{ version }})</NuxtLink>.
+			>
+			<NuxtLink
+				style="color: unset; text-decoration: underline"
+				:to="'https://github.com/ocoke/CranSurvey/releases/tag/' + version"
+				>(v{{ version }})</NuxtLink
+			>.
 		</p>
 		<p v-show="useI18n().locale.value != 'en-US'">{{ $t("footer.translate") }}</p>
 	</footer>
