@@ -54,7 +54,21 @@
 		"created_at": "Erstellt am",
 		"number_of_questions": "Anzahl der Fragen",
 		"enable_true": "Ja",
-		"enable_false": "Nein"
+		"enable_false": "Nein",
+		"view": "View",
+		"headers": {
+			"id": "ID",
+			"title": "Title",
+			"enabled": "Ermöglichte",
+			"date": "Datum",
+			"description": "Beschreibung",
+			"questions": "Questions",
+			"view": "View"
+		},
+		"boolean": {
+			"true": "Ja",
+			"false": "Nein"
+		}
 	},
 	"results": {
 		"results": "Befund",
@@ -202,6 +216,11 @@
 		"copy": "Kopieren",
 		"copied": "Kopiert!",
 		"valid_times": "Gültige Zeiten (für gekürzten Link)"
+	},
+	"settings": {
+		"settings": "Settings",
+		"no_change": "The settings have not changed.",
+		"confirm_leave": "Are you sure you want to leave this page? Your changes will not be saved."
 	},
 	"error_codes": {
 		"0": "Erfolg.",
