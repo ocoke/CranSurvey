@@ -54,7 +54,21 @@
 		"created_at": "作成日",
 		"number_of_questions": "質問数",
 		"enable_true": "はい",
-		"enable_false": "いいえ"
+		"enable_false": "いいえ",
+		"view": "View",
+		"headers": {
+			"id": "ID",
+			"title": "Title",
+			"enabled": "有効",
+			"date": "日付",
+			"description": "形容",
+			"questions": "Questions",
+			"view": "View"
+		},
+		"boolean": {
+			"true": "はい",
+			"false": "いいえ"
+		}
 	},
 	"results": {
 		"results": "業績",
@@ -202,6 +216,11 @@
 		"copy": "写し",
 		"copied": "コピー！",
 		"valid_times": "有効時間(短縮リンクの場合)"
+	},
+	"settings": {
+		"settings": "Settings",
+		"no_change": "The settings have not changed.",
+		"confirm_leave": "Are you sure you want to leave this page? Your changes will not be saved."
 	},
 	"error_codes": {
 		"0": "成功。",
