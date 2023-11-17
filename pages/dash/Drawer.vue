@@ -1,4 +1,7 @@
 <script setup>
+import { onMounted } from 'vue'
+import { useDisplay } from 'vuetify'
+
 const localePath = useLocalePath()
 const { locales } = useI18n()
 // const switchLocalePath = useSwitchLocalePath()
@@ -14,11 +17,21 @@ const theme = useTheme()
 function toggleTheme() {
 	theme.global.name.value = theme.global.current.value.dark ? "light" : "dark"
 }
+
+
+const { mobile } = useDisplay()
+
+
+
 </script>
 
 <template>
-	<v-navigation-drawer v-model="drawer" :rail="rail" permanent @click="rail = false">
-		<v-list-item prepend-avatar="/icons/64x64.png" title="CranSurvey" nav>
+	<v-app-bar collapse :elevation="0" density="compact" style="width: 256px;" v-if="mobile">
+		<v-app-bar-nav-icon @click.stop="drawer = !drawer; rail = false;"></v-app-bar-nav-icon>
+		<v-app-bar-title>CranSurvey</v-app-bar-title>
+	</v-app-bar>
+	<v-navigation-drawer v-model="drawer" :rail="rail" :permanent="!mobile" :temporary="mobile" @click="rail = false" style="border-radius: 0 24px 0 0;">
+		<v-list-item prepend-avatar="/icons/64x64.png" title="CranSurvey" nav v-if="!mobile" style="margin-left: .35rem;">
 			<template v-slot:append>
 				<v-btn variant="text" icon="mdi-chevron-left" @click.stop="rail = !rail"></v-btn>
 			</template>
@@ -26,7 +39,7 @@ function toggleTheme() {
 
 		<v-divider></v-divider>
 
-		<v-list density="compact" nav>
+		<v-list nav>
 			<v-list-item
 				rounded="xl"
 				color="primary"
@@ -83,7 +96,7 @@ function toggleTheme() {
 export default {
 	data() {
 		return {
-			drawer: true,
+			drawer: false,
 			rail: true,
 			lang: useI18n().locale.value,
 		}

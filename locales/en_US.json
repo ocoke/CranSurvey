@@ -233,6 +233,20 @@
 		"captcha": "CAPTCHA",
 		"update": "Update"
 	},
+	"view": {
+		"required": "* Indicates required question",
+		"your_answer": "Your Answer",
+		"requirements": "The answer doesn't meet the requirements.",
+		"select": "Select",
+		"file": "File Input",
+		"uploaded": "Upload completed! URL:",
+		"submited": "Your response has been recorded.",
+		"submit": "Submit",
+		"required_question": "Please answer all the required questions.",
+		"requirements_submit": "The answer doesn't meet the requirements. Please check it and try again.",
+		"wait_upload": "Please wait for the file to upload.",
+		"went_wrong": "Something went wrong. Please try again later."
+	},
 	"error_codes": {
 		"0": "Success.",
 		"1001": "Invalid parameters.",

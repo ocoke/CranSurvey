@@ -1,13 +1,13 @@
 <template>
 	<div class="bg"></div>
 	<div class="main">
-		<Title>{{ surveyInfo.title }} - CranSurvey</Title>
+		<Title>{{ surveyInfo.title }} - {{ siteConfig.title || 'CranSurvey' }}</Title>
 		<v-card style="box-shadow: none; padding: 10px 6px 16px 6px" color="light-green-lighten-4">
 			<v-card-title style="font-size: 1.5rem">{{ surveyInfo.title }}</v-card-title>
 			<v-card-text style="opacity: 0.7; padding-bottom: 0.5rem">{{ surveyInfo.description }}</v-card-text>
 			<v-card-text class="subtitle-text"><v-divider></v-divider></v-card-text>
 			<v-card-text class="text-deep-orange-darken-3 subtitle-text" style="padding-top: 0.5rem"
-				>* Indicates required question</v-card-text
+				>{{ $t('view.required') }}</v-card-text
 			>
 		</v-card>
 		<!-- <v-card color="light-green-lighten-4" style="box-shadow: none; margin-top: 20px;">
@@ -35,13 +35,13 @@
 				<div class="short_answer" v-if="item.type == 'short_answer'">
 					<v-text-field
 						variant="outlined"
-						label="Your Answer"
+						:label="$t('view.your_answer')"
 						:placeholder="item.placeholder"
 						counter
 						:rules="[
 							(v) =>
 								ansValidate(v || '', item.type, item.validate) ||
-								'The answer doesn\'t meet the requirements. (' +
+								$t('view.requirements') + ' (' +
 									item.validate.split(':')[0] +
 									'-' +
 									item.validate.split(':')[1] +
@@ -52,14 +52,14 @@
 				</div>
 				<div class="paragraph" v-if="item.type == 'paragraph'">
 					<v-textarea
-						label="Your Answer"
+						:label="$t('view.your_answer')"
 						variant="outlined"
 						:placeholder="item.placeholder"
 						counter
 						:rules="[
 							(v) =>
 								ansValidate(v || '', item.type, item.validate) ||
-								'The answer doesn\'t meet the requirements. (' +
+								$t('view.requirements') + ' (' +
 									item.validate.split(':')[0] +
 									'-' +
 									item.validate.split(':')[1] +
@@ -91,7 +91,7 @@
 						v-model="ans[item.id]"
 						item-title="text"
 						item-value="value"
-						label="Select"
+						:label="$t('view.select')"
 					></v-select>
 				</div>
 				<div class="date" v-if="item.type == 'date' && item.options && item.options.optionsData">
@@ -108,7 +108,7 @@
 								class="text-deep-orange-darken-3"
 								style="margin-top: 1rem"
 							>
-								Your answer doesn't meet the requirements.
+								{{ $t('view.requirements') }}
 							</p>
 						</template>
 
@@ -139,18 +139,18 @@
 					style="padding-top: 20px"
 				>
 					<v-file-input
-						label="File Input"
+						:label="$t('view.file')"
 						variant="outlined"
 						:accept="fileSuffixes(item.options.optionsData)"
 						@change="upload($event, item.id)"
 					></v-file-input>
-					<p style="margin-bottom: 0.3rem" v-if="ans[item.id]">Upload completed! URL: {{ ans[item.id] }}</p>
+					<p style="margin-bottom: 0.3rem" v-if="ans[item.id]">{{ $t('view.uploaded') }} {{ ans[item.id] }}</p>
 				</div>
 			</v-card-text>
 		</v-card>
 		<v-card color="light-green-lighten-4" v-show="collected" style="margin-top: 10px; box-shadow: none">
 			<v-card-text>
-				<p>Your response has been recorded.</p>
+				<p>{{ $t('view.submited') }}</p>
 			</v-card-text>
 		</v-card>
 		<v-btn
@@ -166,7 +166,7 @@
 			@click="submit"
 			:disabled="!ans"
 			v-show="!collected"
-			>Submit</v-btn
+			>{{ $t('view.submit') }}</v-btn
 		>
 		<span style="display: none" id="_info">{{ surveyInfo }}</span>
 	</div>
@@ -217,6 +217,12 @@ const fileSuffixes = (labels) => {
 	}
 	return a.toString()
 }
+
+const siteConfig = (await $fetch("/api/config/get", {
+	method: "GET"
+})).data
+
+
 </script>
 <script>
 import { useToast } from "vue-toastification"
@@ -263,7 +269,7 @@ export default {
 			const surveyInfo = JSON.parse(document.getElementById("_info").innerText)
 			for (const i in surveyInfo.questions) {
 				if (surveyInfo.questions[i].required && !ans[i] && ans[i] != 0) {
-					toast.error("Please answer all the required questions.", toastCfg)
+					toast.error(this.$t('view.required_question'), toastCfg)
 					return false
 				}
 				if (surveyInfo.questions[i].type == "date") {
@@ -274,7 +280,7 @@ export default {
 					surveyInfo.questions[i].validate = surveyInfo.questions[i].options.optionsData
 				}
 				if (ans[i] && !ansValidate(ans[i], surveyInfo.questions[i].type, surveyInfo.questions[i].validate)) {
-					toast.error("The answer doesn't meet the requirements. Please check it and try again.", toastCfg)
+					toast.error(this.$t('view.requirements_submit'), toastCfg)
 					return false
 				}
 				answers.push({
@@ -284,7 +290,7 @@ export default {
 			}
 
 			if (this.cardloading.includes(true)) {
-				toast.error("Please wait for the file to upload.", toastCfg)
+				toast.error(this.$t('view.wait_upload'), toastCfg)
 				return false
 			}
 			const resp = await $fetch("/api/survey/collect", {
@@ -299,7 +305,7 @@ export default {
 				// toast.success('Your response has been recorded.', toastCfg)
 				this.collected = true
 			} else {
-				toast.error("Something went wrong. Please try again later.", toastCfg)
+				toast.error(this.$t('view.went_wrong'), toastCfg)
 				return false
 			}
 		},
