@@ -8,6 +8,8 @@
   export let server: string = undefined
   export let id: string = undefined
   export let domain: string = undefined
+  export let themeColor: string = undefined
+  export let mode: string = undefined
   import ansValidate from '../../src/functions/validate'
   if (!server || (!id && !domain)) {
     throw new Error("[csur-client]: Please check the required params.")
@@ -17,6 +19,10 @@
   let opacity: string = "opacity: 0;"
 
   let usrid: string = ""
+
+  let tabActive: string = ""
+
+
   if (localStorage.getItem('cransurvey-usrid')) {
     usrid = localStorage.getItem('cransurvey-usrid')
   } else {
@@ -33,6 +39,9 @@
     }, 100)
   })
 
+  beercss("theme", themeColor)
+  beercss("mode", mode)
+
   function closeTab() {
     opacity = "opacity: 0;"
     setTimeout(() => {
@@ -48,6 +57,9 @@
   function submitQuestion() {
     if (!data[0]) {
       return
+    }
+    if (tabActive) {
+      tabActive = ""
     }
     loading = true
     fetch(`${server}/api/survey/collect`, {
@@ -70,11 +82,21 @@
       }
     })
   }
+
+  function openQuestionsTab() {
+    tabActive = "active"
+    // window width
+    let width = window.innerWidth
+    if (width < 550) {
+      tabActive += " max"
+    }
+  }
 </script>
 
+<body>
 
-{ #if data.length > 0 }
-  <article class="secondary-container csur-container" style={opacity}>
+{ #if (data.length > 0)}
+  <article class="secondary-container csur-container {data[0].site.promptWindowPosition} {data[0].type}" style={opacity}>
     {#if loading}
     <progress class="app-progress-bar"></progress>
     {/if}
@@ -85,30 +107,54 @@
         <i>done</i>
       </span>
     </label>
+    { #if !(data[0].site.promptWindowPosition == 'bottom_banner' && data[0].type == 'simple') }
+    <div>
+      <h5>{data[0].title}</h5>
+      <p class="description">{data[0].description}</p>
+    </div>
+    {/if}
+    <div class="banner_content">
+      <div class="item_q">
+        { #if (data[0].type == 'simple' && !submitted) }
+          <Question question={data[0].questions[0]} bind:answer={ans[0]}/>
+        {/if}
+      </div>
+      <div class="item">
+        { #if (!submitted)}
+        <nav class="right-align">
+          { #if data[0].type == 'advanced' }
+            <button class="border round" on:click={openQuestionsTab}>View</button>
+          { :else if data[0].type == 'simple' }
+            <button class="border round" on:click={submitQuestion}>Submit</button>
+          {/if} 
+        </nav>
+        {:else}
+        <article class="border question-box">
+          <p class="">Your response has been recorded.</p>
+        </article>
+        {/if}
+      </div>
+    </div>
+  </article>
+  <div class="overlay {tabActive}"></div>
+  <dialog class="{tabActive} questions-tab">
     <h5>{data[0].title}</h5>
     <p class="description">{data[0].description}</p>
-    { #if (data[0].type == 'simple' && !submitted) }
-      <Question question={data[0].questions[0]} bind:answer={ans[0]}/>
-    {/if}
-    { #if (!submitted)}
+    <div>
+      { #each data[0].questions as question, index}
+        <Question question={question} bind:answer={ans[index]}/>
+      {/each}
+    </div>
     <nav class="right-align">
-      { #if data[0].type == 'advanced' }
-        <button class="border round">View</button>
-      { :else if data[0].type == 'simple' }
-        <button class="border round" on:click={submitQuestion}>Submit</button>
-      {/if} 
+      <button class="border" on:click={() => {tabActive = ""}}>Cancel</button>
+      <button class="round" on:click={submitQuestion}>Submit</button>
     </nav>
-    {:else}
-    <article class="border question-box">
-      <p class="">Your response has been recorded.</p>
-    </article>
-    {/if}
-  </article>
+  </dialog>
+  
 {/if}
 
 
-
-
+</body>
 
 
 <style scoped>
@@ -116,15 +162,56 @@
     .csur-container {
       box-shadow: none!important;
       position: fixed;
-      bottom: 1rem;
-      right: 1rem;
-      width: 450px;
-      max-width: calc(100% - 2rem);
       opacity: 0;
       transition: opacity .4s;
-      z-index: 9999;
+      z-index: 99;
       word-break: break-all;
       overflow: hidden;
+    }
+    .bottom_right {
+      right: 1rem;
+      bottom: 1rem;
+      width: 450px;
+      max-width: calc(100% - 2rem);
+    }
+    .bottom_left {
+      left: 1rem;
+      bottom: 1rem;
+      width: 450px;
+      max-width: calc(100% - 2rem);
+    }
+    .bottom_banner {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      /* display: flex; */
+
+      
+    }
+    .bottom_banner.simple {
+      padding-top: 0;
+      padding-bottom: 0;
+
+    }
+    .bottom_banner.simple .banner_content {
+      max-width: 960px;
+    }
+    .bottom_banner .banner_content {
+      display: flex;
+      max-height: 20rem;
+
+      
+      margin: 0 auto;
+    }
+    .bottom_banner .banner_content .item_q {
+      width: 70%;
+      margin-right: 15px;
+    }
+    .bottom_banner .banner_content .item {
+      justify-content: right;
+      align-items: center;
+      display: flex;
+      width: 25%;
     }
     article.csur-container .description {
       opacity: .8;
@@ -148,5 +235,8 @@
       margin-top: 1px;
       border-radius: 24px;
       height: 5px;
+    }
+    .questions-tab {
+      width: 480px;
     }
 </style>
