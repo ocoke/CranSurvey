@@ -9,6 +9,7 @@
     }
 
     let error, errorText: string = ""
+    let checkboxes: object = []
     function check(e) {
         let result = ansValidate(e.target.value, question.type, question.validate)
         if (!result) {
@@ -18,6 +19,23 @@
             error = ""
             errorText = ""
         }
+    }
+    function log(e) {
+        // console.log(e.target.value)
+        answer.answer = Number(e.target.value)
+    }
+    function checkbox(e) {
+        if (checkboxes.length == 0) {
+            for (let i in question.options.optionsData) {
+                checkboxes.push(false)
+            }
+        }
+        if (checkboxes[Number(e.target.value)]) {
+            checkboxes[Number(e.target.value)] = false
+        } else {
+            checkboxes[Number(e.target.value)] = true
+        }
+        answer.answer = checkboxes
     }
 </script>
 
@@ -41,6 +59,37 @@
         <p class="answerLength helper">{answer.answer.length}</p>
     </div>
     {/if}
+    {#if question.type == "multiple"}
+    <div class="multiple-choice">
+        {#each question.options.optionsData as opt, index}
+        <label class="radio">
+            <input type="radio" on:change={log} bind:value={index} name={'radio_group_' + question.id }>
+            <span>{opt}</span>
+        </label><br>
+        {/each}
+    </div> 
+    {/if}
+    {#if question.type == 'dropdown'}
+    <div class="field label suffix border">
+        <select bind:value={answer.answer}>
+            {#each question.options.optionsData as opt, index}
+            <option value={index}>{opt}</option>
+            {/each}
+        </select>
+        <label>Select</label>
+        <i>arrow_drop_down</i>
+      </div>
+    {/if}
+    {#if question.type == "checkboxes"}
+    <div class="multiple-choice">
+        {#each question.options.optionsData as opt, index}
+        <label class="checkbox">
+            <input type="checkbox" on:change={checkbox} bind:value={index} name={'checkboxes_' + question.id }>
+            <span>{opt}</span>
+        </label><br>
+        {/each}
+    </div> 
+    {/if}
 </article>
 <style scoped>
 	@import "beercss/dist/cdn/beer.min.css";
@@ -54,5 +103,8 @@
         text-align: right;
         width: 90%;
         padding-top: 0.65rem;
+    }
+    .multiple-choice {
+        margin-top: 1rem;
     }
 </style>
