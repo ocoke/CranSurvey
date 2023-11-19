@@ -11,11 +11,11 @@ export default eventHandler(async (event) => {
 		}
 	} else if (!sid && domain) {
 		// Specific domain
-		let list: object = []
+		const list: object = []
 		for (const i in survey) {
 			let surveyDomain = survey[i]["site"]["domain"] || ""
-			if (surveyDomain.includes(',')) {
-				surveyDomain = surveyDomain.split(',')
+			if (surveyDomain.includes(",")) {
+				surveyDomain = surveyDomain.split(",")
 			} else {
 				surveyDomain = [surveyDomain]
 			}
@@ -29,9 +29,9 @@ export default eventHandler(async (event) => {
 			data: list,
 		}
 	} else {
-		let list: object = []
+		const list: object = []
 		for (const i in survey) {
-			let surveyDomain = survey[i]["site"]["domain"] || ""
+			const surveyDomain = survey[i]["site"]["domain"] || ""
 			if (surveyDomain == "") {
 				list.push(survey[i])
 			}
