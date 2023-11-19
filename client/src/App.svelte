@@ -184,7 +184,7 @@
         {/if}
       </div>
     </div>
-    
+    <p class="description copyright">Powered by <a href="https://github.com/ocoke/CranSurvey">CranSurvey</a></p>
   </article>
   <div class="overlay {tabActive}"></div>
   <dialog class="{tabActive} questions-tab">
@@ -311,5 +311,10 @@
     }
     .questions-tab {
       width: 480px;
+    }
+    .copyright {
+      text-align: right;
+      margin-top: .5rem;
+      margin-bottom: 0;
     }
 </style>
