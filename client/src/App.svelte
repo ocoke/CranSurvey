@@ -13,7 +13,7 @@
   export let timeout: number = undefined
   import ansValidate from '../../src/functions/validate'
   if (!server || (!id && !domain)) {
-    throw new Error("[csur-client]: Please check the required params.")
+    console.warn("[csur-client]: Please check the required params.")
   }
 
   let data: object = []
@@ -40,8 +40,21 @@
     }, 100)
   })
 
-  beercss("theme", themeColor)
-  beercss("mode", mode)
+  // beercss("theme", themeColor)
+  let theme: object = {
+    light: "",
+    dark: "",
+  }
+  materialDynamicColors(themeColor).then(colors => {
+    Object.entries(colors).forEach(([themeName, themeColors]) => {
+        Object.entries(themeColors).forEach(([camelName, color]) => {
+            const kebabName = camelName.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()
+            theme[themeName] += (`--${kebabName}: ${color.toUpperCase()}; `)
+        })
+    })
+  })
+
+ 
 
   function closeTab() {
     opacity = "opacity: 0;"
@@ -124,7 +137,7 @@
   }
 </script>
 
-<body>
+<body style={theme[mode]}>
 
 { #if (data.length > 0)}
   <article class="secondary-container csur-container {data[0].site.promptWindowPosition} {data[0].type}" style={opacity}>

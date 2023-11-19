@@ -18,6 +18,12 @@ function toggleTheme() {
 }
 
 const { mobile } = useDisplay()
+
+let drawer = ref(true)
+
+if (mobile.value) {
+	drawer.value = false
+}
 </script>
 
 <template>
@@ -99,7 +105,6 @@ const { mobile } = useDisplay()
 export default {
 	data() {
 		return {
-			drawer: false,
 			rail: true,
 			lang: useI18n().locale.value,
 		}
