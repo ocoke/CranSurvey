@@ -1,0 +1,69 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+# ESLint is a tool for identifying and reporting on patterns
+# found in ECMAScript/JavaScript code.
+# More details at https://github.com/eslint/eslint
+# and https://eslint.org
+
+name: Client
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ "master" ]
+    types: [review_requested]
+  # schedule:
+  #   - cron: '38 16 * * 2'
+
+jobs:
+  eslint:
+    name: Run eslint scanning
+    runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.pull_request.title, 'style(eslint)') && !contains(github.event.head_commit.message, 'Merge pull request') }}
+    permissions:
+      contents: read
+      security-events: write
+      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install
+        run: |
+          yarn install
+          
+      - name: Run ESLint
+        run: yarn client:build
+        continue-on-error: false
+
+      - name: Commit
+        run: |
+          git add .
+          git config --global user.name "iColaBot"
+          git config --global user.email "icolabot@e.yfun.top"
+          git commit -m "build(client): update"
+        continue-on-error: true
+#       - name: Create Pull Request
+#         run: gh pr create -B master -H ci/update --title "Pull Request by Action" --body 'Created by GitHub Action.'
+#         env:
+#             GITHUB_TOKEN: ${{ secrets.ACTION_GH_TOKEN }}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: "build(client): update"
+          title: "build(client): update"
+          token: ${{  secrets.ACTION_GH_TOKEN  }}
+        continue-on-error: true
+
+#       - name: Install
+#         run: |
+#           git add .
+#           git config --global user.name "iColaBot"
+#           git config --global user.email "icolabot@e.yfun.top"
+#           git commit -m "style(eslint): update"
+#           git push -u origin master
+
