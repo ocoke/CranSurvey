@@ -4,7 +4,7 @@ node_modules
 .cache
 .output
 .env
-dist
+
 tmp
 .tmp
 .DS_Store
@@ -22,7 +22,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
+
 dist-ssr
 *.local
 

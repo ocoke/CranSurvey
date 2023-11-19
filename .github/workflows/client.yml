@@ -21,7 +21,7 @@ on:
 
 jobs:
   eslint:
-    name: Run eslint scanning
+    name: Build for Client
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.pull_request.title, 'style(eslint)') && !contains(github.event.head_commit.message, 'Merge pull request') }}
     permissions:
@@ -36,7 +36,7 @@ jobs:
         run: |
           yarn install
           
-      - name: Run ESLint
+      - name: Building
         run: yarn client:build
         continue-on-error: false
 
