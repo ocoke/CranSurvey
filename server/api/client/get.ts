@@ -29,9 +29,17 @@ export default eventHandler(async (event) => {
 			data: list,
 		}
 	} else {
+		let list: object = []
+		for (const i in survey) {
+			let surveyDomain = survey[i]["site"]["domain"] || ""
+			if (surveyDomain == "") {
+				list.push(survey[i])
+			}
+		}
 		return {
-			code: 1001,
-			msg: "Invalid parameters.",
+			code: 0,
+			msg: "Success.",
+			data: list,
 		}
 	}
 })

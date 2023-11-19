@@ -158,7 +158,7 @@
       <div class="item">
         { #if (!submitted)}
         <nav class="right-align">
-          { #if data[0].type == 'advanced' }
+          { #if (data[0].type == 'advanced' || data[0].type == 'prompt') }
             <button class="border round" on:click={openQuestionsTab}>View</button>
           { :else if data[0].type == 'simple' }
             <button class="border round" on:click={submitQuestion}>Submit</button>
@@ -190,6 +190,7 @@
       </span>
     </label>
     {/if}
+    {#if data[0].type == 'advanced'}
     <h5 style="margin-top: 0;">{data[0].title}</h5>
     <p class="description">{data[0].description}</p>
     <div>
@@ -201,6 +202,13 @@
       <button class="border" on:click={() => {tabActive = ""}}>Cancel</button>
       <button class="round" on:click={submitQuestion}>Submit</button>
     </nav>
+    {:else}
+    <h5 style="margin-top: 0;">{data[0].questions[0].question}</h5>
+    <p>{data[0].questions[0].prompt}</p>
+    <nav class="right-align">
+      <button class="border" on:click={() => {tabActive = ""}}>Cancel</button>
+    </nav>
+    {/if}
   </dialog>
   
 {/if}
