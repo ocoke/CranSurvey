@@ -37,12 +37,20 @@
         }
         answer.answer = checkboxes
     }
+
+    function date(e) {
+        answer.answer = new Date(e.target.value).getTime()
+    }
 </script>
 
 <!-- {JSON.stringify(question)} -->
 
 <article class="border question-box">
-    <h6>{question.question}</h6>
+    <h6>{question.question}
+        {#if question.required}
+        <span >*</span>
+        {/if}
+    </h6>
     <p class="description">{question.prompt || ''}</p>
     {#if question.type == "short_answer"}
     <div class="field border {error}">
@@ -89,6 +97,19 @@
         </label><br>
         {/each}
     </div> 
+    {/if}
+    {#if question.type == "date"}
+    <div class="date">
+        <button>
+            <i>today</i>
+            <span>Date</span>
+            <input type="date" on:change={date} min={new Date(question.options.optionsData[0]).toISOString().split('T')[0]} max={new Date(question.options.optionsData[1]).toISOString().split('T')[0]}>
+        </button>
+        {#if answer.answer}
+
+            {new Date(answer.answer).toDateString()}
+        {/if}
+    </div>
     {/if}
 </article>
 <style scoped>

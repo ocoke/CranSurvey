@@ -10,6 +10,7 @@
   export let domain: string = undefined
   export let themeColor: string = undefined
   export let mode: string = undefined
+  export let timeout: number = undefined
   import ansValidate from '../../src/functions/validate'
   if (!server || (!id && !domain)) {
     throw new Error("[csur-client]: Please check the required params.")
@@ -54,6 +55,8 @@
 
   let submitted, loading : boolean = false
 
+  let response: string = ""
+
   function submitQuestion() {
     if (!data[0]) {
       return
@@ -61,6 +64,14 @@
     if (tabActive) {
       tabActive = ""
     }
+    for (let i in data[0].questions) {
+      if (data[0].questions[i].required && !ans[i]) {
+        response = "Please answer all the required questions."
+        return
+      }
+    }
+
+
     loading = true
     fetch(`${server}/api/survey/collect`, {
       method: "POST",
@@ -76,9 +87,22 @@
       if (res.code == 0) {
         submitted = true
         loading = false
+        response = ""
         setTimeout(() => {
           closeTab()
         }, 2500)
+      } else if (res.code == 3003) {
+        response = "Please answer all the required questions."
+        loading = false
+        return
+      } else if (res.code == 3002) {
+        response = "The answer doesn't meet the requirements."
+        loading = false
+        return
+      } else {
+        response = "Something went wrong. Please try again later."
+        loading = false
+        return
       }
     })
   }
@@ -90,6 +114,13 @@
     if (width < 550) {
       tabActive += " max"
     }
+  }
+
+  if (timeout && !ans) {
+    setTimeout(() => {
+      closeTab()
+    }, timeout)
+  
   }
 </script>
 
@@ -112,6 +143,11 @@
       <h5>{data[0].title}</h5>
       <p class="description">{data[0].description}</p>
     </div>
+    {#if response}
+    <article class="border question-box" style="margin-bottom: 1rem;">
+      <p style="color: var(--error);">{response}</p>
+      </article>
+    {/if}
     {/if}
     <div class="banner_content">
       <div class="item_q">
@@ -135,10 +171,26 @@
         {/if}
       </div>
     </div>
+    
   </article>
   <div class="overlay {tabActive}"></div>
   <dialog class="{tabActive} questions-tab">
-    <h5>{data[0].title}</h5>
+    {#if tabActive.includes("max")}
+    <label class="radio icon close-btn" on:click={() => {tabActive = "active"}}>
+      <input type="radio" name="radio3_">
+      <span>
+        <i>close_fullscreen</i>
+      </span>
+    </label>
+    {:else}
+    <label class="radio icon close-btn" on:click={() => {tabActive += " max"}}>
+      <input type="radio" name="radio3_">
+      <span>
+        <i>fullscreen</i>
+      </span>
+    </label>
+    {/if}
+    <h5 style="margin-top: 0;">{data[0].title}</h5>
     <p class="description">{data[0].description}</p>
     <div>
       { #each data[0].questions as question, index}
