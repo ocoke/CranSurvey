@@ -1,0 +1,8 @@
+{
+  "date": "2023-11-19T02:26:28.686Z",
+  "preset": "deno",
+  "commands": {
+    "preview": "",
+    "deploy": "cd ./ && deployctl deploy --project=<project_name> server/index.ts"
+  }
+}

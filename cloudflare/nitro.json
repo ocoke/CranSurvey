@@ -1,0 +1,8 @@
+{
+  "date": "2023-11-19T02:27:31.578Z",
+  "preset": "cloudflare",
+  "commands": {
+    "preview": "npx wrangler dev ./server/index.mjs --site ./public --local",
+    "deploy": "npx wrangler deploy"
+  }
+}

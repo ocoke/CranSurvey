@@ -1,0 +1,1 @@
+import{_ as r}from"./_plugin-vue_export-helper.c27b6911.js";import{t as e}from"./entry.dc320ebb.js";const o={};function i(t,n){return e(t.$t("edit.edit"))}const _=r(o,[["render",i]]);export{_ as default};
