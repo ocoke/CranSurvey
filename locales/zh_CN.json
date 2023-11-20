@@ -231,7 +231,9 @@
 		"surveys": "调查",
 		"use_captcha_survey": "使用 CAPTCHA 收集数据",
 		"captcha": "验证码",
-		"update": "更新"
+		"update": "更新",
+		"ai": "AI",
+		"ai_key": "OpenAI API Key"
 	},
 	"view": {
 		"required": "* 为必填题",
@@ -249,7 +251,12 @@
 	},
 	"ai": {
 		"askai": "Ask AI",
-		"unavailable": "Sorry, the AI is currently not available."
+		"unavailable": "Sorry, the AI is currently not available.",
+		"give_me_suggestions": "Give me some suggestions.",
+		"help_me_analyze": "Help me analyze the results.",
+		"custom_input": "Custom Input",
+		"start": "Try asking the AI some questions about this survey.",
+		"no_apikey": "You haven't set your OpenAI API Key yet. Please set it in the settings page."
 	},
 	"error_codes": {
 		"0": "成功。",
