@@ -232,8 +232,8 @@
 		"use_captcha_survey": "使用 CAPTCHA 收集數據",
 		"captcha": "驗證碼",
 		"update": "更新",
-		"ai": "AI",
-		"ai_key": "OpenAI API Key"
+		"ai": "人工智慧",
+		"ai_key": "OpenAI API 金鑰"
 	},
 	"view": {
 		"required": "* 為必填題",
@@ -250,13 +250,13 @@
 		"went_wrong": "出了點問題。請稍後再試。"
 	},
 	"ai": {
-		"askai": "Ask AI",
-		"unavailable": "Sorry, the AI is currently not available.",
-		"give_me_suggestions": "Give me some suggestions.",
-		"help_me_analyze": "Help me analyze the results.",
-		"custom_input": "Custom Input",
-		"start": "Try asking the AI some questions about this survey.",
-		"no_apikey": "You haven't set your OpenAI API Key yet. Please set it in the settings page."
+		"askai": "詢問 AI",
+		"unavailable": "對不起，AI 目前不可用。",
+		"give_me_suggestions": "給我一些建議。",
+		"help_me_analyze": "幫我分析結果。",
+		"custom_input": "自訂輸入",
+		"start": "試著問 AI 一些關於這個調查的問題。",
+		"no_apikey": "您尚未設定 OpenAI API 金鑰。請在設置頁面進行設置。"
 	},
 	"error_codes": {
 		"0": "成功。",
