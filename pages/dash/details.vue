@@ -34,8 +34,31 @@ import "~/src/styles/dash.css"
 			</v-card-text>
 		</v-card>
 		<v-card :title="$t('ai.askai')" variant="outlined" style="margin-right: 0;">
-			<v-card-text style="display: flex; justify-content: center; align-items: center; height: 100%;">
-				<p style="margin-bottom: 15%;">{{ $t('ai.unavailable') }}</p>
+			<v-card-text style="">
+				<!-- <p style="margin-bottom: 15%;">{{ $t('ai.unavailable') }}</p> -->
+				<v-card class="aiResults" variant="tonal" style="width: 100%;" :loading="aiLoading">
+					<v-card-text>
+						<p v-if="!aiKey">{{ $t('ai.no_apikey') }}</p>
+						<p v-else-if="aiResp">{{ aiResp }}</p>
+						<p v-else>{{ $t('ai.start') }}</p>
+					</v-card-text>
+				</v-card>
+				<div class="btnGroup" v-if="aiKey">
+					<v-btn variant="tonal" @click="sendAI('suggestions')">
+						🤔 {{ $t('ai.give_me_suggestions') }}
+					</v-btn>
+					<v-btn variant="tonal" @click="sendAI('analyze')">
+						🙌 {{ $t('ai.help_me_analyze') }}
+					</v-btn>
+					<div style="display: flex; margin-top: .5rem; justify-content: center; align-items: center;">
+						<v-text-field :label="'👨‍💻' + $t('ai.custom_input')" density="compact" hide-details="auto" style="width: 92%; margin-right: 2%;" v-model="customInput"></v-text-field>
+						<v-btn variant="tonal" style="width: 6%; margin-top: 2px;" @click="sendAI('custom')">
+							<v-icon icon="mdi-send"></v-icon>
+						</v-btn>
+					</div>
+					
+
+				</div>
 			</v-card-text>
 		</v-card>
 	</div>
@@ -190,6 +213,7 @@ for (let i in colors) {
 
 let hashMaterialColors = []
 
+const aiPrompt = "You're CranSurvey Bot. Your job is to help the user analyze their data from the survey on the website. The user will give you JSON format data that includes all the answers that have been collected. Please use the function of get_analytics to analyze them. Please detect the language of the questions and the most 3 countries that the answers are from, Are there many situations where a user answers multiple times? How does it lead to the final results? Are the results credible based on these results? Does the survey content need to be adjusted?"
 while (hashMaterialColorsOrder.length > 0) {
   // 生成一个随机索引
   const randomIndex = Math.floor(Math.random() * hashMaterialColorsOrder.length);
@@ -249,6 +273,7 @@ export default {
 			itemsPerPage: 10,
 			totalItems: 0,
 			loading: true,
+			aiLoading: false,
 			token: "",
 			search: "",
 			surveyQuestions: [],
@@ -263,6 +288,10 @@ export default {
 				]
 			},
 			chartLoading: true,
+			rawResp: {},
+			aiResp: "",
+			customInput: "",
+			aiKey: "",
 		}
 	},
 	methods: {
@@ -280,6 +309,7 @@ export default {
 					search: this.search,
 				}),
 			}).then((resp) => {
+				this.rawResp = resp
 				if (resp.code == 0) {
 					const answers = []
 					for (const i in resp.answers) {
@@ -323,6 +353,79 @@ export default {
 				return text + "..."
 			}
 		},
+		async sendAI(arg) {
+			this.aiLoading = true
+			this.aiResp = ""
+			let prompt = {
+				"model": "gpt-3.5-turbo",
+				"messages": [
+					{
+						"role": "system",
+						"content": "You're CranSurvey Bot. Your job is to help the user analyze their data from the survey on the website. The user will give you JSON format data that includes all the answers that have been collected. \n\nThere are 2 important keys in the JSON format input. They're \"survey\" (questions) and \"answers\". For every collected answer, the key \"usr\" is the unique id of the user. The \"ans\" key includes the answer. (for multiple choice/dropdown/checkboxes, the answer is the index of the options). \"geoip\" includes the geo data of the user based on their IP. It is in the format of [city, country, region, ...]\n\nTo ensure accurate content, please check three times before answering. Answer me in " + this.$i18n.locale + "."
+					},
+					{
+						"role": "system",
+						"content": ""
+					},
+					{
+						"role": "user",
+						"content": JSON.stringify(this.rawResp)
+					}
+				],
+				"temperature": 1,
+				"max_tokens": 2048,
+				"top_p": 1,
+				"frequency_penalty": 0,
+				"presence_penalty": 0,
+				"stream": true,
+			}
+			if (arg == "suggestions") {
+				prompt.messages[1].content = "Please detect the language of the questions and the most 3 countries that the answers are from, Are there many situations where a user answers multiple times? How does it lead to the final results? Are the results credible based on these results? Does the survey content need to be adjusted? For example, modify the text/, add or delete questions, etc.? And check that the title of the user survey is easy for customers to understand and answer. If so, please give detailed suggestions and tips to help users better understand their customers' needs."
+			} else if (arg == "analyze") {
+				prompt.messages.push({
+					"role": "system",
+					"content": "Please detect the language of the questions and the most 3 countries that the answers are from, Are there many situations where a user answers multiple times? How does it lead to the final results? Are the results credible based on these results? Please analyze the results in such ways I mentioned above."
+				})
+			} else if (arg == "custom") {
+				prompt.messages.push({
+					"role": "system",
+					"content": this.customInput,
+				})
+			}
+			let c = await fetch("https://api.openai.com/v1/chat/completions", {
+				method: "POST",
+				body: JSON.stringify(prompt),
+				headers: {
+					"Authorization": "Bearer " + this.aiKey,
+					"Content-Type": "application/json"
+				}
+			})
+			const reader = c.body?.pipeThrough(new TextDecoderStream()).getReader();
+			while (true) {
+				const res = await reader?.read();
+				if (res?.done) break;
+				// console.log("Received", res.value);
+				let v = "[" + res?.value.replaceAll('data: {', ', {') + "]"
+				v = v.replace('data: [DONE]', ', {"done": true, "choices": [{"delta": {"content": ""}}]}')
+				v = v.replace('[,', '[')
+				
+				v = JSON.parse(v)
+				for (let i of v) {
+					
+					if (i.done) {
+						this.aiLoading = false
+						break
+					}
+					if (i.choices[0].delta.content) {
+						this.aiResp += i.choices[0].delta.content
+					}
+				}
+			}
+
+
+			// this.aiResp = c.choices[0].message.content
+		},	
+
 	},
 	mounted() {
 		this.token = sessionStorage.getItem("_cransurvey_token")
@@ -359,6 +462,16 @@ export default {
 				title: this.$t("results.city"),
 			},
 		]
+		$fetch('/api/config/get', {
+			method: 'POST',
+			body: JSON.stringify({
+				token: this.token,
+			})
+		}).then((rsp) => {
+			if (rsp.code == 0 && rsp.data.ai) {
+				this.aiKey = rsp.data.ai.key
+			}
+		})
 	},
 }
 </script>

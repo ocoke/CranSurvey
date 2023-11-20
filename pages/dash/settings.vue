@@ -90,6 +90,21 @@ import "~/src/styles/dash.css"
 						</div>
 					</v-expansion-panel-text>
 				</v-expansion-panel>
+				<v-expansion-panel>
+					<v-expansion-panel-title>{{ $t("settings.ai") }}</v-expansion-panel-title>
+					<v-expansion-panel-text>
+						<div>
+							<div style="margin-top: 10px" v-if="config.users.allowSignUp">
+							<v-text-field
+								:label="$t('settings.ai_key')"
+								variant="outlined"
+								placeholder=""
+								v-model="config.ai.key"
+							></v-text-field>
+						</div>
+						</div>
+					</v-expansion-panel-text>
+				</v-expansion-panel>
 				<v-expansion-panel disabled>
 					<v-expansion-panel-title>{{ $t("settings.captcha") }}</v-expansion-panel-title>
 					<v-expansion-panel-text></v-expansion-panel-text>
@@ -127,12 +142,14 @@ export default {
 				site: {},
 				surveys: {},
 				captcha: {},
+				ai: {},
 			},
 			originalConfig: {
 				users: {},
 				site: {},
 				surveys: {},
 				captcha: {},
+				ai: {},
 			},
 			loading: true,
 		}
@@ -186,6 +203,7 @@ export default {
 			if (!this.config.site) this.config.site = {}
 			if (!this.config.surveys) this.config.surveys = {}
 			if (!this.config.captcha) this.config.captcha = {}
+			if (!this.config.ai) this.config.ai = {}
 
 			this.originalConfig = structuredClone(siteConfig.data)
 			this.loading = false
