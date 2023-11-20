@@ -94,7 +94,7 @@ import "~/src/styles/dash.css"
 					<v-expansion-panel-title>{{ $t("settings.ai") }}</v-expansion-panel-title>
 					<v-expansion-panel-text>
 						<div>
-							<div style="margin-top: 10px" v-if="config.users.allowSignUp">
+							<div style="margin-top: 10px">
 							<v-text-field
 								:label="$t('settings.ai_key')"
 								variant="outlined"
