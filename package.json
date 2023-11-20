@@ -22,6 +22,8 @@
     "@types/node": "^20.6.0",
     "@vercel/kv": "^0.2.4",
     "beercss": "^3.4.7",
+    "chart.js": "^4.4.0",
+    "chartjs-chart-geo": "^4.2.7",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "js-base64": "^3.7.5",
@@ -36,6 +38,7 @@
     "sass": "^1.69.5",
     "unstorage": "^1.8.0",
     "uuid": "^9.0.0",
+    "vue-chartjs": "^5.2.0",
     "vue-toastification": "^2.0.0-rc.5",
     "vuetify": "^3.4.0"
   },

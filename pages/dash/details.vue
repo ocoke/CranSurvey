@@ -26,6 +26,19 @@ import "~/src/styles/dash.css"
 </script>
 <template>
 	<h1 class="text-h4">{{ $t("results.results") }}</h1>
+	<div class="card-group results">
+		<v-card :title="$t('results.country')" variant="outlined" :loading="chartLoading">
+			<v-card-text style="max-height: 300px;">
+				
+				<Pie :data="chartData" style="margin: 0 auto;" v-if="!chartLoading"/>
+			</v-card-text>
+		</v-card>
+		<v-card :title="$t('ai.askai')" variant="outlined" style="margin-right: 0;">
+			<v-card-text style="display: flex; justify-content: center; align-items: center; height: 100%;">
+				<p style="margin-bottom: 15%;">{{ $t('ai.unavailable') }}</p>
+			</v-card-text>
+		</v-card>
+	</div>
 	<v-card variant="outlined" style="margin: 20px auto; padding: 15px">
 		<template v-slot:text>
 			<v-text-field
@@ -162,7 +175,42 @@ import "~/src/styles/dash.css"
 </template>
 
 <script>
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+import { Pie } from 'vue-chartjs'
+import colors from 'vuetify/util/colors'
+// let materialColors = ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue', 'light-blue', 'cyan', 'teal', 'green', 'light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 'brown', 'grey', 'blue-grey']
+let hashMaterialColorsOrder = []
+
+for (let i in colors) {
+	for (let j in colors[i]) {
+		if (j == "lighten5") continue
+		hashMaterialColorsOrder.push(colors[i][j])
+	}
+}
+
+let hashMaterialColors = []
+
+while (hashMaterialColorsOrder.length > 0) {
+  // 生成一个随机索引
+  const randomIndex = Math.floor(Math.random() * hashMaterialColorsOrder.length);
+  
+  // 从原始数组中取出随机元素
+  const randomElement = hashMaterialColorsOrder.splice(randomIndex, 1)[0];
+  
+  // 将选中的元素添加到已选择的数组中
+  hashMaterialColors.push(randomElement);
+}
+
+// import { ChoroplethController, GeoFeature, ColorScale, ProjectionScale } from 'chartjs-chart-geo';
+ChartJS.register(ArcElement, Tooltip, Legend)
 export default {
+	components: {
+		Pie,
+	},
+	computed: {
+      chartData() { return this.countryData },
+    //   chartOptions() { return /* mutable chart options */ }
+    },
 	data() {
 		return {
 			headers: [
@@ -205,6 +253,16 @@ export default {
 			search: "",
 			surveyQuestions: [],
 			dialogs: [],
+			countryData: {
+				labels: [],
+				datasets: [
+					{
+						backgroundColor: [],
+						data: []
+					}
+				]
+			},
+			chartLoading: true,
 		}
 	},
 	methods: {
@@ -233,6 +291,16 @@ export default {
 							country: resp.answers[i].geoip[1],
 							city: resp.answers[i].geoip[0],
 						})
+						if (!this.countryData.labels.includes(resp.answers[i].geoip[1])) {
+							this.countryData.labels.push(resp.answers[i].geoip[1])
+							
+
+							this.countryData.datasets[0].backgroundColor.push(hashMaterialColors[this.countryData.labels.length - 1])
+
+							this.countryData.datasets[0].data[this.countryData.labels.indexOf(resp.answers[i].geoip[1])] = 1
+						} else {
+							this.countryData.datasets[0].data[this.countryData.labels.indexOf(resp.answers[i].geoip[1])]++
+						}
 					}
 					this.tableItems = answers
 					this.totalItems = resp.total
@@ -242,6 +310,7 @@ export default {
 					this.totalItems = 0
 				}
 				this.loading = false
+				this.chartLoading = false
 			})
 		},
 		desc(text) {

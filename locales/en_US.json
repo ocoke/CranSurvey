@@ -247,6 +247,10 @@
 		"wait_upload": "Please wait for the file to upload.",
 		"went_wrong": "Something went wrong. Please try again later."
 	},
+	"ai": {
+		"askai": "Ask AI",
+		"unavailable": "Sorry, the AI is currently not available."
+	},
 	"error_codes": {
 		"0": "Success.",
 		"1001": "Invalid parameters.",
