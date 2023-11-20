@@ -247,6 +247,10 @@
 		"wait_upload": "Veuillez patienter jusqu’à ce que le fichier soit téléchargé.",
 		"went_wrong": "Quelque chose s’est mal passé. Veuillez réessayer plus tard."
 	},
+	"ai": {
+		"askai": "Ask AI",
+		"unavailable": "Sorry, the AI is currently not available."
+	},
 	"error_codes": {
 		"0": "Succès.",
 		"1001": "Paramètres non valides.",
