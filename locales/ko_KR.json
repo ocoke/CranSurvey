@@ -247,6 +247,10 @@
 		"wait_upload": "파일이 업로드될 때까지 기다려 주십시오.",
 		"went_wrong": "문제가 발생했습니다. 나중에 다시 시도하십시오."
 	},
+	"ai": {
+		"askai": "Ask AI",
+		"unavailable": "Sorry, the AI is currently not available."
+	},
 	"error_codes": {
 		"0": "성공.",
 		"1001": "잘못된 매개 변수입니다.",
