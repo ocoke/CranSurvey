@@ -247,6 +247,10 @@
 		"wait_upload": "請等待檔上傳。",
 		"went_wrong": "出了點問題。請稍後再試。"
 	},
+	"ai": {
+		"askai": "Ask AI",
+		"unavailable": "Sorry, the AI is currently not available."
+	},
 	"error_codes": {
 		"0": "成功。",
 		"1001": "參數無效。",
