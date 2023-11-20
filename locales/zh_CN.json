@@ -231,7 +231,9 @@
 		"surveys": "调查",
 		"use_captcha_survey": "使用 CAPTCHA 收集数据",
 		"captcha": "验证码",
-		"update": "更新"
+		"update": "更新",
+		"ai": "人工智能",
+		"ai_key": "OpenAI API 密钥"
 	},
 	"view": {
 		"required": "* 为必填题",
@@ -246,6 +248,15 @@
 		"requirements_submit": "答案不符合要求。请检查并重试。",
 		"wait_upload": "请等待文件上传。",
 		"went_wrong": "出了点问题。请稍后再试。"
+	},
+	"ai": {
+		"askai": "询问 AI",
+		"unavailable": "对不起，AI 目前不可用。",
+		"give_me_suggestions": "给我一些建议。",
+		"help_me_analyze": "帮我分析结果。",
+		"custom_input": "自定义输入",
+		"start": "试着问 AI 一些关于这个调查的问题。",
+		"no_apikey": "您尚未设置 OpenAI API 密钥。请在设置页面进行设置。"
 	},
 	"error_codes": {
 		"0": "成功。",
