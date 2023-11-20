@@ -232,8 +232,8 @@
 		"use_captcha_survey": "データ収集での CAPTCHA の使用",
 		"captcha": "キャプチャ",
 		"update": "更新",
-		"ai": "AI",
-		"ai_key": "OpenAI API Key"
+		"ai": "人工知能",
+		"ai_key": "OpenAI API キー"
 	},
 	"view": {
 		"required": "* 必須の質問を示します",
@@ -250,13 +250,13 @@
 		"went_wrong": "問題が発生しました。後でもう一度やり直してください。"
 	},
 	"ai": {
-		"askai": "Ask AI",
-		"unavailable": "Sorry, the AI is currently not available.",
-		"give_me_suggestions": "Give me some suggestions.",
-		"help_me_analyze": "Help me analyze the results.",
-		"custom_input": "Custom Input",
-		"start": "Try asking the AI some questions about this survey.",
-		"no_apikey": "You haven't set your OpenAI API Key yet. Please set it in the settings page."
+		"askai": "AIに聞く",
+		"unavailable": "申し訳ございませんが、現在AIはご利用いただけません。",
+		"give_me_suggestions": "私にいくつかの提案をしてください。",
+		"help_me_analyze": "結果の分析を手伝ってください。",
+		"custom_input": "カスタム入力",
+		"start": "このアンケートについてAIに質問してみてください。",
+		"no_apikey": "OpenAI API キーをまだ設定していません。設定ページで設定してください。"
 	},
 	"error_codes": {
 		"0": "成功。",
