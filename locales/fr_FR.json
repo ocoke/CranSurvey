@@ -231,7 +231,9 @@
 		"surveys": "Enquêtes",
 		"use_captcha_survey": "Utiliser le CAPTCHA pour collecter des données",
 		"captcha": "CAPTCHA",
-		"update": "Mettre à jour"
+		"update": "Mettre à jour",
+		"ai": "AI",
+		"ai_key": "OpenAI API Key"
 	},
 	"view": {
 		"required": "* Indique la question requise",
@@ -249,7 +251,12 @@
 	},
 	"ai": {
 		"askai": "Ask AI",
-		"unavailable": "Sorry, the AI is currently not available."
+		"unavailable": "Sorry, the AI is currently not available.",
+		"give_me_suggestions": "Give me some suggestions.",
+		"help_me_analyze": "Help me analyze the results.",
+		"custom_input": "Custom Input",
+		"start": "Try asking the AI some questions about this survey.",
+		"no_apikey": "You haven't set your OpenAI API Key yet. Please set it in the settings page."
 	},
 	"error_codes": {
 		"0": "Succès.",
