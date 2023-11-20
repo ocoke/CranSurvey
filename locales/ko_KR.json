@@ -231,7 +231,9 @@
 		"surveys": "설문 조사",
 		"use_captcha_survey": "데이터 수집에 CAPTCHA 사용",
 		"captcha": "캡챠",
-		"update": "업데이트"
+		"update": "업데이트",
+		"ai": "AI",
+		"ai_key": "OpenAI API Key"
 	},
 	"view": {
 		"required": "* 필수 질문을 나타냅니다.",
@@ -249,7 +251,12 @@
 	},
 	"ai": {
 		"askai": "Ask AI",
-		"unavailable": "Sorry, the AI is currently not available."
+		"unavailable": "Sorry, the AI is currently not available.",
+		"give_me_suggestions": "Give me some suggestions.",
+		"help_me_analyze": "Help me analyze the results.",
+		"custom_input": "Custom Input",
+		"start": "Try asking the AI some questions about this survey.",
+		"no_apikey": "You haven't set your OpenAI API Key yet. Please set it in the settings page."
 	},
 	"error_codes": {
 		"0": "성공.",
