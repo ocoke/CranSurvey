@@ -231,7 +231,9 @@
 		"surveys": "Befragungen",
 		"use_captcha_survey": "Verwenden von CAPTCHA zum Sammeln von Daten",
 		"captcha": "CAPTCHA",
-		"update": "Aktualisieren"
+		"update": "Aktualisieren",
+		"ai": "Künstliche Intelligenz",
+		"ai_key": "OpenAI-API-Schlüssel"
 	},
 	"view": {
 		"required": "* Zeigt die erforderliche Frage an",
@@ -246,6 +248,15 @@
 		"requirements_submit": "Die Antwort entspricht nicht den Anforderungen. Bitte überprüfen Sie es und versuchen Sie es erneut.",
 		"wait_upload": "Bitte warten Sie, bis die Datei hochgeladen ist.",
 		"went_wrong": "Irgendetwas ist schief gelaufen. Bitte versuchen Sie es später noch einmal."
+	},
+	"ai": {
+		"askai": "Fragen Sie die KI",
+		"unavailable": "Leider ist die KI derzeit nicht verfügbar.",
+		"give_me_suggestions": "Gebt mir ein paar Vorschläge.",
+		"help_me_analyze": "Helfen Sie mir, die Ergebnisse zu analysieren.",
+		"custom_input": "Benutzerdefinierte Eingabe",
+		"start": "Versuchen Sie, der KI einige Fragen zu dieser Umfrage zu stellen.",
+		"no_apikey": "Sie haben Ihren OpenAI-API-Schlüssel noch nicht festgelegt. Bitte stellen Sie es auf der Einstellungsseite ein."
 	},
 	"error_codes": {
 		"0": "Erfolg.",

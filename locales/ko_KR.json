@@ -231,7 +231,9 @@
 		"surveys": "설문 조사",
 		"use_captcha_survey": "데이터 수집에 CAPTCHA 사용",
 		"captcha": "캡챠",
-		"update": "업데이트"
+		"update": "업데이트",
+		"ai": "인공 지능",
+		"ai_key": "OpenAI API 키"
 	},
 	"view": {
 		"required": "* 필수 질문을 나타냅니다.",
@@ -246,6 +248,15 @@
 		"requirements_submit": "답변이 요구 사항을 충족하지 않습니다. 확인 후 다시 시도하십시오.",
 		"wait_upload": "파일이 업로드될 때까지 기다려 주십시오.",
 		"went_wrong": "문제가 발생했습니다. 나중에 다시 시도하십시오."
+	},
+	"ai": {
+		"askai": "AI에게 물어보기",
+		"unavailable": "죄송합니다. AI는 현재 사용할 수 없습니다.",
+		"give_me_suggestions": "몇 가지 제안을 해주세요.",
+		"help_me_analyze": "결과 분석을 도와주세요.",
+		"custom_input": "사용자 지정 입력",
+		"start": "AI에게 이 설문조사에 대해 몇 가지 질문을 해보세요.",
+		"no_apikey": "아직 OpenAI API 키를 설정하지 않았습니다. 설정 페이지에서 설정하십시오."
 	},
 	"error_codes": {
 		"0": "성공.",

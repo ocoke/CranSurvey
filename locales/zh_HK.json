@@ -231,7 +231,9 @@
 		"surveys": "Surveys",
 		"use_captcha_survey": "Use CAPTCHA in Collecting Data",
 		"captcha": "CAPTCHA",
-		"update": "Update"
+		"update": "Update",
+		"ai": "AI",
+		"ai_key": "OpenAI API Key"
 	},
 	"view": {
 		"required": "* Indicates required question",
@@ -246,6 +248,15 @@
 		"requirements_submit": "The answer doesn't meet the requirements. Please check it and try again.",
 		"wait_upload": "Please wait for the file to upload.",
 		"went_wrong": "Something went wrong. Please try again later."
+	},
+	"ai": {
+		"askai": "Ask AI",
+		"unavailable": "Sorry, the AI is currently not available.",
+		"give_me_suggestions": "Give me some suggestions.",
+		"help_me_analyze": "Help me analyze the results.",
+		"custom_input": "Custom Input",
+		"start": "Try asking the AI some questions about this survey.",
+		"no_apikey": "You haven't set your OpenAI API Key yet. Please set it in the settings page."
 	},
 	"error_codes": {
 		"0": "Success.",

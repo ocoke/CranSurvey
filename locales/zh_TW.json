@@ -231,7 +231,9 @@
 		"surveys": "調查",
 		"use_captcha_survey": "使用 CAPTCHA 收集數據",
 		"captcha": "驗證碼",
-		"update": "更新"
+		"update": "更新",
+		"ai": "人工智慧",
+		"ai_key": "OpenAI API 金鑰"
 	},
 	"view": {
 		"required": "* 為必填題",
@@ -246,6 +248,15 @@
 		"requirements_submit": "答案不符合要求。請檢查並重試。",
 		"wait_upload": "請等待檔上傳。",
 		"went_wrong": "出了點問題。請稍後再試。"
+	},
+	"ai": {
+		"askai": "詢問 AI",
+		"unavailable": "對不起，AI 目前不可用。",
+		"give_me_suggestions": "給我一些建議。",
+		"help_me_analyze": "幫我分析結果。",
+		"custom_input": "自訂輸入",
+		"start": "試著問 AI 一些關於這個調查的問題。",
+		"no_apikey": "您尚未設定 OpenAI API 金鑰。請在設置頁面進行設置。"
 	},
 	"error_codes": {
 		"0": "成功。",
