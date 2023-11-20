@@ -247,6 +247,10 @@
 		"wait_upload": "ファイルがアップロードされるのをお待ちください。",
 		"went_wrong": "問題が発生しました。後でもう一度やり直してください。"
 	},
+	"ai": {
+		"askai": "Ask AI",
+		"unavailable": "Sorry, the AI is currently not available."
+	},
 	"error_codes": {
 		"0": "成功。",
 		"1001": "無効なパラメーターです。",
