@@ -232,8 +232,8 @@
 		"use_captcha_survey": "Verwenden von CAPTCHA zum Sammeln von Daten",
 		"captcha": "CAPTCHA",
 		"update": "Aktualisieren",
-		"ai": "AI",
-		"ai_key": "OpenAI API Key"
+		"ai": "Künstliche Intelligenz",
+		"ai_key": "OpenAI-API-Schlüssel"
 	},
 	"view": {
 		"required": "* Zeigt die erforderliche Frage an",
@@ -250,13 +250,13 @@
 		"went_wrong": "Irgendetwas ist schief gelaufen. Bitte versuchen Sie es später noch einmal."
 	},
 	"ai": {
-		"askai": "Ask AI",
-		"unavailable": "Sorry, the AI is currently not available.",
-		"give_me_suggestions": "Give me some suggestions.",
-		"help_me_analyze": "Help me analyze the results.",
-		"custom_input": "Custom Input",
-		"start": "Try asking the AI some questions about this survey.",
-		"no_apikey": "You haven't set your OpenAI API Key yet. Please set it in the settings page."
+		"askai": "Fragen Sie die KI",
+		"unavailable": "Leider ist die KI derzeit nicht verfügbar.",
+		"give_me_suggestions": "Gebt mir ein paar Vorschläge.",
+		"help_me_analyze": "Helfen Sie mir, die Ergebnisse zu analysieren.",
+		"custom_input": "Benutzerdefinierte Eingabe",
+		"start": "Versuchen Sie, der KI einige Fragen zu dieser Umfrage zu stellen.",
+		"no_apikey": "Sie haben Ihren OpenAI-API-Schlüssel noch nicht festgelegt. Bitte stellen Sie es auf der Einstellungsseite ein."
 	},
 	"error_codes": {
 		"0": "Erfolg.",
