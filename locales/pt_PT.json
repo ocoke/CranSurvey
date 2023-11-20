@@ -247,6 +247,10 @@
 		"wait_upload": "Aguarde até que o arquivo seja carregado.",
 		"went_wrong": "Algo deu errado. Tente novamente mais tarde."
 	},
+	"ai": {
+		"askai": "Ask AI",
+		"unavailable": "Sorry, the AI is currently not available."
+	},
 	"error_codes": {
 		"0": "Êxito.",
 		"1001": "Parâmetros inválidos.",
