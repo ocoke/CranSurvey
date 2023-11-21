@@ -6,7 +6,7 @@ export default eventHandler(async (event) => {
 	const reqBody = await readBody(event)
 
 	const id = escapeText(reqBody.id)
-	const { pwd } = reqBody
+	const { pwd, icode } = reqBody
 
 	if (!id || !pwd || id.length >= 32 || pwd.length >= 64) {
 		return {
@@ -43,12 +43,20 @@ export default eventHandler(async (event) => {
 		}
 
 		const cfg: object = await storage.getItem("cfg")
-		const allowSignUp = cfg["users"].allowSignUp
+		const allowSignUp: boolean = cfg["users"].allowSignUp
+		const inviteCode: string = cfg["users"].inviteCode
 
 		if (!allowSignUp) {
 			return {
 				code: 1003,
 				msg: "Sign up is not allowed.",
+			}
+		}
+
+		if (inviteCode && icode != inviteCode) {
+			return {
+				code: 1004,
+				msg: "Invalid invite code.",
 			}
 		}
 

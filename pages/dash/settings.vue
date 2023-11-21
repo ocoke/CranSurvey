@@ -169,7 +169,7 @@ export default {
 				}
 			}
 			if (noChanges) {
-				toast.info(this.$t("settings.no_changes"), toastCfg)
+				toast.info(this.$t("settings.no_change"), toastCfg)
 				return false
 			}
 			this.loading = true

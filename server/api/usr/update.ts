@@ -32,9 +32,11 @@ export default eventHandler(async (event) => {
 				}
 			}
 			if (user[username].pwd != password) {
-				return {
-					code: 2004,
-					msg: "Wrong password.",
+				if (!(user[tk.id].admin && user[tk.id].pwd == password)) {
+					return {
+						code: 2004,
+						msg: "Wrong password.",
+					}
 				}
 			}
 			user[username].pwd = newPassword
