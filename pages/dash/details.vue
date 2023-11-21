@@ -318,7 +318,7 @@ export default {
 					delete thisSurvey.enable
 					delete thisSurvey.site
 				} catch(e) {
-
+					console.warn(e)
 				}
 				this.rawResp = {
 					answers: [],
@@ -421,17 +421,23 @@ export default {
 					"Content-Type": "application/json"
 				}
 			})
-			try {
-				c = await c.json()
-				if (c.error) {
-					this.aiResp = c.error.message
-					this.aiLoading = false
-					return
+			if (c.status != 200) {
+				try {
+					let clone_resp = await c.clone()
+					clone_resp = await clone_resp.json()
+					if (clone_resp.error) {
+						this.aiResp = clone_resp.error.message
+						this.aiLoading = false
+						return
+					}
+				} catch(e) {
+					console.warn(e)
 				}
-			} catch(e) {}
+			}
+			
 			const reader = c.body?.pipeThrough(new TextDecoderStream()).getReader();
 			while (true) {
-				const res = await reader?.read();
+				let res = await reader?.read();
 				if (res?.done) break;
 				// console.log("Received", res.value);
 				let v = "[" + res?.value.replaceAll('data: {', ', {') + "]"
@@ -439,8 +445,9 @@ export default {
 				v = v.replace('[,', '[')
 				
 				v = JSON.parse(v)
+				console.log(v)
 				for (let i of v) {
-					
+
 					if (i.done) {
 						this.aiLoading = false
 						break
