@@ -28,7 +28,7 @@ import "~/src/styles/dash.css"
 	<h1 class="text-h4">{{ $t("results.results") }}</h1>
 	<div class="card-group results">
 		<v-card :title="$t('results.country')" variant="outlined" :loading="chartLoading">
-			<v-card-text style="max-height: 300px;">
+			<v-card-text style="max-height: 450px;">
 				
 				<Pie :data="chartData" style="margin: 0 auto;" v-if="!chartLoading"/>
 			</v-card-text>
@@ -56,8 +56,7 @@ import "~/src/styles/dash.css"
 							<v-icon icon="mdi-send"></v-icon>
 						</v-btn>
 					</div>
-					
-
+				<p style="margin-top: .6rem; text-align: right; opacity: .7;">AI can make mistakes,<br>Powered by OpenAI.</p>
 				</div>
 			</v-card-text>
 		</v-card>
@@ -76,6 +75,7 @@ import "~/src/styles/dash.css"
 
 		<v-card-text>
 			<v-data-table-server
+				class="resultsDataTable"
 				:headers="headers"
 				:items="tableItems"
 				:search="search"
@@ -213,15 +213,17 @@ for (let i in colors) {
 
 let hashMaterialColors = []
 
-const aiPrompt = "You're CranSurvey Bot. Your job is to help the user analyze their data from the survey on the website. The user will give you JSON format data that includes all the answers that have been collected. Please use the function of get_analytics to analyze them. Please detect the language of the questions and the most 3 countries that the answers are from, Are there many situations where a user answers multiple times? How does it lead to the final results? Are the results credible based on these results? Does the survey content need to be adjusted?"
+// const aiPrompt = "You're CranSurvey Bot. Your job is to help the user analyze their data from the survey on the website. The user will give you JSON format data that includes all the answers that have been collected. Please use the function of get_analytics to analyze them. Please detect the language of the questions and the most 3 countries that the answers are from, Are there many situations where a user answers multiple times? How does it lead to the final results? Are the results credible based on these results? Does the survey content need to be adjusted?"
+
+// random color
+
 while (hashMaterialColorsOrder.length > 0) {
-  // 生成一个随机索引
+
   const randomIndex = Math.floor(Math.random() * hashMaterialColorsOrder.length);
   
-  // 从原始数组中取出随机元素
+
   const randomElement = hashMaterialColorsOrder.splice(randomIndex, 1)[0];
   
-  // 将选中的元素添加到已选择的数组中
   hashMaterialColors.push(randomElement);
 }
 
@@ -309,7 +311,20 @@ export default {
 					search: this.search,
 				}),
 			}).then((resp) => {
-				this.rawResp = resp
+				let thisSurvey = resp.survey
+				try {
+					delete thisSurvey.id
+					delete thisSurvey.created_at
+					delete thisSurvey.enable
+					delete thisSurvey.site
+				} catch(e) {
+
+				}
+				this.rawResp = {
+					answers: [],
+					survey: resp.survey,
+					total: resp.total,
+				}
 				if (resp.code == 0) {
 					const answers = []
 					for (const i in resp.answers) {
@@ -321,6 +336,11 @@ export default {
 							country: resp.answers[i].geoip[1],
 							city: resp.answers[i].geoip[0],
 						})
+						let thisAnswer = resp.answers[i]
+						delete thisAnswer.id
+						thisAnswer.usr = thisAnswer.usr.slice(-6)
+						thisAnswer.geoip = thisAnswer.geoip[0] + "," + thisAnswer.geoip[2] + "," + thisAnswer.geoip[1]
+						this.rawResp.answers.push(thisAnswer)
 						if (!this.countryData.labels.includes(resp.answers[i].geoip[1])) {
 							this.countryData.labels.push(resp.answers[i].geoip[1])
 							
@@ -335,6 +355,7 @@ export default {
 					this.tableItems = answers
 					this.totalItems = resp.total
 					this.surveyQuestions = resp.survey.questions
+					
 				} else {
 					this.tableItems = []
 					this.totalItems = 0
@@ -361,7 +382,7 @@ export default {
 				"messages": [
 					{
 						"role": "system",
-						"content": "You're CranSurvey Bot. Your job is to help the user analyze their data from the survey on the website. The user will give you JSON format data that includes all the answers that have been collected. \n\nThere are 2 important keys in the JSON format input. They're \"survey\" (questions) and \"answers\". For every collected answer, the key \"usr\" is the unique id of the user. The \"ans\" key includes the answer. (for multiple choice/dropdown/checkboxes, the answer is the index of the options). \"geoip\" includes the geo data of the user based on their IP. It is in the format of [city, country, region, ...]\n\nTo ensure accurate content, please check three times before answering. Answer me in " + this.$i18n.locale + "."
+						"content": "You're CranSurvey Bot. Your job is to help the user analyze their data from the survey on the website. The user will give you JSON format data that includes all the answers that have been collected. \n\nThere are 2 important keys in the JSON format input. They're \"survey\" (questions) and \"answers\". For every collected answer, the key \"usr\" is the unique id of the user. The \"ans\" key includes the answer. (for multiple choice/dropdown/checkboxes, the answer is the index of the options). \"geoip\" includes the geo data of the user based on their IP. It is in the format of [city, region, country]\nTo ensure accurate content, please check three times before answering. Answer me in " + this.$i18n.locale + "."
 					},
 					{
 						"role": "system",
@@ -400,6 +421,14 @@ export default {
 					"Content-Type": "application/json"
 				}
 			})
+			try {
+				c = await c.json()
+				if (c.error) {
+					this.aiResp = c.error.message
+					this.aiLoading = false
+					return
+				}
+			} catch(e) {}
 			const reader = c.body?.pipeThrough(new TextDecoderStream()).getReader();
 			while (true) {
 				const res = await reader?.read();
