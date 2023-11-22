@@ -95,13 +95,13 @@ import "~/src/styles/dash.css"
 					<v-expansion-panel-text>
 						<div>
 							<div style="margin-top: 10px">
-							<v-text-field
-								:label="$t('settings.ai_key')"
-								variant="outlined"
-								placeholder=""
-								v-model="config.ai.key"
-							></v-text-field>
-						</div>
+								<v-text-field
+									:label="$t('settings.ai_key')"
+									variant="outlined"
+									placeholder=""
+									v-model="config.ai.key"
+								></v-text-field>
+							</div>
 						</div>
 					</v-expansion-panel-text>
 				</v-expansion-panel>

@@ -19,7 +19,7 @@ function toggleTheme() {
 
 const { mobile } = useDisplay()
 
-let drawer = ref(true)
+const drawer = ref(true)
 
 if (mobile.value) {
 	drawer.value = false

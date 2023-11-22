@@ -28,35 +28,38 @@ import "~/src/styles/dash.css"
 	<h1 class="text-h4">{{ $t("results.results") }}</h1>
 	<div class="card-group results">
 		<v-card :title="$t('results.country')" variant="outlined" :loading="chartLoading">
-			<v-card-text style="max-height: 450px;">
-				
-				<Pie :data="chartData" style="margin: 0 auto;" v-if="!chartLoading"/>
+			<v-card-text style="max-height: 450px">
+				<Pie :data="chartData" style="margin: 0 auto" v-if="!chartLoading" />
 			</v-card-text>
 		</v-card>
-		<v-card :title="$t('ai.askai')" variant="outlined" style="margin-right: 0;">
+		<v-card :title="$t('ai.askai')" variant="outlined" style="margin-right: 0">
 			<v-card-text style="">
 				<!-- <p style="margin-bottom: 15%;">{{ $t('ai.unavailable') }}</p> -->
-				<v-card class="aiResults" variant="tonal" style="width: 100%;" :loading="aiLoading">
+				<v-card class="aiResults" variant="tonal" style="width: 100%" :loading="aiLoading">
 					<v-card-text>
-						<p v-if="!aiKey">{{ $t('ai.no_apikey') }}</p>
+						<p v-if="!aiKey">{{ $t("ai.no_apikey") }}</p>
 						<p v-else-if="aiResp">{{ aiResp }}</p>
-						<p v-else>{{ $t('ai.start') }}</p>
+						<p v-else>{{ $t("ai.start") }}</p>
 					</v-card-text>
 				</v-card>
 				<div class="btnGroup" v-if="aiKey">
-					<v-btn variant="tonal" @click="sendAI('suggestions')">
-						🤔 {{ $t('ai.give_me_suggestions') }}
-					</v-btn>
-					<v-btn variant="tonal" @click="sendAI('analyze')">
-						🙌 {{ $t('ai.help_me_analyze') }}
-					</v-btn>
-					<div style="display: flex; margin-top: .5rem; justify-content: center; align-items: center;">
-						<v-text-field :label="'👨‍💻' + $t('ai.custom_input')" density="compact" hide-details="auto" style="width: 92%; margin-right: 2%;" v-model="customInput"></v-text-field>
-						<v-btn variant="tonal" style="width: 6%; margin-top: 2px;" @click="sendAI('custom')">
+					<v-btn variant="tonal" @click="sendAI('suggestions')"> 🤔 {{ $t("ai.give_me_suggestions") }} </v-btn>
+					<v-btn variant="tonal" @click="sendAI('analyze')"> 🙌 {{ $t("ai.help_me_analyze") }} </v-btn>
+					<div style="display: flex; margin-top: 0.5rem; justify-content: center; align-items: center">
+						<v-text-field
+							:label="'👨‍💻' + $t('ai.custom_input')"
+							density="compact"
+							hide-details="auto"
+							style="width: 92%; margin-right: 2%"
+							v-model="customInput"
+						></v-text-field>
+						<v-btn variant="tonal" style="width: 6%; margin-top: 2px" @click="sendAI('custom')">
 							<v-icon icon="mdi-send"></v-icon>
 						</v-btn>
 					</div>
-				<p style="margin-top: .6rem; text-align: right; opacity: .7;">AI can make mistakes,<br>Powered by OpenAI.</p>
+					<p style="margin-top: 0.6rem; text-align: right; opacity: 0.7">
+						AI can make mistakes,<br />Powered by OpenAI.
+					</p>
 				</div>
 			</v-card-text>
 		</v-card>
@@ -198,33 +201,31 @@ import "~/src/styles/dash.css"
 </template>
 
 <script>
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
-import { Pie } from 'vue-chartjs'
-import colors from 'vuetify/util/colors'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js"
+import { Pie } from "vue-chartjs"
+import colors from "vuetify/util/colors"
 // let materialColors = ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue', 'light-blue', 'cyan', 'teal', 'green', 'light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 'brown', 'grey', 'blue-grey']
-let hashMaterialColorsOrder = []
+const hashMaterialColorsOrder = []
 
-for (let i in colors) {
-	for (let j in colors[i]) {
+for (const i in colors) {
+	for (const j in colors[i]) {
 		if (j == "lighten5") continue
 		hashMaterialColorsOrder.push(colors[i][j])
 	}
 }
 
-let hashMaterialColors = []
+const hashMaterialColors = []
 
 // const aiPrompt = "You're CranSurvey Bot. Your job is to help the user analyze their data from the survey on the website. The user will give you JSON format data that includes all the answers that have been collected. Please use the function of get_analytics to analyze them. Please detect the language of the questions and the most 3 countries that the answers are from, Are there many situations where a user answers multiple times? How does it lead to the final results? Are the results credible based on these results? Does the survey content need to be adjusted?"
 
 // random color
 
 while (hashMaterialColorsOrder.length > 0) {
+	const randomIndex = Math.floor(Math.random() * hashMaterialColorsOrder.length)
 
-  const randomIndex = Math.floor(Math.random() * hashMaterialColorsOrder.length);
-  
+	const randomElement = hashMaterialColorsOrder.splice(randomIndex, 1)[0]
 
-  const randomElement = hashMaterialColorsOrder.splice(randomIndex, 1)[0];
-  
-  hashMaterialColors.push(randomElement);
+	hashMaterialColors.push(randomElement)
 }
 
 // import { ChoroplethController, GeoFeature, ColorScale, ProjectionScale } from 'chartjs-chart-geo';
@@ -234,9 +235,11 @@ export default {
 		Pie,
 	},
 	computed: {
-      chartData() { return this.countryData },
-    //   chartOptions() { return /* mutable chart options */ }
-    },
+		chartData() {
+			return this.countryData
+		},
+		//   chartOptions() { return /* mutable chart options */ }
+	},
 	data() {
 		return {
 			headers: [
@@ -285,9 +288,9 @@ export default {
 				datasets: [
 					{
 						backgroundColor: [],
-						data: []
-					}
-				]
+						data: [],
+					},
+				],
 			},
 			chartLoading: true,
 			rawResp: {},
@@ -311,13 +314,13 @@ export default {
 					search: this.search,
 				}),
 			}).then((resp) => {
-				let thisSurvey = resp.survey
+				const thisSurvey = resp.survey
 				try {
 					delete thisSurvey.id
 					delete thisSurvey.created_at
 					delete thisSurvey.enable
 					delete thisSurvey.site
-				} catch(e) {
+				} catch (e) {
 					console.warn(e)
 				}
 				this.rawResp = {
@@ -336,14 +339,13 @@ export default {
 							country: resp.answers[i].geoip[1],
 							city: resp.answers[i].geoip[0],
 						})
-						let thisAnswer = resp.answers[i]
+						const thisAnswer = resp.answers[i]
 						delete thisAnswer.id
 						thisAnswer.usr = thisAnswer.usr.slice(-6)
 						thisAnswer.geoip = thisAnswer.geoip[0] + "," + thisAnswer.geoip[2] + "," + thisAnswer.geoip[1]
 						this.rawResp.answers.push(thisAnswer)
 						if (!this.countryData.labels.includes(resp.answers[i].geoip[1])) {
 							this.countryData.labels.push(resp.answers[i].geoip[1])
-							
 
 							this.countryData.datasets[0].backgroundColor.push(hashMaterialColors[this.countryData.labels.length - 1])
 
@@ -355,7 +357,6 @@ export default {
 					this.tableItems = answers
 					this.totalItems = resp.total
 					this.surveyQuestions = resp.survey.questions
-					
 				} else {
 					this.tableItems = []
 					this.totalItems = 0
@@ -377,49 +378,54 @@ export default {
 		async sendAI(arg) {
 			this.aiLoading = true
 			this.aiResp = ""
-			let prompt = {
-				"model": "gpt-3.5-turbo",
-				"messages": [
+			const prompt = {
+				model: "gpt-3.5-turbo",
+				messages: [
 					{
-						"role": "system",
-						"content": "You're CranSurvey Bot. Your job is to help the user analyze their data from the survey on the website. The user will give you JSON format data that includes all the answers that have been collected. \n\nThere are 2 important keys in the JSON format input. They're \"survey\" (questions) and \"answers\". For every collected answer, the key \"usr\" is the unique id of the user. The \"ans\" key includes the answer. (for multiple choice/dropdown/checkboxes, the answer is the index of the options). \"geoip\" includes the geo data of the user based on their IP. It is in the format of [city, region, country]\nTo ensure accurate content, please check three times before answering. Answer me in " + this.$i18n.locale + "."
+						role: "system",
+						content:
+							'You\'re CranSurvey Bot. Your job is to help the user analyze their data from the survey on the website. The user will give you JSON format data that includes all the answers that have been collected. \n\nThere are 2 important keys in the JSON format input. They\'re "survey" (questions) and "answers". For every collected answer, the key "usr" is the unique id of the user. The "ans" key includes the answer. (for multiple choice/dropdown/checkboxes, the answer is the index of the options). "geoip" includes the geo data of the user based on their IP. It is in the format of [city, region, country]\nTo ensure accurate content, please check three times before answering. Answer me in ' +
+							this.$i18n.locale +
+							".",
 					},
 					{
-						"role": "system",
-						"content": ""
+						role: "system",
+						content: "",
 					},
 					{
-						"role": "user",
-						"content": JSON.stringify(this.rawResp)
-					}
+						role: "user",
+						content: JSON.stringify(this.rawResp),
+					},
 				],
-				"temperature": 1,
-				"max_tokens": 2048,
-				"top_p": 1,
-				"frequency_penalty": 0,
-				"presence_penalty": 0,
-				"stream": true,
+				temperature: 1,
+				max_tokens: 2048,
+				top_p: 1,
+				frequency_penalty: 0,
+				presence_penalty: 0,
+				stream: true,
 			}
 			if (arg == "suggestions") {
-				prompt.messages[1].content = "Please detect the language of the questions and the most 3 countries that the answers are from, Are there many situations where a user answers multiple times? How does it lead to the final results? Are the results credible based on these results? Does the survey content need to be adjusted? For example, modify the text/, add or delete questions, etc.? And check that the title of the user survey is easy for customers to understand and answer. If so, please give detailed suggestions and tips to help users better understand their customers' needs."
+				prompt.messages[1].content =
+					"Please detect the language of the questions and the most 3 countries that the answers are from, Are there many situations where a user answers multiple times? How does it lead to the final results? Are the results credible based on these results? Does the survey content need to be adjusted? For example, modify the text/, add or delete questions, etc.? And check that the title of the user survey is easy for customers to understand and answer. If so, please give detailed suggestions and tips to help users better understand their customers' needs."
 			} else if (arg == "analyze") {
 				prompt.messages.push({
-					"role": "system",
-					"content": "Please detect the language of the questions and the most 3 countries that the answers are from, Are there many situations where a user answers multiple times? How does it lead to the final results? Are the results credible based on these results? Please analyze the results in such ways I mentioned above."
+					role: "system",
+					content:
+						"Please detect the language of the questions and the most 3 countries that the answers are from, Are there many situations where a user answers multiple times? How does it lead to the final results? Are the results credible based on these results? Please analyze the results in such ways I mentioned above.",
 				})
 			} else if (arg == "custom") {
 				prompt.messages.push({
-					"role": "system",
-					"content": this.customInput,
+					role: "system",
+					content: this.customInput,
 				})
 			}
-			let c = await fetch("https://api.openai.com/v1/chat/completions", {
+			const c = await fetch("https://api.openai.com/v1/chat/completions", {
 				method: "POST",
 				body: JSON.stringify(prompt),
 				headers: {
-					"Authorization": "Bearer " + this.aiKey,
-					"Content-Type": "application/json"
-				}
+					Authorization: "Bearer " + this.aiKey,
+					"Content-Type": "application/json",
+				},
 			})
 			if (c.status != 200) {
 				try {
@@ -430,24 +436,23 @@ export default {
 						this.aiLoading = false
 						return
 					}
-				} catch(e) {
+				} catch (e) {
 					console.warn(e)
 				}
 			}
-			
-			const reader = c.body?.pipeThrough(new TextDecoderStream()).getReader();
-			while (true) {
-				let res = await reader?.read();
-				if (res?.done) break;
+
+			const reader = c.body?.pipeThrough(new TextDecoderStream()).getReader()
+			for (;;) {
+				const res = await reader?.read()
+				if (res?.done) break
 				// console.log("Received", res.value);
-				let v = "[" + res?.value.replaceAll('data: {', ', {') + "]"
-				v = v.replace('data: [DONE]', ', {"done": true, "choices": [{"delta": {"content": ""}}]}')
-				v = v.replace('[,', '[')
-				
+				let v = "[" + res?.value.replaceAll("data: {", ", {") + "]"
+				v = v.replace("data: [DONE]", ', {"done": true, "choices": [{"delta": {"content": ""}}]}')
+				v = v.replace("[,", "[")
+
 				v = JSON.parse(v)
 				console.log(v)
-				for (let i of v) {
-
+				for (const i of v) {
 					if (i.done) {
 						this.aiLoading = false
 						break
@@ -458,10 +463,8 @@ export default {
 				}
 			}
 
-
 			// this.aiResp = c.choices[0].message.content
-		},	
-
+		},
 	},
 	mounted() {
 		this.token = sessionStorage.getItem("_cransurvey_token")
@@ -498,11 +501,11 @@ export default {
 				title: this.$t("results.city"),
 			},
 		]
-		$fetch('/api/config/get', {
-			method: 'POST',
+		$fetch("/api/config/get", {
+			method: "POST",
 			body: JSON.stringify({
 				token: this.token,
-			})
+			}),
 		}).then((rsp) => {
 			if (rsp.code == 0 && rsp.data.ai) {
 				this.aiKey = rsp.data.ai.key
