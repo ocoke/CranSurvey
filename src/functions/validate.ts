@@ -1,19 +1,50 @@
+import { isValidPhoneNumber } from "libphonenumber-js"
 export default function ansValidate(answer: any, type: string, rule: any) {
-	if (type == "short_answer") {
+	if (type == "short_answer" || type == "paragraph") {
 		// Short Answer
 		if (rule.includes(":")) {
 			// [num]:[num]
 			if (answer.length >= parseInt(rule.split(":")[0]) && answer.length <= parseInt(rule.split(":")[1])) {
-				return true
-			} else {
-				return false
-			}
-		}
-	} else if (type == "paragraph") {
-		if (rule.includes(":")) {
-			// [num]:[num]
-			if (answer.length >= parseInt(rule.split(":")[0]) && answer.length <= parseInt(rule.split(":")[1])) {
-				return true
+				if (rule.split(":").length >= 3) {
+					// email/phone/number/URL
+					const check: string = rule.split(":")[2]
+					if (check == "email") {
+						const regex =
+							/(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/g
+						if (regex.test(answer)) {
+							return true
+						} else {
+							return false
+						}
+					} else if (check == "phone") {
+						if (rule.split(":")[3]) {
+							const regions = rule.split(":")[3].split(",")
+							for (const i in regions) {
+								if (isValidPhoneNumber(answer, regions[i])) {
+									return true
+								}
+							}
+						} else {
+							return false
+						}
+					} else if (check == "number") {
+						if (isNaN(answer)) {
+							return false
+						} else {
+							return true
+						}
+					} else if (check == "URL") {
+						const regex =
+							/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/g
+						if (regex.test(answer)) {
+							return true
+						} else {
+							return false
+						}
+					}
+				} else {
+					return true
+				}
 			} else {
 				return false
 			}

@@ -1,5 +1,9 @@
 <script setup>
 const localePath = useLocalePath()
+let country = ref([])
+if (process.client) {
+	country.value = (await import('../../src/data/country.' + useI18n().locale.value.replace('-', '_') + '.json')).default
+}
 if (process.client) {
 	const token = sessionStorage.getItem("_cransurvey_token")
 	const username = sessionStorage.getItem("_cransurvey_usr")
@@ -113,7 +117,32 @@ import "~/src/styles/dash.css"
 								density="compact"
 								v-model="simple.validate.max"
 							></v-text-field></p
-					></v-card-text>
+					>
+
+					<p>
+						<v-select
+							label="Select"
+							:items="textTypes"
+							item-title="name"
+							item-value="value"
+							v-model="tempValidate"
+							variant="outlined"
+						></v-select>
+						<v-autocomplete
+							label="Select"
+							:items="country"
+							item-title="name"
+							item-value="code"
+							variant="outlined"
+							multiple
+							v-model="tempPhoneCountry"
+							chips
+							v-if="tempValidate == 'phone'"
+						></v-autocomplete>
+						<!-- {{country}} -->
+					</p>
+				
+					</v-card-text>
 				</v-card>
 				<v-card v-else-if="simple.type == 'date'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial">
 					<v-card-text>
@@ -344,7 +373,7 @@ import "~/src/styles/dash.css"
 									</tr>
 									<tr v-else>
 										<td>{{ $t("new.question.answer_validate") }}</td>
-										<td>{{ item.validateStr }}</td>
+										<td>{{ item.validate }}</td>
 									</tr>
 								</tbody>
 							</v-table>
@@ -352,6 +381,12 @@ import "~/src/styles/dash.css"
 								<v-spacer></v-spacer>
 								<v-btn variant="text" color="primary" @click="deleteQuestion(item.id)">
 									{{ $t("results.delete") }}
+								</v-btn>
+								<v-btn variant="text" color="primary" @click="moveQuestion(item.id, 1)">
+									{{ $t("new.moveup") }}
+								</v-btn>
+								<v-btn variant="text" color="primary" @click="moveQuestion(item.id, 2)">
+									{{ $t("new.movedown") }}
 								</v-btn>
 							</v-card-actions>
 						</v-expansion-panel-text>
@@ -441,7 +476,6 @@ import "~/src/styles/dash.css"
 
 <script>
 import { useToast } from "vue-toastification"
-
 const toast = useToast()
 const toastCfg = {
 	position: "top-right",
@@ -484,6 +518,8 @@ export default {
 				title: "",
 				content: "",
 			},
+			tempValidate: null,
+			tempPhoneCountry: [],
 			promptContentRules: [(v) => v.length <= 2048 || "Max 2048 characters"],
 			surveyTitle: "",
 			surveyDesc: "",
@@ -532,7 +568,6 @@ export default {
 					name: this.$t("new.files.images"),
 					value: "images",
 				},
-				// docs, videos, audios, sheets, slides, others ...
 				{
 					name: this.$t("new.files.docs"),
 					value: "docs",
@@ -558,6 +593,25 @@ export default {
 					value: "archives",
 				},
 			],
+			textTypes: [
+				{
+					name: this.$t('new.text.email'),
+					value: 'email',
+				},
+				{
+					name: this.$t('new.text.url'),
+					value: 'url',
+				},
+				{
+					name: this.$t('new.text.phone'),
+					value: 'phone',
+				},
+				{
+					name: this.$t('new.text.number'),
+					value: 'number',
+				},
+			],
+			// country,
 		}
 	},
 	methods: {
@@ -578,7 +632,7 @@ export default {
 					return false
 				}
 				const validate = this.simple.validate
-				const validateStr = (validate.min || 1) + ":" + (validate.max || 2048)
+				const validateStr = (validate.min || 1) + ":" + (validate.max || 2048) + (this.tempValidate ? ":" + this.tempValidate : "") + (this.tempPhoneCountry.length ? ":" + this.tempPhoneCountry.join(",") : "")
 				data = {
 					title: this.surveyTitle,
 					description: this.surveyDesc,
@@ -660,7 +714,7 @@ export default {
 				return false
 			}
 			const validate = this.simple.validate
-			const validateStr = (validate.min || 1) + ":" + (validate.max || 2048)
+			const validateStr = (validate.min || 1) + ":" + (validate.max || 2048) + (this.tempValidate ? ":" + this.tempValidate : "") + (this.tempPhoneCountry.length ? ":" + this.tempPhoneCountry.join(",") : "")
 			this.advanced.questions.push({
 				id: this.advanced.questions.length,
 				type: info.type,
@@ -688,11 +742,36 @@ export default {
 					optionsData: [],
 				},
 			}
+			this.tempValidate = null
+			this.tempPhoneCountry = []
 		},
 		deleteQuestion(id) {
 			this.advanced.questions.splice(id, 1)
 			for (const i in this.advanced.questions) {
 				this.advanced.questions[i].id = i
+			}
+		},
+		moveQuestion(id, mode) {
+			// mode == 1, up
+			// mode == 2, down
+			if (mode == 1) {
+				if (id == 0) {
+					return false
+				}
+				const tmp = this.advanced.questions[id - 1]
+				this.advanced.questions[id - 1] = this.advanced.questions[id]
+				this.advanced.questions[id] = tmp
+				this.advanced.questions[id - 1].id = id - 1
+				this.advanced.questions[id].id = id
+			} else {
+				if (id == this.advanced.questions.length - 1) {
+					return false
+				}
+				const tmp = this.advanced.questions[id + 1]
+				this.advanced.questions[id + 1] = this.advanced.questions[id]
+				this.advanced.questions[id] = tmp
+				this.advanced.questions[id + 1].id = id + 1
+				this.advanced.questions[id].id = id
 			}
 		},
 		addOptions() {

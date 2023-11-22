@@ -26,7 +26,7 @@
 		"init": "It seems like this is your first time here, we have automatically initialized your database.",
 		"or_signin": "Or sign in",
 		"invite_code": "Invite Code",
-		"invalid_invite_code": "Invalid invite code.",
+		"invalid_invite_code": "Invalid invite code."
 	},
 	"dashboard": {
 		"dashboard": "Dashboard",
@@ -196,7 +196,15 @@
 			"archives": "Archives"
 		},
 		"webhook": "Webhook",
-		"webhook_sub": "Enter your webhook url here, leave blank for none."
+		"webhook_sub": "Enter your webhook url here, leave blank for none.",
+		"moveup: ": "Move Up",
+		"movedown: ": "Move Down",
+		"text": {
+			"email": "Email",
+			"phone": "Phone Number",
+			"url": "URL",
+			"number": "Number"
+		}
 	},
 	"editUser": {
 		"editUser": "Edit for {username}",

@@ -5717,6 +5717,11 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
+libphonenumber-js@^1.10.50:
+  version "1.10.50"
+  resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-1.10.50.tgz#d7ea406dd86f9b1056f261bdfe66c3016ed0bd2e"
+  integrity sha512-AOYOJslxKQ49mpwvpkSFcagoMtxeH1UpUHm+05pmPkenPpFbt6ofdeEvQ+ZylmQiJS99ocRWeEeEp7quVlFyVA==
+
 lilconfig@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/lilconfig/-/lilconfig-2.1.0.tgz"
