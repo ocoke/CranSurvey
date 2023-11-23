@@ -24,7 +24,9 @@
 		"invalid_params": "請檢查用户名與密碼。",
 		"invalid_password": "密碼不匹配",
 		"init": "It seems like this is your first time here, we have automatically initialized your database.",
-		"or_signin": "Or sign in"
+		"or_signin": "Or sign in",
+		"invite_code": "Invite Code",
+		"invalid_invite_code": "Invalid invite code."
 	},
 	"dashboard": {
 		"dashboard": "Dashboard",
@@ -194,10 +196,19 @@
 			"archives": "Archives"
 		},
 		"webhook": "Webhook",
-		"webhook_sub": "Enter your webhook url here, leave blank for none."
+		"webhook_sub": "Enter your webhook url here, leave blank for none.",
+		"moveup: ": "Move Up",
+		"movedown: ": "Move Down",
+		"text": {
+			"email": "Email",
+			"phone": "Phone Number",
+			"url": "URL",
+			"number": "Number"
+		}
 	},
 	"editUser": {
 		"editUser": "Edit for {username}",
+		"pwd": "Password (Admin user please type your password)",
 		"password": "Reset Password",
 		"password_sub": "Reset the passwod for {username}.",
 		"enter_password": "Please enter the new password for {username}.",
@@ -263,6 +274,7 @@
 		"1001": "Invalid parameters.",
 		"1002": "User already exists.",
 		"1003": "Sign up is not allowed",
+		"1004": "Invalid invite code.",
 		"2001": "Invalid token.",
 		"2002": "Database error.",
 		"2003": "Survey ID already exists.",
