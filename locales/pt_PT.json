@@ -24,7 +24,9 @@
 		"invalid_params": "Verifique seu nome de usuário e senha.",
 		"invalid_password": "As senhas não coincidem.",
 		"init": "Parece que esta é a sua primeira vez aqui, nós inicializamos automaticamente o seu banco de dados.",
-		"or_signin": "Ou inicie sessão"
+		"or_signin": "Ou inicie sessão",
+		"invite_code": "Invite Code",
+		"invalid_invite_code": "Invalid invite code."
 	},
 	"dashboard": {
 		"dashboard": "Painel",
@@ -194,10 +196,19 @@
 			"archives": "Arquivo"
 		},
 		"webhook": "Gancho da Web",
-		"webhook_sub": "Digite sua url webhook aqui, deixe em branco para nenhum."
+		"webhook_sub": "Digite sua url webhook aqui, deixe em branco para nenhum.",
+		"moveup: ": "Move Up",
+		"movedown: ": "Move Down",
+		"text": {
+			"email": "Email",
+			"phone": "Phone Number",
+			"url": "URL",
+			"number": "Number"
+		}
 	},
 	"editUser": {
 		"editUser": "Editar para {username}",
+		"pwd": "Password (Admin user please type your password)",
 		"password": "Redefinir senha",
 		"password_sub": "Redefinir o passwod para {username}.",
 		"enter_password": "Introduza a nova palavra-passe para {username}.",
@@ -263,6 +274,7 @@
 		"1001": "Parâmetros inválidos.",
 		"1002": "Usuário já existe.",
 		"1003": "Não é permitida a inscrição",
+		"1004": "Invalid invite code.",
 		"2001": "Token inválido.",
 		"2002": "Erro de banco de dados.",
 		"2003": "O ID da pesquisa já existe.",
