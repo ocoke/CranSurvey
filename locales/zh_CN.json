@@ -25,8 +25,8 @@
 		"invalid_password": "密码不匹配。",
 		"init": "看来这是您第一次来这里，我们已经自动初始化了您的数据库。",
 		"or_signin": "或登录",
-		"invite_code": "Invite Code",
-		"invalid_invite_code": "Invalid invite code."
+		"invite_code": "邀请码",
+		"invalid_invite_code": "邀请码无效。"
 	},
 	"dashboard": {
 		"dashboard": "仪表板",
@@ -197,18 +197,18 @@
 		},
 		"webhook": "Webhook",
 		"webhook_sub": "在此处输入您的 webhook 网址，将“无”留空。",
-		"moveup: ": "Move Up",
-		"movedown: ": "Move Down",
+		"moveup: ": "上升",
+		"movedown: ": "下移",
 		"text": {
-			"email": "Email",
-			"phone": "Phone Number",
-			"url": "URL",
-			"number": "Number"
+			"email": "电子邮件",
+			"phone": "电话号码",
+			"url": "网址",
+			"number": "数"
 		}
 	},
 	"editUser": {
 		"editUser": "编辑 {username}",
-		"pwd": "Password (Admin user please type your password)",
+		"pwd": "密码（管理员用户请输入您的密码）",
 		"password": "重置密码",
 		"password_sub": "重置密码 {username}.",
 		"enter_password": "请输入新密码 {username}.",
@@ -274,7 +274,7 @@
 		"1001": "参数无效。",
 		"1002": "用户已存在。",
 		"1003": "不允许注册",
-		"1004": "Invalid invite code.",
+		"1004": "邀请码无效。",
 		"2001": "令牌无效。",
 		"2002": "数据库错误。",
 		"2003": "调查 ID 已存在。",
