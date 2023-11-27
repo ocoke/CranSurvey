@@ -24,7 +24,9 @@
 		"invalid_params": "Veuillez vérifier votre nom d’utilisateur et votre mot de passe.",
 		"invalid_password": "Les mots de passe ne correspondent pas.",
 		"init": "Il semble que ce soit la première fois que vous venez ici, nous avons automatiquement initialisé votre base de données.",
-		"or_signin": "Ou connectez-vous"
+		"or_signin": "Ou connectez-vous",
+		"invite_code": "Code d’invitation",
+		"invalid_invite_code": "Code d’invitation non valide."
 	},
 	"dashboard": {
 		"dashboard": "Tableau de bord",
@@ -194,10 +196,19 @@
 			"archives": "Archives"
 		},
 		"webhook": "Webhook (en anglais)",
-		"webhook_sub": "Entrez l’URL de votre webhook ici, laissez vide pour aucune."
+		"webhook_sub": "Entrez l’URL de votre webhook ici, laissez vide pour aucune.",
+		"moveup: ": "Monter",
+		"movedown: ": "Descendre",
+		"text": {
+			"email": "Messagerie électronique",
+			"phone": "Numéro de téléphone",
+			"url": "URL",
+			"number": "Nombre"
+		}
 	},
 	"editUser": {
 		"editUser": "Modifier pour {username}",
+		"pwd": "Mot de passe (l’utilisateur administrateur doit saisir votre mot de passe)",
 		"password": "Réinitialiser le mot de passe",
 		"password_sub": "Réinitialiser le mot de passe pour {username}.",
 		"enter_password": "Veuillez saisir le nouveau mot de passe pour {username}.",
@@ -263,6 +274,7 @@
 		"1001": "Paramètres non valides.",
 		"1002": "L’utilisateur existe déjà.",
 		"1003": "L’inscription n’est pas autorisée",
+		"1004": "Code d’invitation non valide.",
 		"2001": "Jeton non valide.",
 		"2002": "Erreur de base de données.",
 		"2003": "L’ID d’enquête existe déjà.",
