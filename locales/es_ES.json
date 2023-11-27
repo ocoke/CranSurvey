@@ -25,8 +25,8 @@
 		"invalid_password": "Las contraseñas no coinciden.",
 		"init": "Parece que esta es su primera vez aquí, hemos inicializado automáticamente su base de datos.",
 		"or_signin": "O inicia sesión",
-		"invite_code": "Invite Code",
-		"invalid_invite_code": "Invalid invite code."
+		"invite_code": "Código de invitación",
+		"invalid_invite_code": "Código de invitación no válido."
 	},
 	"dashboard": {
 		"dashboard": "Salpicadero",
@@ -197,18 +197,18 @@
 		},
 		"webhook": "Webhook (webhook)",
 		"webhook_sub": "Ingrese la URL de su webhook aquí, déjela en blanco para ninguno.",
-		"moveup: ": "Move Up",
-		"movedown: ": "Move Down",
+		"moveup: ": "Desplazar hacia arriba",
+		"movedown: ": "Desplazar hacia abajo",
 		"text": {
-			"email": "Email",
-			"phone": "Phone Number",
+			"email": "Correo electrónico",
+			"phone": "Número de teléfono",
 			"url": "URL",
-			"number": "Number"
+			"number": "Número"
 		}
 	},
 	"editUser": {
 		"editUser": "Editar para {username}",
-		"pwd": "Password (Admin user please type your password)",
+		"pwd": "Contraseña (Usuario administrador, escriba su contraseña)",
 		"password": "Restablecer contraseña",
 		"password_sub": "Restablecer el passwod para {username}.",
 		"enter_password": "Introduzca la nueva contraseña para {username}.",
@@ -274,7 +274,7 @@
 		"1001": "Parámetros no válidos.",
 		"1002": "El usuario ya existe.",
 		"1003": "No se permite registrarse",
-		"1004": "Invalid invite code.",
+		"1004": "Código de invitación no válido.",
 		"2001": "Token no válido.",
 		"2002": "Error de base de datos.",
 		"2003": "El ID de la encuesta ya existe.",
