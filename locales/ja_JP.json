@@ -25,8 +25,8 @@
 		"invalid_password": "パスワードが一致しません。",
 		"init": "ここで初めてのようですが、データベースを自動的に初期化しました。",
 		"or_signin": "またはサインイン",
-		"invite_code": "Invite Code",
-		"invalid_invite_code": "Invalid invite code."
+		"invite_code": "招待コード",
+		"invalid_invite_code": "招待コードが無効です。"
 	},
 	"dashboard": {
 		"dashboard": "ダッシュボード",
@@ -197,18 +197,18 @@
 		},
 		"webhook": "Webhook (英語)",
 		"webhook_sub": "ここに Webhook の URL を入力し、なしの場合は空白のままにします。",
-		"moveup: ": "Move Up",
-		"movedown: ": "Move Down",
+		"moveup: ": "上へ移動",
+		"movedown: ": "下へ移動",
 		"text": {
-			"email": "Email",
-			"phone": "Phone Number",
-			"url": "URL",
-			"number": "Number"
+			"email": "電子メール",
+			"phone": "電話番号",
+			"url": "URL (英語)",
+			"number": "数"
 		}
 	},
 	"editUser": {
 		"editUser": "編集対象 {username}",
-		"pwd": "Password (Admin user please type your password)",
+		"pwd": "パスワード(管理者ユーザーはパスワードを入力してください)",
 		"password": "パスワードのリセット",
 		"password_sub": "のパスワードをリセットする {username}.",
 		"enter_password": "新しいパスワードを入力してください {username}.",
@@ -274,7 +274,7 @@
 		"1001": "無効なパラメーターです。",
 		"1002": "ユーザーは既に存在します。",
 		"1003": "サインアップは許可されていません",
-		"1004": "Invalid invite code.",
+		"1004": "招待コードが無効です。",
 		"2001": "トークンが無効です。",
 		"2002": "データベース エラー。",
 		"2003": "調査 ID は既に存在します。",
