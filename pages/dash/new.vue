@@ -1,8 +1,10 @@
 <script setup>
 const localePath = useLocalePath()
-let country = ref([])
+const country = ref([])
+import country_data from '~/src/data/country.ts'
 if (process.client) {
-	country.value = (await import('../../src/data/country.' + useI18n().locale.value.replace('-', '_') + '.json')).default
+	// country.value = (await import("~/src/data/country." + useI18n().locale.value.replace("-", "_") + ".json")).default
+	country.value = country_data[useI18n().locale.value.replace("-", "_")]
 }
 if (process.client) {
 	const token = sessionStorage.getItem("_cransurvey_token")
@@ -116,32 +118,31 @@ import "~/src/styles/dash.css"
 								class="inline-num-input"
 								density="compact"
 								v-model="simple.validate.max"
-							></v-text-field></p
-					>
+							></v-text-field>
+						</p>
 
-					<p>
-						<v-select
-							label="Select"
-							:items="textTypes"
-							item-title="name"
-							item-value="value"
-							v-model="tempValidate"
-							variant="outlined"
-						></v-select>
-						<v-autocomplete
-							label="Select"
-							:items="country"
-							item-title="name"
-							item-value="code"
-							variant="outlined"
-							multiple
-							v-model="tempPhoneCountry"
-							chips
-							v-if="tempValidate == 'phone'"
-						></v-autocomplete>
-						<!-- {{country}} -->
-					</p>
-				
+						<p>
+							<v-select
+								label="Select"
+								:items="textTypes"
+								item-title="name"
+								item-value="value"
+								v-model="tempValidate"
+								variant="outlined"
+							></v-select>
+							<v-autocomplete
+								label="Select"
+								:items="country"
+								item-title="name"
+								item-value="code"
+								variant="outlined"
+								multiple
+								v-model="tempPhoneCountry"
+								chips
+								v-if="tempValidate == 'phone'"
+							></v-autocomplete>
+							<!-- {{country}} -->
+						</p>
 					</v-card-text>
 				</v-card>
 				<v-card v-else-if="simple.type == 'date'" variant="outlined" style="margin-bottom: 1rem; overflow-x: initial">
@@ -595,20 +596,20 @@ export default {
 			],
 			textTypes: [
 				{
-					name: this.$t('new.text.email'),
-					value: 'email',
+					name: this.$t("new.text.email"),
+					value: "email",
 				},
 				{
-					name: this.$t('new.text.url'),
-					value: 'url',
+					name: this.$t("new.text.url"),
+					value: "url",
 				},
 				{
-					name: this.$t('new.text.phone'),
-					value: 'phone',
+					name: this.$t("new.text.phone"),
+					value: "phone",
 				},
 				{
-					name: this.$t('new.text.number'),
-					value: 'number',
+					name: this.$t("new.text.number"),
+					value: "number",
 				},
 			],
 			// country,
@@ -632,7 +633,12 @@ export default {
 					return false
 				}
 				const validate = this.simple.validate
-				const validateStr = (validate.min || 1) + ":" + (validate.max || 2048) + (this.tempValidate ? ":" + this.tempValidate : "") + (this.tempPhoneCountry.length ? ":" + this.tempPhoneCountry.join(",") : "")
+				const validateStr =
+					(validate.min || 1) +
+					":" +
+					(validate.max || 2048) +
+					(this.tempValidate ? ":" + this.tempValidate : "") +
+					(this.tempPhoneCountry.length ? ":" + this.tempPhoneCountry.join(",") : "")
 				data = {
 					title: this.surveyTitle,
 					description: this.surveyDesc,
@@ -714,7 +720,12 @@ export default {
 				return false
 			}
 			const validate = this.simple.validate
-			const validateStr = (validate.min || 1) + ":" + (validate.max || 2048) + (this.tempValidate ? ":" + this.tempValidate : "") + (this.tempPhoneCountry.length ? ":" + this.tempPhoneCountry.join(",") : "")
+			const validateStr =
+				(validate.min || 1) +
+				":" +
+				(validate.max || 2048) +
+				(this.tempValidate ? ":" + this.tempValidate : "") +
+				(this.tempPhoneCountry.length ? ":" + this.tempPhoneCountry.join(",") : "")
 			this.advanced.questions.push({
 				id: this.advanced.questions.length,
 				type: info.type,
