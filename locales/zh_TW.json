@@ -25,8 +25,8 @@
 		"invalid_password": "密碼不匹配。",
 		"init": "看來這是您第一次來這裏，我們已經自動初始化了您的資料庫。",
 		"or_signin": "或登錄",
-		"invite_code": "Invite Code",
-		"invalid_invite_code": "Invalid invite code."
+		"invite_code": "邀請碼",
+		"invalid_invite_code": "邀請碼無效。"
 	},
 	"dashboard": {
 		"dashboard": "儀錶板",
@@ -197,18 +197,18 @@
 		},
 		"webhook": "Webhook",
 		"webhook_sub": "在此處輸入您的 webhook 網址，將「無」留空。",
-		"moveup: ": "Move Up",
-		"movedown: ": "Move Down",
+		"moveup: ": "上升",
+		"movedown: ": "下移",
 		"text": {
-			"email": "Email",
-			"phone": "Phone Number",
-			"url": "URL",
-			"number": "Number"
+			"email": "電子郵件",
+			"phone": "電話號碼",
+			"url": "網址",
+			"number": "數"
 		}
 	},
 	"editUser": {
 		"editUser": "編輯 {username}",
-		"pwd": "Password (Admin user please type your password)",
+		"pwd": "密碼（管理員使用者請輸入您的密碼）",
 		"password": "重置密碼",
 		"password_sub": "重置密碼 {username}.",
 		"enter_password": "請輸入新密碼 {username}.",
@@ -274,7 +274,7 @@
 		"1001": "參數無效。",
 		"1002": "使用者已存在。",
 		"1003": "不允許註冊",
-		"1004": "Invalid invite code.",
+		"1004": "邀請碼無效。",
 		"2001": "令牌無效。",
 		"2002": "資料庫錯誤。",
 		"2003": "調查ID已存在。",
