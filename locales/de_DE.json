@@ -25,8 +25,8 @@
 		"invalid_password": "Die Passwörter stimmen nicht überein.",
 		"init": "Es scheint, als wären Sie zum ersten Mal hier, wir haben Ihre Datenbank automatisch initialisiert.",
 		"or_signin": "Oder melden Sie sich an",
-		"invite_code": "Invite Code",
-		"invalid_invite_code": "Invalid invite code."
+		"invite_code": "Einladungscode",
+		"invalid_invite_code": "Ungültiger Einladungscode."
 	},
 	"dashboard": {
 		"dashboard": "Instrumententafel",
@@ -197,18 +197,18 @@
 		},
 		"webhook": "Webhook",
 		"webhook_sub": "Geben Sie hier Ihre Webhook-URL ein, lassen Sie das Feld für keine leer.",
-		"moveup: ": "Move Up",
-		"movedown: ": "Move Down",
+		"moveup: ": "Aufrücken",
+		"movedown: ": "Nach unten bewegen",
 		"text": {
-			"email": "Email",
-			"phone": "Phone Number",
-			"url": "URL",
-			"number": "Number"
+			"email": "E-Mail",
+			"phone": "Telefonnummer",
+			"url": "Internetadresse",
+			"number": "Zahl"
 		}
 	},
 	"editUser": {
 		"editUser": "Bearbeiten für {username}",
-		"pwd": "Password (Admin user please type your password)",
+		"pwd": "Passwort (Admin-Benutzer, bitte geben Sie Ihr Passwort ein)",
 		"password": "Passwort zurücksetzen",
 		"password_sub": "Setzen Sie den Passwod für {username}.",
 		"enter_password": "Bitte geben Sie das neue Passwort für {username}.",
@@ -274,7 +274,7 @@
 		"1001": "Ungültige Parameter.",
 		"1002": "Der Benutzer ist bereits vorhanden.",
 		"1003": "Eine Anmeldung ist nicht erlaubt",
-		"1004": "Invalid invite code.",
+		"1004": "Ungültiger Einladungscode.",
 		"2001": "Ungültiges Token.",
 		"2002": "Datenbankfehler.",
 		"2003": "Die Umfrage-ID ist bereits vorhanden.",
