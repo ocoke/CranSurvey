@@ -76,6 +76,7 @@
 		"results": "業績",
 		"success": "データが正常にフェッチされました。",
 		"no_results": "結果が見つかりません。",
+		"chart_unavailable": "Sorry, the chart is currently not available.",
 		"survey_preview": "調査は次の場所で作成されました。 {time}、1つの答えがあります。|調査は次の場所で作成されました。 {time}は {count} 答え。",
 		"from_user": "から '{usr}`",
 		"question": "質問",
