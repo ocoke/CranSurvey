@@ -29,7 +29,8 @@ import "~/src/styles/dash.css"
 	<div class="card-group results">
 		<v-card :title="$t('results.country')" variant="outlined" :loading="chartLoading">
 			<v-card-text style="max-height: 450px">
-				<Pie :data="chartData" style="margin: 0 auto" v-if="!chartLoading" />
+				<Pie :data="chartData" style="margin: 0 auto" v-if="!chartLoading && chartData" />
+				<p v-else>{{ $t("results.chart_unavailable") }}</p>
 			</v-card-text>
 		</v-card>
 		<v-card :title="$t('ai.askai')" variant="outlined" style="margin-right: 0">
@@ -204,6 +205,9 @@ import "~/src/styles/dash.css"
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js"
 import { Pie } from "vue-chartjs"
 import colors from "vuetify/util/colors"
+import country_data from "~/src/data/country.code.ts"
+import { useI18n } from "vue-i18n"
+
 // let materialColors = ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue', 'light-blue', 'cyan', 'teal', 'green', 'light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 'brown', 'grey', 'blue-grey']
 const hashMaterialColorsOrder = []
 
@@ -236,6 +240,7 @@ export default {
 	},
 	computed: {
 		chartData() {
+			console.log(this.countryData)
 			return this.countryData
 		},
 		//   chartOptions() { return /* mutable chart options */ }
@@ -283,6 +288,7 @@ export default {
 			search: "",
 			surveyQuestions: [],
 			dialogs: [],
+			lang: "en-US",
 			countryData: {
 				labels: [],
 				datasets: [
@@ -301,6 +307,7 @@ export default {
 	},
 	methods: {
 		loadItems({ page, itemsPerPage, sortBy }) {
+			if (!this.token) return
 			console.log(sortBy)
 			this.loading = true
 			$fetch("/api/survey/results", {
@@ -336,7 +343,7 @@ export default {
 							date: new Date(resp.answers[i].created_at).toLocaleString(),
 							answers: resp.answers[i].ans.length,
 							ans: resp.answers[i].ans,
-							country: resp.answers[i].geoip[1],
+							country: country_data[this.lang.replace("-", "_")][resp.answers[i].geoip[4]] || "Unknown",
 							city: resp.answers[i].geoip[0],
 						})
 						const thisAnswer = resp.answers[i]
@@ -344,14 +351,19 @@ export default {
 						thisAnswer.usr = thisAnswer.usr.slice(-6)
 						thisAnswer.geoip = thisAnswer.geoip[0] + "," + thisAnswer.geoip[2] + "," + thisAnswer.geoip[1]
 						this.rawResp.answers.push(thisAnswer)
-						if (!this.countryData.labels.includes(resp.answers[i].geoip[1])) {
-							this.countryData.labels.push(resp.answers[i].geoip[1])
-
+						// let countryName = resp.answers[i].geoip.split(",")[1]
+						const countryCode = resp.answers[i].geoip.split(",")[4]
+						// let countryName = country_data[this.useI18n().locale.value.replace("-", "_")].filter((i) => i.code == countryCode)[0].code
+						const countryName = country_data[this.lang.replace("-", "_")][countryCode] || "Unknown"
+						if (!this.countryData.labels.includes(countryName)) {
+							// there's no country in the list
+							this.countryData.labels.push(countryName)
+							// push random color
 							this.countryData.datasets[0].backgroundColor.push(hashMaterialColors[this.countryData.labels.length - 1])
 
-							this.countryData.datasets[0].data[this.countryData.labels.indexOf(resp.answers[i].geoip[1])] = 1
+							this.countryData.datasets[0].data[this.countryData.labels.indexOf(countryName)] = 1
 						} else {
-							this.countryData.datasets[0].data[this.countryData.labels.indexOf(resp.answers[i].geoip[1])]++
+							this.countryData.datasets[0].data[this.countryData.labels.indexOf(countryName)]++
 						}
 					}
 					this.tableItems = answers
@@ -469,6 +481,7 @@ export default {
 	mounted() {
 		this.token = sessionStorage.getItem("_cransurvey_token")
 		this.loadItems({ page: 1, itemsPerPage: 10 })
+		this.lang = useI18n().locale.value
 		this.headers = [
 			{
 				align: "start",

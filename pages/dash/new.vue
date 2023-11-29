@@ -1,7 +1,7 @@
 <script setup>
 const localePath = useLocalePath()
 const country = ref([])
-import country_data from '~/src/data/country.ts'
+import country_data from "~/src/data/country.ts"
 if (process.client) {
 	// country.value = (await import("~/src/data/country." + useI18n().locale.value.replace("-", "_") + ".json")).default
 	country.value = country_data[useI18n().locale.value.replace("-", "_")]
