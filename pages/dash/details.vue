@@ -346,13 +346,14 @@ export default {
 							country: country_data[this.lang.replace("-", "_")][resp.answers[i].geoip[4]] || "Unknown",
 							city: resp.answers[i].geoip[0],
 						})
+						const countryCode = resp.answers[i].geoip[4]
 						const thisAnswer = resp.answers[i]
 						delete thisAnswer.id
 						thisAnswer.usr = thisAnswer.usr.slice(-6)
 						thisAnswer.geoip = thisAnswer.geoip[0] + "," + thisAnswer.geoip[2] + "," + thisAnswer.geoip[1]
 						this.rawResp.answers.push(thisAnswer)
 						// let countryName = resp.answers[i].geoip.split(",")[1]
-						const countryCode = resp.answers[i].geoip.split(",")[4]
+						
 						// let countryName = country_data[this.useI18n().locale.value.replace("-", "_")].filter((i) => i.code == countryCode)[0].code
 						const countryName = country_data[this.lang.replace("-", "_")][countryCode] || "Unknown"
 						if (!this.countryData.labels.includes(countryName)) {
