@@ -76,6 +76,7 @@
 		"results": "结果",
 		"success": "已成功获取数据。",
 		"no_results": "未找到结果。",
+		"chart_unavailable": "Sorry, the chart is currently not available.",
 		"survey_preview": "该调查创建于 {time}，有 1 个答案。| 该调查创建于 {time}，有 {count} 个答案。",
 		"from_user": "从 `{usr}`",
 		"question": "问题",
