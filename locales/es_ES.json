@@ -76,6 +76,7 @@
 		"results": "Resultados",
 		"success": "Los datos se obtuvieron correctamente.",
 		"no_results": "No se encontraron resultados.",
+		"chart_unavailable": "Sorry, the chart is currently not available.",
 		"survey_preview": "La encuesta fue creada en {time}, tiene 1 respuesta. | La encuesta fue creada en {time}tiene {count} Respuestas.",
 		"from_user": "Desde '{usr}`",
 		"question": "Pregunta",
