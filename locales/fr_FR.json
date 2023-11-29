@@ -76,6 +76,7 @@
 		"results": "Résultats",
 		"success": "Les données ont été récupérées avec succès.",
 		"no_results": "Aucun résultat n’a été trouvé.",
+		"chart_unavailable": "Sorry, the chart is currently not available.",
 		"survey_preview": "L’enquête a été créée à l’adresse suivante : {time}, a 1 réponse. | L’enquête a été créée à l’adresse suivante : {time}a {count} Réponses.",
 		"from_user": "À partir de '{usr}`",
 		"question": "Question",
