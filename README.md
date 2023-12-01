@@ -13,7 +13,16 @@
 
 ## 🙌 Getting Started
 
-> The documents are on the way.
+> For documents, please check https://csur.proj.sbs/
+
+- [Getting Started](https://csur.proj.sbs/guide/start.html)
+- [Demo Site](https://csur.proj.sbs/demo.html)
+- [API References (TODO)](https://csur.proj.sbs/api.html)
+- [Configure the Database](https://csur.proj.sbs/database.html)
+- [More Documents](https://csur.proj.sbs/)
+
+> [!TIP]
+> Our documents have multiple languages, you can choose the language that you prefer. Some documents were translated by machine, if there is any issue about them, you can start an issue or contribute to it.
 
 ## ✨ Features
 
@@ -22,7 +31,7 @@
 - **Open Source**: CranSurvey is open-source, based on MIT license, allowing for extensive customization and modification.
 - **Custom Analytics**: With CranSurvey, you have the flexibility to design and implement custom analytics tailored to your specific website goals. This allows for a more focused and meaningful analysis of visitor behavior and preferences.
 - **Integration Flexibility**: CranSurvey offers more flexibility in integrating with other systems and services. Use Webhooks or other ways to connect.
-
+- **AI Powered**: With our powerful prompts, you can ask AI about the survey results to get some suggestions or help you analyze the data.
 
 
 <!--
@@ -38,7 +47,8 @@ Please check our wiki to learn more information about this.
 
 ## 👨‍💻 Development
 
-CranSurvey is still in development, to see the progress, please check the [ocoke/CranSurvey#27](https://github.com/ocoke/CranSurvey/issues/27).
+> [!NOTE]
+> CranSurvey is still in development, to see the progress, please check the [ocoke/CranSurvey#27](https://github.com/ocoke/CranSurvey/issues/27).
 
 
 ## ❤️ Thanks
