@@ -1,28 +1,58 @@
 <script setup>
+import "~/src/styles/dash.css"
+import { useToast } from "vue-toastification"
+import toastCfg from "~/src/functions/toastCfg"
+
+const toast = useToast()
+const { t } = useI18n()
 const localePath = useLocalePath()
-if (process.client) {
-	const token = sessionStorage.getItem("_cransurvey_token")
-	const username = sessionStorage.getItem("_cransurvey_usr")
-	if (!token || !username) {
-		navigateTo(localePath("/sign-in"))
-	} else if (!sessionStorage.getItem("_cransurvey_token_lock")) {
-		$fetch("/api/usr/token", {
-			method: "POST",
-			body: JSON.stringify({
-				token: token,
-			}),
-		}).then((rsp) => {
-			if (rsp.code == 0) {
-				sessionStorage.setItem("_cransurvey_token_lock", true)
-			} else {
-				sessionStorage.removeItem("_cransurvey_token")
-				sessionStorage.removeItem("_cransurvey_usr")
-				navigateTo(localePath("/sign-in"))
-			}
-		})
+
+const siteUsersLoading = ref(true)
+const siteUsersData = ref("")
+const siteUsers = ref([])
+const siteAdmins = ref([])
+const loading = ref(true)
+
+// func: signout
+const signout = () => {
+	if (process.client) {
+		sessionStorage.removeItem("_cransurvey_token")
+		sessionStorage.removeItem("_cransurvey_usr")
+		toast.success(t("users.signout_success"), toastCfg)
+		navigateTo(useLocalePath()("/sign-in"))
 	}
 }
-import "~/src/styles/dash.css"
+
+// onmounted: get users list
+onMounted(async() => {
+	const siteUsers = await $fetch("/api/dash/users", {
+		method: "POST",
+		body: JSON.stringify({
+			token: sessionStorage.getItem("_cransurvey_token"),
+		}),
+	})
+
+	let uid = 0
+	siteAdmins.value = siteUsers.admins
+
+	for (const i in siteUsers.list) {
+		uid++
+		siteUsers.value.push({
+			title: siteUsers.list[i],
+			uid: uid,
+		})
+	}
+
+	if (siteUsers.code == 0) {
+		siteUsersData.value = t("dashboard.site_users", siteUsers.count)
+	} else {
+		siteUsersData.value = t("dashboard.error_fetching_data")
+	}
+
+	siteUsersLoading.value = false
+
+	loading.value = false
+})
 </script>
 
 <template>
@@ -70,82 +100,6 @@ import "~/src/styles/dash.css"
 		<v-btn variant="outlined" @click="signout">{{ $t("users.signout") }}</v-btn>
 	</div>
 </template>
-
-<script>
-import { useToast } from "vue-toastification"
-
-const toast = useToast()
-const toastCfg = {
-	position: "top-right",
-	timeout: 5000,
-	closeOnClick: true,
-	pauseOnFocusLoss: true,
-	pauseOnHover: true,
-	draggable: false,
-	draggablePercent: 0.6,
-	showCloseButtonOnHover: true,
-	hideProgressBar: true,
-	closeButton: "button",
-	icon: true,
-	rtl: false,
-}
-export default {
-	data() {
-		return {
-			drawer: true,
-			rail: true,
-			siteUsersLoading: true,
-			siteUsersData: "",
-			siteUsers: [],
-			siteAdmins: [],
-			loading: true,
-		}
-	},
-	methods: {
-		signout() {
-			if (process.client) {
-				sessionStorage.removeItem("_cransurvey_token")
-				sessionStorage.removeItem("_cransurvey_usr")
-				toast.success(this.$t("users.signout_success"), toastCfg)
-				navigateTo(useLocalePath()("/sign-in"))
-			}
-		},
-	},
-	async mounted() {
-		const siteUsers = await $fetch("/api/dash/users", {
-			method: "POST",
-			body: JSON.stringify({
-				token: sessionStorage.getItem("_cransurvey_token"),
-			}),
-		})
-
-		let uid = 0
-		this.siteAdmins = siteUsers.admins
-
-		for (const i in siteUsers.list) {
-			uid++
-			this.siteUsers.push({
-				title: siteUsers.list[i],
-				uid: uid,
-			})
-			// this.siteUsers.push({
-			// 	type: "divider",
-			// })
-		}
-
-		if (siteUsers.code == 0) {
-			this.siteUsersData = this.$t("dashboard.site_users", siteUsers.count)
-		} else {
-			this.siteUsersData = this.$t("dashboard.error_fetching_data")
-		}
-
-		this.siteUsersLoading = false
-
-		this.username = sessionStorage.getItem("_cransurvey_usr")
-		this.loading = false
-	},
-}
-</script>
 <style>
 .mainGroup {
 	margin-top: 20px;
