@@ -1,15 +1,12 @@
 <script setup>
-import { useDisplay } from "vuetify"
+import { useDisplay, useTheme } from "vuetify"
 
 const localePath = useLocalePath()
 const { locales } = useI18n()
-// const switchLocalePath = useSwitchLocalePath()
 
 const availableLocales = computed(() => {
-	// return (locales.value).filter(i => i.code !== locale.value)
 	return locales.value
 })
-import { useTheme } from "vuetify"
 
 const theme = useTheme()
 
@@ -23,6 +20,14 @@ const drawer = ref(true)
 
 if (mobile.value) {
 	drawer.value = false
+}
+
+const lang = ref(useI18n().locale.value)
+
+const rail = ref(true)
+
+const switchLang = () => {
+	navigateTo(useSwitchLocalePath()(lang.value))
 }
 </script>
 
@@ -101,18 +106,3 @@ if (mobile.value) {
 		</v-list>
 	</v-navigation-drawer>
 </template>
-<script>
-export default {
-	data() {
-		return {
-			rail: true,
-			lang: useI18n().locale.value,
-		}
-	},
-	methods: {
-		switchLang() {
-			navigateTo(useSwitchLocalePath()(this.lang))
-		},
-	},
-}
-</script>
