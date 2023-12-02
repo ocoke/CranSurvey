@@ -25,6 +25,8 @@ export default async function initDatabase() {
 			},
 		})
 
+		await storage.setItem("link", {})
+
 		await storage.setItem("init", true)
 
 		return true

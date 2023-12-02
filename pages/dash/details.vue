@@ -353,7 +353,7 @@ export default {
 						thisAnswer.geoip = thisAnswer.geoip[0] + "," + thisAnswer.geoip[2] + "," + thisAnswer.geoip[1]
 						this.rawResp.answers.push(thisAnswer)
 						// let countryName = resp.answers[i].geoip.split(",")[1]
-						
+
 						// let countryName = country_data[this.useI18n().locale.value.replace("-", "_")].filter((i) => i.code == countryCode)[0].code
 						const countryName = country_data[this.lang.replace("-", "_")][countryCode] || "Unknown"
 						if (!this.countryData.labels.includes(countryName)) {
