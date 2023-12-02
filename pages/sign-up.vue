@@ -1,5 +1,78 @@
 <script setup>
 import "~/src/styles/sign-in.css"
+import md5 from "md5"
+import { useToast } from "vue-toastification"
+import toastCfg from "~/src/functions/toastCfg"
+const { t, localePath } = useI18n()
+const toast = useToast()
+
+// page variables
+const username = ref("")
+const password = ref("")
+const password_re = ref("")
+const inviteCodeTab = ref(false)
+const inviteCode = ref(null)
+const loading = ref(false)
+
+// sign up function
+const sign = async () => {
+	// set loading
+	loading.value = true
+	inviteCodeTab.value = false
+	// check params
+	if (!username.value || !password.value) {
+		toast.error(t("signup.invalid_params"), toastCfg)
+		loading.value = false
+		return false
+	}
+	if (password_re.value != password.value) {
+		toast.error(t("signup.invalid_password"), toastCfg)
+		loading.value = false
+		return false
+	}
+	const hashPwd = md5(password.value)
+
+	// send request
+	const rsp = await $fetch("/api/usr/sign-up", {
+		method: "POST",
+		body: JSON.stringify({
+			id: username.value,
+			pwd: hashPwd,
+			icode: inviteCode.value,
+		}),
+	})
+
+	if (rsp && rsp.code == 0) {
+		// sign up successfully
+		toast.success(t("signup.success"), toastCfg)
+		loading.value = false
+		sessionStorage.setItem("_cransurvey_token", rsp.token)
+		sessionStorage.setItem("_cransurvey_usr", username.value)
+		if (rsp.init) {
+			toast.info(t("signup.init"), toastCfg)
+			setTimeout(() => {
+				navigateTo(localePath("/dash"))
+			}, 2500)
+		} else {
+			setTimeout(() => {
+				navigateTo(localePath("/dash"))
+			}, 2000)
+		}
+	} else if (rsp.code == 1004) {
+		// 1004: invalid invite code
+		if (inviteCodeTab.value) {
+			toast.error(t("signup.invalid_invite_code"), toastCfg)
+			loading.value = false
+			return false
+		}
+		inviteCodeTab.value = true
+		loading.value = false
+	} else {
+		toast.error(t("signup.error") + " (" + t("error_codes." + rsp.code) + ")", toastCfg)
+		console.warn(rsp)
+		loading.value = false
+	}
+}
 </script>
 
 <template>
@@ -44,91 +117,3 @@ import "~/src/styles/sign-in.css"
 	</v-dialog>
 </template>
 
-<script>
-import md5 from "md5"
-import { useToast } from "vue-toastification"
-
-const toast = useToast()
-const toastCfg = {
-	position: "top-right",
-	timeout: 5000,
-	closeOnClick: true,
-	pauseOnFocusLoss: true,
-	pauseOnHover: true,
-	draggable: false,
-	draggablePercent: 0.6,
-	showCloseButtonOnHover: true,
-	hideProgressBar: true,
-	closeButton: "button",
-	icon: true,
-	rtl: false,
-}
-export default {
-	name: "MyComponent",
-	data() {
-		return {
-			username: "",
-			password: "",
-			password_re: "",
-			inviteCodeTab: false,
-			inviteCode: null,
-			loading: false,
-		}
-	},
-	methods: {
-		async sign(inviteCode) {
-			this.loading = true
-			this.inviteCodeTab = false
-			if (!this.username || !this.password) {
-				toast.error(this.$t("signup.invalid_params"), toastCfg)
-				this.loading = false
-				return false
-			}
-			if (this.password_re != this.password) {
-				toast.error(this.$t("signup.invalid_password"), toastCfg)
-				this.loading = false
-				return false
-			}
-			const hashPwd = md5(this.password)
-			const rsp = await $fetch("/api/usr/sign-up", {
-				method: "POST",
-				body: JSON.stringify({
-					id: this.username,
-					pwd: hashPwd,
-					icode: inviteCode ? this.inviteCode : null,
-				}),
-			})
-
-			if (rsp && rsp.code == 0) {
-				toast.success(this.$t("signup.success"), toastCfg)
-				this.loading = false
-				console.debug(rsp)
-				sessionStorage.setItem("_cransurvey_token", rsp.token)
-				sessionStorage.setItem("_cransurvey_usr", this.username)
-				if (rsp.init) {
-					toast.info(this.$t("signup.init"), toastCfg)
-					setTimeout(() => {
-						navigateTo(this.localePath("/dash"))
-					}, 2500)
-				} else {
-					setTimeout(() => {
-						navigateTo(this.localePath("/dash"))
-					}, 2000)
-				}
-			} else if (rsp.code == 1004) {
-				if (inviteCode == 1) {
-					toast.error(this.$t("signup.invalid_invite_code"), toastCfg)
-					this.loading = false
-					return false
-				}
-				this.inviteCodeTab = true
-				this.loading = false
-			} else {
-				toast.error(this.$t("signup.error") + " (" + this.$t("error_codes." + rsp.code) + ")", toastCfg)
-				console.warn(rsp)
-				this.loading = false
-			}
-		},
-	},
-}
-</script>
