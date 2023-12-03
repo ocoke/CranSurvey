@@ -1,34 +1,374 @@
 <script setup>
+import "~/src/styles/dash.css"
+import country_data from "~/src/data/country.ts"
+import { useToast } from "vue-toastification"
+import toastCfg from "~/src/functions/toastCfg"
+
 const localePath = useLocalePath()
 const country = ref([])
-import country_data from "~/src/data/country.ts"
-if (process.client) {
-	// country.value = (await import("~/src/data/country." + useI18n().locale.value.replace("-", "_") + ".json")).default
-	country.value = country_data[useI18n().locale.value.replace("-", "_")]
-}
-if (process.client) {
-	const token = sessionStorage.getItem("_cransurvey_token")
-	const username = sessionStorage.getItem("_cransurvey_usr")
-	if (!token || !username) {
-		navigateTo(localePath("/sign-in"))
-	} else if (!sessionStorage.getItem("_cransurvey_token_lock")) {
-		$fetch("/api/usr/token", {
-			method: "POST",
-			body: JSON.stringify({
-				token: token,
-			}),
-		}).then((rsp) => {
-			if (rsp.code == 0) {
-				sessionStorage.setItem("_cransurvey_token_lock", true)
-			} else {
-				sessionStorage.removeItem("_cransurvey_token")
-				sessionStorage.removeItem("_cransurvey_usr")
-				navigateTo(localePath("/sign-in"))
-			}
-		})
+const toast = useToast()
+const { t } = useI18n()
+
+const surveyType = ref("")
+const promptWindowPosition = ref("bottom_right")
+const priority = ref(0)
+const editUpdate = ref(false)	
+const surveyTitle = ref("")
+const surveyDesc = ref("")
+const optionText = ref("")
+const deleteOptionText = ref(null)
+const availableTypes = ref([
+	{
+		name: t("new.types.short_answer"),
+		value: "short_answer",
+	},
+	{
+		name: t("new.types.paragraph"),
+		value: "paragraph",
+	},
+	{
+		name: t("new.types.multiple"),
+		value: "multiple",
+	},
+	{
+		name: t("new.types.checkboxes"),
+		value: "checkboxes",
+	},
+	{
+		name: t("new.types.dropdown"),
+		value: "dropdown",
+	},
+	// {
+	// 	name: t("new.types.linear"),
+	// 	value: "linear",
+	// },
+	{
+		name: t("new.types.file"),
+		value: "file",
+	},
+	{
+		name: t("new.types.date"),
+		value: "date",
+	},
+	// {
+	// 	name: t("new.types.time"),
+	// 	value: "time",
+	// },
+])
+const fileTypes = ref([
+	{
+		name: t("new.files.images"),
+		value: "images",
+	},
+	{
+		name: t("new.files.docs"),
+		value: "docs",
+	},
+	{
+		name: t("new.files.videos"),
+		value: "videos",
+	},
+	{
+		name: t("new.files.audios"),
+		value: "audios",
+	},
+	{
+		name: t("new.files.sheets"),
+		value: "sheets",
+	},
+	{
+		name: t("new.files.slides"),
+		value: "slides",
+	},
+	{
+		name: t("new.files.archives"),
+		value: "archives",
+	},
+])
+const textTypes = ref([
+	{
+		name: t("new.text.email"),
+		value: "email",
+	},
+	{
+		name: t("new.text.url"),
+		value: "url",
+	},
+	{
+		name: t("new.text.phone"),
+		value: "phone",
+	},
+	{
+		name: t("new.text.number"),
+		value: "number",
+	},
+])
+const promptContentRules = ref([(v) => v.length <= 2048 || "Max 2048 Characters"])
+const simple = ref({
+	type: "short_answer",
+	validate: {
+		min: 1,
+		max: 2048,
+	},
+	required: true,
+	options: {
+		optionsData: [],
+	},
+})
+const advanced = ref({
+	questions: [],
+})
+const prompt = ref({
+	title: "",
+	content: "",
+})
+const tempValidate = ref(null)
+const tempPhoneCountry = ref([])
+
+
+const create = async () => {
+	let data
+	if (surveyType.value == "simple") {
+		const info = simple.value
+		if (!info.question || !info.type || !surveyTitle.value || !surveyDesc.value) {
+			toast.error(t("new.miss_required"), toastCfg)
+			return false
+		}
+		const validate = simple.value.validate
+		const validateStr =
+			(validate.min || 1) +
+			":" +
+			(validate.max || 2048) +
+			(tempValidate.value ? ":" + tempValidate.value : "") +
+			(tempPhoneCountry.value.length ? ":" + tempPhoneCountry.value.join(",") : "")
+		data = {
+			title: surveyTitle.value,
+			description: surveyDesc.value,
+			token: sessionStorage.getItem("_cransurvey_token"),
+			type: "simple",
+			questions: [
+				{
+					id: 0,
+					type: info.type,
+					validate: validateStr,
+					question: info.question,
+					placeholder: info.placeholder,
+					prompt: info.prompt,
+					required: info.required,
+					options: info.options,
+				},
+			],
+			site: {
+				domain: info.domain,
+				priority: priority.value,
+				promptWindowPosition: promptWindowPosition.value,
+			},
+		}
+	} else if (surveyType.value == "prompt") {
+		data = {
+			title: surveyTitle.value,
+			description: surveyDesc.value,
+			token: sessionStorage.getItem("_cransurvey_token"),
+			type: "prompt",
+			questions: [
+				{
+					id: 0,
+					type: "info",
+					validate: "disabled",
+					question: prompt.value.title,
+					prompt: prompt.value.content,
+					required: false,
+				},
+			],
+			site: {
+				domain: simple.value.domain,
+				priority: priority.value,
+				promptWindowPosition: promptWindowPosition.value,
+			},
+		}
+	} else if (surveyType.value == "advanced") {
+		data = {
+			title: surveyTitle.value,
+			description: surveyDesc.value,
+			token: sessionStorage.getItem("_cransurvey_token"),
+			type: "advanced",
+			questions: advanced.value.questions,
+			site: {
+				domain: simple.value.domain,
+				priority: priority.value,
+				promptWindowPosition: promptWindowPosition.value,
+			},
+		}
+	}
+	if (editUpdate.value) {
+		data.id = (useRoute().params.id)
+	}
+	const rsp = await $fetch("/api/survey/create", {
+		method: "POST",
+		body: JSON.stringify(data),
+	})
+
+	if (rsp.code == 0) {
+		toast.success(t("new.success"), toastCfg)
+		navigateTo(useLocalePath()("/dash/surveys"))
+	} else {
+		toast.error(t("new.error") + " (" + t("error_codes." + rsp.code) + ")", toastCfg)
 	}
 }
-import "~/src/styles/dash.css"
+
+const addQuestion = () => {
+	if (!simple.value.question || !simple.value.type) {
+		toast.error(t("new.miss_required"), toastCfg)
+		return false
+	}
+	const validate = simple.value.validate
+	const validateStr =
+		(validate.min || 1) +
+		":" +
+		(validate.max || 2048) +
+		(tempValidate.value ? ":" + tempValidate.value : "") +
+		(tempPhoneCountry.value.length ? ":" + tempPhoneCountry.value.join(",") : "")
+	advanced.value.questions.push({
+		id: advanced.value.questions.length,
+		type: simple.value.type,
+		validate: validateStr,
+		question: simple.value.question,
+		placeholder: simple.value.placeholder,
+		prompt: simple.value.prompt,
+		required: simple.value.required,
+		options: simple.value.options,
+	})
+	if (simple.value.options.optionsData.length != 0) {
+		simple.value.options.optionsData = []
+	}
+	simple.value = {
+		type: "short_answer",
+		validate: {
+			min: 1,
+			max: 2048,
+		},
+		required: true,
+		options: {
+			optionsData: [],
+		},
+	}
+	tempValidate.value = null
+	tempPhoneCountry.value = []
+}
+
+const deleteQuestion = (id) => {
+	advanced.value.questions.splice(id, 1)
+	for (const i in advanced.value.questions) {
+		advanced.value.questions[i].id = i
+	}
+}
+
+const moveQuestion = (id, mode) => {
+	// mode == 1, up
+	// mode == 2, down
+	if (mode == 1) {
+		if (id == 0) {
+			return false
+		}
+		const tmp = advanced.value.questions[id - 1]
+		advanced.value.questions[id - 1] = advanced.value.questions[id]
+		advanced.value.questions[id] = tmp
+		advanced.value.questions[id - 1].id = id - 1
+		advanced.value.questions[id].id = id
+	} else {
+		if (id == advanced.value.questions.length - 1) {
+			return false
+		}
+		const tmp = advanced.value.questions[id + 1]
+		advanced.value.questions[id + 1] = advanced.value.questions[id]
+		advanced.value.questions[id] = tmp
+		advanced.value.questions[id + 1].id = id + 1
+		advanced.value.questions[id].id = id
+	}
+}
+
+const addOptions = () => {
+	if (!optionText.value) {
+		return false
+	}
+	if (simple.value.options.optionsData.includes(optionText.value)) {
+		toast.error(t("new.option_exists"), toastCfg)
+		return false
+	}
+	simple.value.options.optionsData.push(optionText.value)
+	optionText.value = ""
+}
+
+const deleteOption = () => {
+	if (!simple.value.options.optionsData) {
+		simple.value.options.optionsData = []
+	}
+	if (simple.value.type == "multiple") {
+		deleteOptionText.value = simple.value.options.optionsData[deleteOptionText.value]
+	}
+	if (!deleteOptionText.value) {
+		return false
+	}
+
+	simple.value.options.optionsData = simple.value.options.optionsData.filter((item) => {
+		return item != deleteOptionText.value
+	})
+	deleteOptionText.value = null
+}
+
+const setDefaultOption = () => {
+	if (deleteOptionText.value == null) {
+		return false
+	}
+	simple.value.placeholder = simple.value.options.optionsData[deleteOptionText.value]
+	simple.value.options.default = deleteOptionText.value
+}
+
+onMounted(async () => {
+	username.value = sessionStorage.getItem("_cransurvey_usr")
+	if (useRoute().query.id) {
+		const editId = useRoute().query.id
+		const rsp = await $fetch("/api/survey/get", {
+			method: "POST",
+			body: JSON.stringify({
+				token: sessionStorage.getItem("_cransurvey_token"),
+				uniqueId: editId,
+			}),
+		})
+		if (rsp.code == 0) {
+			editUpdate.value = true
+			surveyTitle.value = rsp.survey.title
+			surveyDesc.value = rsp.survey.description
+			surveyType.value = rsp.survey.type
+			priority.value = rsp.survey.site.priority
+			promptWindowPosition.value = rsp.survey.site.promptWindowPosition
+			simple.value.domain = rsp.survey.site.domain
+			if (rsp.survey.type == "simple") {
+				simple.value = rsp.survey.questions[0]
+				if (rsp.survey.questions[0].validate) {
+					const validate = rsp.survey.questions[0].validate.split(":")
+					simple.value.validate.min = validate[0]
+					simple.value.validate.max = validate[1]
+				}
+			} else if (rsp.survey.type == "prompt") {
+				prompt.value = rsp.survey.questions[0]
+			} else if (rsp.survey.type == "advanced") {
+				advanced.value.questions = rsp.survey.questions
+			}
+		} else {
+			toast.error(
+				t("dashboard.error_fetching_data") + " (" + t("error_codes." + rsp.code) + ")",
+				toastCfg,
+			)
+		}
+	}
+})
+
+if (process.client) {
+	country.value = country_data[useI18n().locale.value.replace("-", "_")]
+}
+
+
 </script>
 
 <template>
@@ -475,392 +815,6 @@ import "~/src/styles/dash.css"
 	</div>
 </template>
 
-<script>
-import { useToast } from "vue-toastification"
-const toast = useToast()
-const toastCfg = {
-	position: "top-right",
-	timeout: 5000,
-	closeOnClick: true,
-	pauseOnFocusLoss: true,
-	pauseOnHover: true,
-	draggable: false,
-	draggablePercent: 0.6,
-	showCloseButtonOnHover: true,
-	hideProgressBar: true,
-	closeButton: "button",
-	icon: true,
-	rtl: false,
-}
-export default {
-	data() {
-		return {
-			drawer: true,
-			rail: true,
-			surveyType: "",
-			promptWindowPosition: "bottom_right",
-			priority: 0,
-			editUpdate: false,
-			simple: {
-				type: "short_answer",
-				validate: {
-					min: 1,
-					max: 2048,
-				},
-				required: true,
-				options: {
-					optionsData: [],
-				},
-			},
-			advanced: {
-				questions: [],
-			},
-			prompt: {
-				title: "",
-				content: "",
-			},
-			tempValidate: null,
-			tempPhoneCountry: [],
-			promptContentRules: [(v) => v.length <= 2048 || "Max 2048 characters"],
-			surveyTitle: "",
-			surveyDesc: "",
-			optionText: "",
-			deleteOptionText: null,
-			availableTypes: [
-				{
-					name: this.$t("new.types.short_answer"),
-					value: "short_answer",
-				},
-				{
-					name: this.$t("new.types.paragraph"),
-					value: "paragraph",
-				},
-				{
-					name: this.$t("new.types.multiple"),
-					value: "multiple",
-				},
-				{
-					name: this.$t("new.types.checkboxes"),
-					value: "checkboxes",
-				},
-				{
-					name: this.$t("new.types.dropdown"),
-					value: "dropdown",
-				},
-				// {
-				// 	name: this.$t("new.types.linear"),
-				// 	value: "linear",
-				// },
-				{
-					name: this.$t("new.types.file"),
-					value: "file",
-				},
-				{
-					name: this.$t("new.types.date"),
-					value: "date",
-				},
-				// {
-				// 	name: this.$t("new.types.time"),
-				// 	value: "time",
-				// },
-			],
-			fileTypes: [
-				{
-					name: this.$t("new.files.images"),
-					value: "images",
-				},
-				{
-					name: this.$t("new.files.docs"),
-					value: "docs",
-				},
-				{
-					name: this.$t("new.files.videos"),
-					value: "videos",
-				},
-				{
-					name: this.$t("new.files.audios"),
-					value: "audios",
-				},
-				{
-					name: this.$t("new.files.sheets"),
-					value: "sheets",
-				},
-				{
-					name: this.$t("new.files.slides"),
-					value: "slides",
-				},
-				{
-					name: this.$t("new.files.archives"),
-					value: "archives",
-				},
-			],
-			textTypes: [
-				{
-					name: this.$t("new.text.email"),
-					value: "email",
-				},
-				{
-					name: this.$t("new.text.url"),
-					value: "url",
-				},
-				{
-					name: this.$t("new.text.phone"),
-					value: "phone",
-				},
-				{
-					name: this.$t("new.text.number"),
-					value: "number",
-				},
-			],
-			// country,
-		}
-	},
-	methods: {
-		signout() {
-			if (process.client) {
-				sessionStorage.removeItem("_cransurvey_token")
-				sessionStorage.removeItem("_cransurvey_usr")
-				toast.success(this.$t("users.signout_success"), toastCfg)
-				navigateTo(useLocalePath()("/sign-in"))
-			}
-		},
-		async create() {
-			let data
-			if (this.surveyType == "simple") {
-				const info = this.simple
-				if (!info.question || !info.type || !this.surveyTitle || !this.surveyDesc) {
-					toast.error(this.$t("new.miss_required"), toastCfg)
-					return false
-				}
-				const validate = this.simple.validate
-				const validateStr =
-					(validate.min || 1) +
-					":" +
-					(validate.max || 2048) +
-					(this.tempValidate ? ":" + this.tempValidate : "") +
-					(this.tempPhoneCountry.length ? ":" + this.tempPhoneCountry.join(",") : "")
-				data = {
-					title: this.surveyTitle,
-					description: this.surveyDesc,
-					token: sessionStorage.getItem("_cransurvey_token"),
-					type: "simple",
-					questions: [
-						{
-							id: 0,
-							type: info.type,
-							validate: validateStr,
-							question: info.question,
-							placeholder: info.placeholder,
-							prompt: info.prompt,
-							required: info.required,
-							options: info.options,
-						},
-					],
-					site: {
-						domain: info.domain,
-						priority: this.priority,
-						promptWindowPosition: this.promptWindowPosition,
-					},
-				}
-			} else if (this.surveyType == "prompt") {
-				data = {
-					title: this.surveyTitle,
-					description: this.surveyDesc,
-					token: sessionStorage.getItem("_cransurvey_token"),
-					type: "prompt",
-					questions: [
-						{
-							id: 0,
-							type: "info",
-							validate: "disabled",
-							question: this.prompt.title,
-							prompt: this.prompt.content,
-							required: false,
-						},
-					],
-					site: {
-						domain: this.simple.domain,
-						priority: this.priority,
-						promptWindowPosition: this.promptWindowPosition,
-					},
-				}
-			} else if (this.surveyType == "advanced") {
-				data = {
-					title: this.surveyTitle,
-					description: this.surveyDesc,
-					token: sessionStorage.getItem("_cransurvey_token"),
-					type: "advanced",
-					questions: this.advanced.questions,
-					site: {
-						domain: this.simple.domain,
-						priority: this.priority,
-						promptWindowPosition: this.promptWindowPosition,
-					},
-				}
-			}
-			if (this.editUpdate) {
-				data.id = useRoute().query.id
-			}
-			const rsp = await $fetch("/api/survey/create", {
-				method: "POST",
-				body: JSON.stringify(data),
-			})
-
-			if (rsp.code == 0) {
-				toast.success(this.$t("new.success"), toastCfg)
-				navigateTo(useLocalePath()("/dash/surveys"))
-			} else {
-				toast.error(this.$t("new.error") + " (" + this.$t("error_codes." + rsp.code) + ")", toastCfg)
-			}
-		},
-		addQuestion() {
-			const info = this.simple
-			if (!info.question || !info.type) {
-				toast.error(this.$t("new.miss_required"), toastCfg)
-				return false
-			}
-			const validate = this.simple.validate
-			const validateStr =
-				(validate.min || 1) +
-				":" +
-				(validate.max || 2048) +
-				(this.tempValidate ? ":" + this.tempValidate : "") +
-				(this.tempPhoneCountry.length ? ":" + this.tempPhoneCountry.join(",") : "")
-			this.advanced.questions.push({
-				id: this.advanced.questions.length,
-				type: info.type,
-				validate: validateStr,
-				question: info.question,
-				placeholder: info.placeholder,
-				prompt: info.prompt,
-				required: info.required,
-				options: {
-					optionsData: this.simple.options.optionsData,
-					...this.simple.options,
-				},
-			})
-			if (this.simple.options.optionsData.length != 0) {
-				this.simple.options.optionsData = []
-			}
-			this.simple = {
-				type: "short_answer",
-				validate: {
-					min: 1,
-					max: 2048,
-				},
-				required: true,
-				options: {
-					optionsData: [],
-				},
-			}
-			this.tempValidate = null
-			this.tempPhoneCountry = []
-		},
-		deleteQuestion(id) {
-			this.advanced.questions.splice(id, 1)
-			for (const i in this.advanced.questions) {
-				this.advanced.questions[i].id = i
-			}
-		},
-		moveQuestion(id, mode) {
-			// mode == 1, up
-			// mode == 2, down
-			if (mode == 1) {
-				if (id == 0) {
-					return false
-				}
-				const tmp = this.advanced.questions[id - 1]
-				this.advanced.questions[id - 1] = this.advanced.questions[id]
-				this.advanced.questions[id] = tmp
-				this.advanced.questions[id - 1].id = id - 1
-				this.advanced.questions[id].id = id
-			} else {
-				if (id == this.advanced.questions.length - 1) {
-					return false
-				}
-				const tmp = this.advanced.questions[id + 1]
-				this.advanced.questions[id + 1] = this.advanced.questions[id]
-				this.advanced.questions[id] = tmp
-				this.advanced.questions[id + 1].id = id + 1
-				this.advanced.questions[id].id = id
-			}
-		},
-		addOptions() {
-			if (!this.optionText) {
-				return false
-			}
-			if (this.simple.options.optionsData.includes(this.optionText)) {
-				toast.error(this.$t("new.option_exists"), toastCfg)
-				return false
-			}
-			this.simple.options.optionsData.push(this.optionText)
-			this.optionText = ""
-		},
-		deleteOption() {
-			if (!this.simple.options.optionsData) {
-				this.simple.options.optionsData = []
-			}
-			if (this.simple.type == "multiple") {
-				this.deleteOptionText = this.simple.options.optionsData[this.deleteOptionText]
-			}
-			if (!this.deleteOptionText) {
-				return false
-			}
-
-			this.simple.options.optionsData = this.simple.options.optionsData.filter((item) => {
-				return item != this.deleteOptionText
-			})
-			this.deleteOptionText = null
-		},
-		setDefaultOption() {
-			if (this.deleteOptionText == null) {
-				return false
-			}
-			this.simple.placeholder = this.simple.options.optionsData[this.deleteOptionText]
-			this.simple.options.default = this.deleteOptionText
-		},
-	},
-	async mounted() {
-		this.username = sessionStorage.getItem("_cransurvey_usr")
-		if (useRoute().query.id) {
-			const editId = useRoute().query.id
-			const rsp = await $fetch("/api/survey/get", {
-				method: "POST",
-				body: JSON.stringify({
-					token: sessionStorage.getItem("_cransurvey_token"),
-					uniqueId: editId,
-				}),
-			})
-			if (rsp.code == 0) {
-				this.editUpdate = true
-				this.surveyTitle = rsp.survey.title
-				this.surveyDesc = rsp.survey.description
-				this.surveyType = rsp.survey.type
-				this.priority = rsp.survey.site.priority
-				this.promptWindowPosition = rsp.survey.site.promptWindowPosition
-				this.simple.domain = rsp.survey.site.domain
-				if (rsp.survey.type == "simple") {
-					this.simple = rsp.survey.questions[0]
-					if (rsp.survey.questions[0].validate) {
-						const validate = rsp.survey.questions[0].validate.split(":")
-						this.simple.validate.min = validate[0]
-						this.simple.validate.max = validate[1]
-					}
-				} else if (rsp.survey.type == "prompt") {
-					this.prompt = rsp.survey.questions[0]
-				} else if (rsp.survey.type == "advanced") {
-					this.advanced.questions = rsp.survey.questions
-				}
-			} else {
-				toast.error(
-					this.$t("dashboard.error_fetching_data") + " (" + this.$t("error_codes." + rsp.code) + ")",
-					toastCfg,
-				)
-			}
-		}
-	},
-}
-</script>
 <style>
 .mainGroup {
 	margin-top: 20px;
