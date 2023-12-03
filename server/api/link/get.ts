@@ -44,7 +44,7 @@ export default eventHandler(async (event) => {
 					region: geoip.country_code,
 					title: links[id]["title"],
 					description: links[id]["description"],
-                    default_lang: links[id]["default_lang"],
+					default_lang: links[id]["default_lang"],
 				},
 			}
 		} else {
@@ -56,7 +56,7 @@ export default eventHandler(async (event) => {
 					region: geoip.country_code,
 					title: links[id]["title"],
 					description: links[id]["description"],
-                    default_lang: links[id]["default_lang"],
+					default_lang: links[id]["default_lang"],
 				},
 			}
 		}
@@ -70,7 +70,7 @@ export default eventHandler(async (event) => {
 				ids: links[id]["items"],
 				title: links[id]["title"],
 				description: links[id]["description"],
-                default_lang: links[id]["default_lang"],
+				default_lang: links[id]["default_lang"],
 			},
 		}
 	}

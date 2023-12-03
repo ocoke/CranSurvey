@@ -5,8 +5,8 @@
 				<v-card-title style="font-size: 1.5rem">{{ pageInfo.title }}</v-card-title>
 				<v-card-text style="opacity: 0.7; padding-bottom: 0.5rem">{{ pageInfo.description }}</v-card-text>
 				<v-card-text class="subtitle-text">
-                    <v-divider></v-divider>
-                </v-card-text>
+					<v-divider></v-divider>
+				</v-card-text>
 			</v-card>
 		</div>
 	</div>
@@ -19,7 +19,8 @@ const lang = useI18n().locale.value.replace("-", "_")
 const pageInfo = ref({})
 if (linkData.value.title && linkData.value.title[lang]) pageInfo.value.title = linkData.value.title[lang]
 else pageInfo.value.title = linkData.value.title[linkData.value.default_lang]
-if (linkData.value.description && linkData.value.description[lang]) pageInfo.value.description = linkData.value.description[lang]
+if (linkData.value.description && linkData.value.description[lang])
+	pageInfo.value.description = linkData.value.description[lang]
 else pageInfo.value.description = linkData.value.description[linkData.value.default_lang]
 </script>
 <style>

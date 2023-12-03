@@ -24,7 +24,7 @@ const signout = () => {
 }
 
 // onmounted: get users list
-onMounted(async() => {
+onMounted(async () => {
 	const siteUsers = await $fetch("/api/dash/users", {
 		method: "POST",
 		body: JSON.stringify({

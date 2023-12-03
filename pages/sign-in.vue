@@ -46,8 +46,12 @@ const sign = async () => {
 			<v-btn variant="tonal" class="font-weight-bold" @click="sign">
 				{{ $t("signin.continue") }}
 			</v-btn>
-			<v-btn variant="outlined" class="font-weight-bold" @click="navigateTo(useLocalePath()('/sign-up'))"
-				style="margin-left: 0.6rem">
+			<v-btn
+				variant="outlined"
+				class="font-weight-bold"
+				@click="navigateTo(useLocalePath()('/sign-up'))"
+				style="margin-left: 0.6rem"
+			>
 				{{ $t("signin.or_signup") }}
 			</v-btn>
 		</p>

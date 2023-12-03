@@ -116,4 +116,3 @@ const sign = async () => {
 		</v-card>
 	</v-dialog>
 </template>
-

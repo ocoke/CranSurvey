@@ -19,8 +19,7 @@ onMounted(async () => {
 		// fetch successfully
 		ongoingSurveysData.value = t("dashboard.ongoing_surveys", ongoingSurveys.count)
 	} else {
-		ongoingSurveysData.value =
-			t("dashboard.error_fetching_data") + " (" + t("error_codes." + ongoingSurveys.code) + ")"
+		ongoingSurveysData.value = t("dashboard.error_fetching_data") + " (" + t("error_codes." + ongoingSurveys.code) + ")"
 	}
 
 	ongoingLoading.value = false
@@ -35,8 +34,7 @@ onMounted(async () => {
 	if (siteUsers.code == 0) {
 		siteUsersData.value = t("dashboard.site_users", siteUsers.count)
 	} else {
-		siteUsersData.value =
-			t("dashboard.error_fetching_data") + " (" + t("error_codes." + siteUsers.code) + ")"
+		siteUsersData.value = t("dashboard.error_fetching_data") + " (" + t("error_codes." + siteUsers.code) + ")"
 	}
 
 	siteUsersLoading.value = false

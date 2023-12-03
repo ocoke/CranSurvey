@@ -4,7 +4,6 @@ import { useToast } from "vue-toastification"
 import md5 from "md5"
 import toastCfg from "~/src/functions/toastCfg"
 
-const localePath = useLocalePath()
 const username = useRoute().query.username
 const toast = useToast()
 const { t } = useI18n()
@@ -13,7 +12,7 @@ const password = ref("")
 const newPassword = ref("")
 const newPasswordRe = ref("")
 
-const updatePwd = async() => {
+const updatePwd = async () => {
 	if (!password.value || !newPassword.value || !newPasswordRe.value) {
 		toast.error(t("signup.invalid_params"), toastCfg)
 		return false
@@ -35,10 +34,7 @@ const updatePwd = async() => {
 	if (updatePwdStatus.code == 0) {
 		toast.success(t("editUser.update_success"), toastCfg)
 	} else {
-		toast.error(
-			t("editUser.update_error") + " (" + t("error_codes." + updatePwdStatus.code) + ")",
-			toastCfg,
-		)
+		toast.error(t("editUser.update_error") + " (" + t("error_codes." + updatePwdStatus.code) + ")", toastCfg)
 	}
 }
 </script>
