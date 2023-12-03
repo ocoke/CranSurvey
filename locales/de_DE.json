@@ -76,6 +76,7 @@
 		"results": "Befund",
 		"success": "Die Daten wurden erfolgreich abgerufen.",
 		"no_results": "Es wurde kein Artikel gefunden.",
+		"chart_unavailable": "Leider ist das Diagramm derzeit nicht verfügbar.",
 		"survey_preview": "Die Umfrage wurde erstellt unter {time}, hat 1 Antwort. | Die Umfrage wurde erstellt unter {time}hat {count} Erwiderungen.",
 		"from_user": "Von '{usr}`",
 		"question": "Frage",

@@ -76,6 +76,7 @@
 		"results": "Resultados",
 		"success": "Dados obtidos com êxito.",
 		"no_results": "Nenhum resultado encontrado.",
+		"chart_unavailable": "Desculpe, o gráfico não está disponível no momento.",
 		"survey_preview": "A pesquisa foi criada em {time}, tem 1 resposta. | A pesquisa foi criada em {time}Tem {count} Respostas.",
 		"from_user": "De '{usr}`",
 		"question": "Pergunta",
